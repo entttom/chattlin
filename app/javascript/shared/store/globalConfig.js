@@ -3,7 +3,7 @@ const {
   API_CHANNEL_THUMBNAIL: apiChannelThumbnail,
   APP_VERSION: appVersion,
   BRAND_NAME: brandName,
-  CHATWOOT_INBOX_TOKEN: maasInboxToken,
+  MAAS_INBOX_TOKEN: maasInboxToken,
   CREATE_NEW_ACCOUNT_FROM_DASHBOARD: createNewAccountFromDashboard,
   DISPLAY_MANIFEST: displayManifest,
   INSTALLATION_NAME: installationName,

@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Du kan nu ta emot e-postmeddelanden i din egna domän."
       }
     },
-    "UPDATE_CHATWOOT": "En uppdatering %{latestMaaSVersion} för MaaS är tillgänglig. Vänligen uppdatera din instans."
+    "UPDATE_MAAS": "En uppdatering %{latestMaaSVersion} för MaaS är tillgänglig. Vänligen uppdatera din instans."
   },
   "FORMS": {
     "MULTISELECT": {

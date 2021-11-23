@@ -21,7 +21,7 @@ class DashboardController < ActionController::Base
       'PRIVACY_URL',
       'DISPLAY_MANIFEST',
       'CREATE_NEW_ACCOUNT_FROM_DASHBOARD',
-      'CHATWOOT_INBOX_TOKEN',
+      'MAAS_INBOX_TOKEN',
       'API_CHANNEL_NAME',
       'API_CHANNEL_THUMBNAIL',
       'ANALYTICS_TOKEN',
@@ -34,6 +34,6 @@ class DashboardController < ActionController::Base
   end
 
   def ensure_installation_onboarding
-    redirect_to '/installation/onboarding' if ::Redis::Alfred.get(::Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING)
+    redirect_to '/installation/onboarding' if ::Redis::Alfred.get(::Redis::Alfred::MAAS_INSTALLATION_ONBOARDING)
   end
 end

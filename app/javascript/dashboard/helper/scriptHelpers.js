@@ -1,7 +1,7 @@
 import posthog from 'posthog-js';
 
-export const CHATWOOT_SET_USER = 'CHATWOOT_SET_USER';
-export const CHATWOOT_RESET = 'CHATWOOT_RESET';
+export const MAAS_SET_USER = 'MAAS_SET_USER';
+export const MAAS_RESET = 'MAAS_RESET';
 
 export const ANALYTICS_IDENTITY = 'ANALYTICS_IDENTITY';
 export const ANALYTICS_RESET = 'ANALYTICS_RESET';
@@ -21,12 +21,12 @@ export const initializeAnalyticsEvents = () => {
 };
 
 export const initializeMaaSEvents = () => {
-  window.bus.$on(CHATWOOT_RESET, () => {
+  window.bus.$on(MAAS_RESET, () => {
     if (window.$maas) {
       window.$maas.reset();
     }
   });
-  window.bus.$on(CHATWOOT_SET_USER, ({ user }) => {
+  window.bus.$on(MAAS_SET_USER, ({ user }) => {
     if (window.$maas) {
       window.$maas.setUser(user.email, {
         avatar_url: user.avatar_url,

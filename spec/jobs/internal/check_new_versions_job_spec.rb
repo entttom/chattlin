@@ -9,6 +9,6 @@ RSpec.describe Internal::CheckNewVersionsJob, type: :job do
     allow(MaaSHub).to receive(:latest_version).and_return(version)
     job
     expect(MaaSHub).to have_received(:latest_version)
-    expect(::Redis::Alfred.get(::Redis::Alfred::LATEST_CHATWOOT_VERSION)).to eq version
+    expect(::Redis::Alfred.get(::Redis::Alfred::LATEST_MAAS_VERSION)).to eq version
   end
 end

@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Artık özel alan adınızda e-postalar alabilirsiniz."
       }
     },
-    "UPDATE_CHATWOOT": "%{latestMaaSVersion} maas sürümü indirilebilir. Lütfen sürümü güncelleyin."
+    "UPDATE_MAAS": "%{latestMaaSVersion} maas sürümü indirilebilir. Lütfen sürümü güncelleyin."
   },
   "FORMS": {
     "MULTISELECT": {

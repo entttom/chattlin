@@ -7,6 +7,6 @@ class Internal::CheckNewVersionsJob < ApplicationJob
     latest_version = MaaSHub.latest_version
     return unless latest_version
 
-    ::Redis::Alfred.set(::Redis::Alfred::LATEST_CHATWOOT_VERSION, latest_version)
+    ::Redis::Alfred.set(::Redis::Alfred::LATEST_MAAS_VERSION, latest_version)
   end
 end

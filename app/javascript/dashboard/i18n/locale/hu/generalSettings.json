@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Most már goadhatsz e-maileket az egyedi domaineden."
       }
     },
-    "UPDATE_CHATWOOT": "Egy frissítés elérhető a MaaShoz %{latestMaaSVersion}. Kérjük frissítsd a telepítésed."
+    "UPDATE_MAAS": "Egy frissítés elérhető a MaaShoz %{latestMaaSVersion}. Kérjük frissítsd a telepítésed."
   },
   "FORMS": {
     "MULTISELECT": {

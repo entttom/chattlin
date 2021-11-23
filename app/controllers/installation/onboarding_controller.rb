@@ -26,7 +26,7 @@ class Installation::OnboardingController < ApplicationController
   end
 
   def finish_onboarding
-    ::Redis::Alfred.delete(::Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING)
+    ::Redis::Alfred.delete(::Redis::Alfred::MAAS_INSTALLATION_ONBOARDING)
     return if onboarding_params[:subscribe_to_updates].blank?
 
     MaaSHub.register_instance(
@@ -37,6 +37,6 @@ class Installation::OnboardingController < ApplicationController
   end
 
   def ensure_installation_onboarding
-    redirect_to '/' unless ::Redis::Alfred.get(::Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING)
+    redirect_to '/' unless ::Redis::Alfred.get(::Redis::Alfred::MAAS_INSTALLATION_ONBOARDING)
   end
 end

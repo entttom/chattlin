@@ -30,10 +30,10 @@
 - name: INSTALLATION_EVENTS_WEBHOOK_URL
   value:
   locked: false
-- name: CHATWOOT_INBOX_TOKEN
+- name: MAAS_INBOX_TOKEN
   value:
   locked: false
-- name: CHATWOOT_INBOX_HMAC_KEY
+- name: MAAS_INBOX_HMAC_KEY
   value:
   locked: false
 - name: API_CHANNEL_NAME

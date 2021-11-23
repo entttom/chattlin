@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Τώρα μπορείτε να λαμβάνετε emails στον τομέα (domain) σας."
       }
     },
-    "UPDATE_CHATWOOT": "Μια ενημέρωση %{latestMaaSVersion} για το MaaS είναι διαθέσιμη. Ενημερώστε την εφαρμογή σας."
+    "UPDATE_MAAS": "Μια ενημέρωση %{latestMaaSVersion} για το MaaS είναι διαθέσιμη. Ενημερώστε την εφαρμογή σας."
   },
   "FORMS": {
     "MULTISELECT": {

@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "You can receive emails in your custom domain now."
       }
     },
-    "UPDATE_CHATWOOT": "An update %{latestMaaSVersion} for MaaS is available. Please update your instance."
+    "UPDATE_MAAS": "An update %{latestMaaSVersion} for MaaS is available. Please update your instance."
   },
   "FORMS": {
     "MULTISELECT": {
