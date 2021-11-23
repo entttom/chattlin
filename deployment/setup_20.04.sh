@@ -53,8 +53,8 @@ rvm autolibs disable
 rvm install "ruby-2.7.2"
 rvm use 2.7.2 --default
 
-git clone https://github.com/entttom/chatwoot/
-cd chatwoot
+git clone https://github.com/entttom/maas/
+cd maas
 if [[ -z "$1" ]]; then
 git checkout master;
 else
