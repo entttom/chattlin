@@ -17,7 +17,8 @@
     }
   }
 
-  .image {
+  .image,
+  .video {
     cursor: pointer;
     position: relative;
 
@@ -26,7 +27,13 @@
     }
 
     .modal-image {
-      max-width: 85%;
+      max-height: 90%;
+      max-width: 90%;
+    }
+
+    .modal-video {
+      max-height: 75vh;
+      max-width: 100%;
     }
 
     &::before {
@@ -35,9 +42,19 @@
       content: '';
       height: 20%;
       left: 0;
-      opacity: .8;
+      opacity: 0.8;
       position: absolute;
       width: 100%;
+    }
+  }
+
+  .video {
+    .modal-container {
+      width: auto;
+
+      .modal--close {
+        z-index: var(--z-index-low);
+      }
     }
   }
 }
@@ -76,7 +93,6 @@
 
     .status--filter {
       @include padding($zero null $zero $space-normal);
-      @include round-corner;
       @include margin($space-smaller $space-slab $zero $zero);
       background-color: $color-background-light;
       border: 1px solid $color-border;
@@ -94,7 +110,7 @@
 
 .conversation-panel {
   @include flex;
-  @include flex-weight(1);
+  @include flex-weight(1 1 1px);
   @include margin($zero);
   flex-direction: column;
   height: 100%;
@@ -114,10 +130,18 @@
   }
 
   &:last-child {
-    margin-bottom: $space-small;
+    margin-bottom: 0;
   }
 
   &.unread--toast {
+    +.right {
+      margin-bottom: 0;
+    }
+
+    +.left {
+      margin-bottom: 0;
+    }
+
     span {
       @include elegant-card;
       @include round-corner;
@@ -132,7 +156,6 @@
 
   .bubble {
     @include bubble-with-types;
-    max-width: 50rem;
     text-align: left;
     word-wrap: break-word;
 
@@ -141,6 +164,7 @@
       font-family: inherit;
     }
   }
+
 
   &.left {
 
@@ -185,6 +209,19 @@
       }
     }
 
+    +.unread--toast {
+      +.right {
+        margin-top: $space-one;
+
+        .bubble {
+          border-top-right-radius: $space-one;
+        }
+      }
+
+      +.left {
+        margin-top: 0;
+      }
+    }
   }
 
   &.right {
@@ -228,6 +265,21 @@
         border-top-left-radius: $space-one;
       }
     }
+
+    +.unread--toast {
+      +.left {
+        margin-top: $space-one;
+
+        .bubble {
+          border-top-left-radius: $space-one;
+        }
+      }
+
+      +.right {
+        margin-top: 0;
+      }
+    }
+
   }
 
   &.center {
@@ -236,7 +288,9 @@
 
   .wrap {
     @include margin($zero $space-normal);
-    max-width: 69%;
+
+    --bubble-max-width: 49.6rem;
+    max-width: Min(var(--bubble-max-width), 85%);
 
     .sender--name {
       font-size: $font-size-mini;
@@ -259,11 +313,11 @@
     display: flex;
     font-size: var(--font-size-small);
     justify-content: center;
-    margin: var(--space-small) var(--space-normal);
-    padding: var(--space-small) var(--space-normal);
+    margin: var(--space-smaller) 0;
+    padding: var(--space-smaller) var(--space-micro) var(--space-smaller) var(--space-one);
 
     .is-text {
-      display: inline-block;
+      display: inline-flex;
       text-align: start;
 
       @include breakpoint(xxxlarge up) {

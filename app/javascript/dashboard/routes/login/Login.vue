@@ -128,7 +128,7 @@ export default {
       bus.$emit('newToastMessage', this.loginApi.message);
     },
     showSignupLink() {
-      return window.chatwootConfig.signupEnabled === 'true';
+      return window.maasConfig.signupEnabled === 'true';
     },
     login() {
       this.loginApi.showLoading = true;

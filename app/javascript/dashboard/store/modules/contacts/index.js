@@ -13,7 +13,10 @@ const state = {
     isFetchingItem: false,
     isFetchingInboxes: false,
     isUpdating: false,
+    isMerging: false,
+    isDeleting: false,
   },
+  sortOrder: [],
 };
 
 export default {

@@ -1,7 +1,7 @@
 {
   "INBOX_MGMT": {
     "HEADER": "Schránky",
-    "SIDEBAR_TXT": "<p><b>Inbox</b></p> <p> When you connect a website or a facebook Page to Chatwoot, it is called an <b>Inbox</b>. You can have unlimited inboxes in your Chatwoot account. </p><p> Click on <b>Add Inbox</b> to connect a website or a Facebook Page. </p><p> In the Dashboard, you can see all the conversations from all your inboxes in a single place and respond to them under the `Conversations` tab. </p><p> You can also see conversations specific to an inbox by clicking on the inbox name on the left pane of the dashboard. </p>",
+    "SIDEBAR_TXT": "<p><b>Inbox</b></p> <p> When you connect a website or a facebook Page to MaaS, it is called an <b>Inbox</b>. You can have unlimited inboxes in your MaaS account. </p><p> Click on <b>Add Inbox</b> to connect a website or a Facebook Page. </p><p> In the Dashboard, you can see all the conversations from all your inboxes in a single place and respond to them under the `Conversations` tab. </p><p> You can also see conversations specific to an inbox by clicking on the inbox name on the left pane of the dashboard. </p>",
     "LIST": {
       "404": "K tomuto účtu nejsou připojeny žádné doručené schránky."
     },
@@ -9,7 +9,7 @@
       {
         "title": "Vybrat kanál",
         "route": "settings_inbox_new",
-        "body": "Vyberte si poskytovatele, který chcete integrovat do Chatwoot."
+        "body": "Vyberte si poskytovatele, který chcete integrovat do MaaS."
       },
       {
         "title": "Vytvořit doručenou poštu",
@@ -28,8 +28,16 @@
       }
     ],
     "ADD": {
+      "CHANNEL_NAME": {
+        "LABEL": "Název schránky",
+        "PLACEHOLDER": "Enter your inbox name (eg: Acme Inc)"
+      },
+      "WEBSITE_NAME": {
+        "LABEL": "Website Name",
+        "PLACEHOLDER": "Enter your website name (eg: Acme Inc)"
+      },
       "FB": {
-        "HELP": "PS: Přihlášením získáme přístup pouze ke zprávám vaší stránky. Vaše soukromé zprávy nikdy nemohou být přístupné Chatwoot.",
+        "HELP": "PS: Přihlášením získáme přístup pouze ke zprávám vaší stránky. Vaše soukromé zprávy nikdy nemohou být přístupné MaaS.",
         "CHOOSE_PAGE": "Vybrat stránku",
         "CHOOSE_PLACEHOLDER": "Vyberte stránku ze seznamu",
         "INBOX_NAME": "Název schránky",
@@ -48,9 +56,10 @@
         "CHANNEL_AVATAR": {
           "LABEL": "Avatar kanálu"
         },
-        "CHANNEL_NAME": {
-          "LABEL": "Název webu",
-          "PLACEHOLDER": "Zadejte název webové stránky (např. Acme Inc)"
+        "CHANNEL_WEBHOOK_URL": {
+          "LABEL": "URL webového háčku",
+          "PLACEHOLDER": "Enter your Webhook URL",
+          "ERROR": "Zadejte prosím platnou URL"
         },
         "CHANNEL_DOMAIN": {
           "LABEL": "Doména webových stránek",
@@ -88,8 +97,8 @@
         "SUBMIT_BUTTON": "Vytvořit doručenou poštu"
       },
       "TWILIO": {
-        "TITLE": "Twilio SMS/Whatsapp Channel",
-        "DESC": "Integrate Twilio and start supporting your customers via SMS or Whatsapp.",
+        "TITLE": "Twilio SMS/WhatsApp Channel",
+        "DESC": "Integrate Twilio and start supporting your customers via SMS or WhatsApp.",
         "ACCOUNT_SID": {
           "LABEL": "SID účtu",
           "PLACEHOLDER": "Zadejte SID vašeho Twilio účtu",
@@ -105,8 +114,8 @@
           "ERROR": "Toto pole je povinné"
         },
         "CHANNEL_NAME": {
-          "LABEL": "Název kanálu",
-          "PLACEHOLDER": "Zadejte název kanálu",
+          "LABEL": "Název schránky",
+          "PLACEHOLDER": "Please enter a inbox name",
           "ERROR": "Toto pole je povinné"
         },
         "PHONE_NUMBER": {
@@ -121,6 +130,40 @@
         "SUBMIT_BUTTON": "Vytvořit Twilio kanál",
         "API": {
           "ERROR_MESSAGE": "Nebyli jsme schopni ověřit přihlašovací údaje Twilia, zkuste to prosím znovu"
+        }
+      },
+      "SMS": {
+        "TITLE": "SMS Channel via Twilio",
+        "DESC": "Start supporting your customers via SMS with Twilio integration."
+      },
+      "WHATSAPP": {
+        "TITLE": "WhatsApp Channel",
+        "DESC": "Start supporting your customers via WhatsApp.",
+        "PROVIDERS": {
+          "LABEL": "API Provider",
+          "TWILIO": "Twilio",
+          "360_DIALOG": "360Dialog"
+        },
+        "INBOX_NAME": {
+          "LABEL": "Název schránky",
+          "PLACEHOLDER": "Please enter an inbox name",
+          "ERROR": "Toto pole je povinné"
+        },
+        "PHONE_NUMBER": {
+          "LABEL": "Telefonní číslo",
+          "PLACEHOLDER": "Zadejte prosím telefonní číslo, ze kterého bude zpráva odeslána.",
+          "ERROR": "Zadejte platnou hodnotu. Telefonní číslo by mělo začínat znakem `+`."
+        },
+        "API_KEY": {
+          "LABEL": "API key",
+          "SUBTITLE": "Configure the WhatsApp API key.",
+          "PLACEHOLDER": "API key",
+          "APPLY_FOR_ACCESS": "Don't have any API key? Apply for access here",
+          "ERROR": "Please enter a valid value."
+        },
+        "SUBMIT_BUTTON": "Create WhatsApp Channel",
+        "API": {
+          "ERROR_MESSAGE": "We were not able to save the WhatsApp channel"
         }
       },
       "API_CHANNEL": {
@@ -160,9 +203,51 @@
         },
         "FINISH_MESSAGE": "Start forwarding your emails to the following email address."
       },
+      "LINE_CHANNEL": {
+        "TITLE": "LINE Channel",
+        "DESC": "Integrate with LINE channel and start supporting your customers.",
+        "CHANNEL_NAME": {
+          "LABEL": "Název kanálu",
+          "PLACEHOLDER": "Zadejte název kanálu",
+          "ERROR": "Toto pole je povinné"
+        },
+        "LINE_CHANNEL_ID": {
+          "LABEL": "LINE Channel ID",
+          "PLACEHOLDER": "LINE Channel ID"
+        },
+        "LINE_CHANNEL_SECRET": {
+          "LABEL": "LINE Channel Secret",
+          "PLACEHOLDER": "LINE Channel Secret"
+        },
+        "LINE_CHANNEL_TOKEN": {
+          "LABEL": "LINE Channel Token",
+          "PLACEHOLDER": "LINE Channel Token"
+        },
+        "SUBMIT_BUTTON": "Create LINE Channel",
+        "API": {
+          "ERROR_MESSAGE": "We were not able to save the LINE channel"
+        },
+        "API_CALLBACK": {
+          "TITLE": "Callback URL",
+          "SUBTITLE": "You have to configure the webhook URL in LINE application with the URL mentioned here."
+        }
+      },
+      "TELEGRAM_CHANNEL": {
+        "TITLE": "Telegram Channel",
+        "DESC": "Integrate with Telegram channel and start supporting your customers.",
+        "BOT_TOKEN": {
+          "LABEL": "Bot Token",
+          "SUBTITLE": "Configure the bot token you have obtained from Telegram BotFather.",
+          "PLACEHOLDER": "Bot Token"
+        },
+        "SUBMIT_BUTTON": "Create Telegram Channel",
+        "API": {
+          "ERROR_MESSAGE": "We were not able to save the telegram channel"
+        }
+      },
       "AUTH": {
-        "TITLE": "Kanály",
-        "DESC": "V současné době podporujeme jako platformu widgety živého chatu, Facebook stránky a Twitter profily. Máme více platforem jako Whatsapp, Email, Telegram a Line v dílech, což bude brzy ven."
+        "TITLE": "Choose a channel",
+        "DESC": "MaaS supports live-chat widget, Facebook page, Twitter profile, WhatsApp, Email etc., as channels. If you want to build a custom channel, you can create it using the API channel. Select one channel from the options below to proceed."
       },
       "AGENTS": {
         "TITLE": "Agenti",
@@ -172,11 +257,11 @@
       },
       "DETAILS": {
         "TITLE": "Doručená pošta detaily",
-        "DESC": "Z rozevíracího seznamu níže vyberte Facebook stránku, kterou chcete připojit k Chatwoot. Můžete také zadat vlastní název doručené poště pro lepší identifikaci."
+        "DESC": "Z rozevíracího seznamu níže vyberte Facebook stránku, kterou chcete připojit k MaaS. Můžete také zadat vlastní název doručené poště pro lepší identifikaci."
       },
       "FINISH": {
         "TITLE": "Nalezeno to!",
-        "DESC": "Úspěšně jste dokončili integraci vaší facebookové stránky s Chatwootem. Až příště přijde zákaznická zpráva, konverzace se automaticky objeví ve vaší schránce.<br>Poskytujeme vám také widget skript, který můžete snadno přidat na vaše webové stránky. Jakmile je toto aktivní na vašich webových stránkách, zákazníci vám mohou posílat zprávy přímo z vašich webových stránek bez pomoci externího nástroje a konverzace se objeví přímo zde, na Chatwoot.<br>Skvěle, co? No, určitě se pokusíme být :)"
+        "DESC": "Úspěšně jste dokončili integraci vaší facebookové stránky s MaaSem. Až příště přijde zákaznická zpráva, konverzace se automaticky objeví ve vaší schránce.<br>Poskytujeme vám také widget skript, který můžete snadno přidat na vaše webové stránky. Jakmile je toto aktivní na vašich webových stránkách, zákazníci vám mohou posílat zprávy přímo z vašich webových stránek bez pomoci externího nástroje a konverzace se objeví přímo zde, na MaaS.<br>Skvěle, co? No, určitě se pokusíme být :)"
       }
     },
     "DETAILS": {
@@ -208,25 +293,41 @@
       "AUTO_ASSIGNMENT": {
         "ENABLED": "Povoleno",
         "DISABLED": "Zakázáno"
+      },
+      "EMAIL_COLLECT_BOX": {
+        "ENABLED": "Povoleno",
+        "DISABLED": "Zakázáno"
+      },
+      "ENABLE_CSAT": {
+        "ENABLED": "Povoleno",
+        "DISABLED": "Zakázáno"
+      },
+      "ENABLE_HMAC": {
+        "LABEL": "Enable"
       }
     },
     "DELETE": {
       "BUTTON_TEXT": "Vymazat",
+      "AVATAR_DELETE_BUTTON_TEXT": "Delete Avatar",
       "CONFIRM": {
         "TITLE": "Potvrdit odstranění",
         "MESSAGE": "Opravdu chcete odstranit ",
+        "PLACE_HOLDER": "Please type {inboxName} to confirm",
         "YES": "Ano, odstranit ",
         "NO": "Ne, zachovat "
       },
       "API": {
         "SUCCESS_MESSAGE": "Doručená pošta byla úspěšně smazána",
-        "ERROR_MESSAGE": "Nelze odstranit doručenou poštu. Opakujte akci později."
+        "ERROR_MESSAGE": "Nelze odstranit doručenou poštu. Opakujte akci později.",
+        "AVATAR_SUCCESS_MESSAGE": "Inbox avatar deleted successfully",
+        "AVATAR_ERROR_MESSAGE": "Could not delete the inbox avatar. Please try again later."
       }
     },
     "TABS": {
       "SETTINGS": "Nastavení",
       "COLLABORATORS": "Spolupracující",
       "CONFIGURATION": "Nastavení",
+      "CAMPAIGN": "Kampaně",
       "PRE_CHAT_FORM": "Formulář před chatem",
       "BUSINESS_HOURS": "Pracovní doba"
     },
@@ -242,18 +343,28 @@
       "INBOX_AGENTS": "Agenti",
       "INBOX_AGENTS_SUB_TEXT": "Přidat nebo odebrat agenty z této složky doručené pošty",
       "UPDATE": "Aktualizovat",
+      "ENABLE_EMAIL_COLLECT_BOX": "Enable email collect box",
+      "ENABLE_EMAIL_COLLECT_BOX_SUB_TEXT": "Enable or disable email collect box on new conversation",
       "AUTO_ASSIGNMENT": "Povolit automatické přiřazení",
+      "ENABLE_CSAT": "Enable CSAT",
+      "ENABLE_CSAT_SUB_TEXT": "Enable/Disable CSAT(Customer satisfaction) survey after resolving a conversation",
       "INBOX_UPDATE_TITLE": "Nastavení doručené pošty",
       "INBOX_UPDATE_SUB_TEXT": "Aktualizujte nastavení doručené pošty",
       "AUTO_ASSIGNMENT_SUB_TEXT": "Povolit nebo zakázat automatické přiřazování nových konverzací agentům přidaným do této schránky.",
       "HMAC_VERIFICATION": "User Identity Validation",
-      "HMAC_DESCRIPTION": "Inorder validate the users identity, the SDK allows you to pass an `identity_hash` for each user. You can generate HMAC using 'sha256' with the key shown here."
+      "HMAC_DESCRIPTION": "Inorder to validate the user's identity, the SDK allows you to pass an `identifier_hash` for each user. You can generate HMAC using 'sha256' with the key shown here.",
+      "HMAC_MANDATORY_VERIFICATION": "Enforce User Identity Validation",
+      "HMAC_MANDATORY_DESCRIPTION": "If enabled, MaaS SDKs setUser method will not work unless the `identifier_hash` is provided for each user.",
+      "INBOX_IDENTIFIER": "Inbox Identifier",
+      "INBOX_IDENTIFIER_SUB_TEXT": "Use the `inbox_identifier` token shown here to authentication your API clients.",
+      "FORWARD_EMAIL_TITLE": "Forward to Email",
+      "FORWARD_EMAIL_SUB_TEXT": "Start forwarding your emails to the following email address."
     },
     "FACEBOOK_REAUTHORIZE": {
       "TITLE": "Znovu autorizovat",
       "SUBTITLE": "Your Facebook connection has expired, please reconnect your Facebook page to continue services",
       "MESSAGE_SUCCESS": "Reconnection successful",
-      "MESSAGE_ERROR": "There was an error, please try again"
+      "MESSAGE_ERROR": "Došlo k chybě, zkuste to prosím znovu"
     },
     "PRE_CHAT_FORM": {
       "DESCRIPTION": "Pre chat forms enable you to capture user information before they start conversation with you.",
@@ -279,7 +390,7 @@
       "TIMEZONE_LABEL": "Vyberte časové pásmo",
       "UPDATE": "Update business hours settings",
       "TOGGLE_AVAILABILITY": "Enable business availability for this inbox",
-      "UNAVAILABLE_MESSAGE_LABEL": "Unavailable message for vistors",
+      "UNAVAILABLE_MESSAGE_LABEL": "Unavailable message for visitors",
       "UNAVAILABLE_MESSAGE_DEFAULT": "We are unavailable at the moment. Leave a message we will respond once we are back.",
       "TOGGLE_HELP": "Enabling business availability will show the available hours on live chat widget even if all the agents are offline. Outside available hours vistors can be warned with a message and a pre-chat form.",
       "DAY": {

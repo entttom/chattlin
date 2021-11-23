@@ -1,5 +1,3 @@
-/* eslint no-console: 0 */
-/* eslint no-param-reassign: 0 */
 import Vue from 'vue';
 import * as types from '../../mutation-types';
 import getters, { getSelectedChatConversation } from './getters';
@@ -69,19 +67,32 @@ export const mutations = {
     Vue.set(chat.meta, 'team', team);
   },
 
-  [types.default.RESOLVE_CONVERSATION](_state, status) {
+  [types.default.UPDATE_CONVERSATION_CUSTOM_ATTRIBUTES](
+    _state,
+    custom_attributes
+  ) {
     const [chat] = getSelectedChatConversation(_state);
-    chat.status = status;
+    Vue.set(chat, 'custom_attributes', custom_attributes);
+  },
+
+  [types.default.CHANGE_CONVERSATION_STATUS](
+    _state,
+    { conversationId, status, snoozedUntil }
+  ) {
+    const conversation =
+      getters.getConversationById(_state)(conversationId) || {};
+    Vue.set(conversation, 'snoozed_until', snoozedUntil);
+    Vue.set(conversation, 'status', status);
   },
 
   [types.default.MUTE_CONVERSATION](_state) {
     const [chat] = getSelectedChatConversation(_state);
-    chat.muted = true;
+    Vue.set(chat, 'muted', true);
   },
 
   [types.default.UNMUTE_CONVERSATION](_state) {
     const [chat] = getSelectedChatConversation(_state);
-    chat.muted = false;
+    Vue.set(chat, 'muted', false);
   },
 
   [types.default.ADD_MESSAGE]({ allConversations, selectedChatId }, message) {
@@ -175,6 +186,13 @@ export const mutations = {
     if (chat) {
       Vue.set(chat, 'can_reply', canReply);
     }
+  },
+
+  [types.default.CLEAR_CONTACT_CONVERSATIONS](_state, contactId) {
+    const chats = _state.allConversations.filter(
+      c => c.meta.sender.id !== contactId
+    );
+    Vue.set(_state, 'allConversations', chats);
   },
 };
 

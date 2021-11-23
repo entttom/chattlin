@@ -28,7 +28,9 @@
       "AUDIO_NOTIFICATIONS_SECTION": {
         "TITLE": "Audio Notifications",
         "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
-        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+        "NONE": "None",
+        "ASSIGNED": "Assigned Conversations",
+        "ALL_CONVERSATIONS": "All Conversations"
       },
       "EMAIL_NOTIFICATIONS_SECTION": {
         "TITLE": "ഇമെയിൽ അറിയിപ്പുകൾ",
@@ -78,6 +80,11 @@
         "ERROR": "ദയവായി സാധുവായ ഒരു ഇമെയിൽ വിലാസം നൽകുക",
         "PLACEHOLDER": "ദയവായി നിങ്ങളുടെ ഇമെയിൽ വിലാസം നൽകുക, ഇത് സംഭാഷണങ്ങളിൽ ദൃശ്യമാകും"
       },
+      "CURRENT_PASSWORD": {
+        "LABEL": "Current password",
+        "ERROR": "Please enter the current password",
+        "PLACEHOLDER": "Please enter the current password"
+      },
       "PASSWORD": {
         "LABEL": "പാസ്‌വേഡ്",
         "ERROR": "ദയവായി 6 അല്ലെങ്കിൽ അതിൽ കൂടുതൽ ദൈർഘ്യമുള്ള പാസ്‌വേഡ് നൽകുക",
@@ -95,11 +102,13 @@
     "CHANGE_ACCOUNTS": "അക്കൗണ്ട് സ്വിച്ചുചെയ്യുക",
     "SELECTOR_SUBTITLE": "ഇനിപ്പറയുന്ന ലിസ്റ്റിൽ നിന്ന് ഒരു അക്കൗണ്ട് തിരഞ്ഞെടുക്കുക",
     "PROFILE_SETTINGS": "പ്രൊഫൈൽ ക്രമീകരണങ്ങൾ",
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
     "LOGOUT": "ലോഗൗട്ട്"
   },
   "APP_GLOBAL": {
     "TRIAL_MESSAGE": "ദിവസത്തെ ട്രയൽ ശേഷിക്കുന്നു.",
-    "TRAIL_BUTTON": "ഇപ്പോൾ വാങ്ങുക"
+    "TRAIL_BUTTON": "ഇപ്പോൾ വാങ്ങുക",
+    "DELETED_USER": "Deleted User"
   },
   "COMPONENTS": {
     "CODE": {
@@ -123,8 +132,8 @@
   "SIDEBAR": {
     "CONVERSATIONS": "സംഭാഷണങ്ങൾ",
     "REPORTS": "റിപ്പോർട്ടുകൾ",
-    "CONTACTS": "കോൺ‌ടാക്റ്റുകൾ",
     "SETTINGS": "ക്രമീകരണങ്ങൾ",
+    "CONTACTS": "കോൺ‌ടാക്റ്റുകൾ",
     "HOME": "ഹോം",
     "AGENTS": "ഏജന്റുമാർ",
     "INBOXES": "ഇൻ‌ബോക്സുകൾ",
@@ -132,10 +141,24 @@
     "CANNED_RESPONSES": "ക്യാൻഡ് പ്രതികരണങ്ങൾ",
     "INTEGRATIONS": "സംയോജനങ്ങൾ",
     "ACCOUNT_SETTINGS": "അക്കൗണ്ട് ക്രമീകരണങ്ങൾ",
+    "APPLICATIONS": "Applications",
     "LABELS": "ലേബലുകൾ",
-    "TEAMS": "Teams"
+    "CUSTOM_ATTRIBUTES": "ഇഷ്‌ടാനുസൃത ആട്രിബ്യൂട്ടുകൾ",
+    "TEAMS": "Teams",
+    "ALL_CONTACTS": "All Contacts",
+    "TAGGED_WITH": "Tagged with",
+    "REPORTS_OVERVIEW": "Overview",
+    "CSAT": "CSAT",
+    "CAMPAIGNS": "Campaigns",
+    "ONGOING": "Ongoing",
+    "ONE_OFF": "One off",
+    "REPORTS_AGENT": "ഏജന്റുമാർ",
+    "REPORTS_LABEL": "ലേബലുകൾ",
+    "REPORTS_INBOX": "Inbox",
+    "REPORTS_TEAM": "Team"
   },
   "CREATE_ACCOUNT": {
+    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any MaaS accounts. Please create a new account to continue.",
     "NEW_ACCOUNT": "പുതിയ അക്കൗണ്ട്",
     "SELECTOR_SUBTITLE": "അക്കൗണ്ട് ഒരു പുതിയ അക്കൗണ്ട് വിജയകരമായി സൃഷ്ടിക്കുക",
     "API": {
@@ -149,6 +172,31 @@
         "PLACEHOLDER": "പുണ്ണ്യാളൻ അഗർബത്തീസ്"
       },
       "SUBMIT": "സമർപ്പിക്കുക"
+    }
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": {
+      "OPEN_CONVERSATION": "Open conversation",
+      "RESOLVE_AND_NEXT": "Resolve and move to next",
+      "NAVIGATE_DROPDOWN": "Navigate dropdown items",
+      "RESOLVE_CONVERSATION": "Resolve Conversation",
+      "GO_TO_CONVERSATION_DASHBOARD": "Go to Conversation Dashboard",
+      "ADD_ATTACHMENT": "Add Attachment",
+      "GO_TO_CONTACTS_DASHBOARD": "Go to Contacts Dashboard",
+      "TOGGLE_SIDEBAR": "Toggle Sidebar",
+      "GO_TO_REPORTS_SIDEBAR": "Go to Reports sidebar",
+      "MOVE_TO_NEXT_TAB": "Move to next tab in conversation list",
+      "GO_TO_SETTINGS": "Go to Settings",
+      "SWITCH_CONVERSATION_STATUS": "Switch to the next conversation status",
+      "SWITCH_TO_PRIVATE_NOTE": "Switch to Private Note",
+      "TOGGLE_RICH_CONTENT_EDITOR": "Toggle Rich Content editor",
+      "SWITCH_TO_REPLY": "Switch to Reply",
+      "TOGGLE_SNOOZE_DROPDOWN": "Toggle snooze dropdown"
+    },
+    "KEYS": {
+      "WINDOWS_KEY_AND_COMMAND_KEY": "Win / ⌘",
+      "ALT_OR_OPTION_KEY": "Alt / ⌥",
+      "FORWARD_SLASH_KEY": "/"
     }
   }
 }

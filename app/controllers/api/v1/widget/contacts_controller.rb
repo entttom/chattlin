@@ -11,11 +11,19 @@ class Api::V1::Widget::ContactsController < Api::V1::Widget::BaseController
     render json: contact_identify_action.perform
   end
 
+  # TODO : clean up this with proper routes delete contacts/custom_attributes
+  def destroy_custom_attributes
+    @contact.custom_attributes = @contact.custom_attributes.excluding(params[:custom_attributes])
+    @contact.save!
+    render json: @contact
+  end
+
   private
 
   def process_hmac
-    return if params[:identifier_hash].blank?
-    raise StandardError, 'HMAC failed: Invalid Identifier Hash Provided' unless valid_hmac?
+    return if params[:identifier_hash].blank? && !@web_widget.hmac_mandatory
+
+    render json: { error: 'HMAC failed: Invalid Identifier Hash Provided' }, status: :unauthorized unless valid_hmac?
 
     @contact_inbox.update(hmac_verified: true)
   end
@@ -29,6 +37,6 @@ class Api::V1::Widget::ContactsController < Api::V1::Widget::BaseController
   end
 
   def permitted_params
-    params.permit(:website_token, :identifier, :identifier_hash, :email, :name, :avatar_url, custom_attributes: {})
+    params.permit(:website_token, :identifier, :identifier_hash, :email, :name, :avatar_url, :phone_number, custom_attributes: {})
   end
 end

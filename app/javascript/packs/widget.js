@@ -4,6 +4,7 @@ import VueI18n from 'vue-i18n';
 import store from '../widget/store';
 import App from '../widget/App.vue';
 import ActionCableConnector from '../widget/helpers/actionCable';
+import { getAlertAudio } from 'shared/helpers/AudioNotificationHelper';
 import i18n from '../widget/i18n';
 
 Vue.use(VueI18n);
@@ -28,6 +29,7 @@ window.onload = () => {
 
   window.actionCable = new ActionCableConnector(
     window.WOOT_WIDGET,
-    window.chatwootPubsubToken
+    window.maasPubsubToken
   );
+  getAlertAudio();
 };

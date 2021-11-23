@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Login to MaaS.work",
+    "TITLE": "Login to MaaS",
     "EMAIL": {
       "LABEL": "Email",
       "PLACEHOLDER": "Email eg: someone@example.com"

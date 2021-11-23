@@ -1,7 +1,7 @@
 # if you dont specify locked attribute, the default value will be true
 # which means the particular config will be locked
 - name: INSTALLATION_NAME
-  value: 'MaaS.work Chat'
+  value: 'MaaS'
 - name: LOGO_THUMBNAIL
   value: '/brand-assets/logo_thumbnail.svg'
 - name: LOGO
@@ -11,11 +11,11 @@
 - name: WIDGET_BRAND_URL
   value: 'https://www.maas.work'
 - name: BRAND_NAME
-  value: 'MaaS.work Chat'
+  value: 'MaaS'
 - name: TERMS_URL
-  value: 'https://www.maas.work'
+  value: 'https://www.maas.work/terms-of-service'
 - name: PRIVACY_URL
-  value: 'https://www.maas.work'
+  value: 'https://www.maas.work/privacy-policy'
 - name: DISPLAY_MANIFEST
   value: true
 - name: MAILER_INBOUND_EMAIL_DOMAIN
@@ -36,3 +36,11 @@
 - name: CHATWOOT_INBOX_HMAC_KEY
   value:
   locked: false
+- name: API_CHANNEL_NAME
+  value:
+- name: API_CHANNEL_THUMBNAIL
+  value:
+- name: ANALYTICS_TOKEN
+  value:
+- name: ANALYTICS_HOST
+  value:

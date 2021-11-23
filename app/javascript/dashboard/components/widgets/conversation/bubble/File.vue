@@ -1,5 +1,5 @@
 <template>
-  <div class="file message-text__wrap" @click="openLink">
+  <div class="file message-text__wrap">
     <div class="icon-wrap">
       <i class="ion-document-text"></i>
     </div>
@@ -36,7 +36,7 @@ export default {
   methods: {
     openLink() {
       const win = window.open(this.url, '_blank', 'noopener');
-      win.focus();
+      if (win) win.focus();
     },
   },
 };

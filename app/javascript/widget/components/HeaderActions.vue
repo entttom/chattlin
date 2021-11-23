@@ -45,7 +45,7 @@ export default {
       this.closeWindow();
       const {
         location: { origin },
-        chatwootWebChannel: { websiteToken },
+        maasWebChannel: { websiteToken },
         authToken,
       } = window;
 

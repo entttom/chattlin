@@ -1,19 +1,16 @@
 export default {
   computed: {
-    hideInputForBotConversations() {
-      return window.chatwootWebChannel.hideInputForBotConversations;
-    },
     useInboxAvatarForBot() {
-      return window.chatwootWidgetDefaults.useInboxAvatarForBot;
+      return window.maasWidgetDefaults.useInboxAvatarForBot;
     },
     hasAConnectedAgentBot() {
-      return !!window.chatwootWebChannel.hasAConnectedAgentBot;
+      return !!window.maasWebChannel.hasAConnectedAgentBot;
     },
     inboxAvatarUrl() {
-      return window.chatwootWebChannel.avatarUrl;
+      return window.maasWebChannel.avatarUrl;
     },
     channelConfig() {
-      return window.chatwootWebChannel;
+      return window.maasWebChannel;
     },
     hasEmojiPickerEnabled() {
       return this.channelConfig.enabledFeatures.includes('emoji_picker');
@@ -22,13 +19,19 @@ export default {
       return this.channelConfig.enabledFeatures.includes('attachments');
     },
     preChatFormEnabled() {
-      return window.chatwootWebChannel.preChatFormEnabled;
+      return window.maasWebChannel.preChatFormEnabled;
     },
     preChatFormOptions() {
-      const options = window.chatwootWebChannel.preChatFormOptions || {};
+      let requireEmail = false;
+      let preChatMessage = '';
+      const options = window.maasWebChannel.preChatFormOptions || {};
+      if (!this.isOnNewConversation) {
+        requireEmail = options.require_email;
+        preChatMessage = options.pre_chat_message;
+      }
       return {
-        requireEmail: options.require_email,
-        preChatMessage: options.pre_chat_message,
+        requireEmail,
+        preChatMessage,
       };
     },
   },

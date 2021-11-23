@@ -3,7 +3,7 @@
     "LINK": "Ajustes del perfil",
     "TITLE": "Ajustes del perfil",
     "BTN_TEXT": "Actualizar perfil",
-    "UPDATE_SUCCESS": "Your profile has been updated successfully",
+    "UPDATE_SUCCESS": "Tu perfil se ha actualizado correctamente",
     "PASSWORD_UPDATE_SUCCESS": "Su contraseña se ha cambiado correctamente",
     "AFTER_EMAIL_CHANGED": "Su perfil ha sido actualizado con éxito, por favor inicie sesión de nuevo cuando sus credenciales de inicio de sesión se hayan cambiado",
     "FORM": {
@@ -19,7 +19,7 @@
       "PASSWORD_SECTION": {
         "TITLE": "Contraseña",
         "NOTE": "Actualizar tu contraseña restablecería tus entradas en varios dispositivos.",
-        "BTN_TEXT": "Change password"
+        "BTN_TEXT": "Cambiar contraseña"
       },
       "ACCESS_TOKEN": {
         "TITLE": "Token de acceso",
@@ -28,7 +28,9 @@
       "AUDIO_NOTIFICATIONS_SECTION": {
         "TITLE": "Notificaciones con sonido",
         "NOTE": "Active las notificaciones de sonido en el tablero para los mensajes nuevos y conversaciones.",
-        "ENABLE_AUDIO": "Realizar un sonido cuando una nueva conversación ha sido creada o un nuevo mensaje llegue"
+        "NONE": "Ninguna",
+        "ASSIGNED": "Assigned Conversations",
+        "ALL_CONVERSATIONS": "All Conversations"
       },
       "EMAIL_NOTIFICATIONS_SECTION": {
         "TITLE": "Notificaciones por email",
@@ -78,6 +80,11 @@
         "ERROR": "Por favor, introduzca una dirección de correo válida",
         "PLACEHOLDER": "Por favor, introduzca su dirección de correo electrónico, esto se mostrará en las conversaciones"
       },
+      "CURRENT_PASSWORD": {
+        "LABEL": "Contraseña actual",
+        "ERROR": "Por favor, introduzca su contraseña actual",
+        "PLACEHOLDER": "Por favor, introduzca su contraseña actual"
+      },
       "PASSWORD": {
         "LABEL": "Contraseña",
         "ERROR": "Por favor, introduzca una contraseña de longitud 6 o más",
@@ -95,11 +102,13 @@
     "CHANGE_ACCOUNTS": "Cambiar de cuenta",
     "SELECTOR_SUBTITLE": "Seleccione una cuenta de la siguiente lista",
     "PROFILE_SETTINGS": "Ajustes del perfil",
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
     "LOGOUT": "Cerrar sesión"
   },
   "APP_GLOBAL": {
     "TRIAL_MESSAGE": "días de prueba restantes.",
-    "TRAIL_BUTTON": "Comprar ahora"
+    "TRAIL_BUTTON": "Comprar ahora",
+    "DELETED_USER": "Deleted User"
   },
   "COMPONENTS": {
     "CODE": {
@@ -123,8 +132,8 @@
   "SIDEBAR": {
     "CONVERSATIONS": "Conversaciones",
     "REPORTS": "Informes",
-    "CONTACTS": "Contactos",
     "SETTINGS": "Ajustes",
+    "CONTACTS": "Contactos",
     "HOME": "Inicio",
     "AGENTS": "Agentes",
     "INBOXES": "Entradas",
@@ -132,10 +141,24 @@
     "CANNED_RESPONSES": "Respuestas predefinidas",
     "INTEGRATIONS": "Integraciones",
     "ACCOUNT_SETTINGS": "Configuración de la cuenta",
+    "APPLICATIONS": "Aplicaciones",
     "LABELS": "Etiquetas",
-    "TEAMS": "Equipos"
+    "CUSTOM_ATTRIBUTES": "Atributos personalizados",
+    "TEAMS": "Equipos",
+    "ALL_CONTACTS": "Todos los contactos",
+    "TAGGED_WITH": "Etiquetado con",
+    "REPORTS_OVERVIEW": "Overview",
+    "CSAT": "Encuestas de Satisfacción",
+    "CAMPAIGNS": "Campañas",
+    "ONGOING": "En Curso",
+    "ONE_OFF": "One off",
+    "REPORTS_AGENT": "Agentes",
+    "REPORTS_LABEL": "Etiquetas",
+    "REPORTS_INBOX": "Bandeja de entrada",
+    "REPORTS_TEAM": "Team"
   },
   "CREATE_ACCOUNT": {
+    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any MaaS accounts. Please create a new account to continue.",
     "NEW_ACCOUNT": "Nueva cuenta",
     "SELECTOR_SUBTITLE": "Crear nueva cuenta",
     "API": {
@@ -149,6 +172,31 @@
         "PLACEHOLDER": "Empresas de Wayne"
       },
       "SUBMIT": "Enviar"
+    }
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": {
+      "OPEN_CONVERSATION": "Open conversation",
+      "RESOLVE_AND_NEXT": "Resolve and move to next",
+      "NAVIGATE_DROPDOWN": "Navigate dropdown items",
+      "RESOLVE_CONVERSATION": "Resolve Conversation",
+      "GO_TO_CONVERSATION_DASHBOARD": "Go to Conversation Dashboard",
+      "ADD_ATTACHMENT": "Add Attachment",
+      "GO_TO_CONTACTS_DASHBOARD": "Go to Contacts Dashboard",
+      "TOGGLE_SIDEBAR": "Toggle Sidebar",
+      "GO_TO_REPORTS_SIDEBAR": "Go to Reports sidebar",
+      "MOVE_TO_NEXT_TAB": "Move to next tab in conversation list",
+      "GO_TO_SETTINGS": "Go to Settings",
+      "SWITCH_CONVERSATION_STATUS": "Switch to the next conversation status",
+      "SWITCH_TO_PRIVATE_NOTE": "Switch to Private Note",
+      "TOGGLE_RICH_CONTENT_EDITOR": "Toggle Rich Content editor",
+      "SWITCH_TO_REPLY": "Switch to Reply",
+      "TOGGLE_SNOOZE_DROPDOWN": "Toggle snooze dropdown"
+    },
+    "KEYS": {
+      "WINDOWS_KEY_AND_COMMAND_KEY": "Win / ⌘",
+      "ALT_OR_OPTION_KEY": "Alt / ⌥",
+      "FORWARD_SLASH_KEY": "/"
     }
   }
 }

@@ -27,6 +27,13 @@
           v-if="shouldShowSidebarItem"
           :key="labelSection.toState"
           :menu-item="labelSection"
+          @add-label="showAddLabelPopup"
+        />
+        <sidebar-item
+          v-if="showShowContactSideMenu"
+          :key="contactLabelSection.key"
+          :menu-item="contactLabelSection"
+          @add-label="showAddLabelPopup"
         />
       </transition-group>
     </div>
@@ -43,9 +50,16 @@
         :show="showOptionsMenu"
         @toggle-accounts="toggleAccountModal"
         @show-support-chat-window="toggleSupportChatWindow"
+        @key-shortcut-modal="toggleKeyShortcutModal"
         @close="toggleOptions"
       />
     </div>
+
+    <woot-key-shortcut-modal
+      v-if="showShortcutModal"
+      @close="closeKeyShortcutModal"
+      @clickaway="closeKeyShortcutModal"
+    />
 
     <account-selector
       :show-account-modal="showAccountModal"
@@ -57,6 +71,10 @@
       :show="showCreateAccountModal"
       @close-account-create-modal="closeCreateAccountModal"
     />
+
+    <woot-modal :show.sync="showAddLabelModal" :on-close="hideAddLabelPopup">
+      <add-label-modal @close="hideAddLabelPopup" />
+    </woot-modal>
   </aside>
 </template>
 
@@ -74,6 +92,18 @@ import AgentDetails from './sidebarComponents/AgentDetails.vue';
 import OptionsMenu from './sidebarComponents/OptionsMenu.vue';
 import AccountSelector from './sidebarComponents/AccountSelector.vue';
 import AddAccountModal from './sidebarComponents/AddAccountModal.vue';
+import AddLabelModal from '../../routes/dashboard/settings/labels/AddLabel';
+import WootKeyShortcutModal from 'components/widgets/modal/WootKeyShortcutModal';
+import {
+  hasPressedAltAndCKey,
+  hasPressedAltAndRKey,
+  hasPressedAltAndSKey,
+  hasPressedAltAndVKey,
+  hasPressedCommandAndForwardSlash,
+  isEscape,
+} from 'shared/helpers/KeyboardHelpers';
+import eventListenerMixins from 'shared/mixins/eventListenerMixins';
+import router from '../../routes';
 
 export default {
   components: {
@@ -84,13 +114,17 @@ export default {
     OptionsMenu,
     AccountSelector,
     AddAccountModal,
+    AddLabelModal,
+    WootKeyShortcutModal,
   },
-  mixins: [adminMixin, alertMixin],
+  mixins: [adminMixin, alertMixin, eventListenerMixins],
   data() {
     return {
       showOptionsMenu: false,
       showAccountModal: false,
       showCreateAccountModal: false,
+      showAddLabelModal: false,
+      showShortcutModal: false,
     };
   },
 
@@ -131,6 +165,9 @@ export default {
     shouldShowSidebarItem() {
       return this.sidemenuItems.common.routes.includes(this.currentRoute);
     },
+    showShowContactSideMenu() {
+      return this.sidemenuItems.contacts.routes.includes(this.currentRoute);
+    },
     shouldShowTeams() {
       return this.shouldShowSidebarItem && this.teams.length;
     },
@@ -144,6 +181,7 @@ export default {
         cssClass: 'menu-title align-justify',
         toState: frontendURL(`accounts/${this.accountId}/settings/inboxes`),
         toStateName: 'settings_inbox_list',
+        newLinkRouteName: 'settings_inbox_new',
         children: this.inboxes.map(inbox => ({
           id: inbox.id,
           label: inbox.name,
@@ -158,10 +196,13 @@ export default {
         icon: 'ion-pound',
         label: 'LABELS',
         hasSubMenu: true,
+        newLink: true,
         key: 'label',
         cssClass: 'menu-title align-justify',
         toState: frontendURL(`accounts/${this.accountId}/settings/labels`),
         toStateName: 'labels_list',
+        showModalForNewItem: true,
+        modalName: 'AddLabel',
         children: this.accountLabels.map(label => ({
           id: label.id,
           label: label.title,
@@ -173,15 +214,40 @@ export default {
         })),
       };
     },
+    contactLabelSection() {
+      return {
+        icon: 'ion-pound',
+        label: 'TAGGED_WITH',
+        hasSubMenu: true,
+        key: 'label',
+        newLink: false,
+        cssClass: 'menu-title align-justify',
+        toState: frontendURL(`accounts/${this.accountId}/settings/labels`),
+        toStateName: 'labels_list',
+        showModalForNewItem: true,
+        modalName: 'AddLabel',
+        children: this.accountLabels.map(label => ({
+          id: label.id,
+          label: label.title,
+          color: label.color,
+          truncateLabel: true,
+          toState: frontendURL(
+            `accounts/${this.accountId}/labels/${label.title}/contacts`
+          ),
+        })),
+      };
+    },
     teamSection() {
       return {
         icon: 'ion-ios-people',
         label: 'TEAMS',
         hasSubMenu: true,
+        newLink: true,
         key: 'team',
         cssClass: 'menu-title align-justify teams-sidebar-menu',
         toState: frontendURL(`accounts/${this.accountId}/settings/teams`),
         toStateName: 'teams_list',
+        newLinkRouteName: 'settings_teams_new',
         children: this.teams.map(team => ({
           id: team.id,
           label: team.name,
@@ -194,34 +260,52 @@ export default {
       return frontendURL(`accounts/${this.accountId}/dashboard`);
     },
   },
-  watch: {
-    currentUser(newUserInfo, oldUserInfo) {
-      if (!oldUserInfo.email && newUserInfo.email) {
-        this.setChatwootUser();
-      }
-    },
-  },
   mounted() {
     this.$store.dispatch('labels/get');
     this.$store.dispatch('inboxes/get');
     this.$store.dispatch('notifications/unReadCount');
     this.$store.dispatch('teams/get');
-    this.setChatwootUser();
+    this.$store.dispatch('attributes/get');
   },
+
   methods: {
-    toggleSupportChatWindow() {
-      window.$chatwoot.toggle();
+    toggleKeyShortcutModal() {
+      this.showShortcutModal = true;
     },
-    setChatwootUser() {
-      if (!this.currentUser.email || !this.globalConfig.chatwootInboxToken) {
-        return;
+    closeKeyShortcutModal() {
+      this.showShortcutModal = false;
+    },
+    handleKeyEvents(e) {
+      if (hasPressedCommandAndForwardSlash(e)) {
+        this.toggleKeyShortcutModal();
       }
-      window.$chatwoot.setUser(this.currentUser.email, {
-        name: this.currentUser.name,
-        email: this.currentUser.email,
-        avatar_url: this.currentUser.avatar_url,
-        identifier_hash: this.currentUser.hmac_identifier,
-      });
+      if (isEscape(e)) {
+        this.closeKeyShortcutModal();
+      }
+
+      if (hasPressedAltAndCKey(e)) {
+        if (!this.isCurrentRouteSameAsNavigation('home')) {
+          router.push({ name: 'home' });
+        }
+      } else if (hasPressedAltAndVKey(e)) {
+        if (!this.isCurrentRouteSameAsNavigation('contacts_dashboard')) {
+          router.push({ name: 'contacts_dashboard' });
+        }
+      } else if (hasPressedAltAndRKey(e)) {
+        if (!this.isCurrentRouteSameAsNavigation('settings_account_reports')) {
+          router.push({ name: 'settings_account_reports' });
+        }
+      } else if (hasPressedAltAndSKey(e)) {
+        if (!this.isCurrentRouteSameAsNavigation('agent_list')) {
+          router.push({ name: 'agent_list' });
+        }
+      }
+    },
+    isCurrentRouteSameAsNavigation(routeName) {
+      return router.currentRoute && router.currentRoute.name === routeName;
+    },
+    toggleSupportChatWindow() {
+      window.$maas.toggle();
     },
     filterMenuItemsByRole(menuItems) {
       if (!this.currentRole) {
@@ -247,6 +331,12 @@ export default {
     closeCreateAccountModal() {
       this.showCreateAccountModal = false;
     },
+    showAddLabelPopup() {
+      this.showAddLabelModal = true;
+    },
+    hideAddLabelPopup() {
+      this.showAddLabelModal = false;
+    },
   },
 };
 </script>
@@ -258,16 +348,6 @@ export default {
   .modal-container {
     width: 40rem;
   }
-
-  .page-top-bar {
-    padding-bottom: $space-two;
-  }
-}
-
-.change-accounts--button.button {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-small;
-  padding: $space-small $space-one;
 }
 
 .account-selector {

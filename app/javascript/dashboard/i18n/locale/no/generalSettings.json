@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Du kan motta e-post i ditt egendefinerte domene nå."
       }
     },
-    "UPDATE_CHATWOOT": "En oppdatering av %{latestChatwootVersion} for Chatwoot er tilgjengelig. Oppdater din instans."
+    "UPDATE_CHATWOOT": "En oppdatering av %{latestMaaSVersion} for MaaS er tilgjengelig. Oppdater din instans."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -70,6 +70,14 @@
       "conversation_assignment": "Samtale tildelt",
       "assigned_conversation_new_message": "Ny melding",
       "conversation_mention": "Omtale"
+    }
+  },
+  "NETWORK": {
+    "NOTIFICATION": {
+      "TEXT": "Disconnected from MaaS"
+    },
+    "BUTTON": {
+      "REFRESH": "Refresh"
     }
   }
 }

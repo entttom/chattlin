@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 describe Contacts::ContactableInboxesService do
+  before do
+    stub_request(:post, /graph.facebook.com/)
+  end
+
   let(:account) { create(:account) }
-  let(:contact) { create(:contact, account: account) }
+  let(:contact) { create(:contact, account: account, email: 'contact@example.com', phone_number: '+2320000') }
   let!(:twilio_sms) { create(:channel_twilio_sms, account: account) }
   let!(:twilio_sms_inbox) { create(:inbox, channel: twilio_sms, account: account) }
   let!(:twilio_whatsapp) { create(:channel_twilio_sms, medium: :whatsapp, account: account) }

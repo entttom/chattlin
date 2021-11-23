@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SuperAdmin | Chatwoot</title>
+    <title>SuperAdmin | MaaS</title>
     <%= javascript_pack_tag 'superadmin' %>
     <%= stylesheet_pack_tag 'superadmin' %>
   </head>
@@ -11,11 +11,11 @@
         <div class="text-center medium-12 login__hero align-self-top">
           <img
             src="/brand-assets/logo.svg"
-            alt="Chatwoot logo"
+            alt="MaaS logo"
             class="hero__logo"
           />
           <h2 class="hero--title">
-            Howdy, Welcome to Chatwoot 👋
+            Howdy, Welcome to MaaS 👋
           </h2>
         </div>
         <div class="row align-center">
@@ -43,9 +43,9 @@
                 </label>
                 <div class="update-subscription--checkbox">
                   <%= check_box_tag "subscribe_to_updates", 'true', true %>
-                  <div for="subscribe_to_updates">
-                  Subscribe to release notes, newsletters & product feedback surveys.
-                  </div>
+                  <label for="subscribe_to_updates">
+                    Subscribe to release notes, newsletters & product feedback surveys.
+                  </label>
                 </div>
                 <button type="submit" class="button nice large expanded">
                   Finish Setup

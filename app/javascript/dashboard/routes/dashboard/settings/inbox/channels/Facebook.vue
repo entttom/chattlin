@@ -161,7 +161,7 @@ export default {
       if (window.fbSDKLoaded === undefined) {
         window.fbAsyncInit = () => {
           FB.init({
-            appId: window.chatwootConfig.fbAppId,
+            appId: window.maasConfig.fbAppId,
             xfbml: true,
             version: 'v7.0',
             status: true,
@@ -206,7 +206,8 @@ export default {
           }
         },
         {
-          scope: 'pages_manage_metadata,pages_messaging',
+          scope:
+            'pages_manage_metadata,pages_messaging,instagram_basic,pages_show_list,instagram_manage_messages',
         }
       );
     },

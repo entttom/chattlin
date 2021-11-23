@@ -28,7 +28,9 @@
       "AUDIO_NOTIFICATIONS_SECTION": {
         "TITLE": "Audio Notifications",
         "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
-        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+        "NONE": "None",
+        "ASSIGNED": "Assigned Conversations",
+        "ALL_CONVERSATIONS": "All Conversations"
       },
       "EMAIL_NOTIFICATIONS_SECTION": {
         "TITLE": "E-postaviseringar",
@@ -78,6 +80,11 @@
         "ERROR": "Ange en giltig e-postadress",
         "PLACEHOLDER": "Ange din e-postadress, detta visas i konversationer"
       },
+      "CURRENT_PASSWORD": {
+        "LABEL": "Current password",
+        "ERROR": "Please enter the current password",
+        "PLACEHOLDER": "Please enter the current password"
+      },
       "PASSWORD": {
         "LABEL": "Lösenord",
         "ERROR": "Ange ett lösenord med minst 6 tecken",
@@ -95,11 +102,13 @@
     "CHANGE_ACCOUNTS": "Byt konto",
     "SELECTOR_SUBTITLE": "Välj ett konto från följande lista",
     "PROFILE_SETTINGS": "Profilinställningar",
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
     "LOGOUT": "Logga ut"
   },
   "APP_GLOBAL": {
     "TRIAL_MESSAGE": "dagars provperiod återstår.",
-    "TRAIL_BUTTON": "Köp nu"
+    "TRAIL_BUTTON": "Köp nu",
+    "DELETED_USER": "Deleted User"
   },
   "COMPONENTS": {
     "CODE": {
@@ -123,8 +132,8 @@
   "SIDEBAR": {
     "CONVERSATIONS": "Konversationer",
     "REPORTS": "Rapporter",
-    "CONTACTS": "Kontakter",
     "SETTINGS": "Inställningar",
+    "CONTACTS": "Kontakter",
     "HOME": "Hem",
     "AGENTS": "Agenter",
     "INBOXES": "Inkorgar",
@@ -132,10 +141,24 @@
     "CANNED_RESPONSES": "Svarsmallar",
     "INTEGRATIONS": "Integrationer",
     "ACCOUNT_SETTINGS": "Kontoinställningar",
+    "APPLICATIONS": "Applications",
     "LABELS": "Etiketter",
-    "TEAMS": "Teams"
+    "CUSTOM_ATTRIBUTES": "Egna egenskaper",
+    "TEAMS": "Teams",
+    "ALL_CONTACTS": "All Contacts",
+    "TAGGED_WITH": "Tagged with",
+    "REPORTS_OVERVIEW": "Overview",
+    "CSAT": "CSAT",
+    "CAMPAIGNS": "Campaigns",
+    "ONGOING": "Ongoing",
+    "ONE_OFF": "One off",
+    "REPORTS_AGENT": "Agenter",
+    "REPORTS_LABEL": "Etiketter",
+    "REPORTS_INBOX": "Inkorg",
+    "REPORTS_TEAM": "Team"
   },
   "CREATE_ACCOUNT": {
+    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any MaaS accounts. Please create a new account to continue.",
     "NEW_ACCOUNT": "Nytt konto",
     "SELECTOR_SUBTITLE": "Skapa ett nytt konto",
     "API": {
@@ -149,6 +172,31 @@
         "PLACEHOLDER": "Wayne Enterprises"
       },
       "SUBMIT": "Skicka"
+    }
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": {
+      "OPEN_CONVERSATION": "Open conversation",
+      "RESOLVE_AND_NEXT": "Resolve and move to next",
+      "NAVIGATE_DROPDOWN": "Navigate dropdown items",
+      "RESOLVE_CONVERSATION": "Resolve Conversation",
+      "GO_TO_CONVERSATION_DASHBOARD": "Go to Conversation Dashboard",
+      "ADD_ATTACHMENT": "Add Attachment",
+      "GO_TO_CONTACTS_DASHBOARD": "Go to Contacts Dashboard",
+      "TOGGLE_SIDEBAR": "Toggle Sidebar",
+      "GO_TO_REPORTS_SIDEBAR": "Go to Reports sidebar",
+      "MOVE_TO_NEXT_TAB": "Move to next tab in conversation list",
+      "GO_TO_SETTINGS": "Go to Settings",
+      "SWITCH_CONVERSATION_STATUS": "Switch to the next conversation status",
+      "SWITCH_TO_PRIVATE_NOTE": "Switch to Private Note",
+      "TOGGLE_RICH_CONTENT_EDITOR": "Toggle Rich Content editor",
+      "SWITCH_TO_REPLY": "Switch to Reply",
+      "TOGGLE_SNOOZE_DROPDOWN": "Toggle snooze dropdown"
+    },
+    "KEYS": {
+      "WINDOWS_KEY_AND_COMMAND_KEY": "Win / ⌘",
+      "ALT_OR_OPTION_KEY": "Alt / ⌥",
+      "FORWARD_SLASH_KEY": "/"
     }
   }
 }

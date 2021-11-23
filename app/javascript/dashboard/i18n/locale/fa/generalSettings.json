@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "اکنون می‌توانید ایمیل‌ها را در دامنه سفارشی خود دریافت کنید."
       }
     },
-    "UPDATE_CHATWOOT": "به روزرسانی%{latestChatwootVersion} برای Chatwoot در دسترس است. لطفا نمونه خود را به روز کنید."
+    "UPDATE_CHATWOOT": "به روزرسانی%{latestMaaSVersion} برای MaaS در دسترس است. لطفا نمونه خود را به روز کنید."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -70,6 +70,14 @@
       "conversation_assignment": "مکالمه اختصاص داده شد",
       "assigned_conversation_new_message": "پیام جدید",
       "conversation_mention": "اشاره"
+    }
+  },
+  "NETWORK": {
+    "NOTIFICATION": {
+      "TEXT": "قطع کردن MaaS"
+    },
+    "BUTTON": {
+      "REFRESH": "تازه کردن"
     }
   }
 }

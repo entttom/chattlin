@@ -10,7 +10,7 @@ describe Facebook::SendOnFacebookService do
   end
 
   let!(:account) { create(:account) }
-  let(:bot) { class_double('FacebookBot::Bot').as_stubbed_const }
+  let(:bot) { class_double('Facebook::Messenger::Bot').as_stubbed_const }
   let!(:widget_inbox) { create(:inbox, account: account) }
   let!(:facebook_channel) { create(:channel_facebook_page, account: account) }
   let!(:facebook_inbox) { create(:inbox, channel: facebook_channel, account: account) }
@@ -46,13 +46,13 @@ describe Facebook::SendOnFacebookService do
     end
 
     context 'with reply' do
-      it 'if message is sent from chatwoot and is outgoing' do
+      it 'if message is sent from maas and is outgoing' do
         message = create(:message, message_type: 'outgoing', inbox: facebook_inbox, account: account, conversation: conversation)
         ::Facebook::SendOnFacebookService.new(message: message).perform
         expect(bot).to have_received(:deliver)
       end
 
-      it 'if message with attachment is sent from chatwoot and is outgoing' do
+      it 'if message with attachment is sent from maas and is outgoing' do
         message = build(:message, message_type: 'outgoing', inbox: facebook_inbox, account: account, conversation: conversation)
         attachment = message.attachments.new(account_id: message.account_id, file_type: :image)
         attachment.file.attach(io: File.open(Rails.root.join('spec/assets/avatar.png')), filename: 'avatar.png', content_type: 'image/png')
@@ -61,7 +61,7 @@ describe Facebook::SendOnFacebookService do
         expect(bot).to have_received(:deliver).with({
                                                       recipient: { id: contact_inbox.source_id },
                                                       message: { text: message.content }
-                                                    }, { access_token: facebook_channel.page_access_token })
+                                                    }, { page_id: facebook_channel.page_id })
         expect(bot).to have_received(:deliver).with({
                                                       recipient: { id: contact_inbox.source_id },
                                                       message: {
@@ -72,7 +72,7 @@ describe Facebook::SendOnFacebookService do
                                                           }
                                                         }
                                                       }
-                                                    }, { access_token: facebook_channel.page_access_token })
+                                                    }, { page_id: facebook_channel.page_id })
       end
     end
   end

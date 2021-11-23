@@ -49,13 +49,11 @@ export default {
     },
     isContactPanelOpen: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   computed: {
-    ...mapGetters({
-      currentChat: 'getSelectedChat',
-    }),
+    ...mapGetters({ currentChat: 'getSelectedChat' }),
     showContactPanel() {
       return this.isContactPanelOpen && this.currentChat.id;
     },
@@ -66,8 +64,20 @@ export default {
         this.$store.dispatch('inboxAssignableAgents/fetch', { inboxId });
       }
     },
+    'currentChat.id'() {
+      this.fetchLabels();
+    },
+  },
+  mounted() {
+    this.fetchLabels();
   },
   methods: {
+    fetchLabels() {
+      if (!this.currentChat.id) {
+        return;
+      }
+      this.$store.dispatch('conversationLabels/get', this.currentChat.id);
+    },
     onToggleContactPanel() {
       this.$emit('contact-panel-toggle');
     },
@@ -75,11 +85,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import '~dashboard/assets/scss/app.scss';
+@import '~dashboard/assets/scss/woot';
 
 .conversation-details-wrap {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   width: 100%;
   border-left: 1px solid var(--color-border);
   background: var(--color-background-light);

@@ -29,6 +29,7 @@ export const actions = {
         name: userObject.name,
         avatar_url: userObject.avatar_url,
         identifier_hash: userObject.identifier_hash,
+        phone_number: userObject.phone_number,
       };
       const {
         data: { pubsub_token: pubsubToken },
@@ -42,14 +43,21 @@ export const actions = {
 
       refreshActionCableConnector(pubsubToken);
     } catch (error) {
-      // Ingore error
+      // Ignore error
     }
   },
   setCustomAttributes: async (_, customAttributes = {}) => {
     try {
-      await ContactsAPI.setCustomAttibutes(customAttributes);
+      await ContactsAPI.setCustomAttributes(customAttributes);
     } catch (error) {
-      // Ingore error
+      // Ignore error
+    }
+  },
+  deleteCustomAttribute: async (_, customAttribute) => {
+    try {
+      await ContactsAPI.deleteCustomAttribute(customAttribute);
+    } catch (error) {
+      // Ignore error
     }
   },
 };

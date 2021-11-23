@@ -4,10 +4,10 @@ import { buildDateFromTime } from 'shared/helpers/DateHelper';
 export default {
   computed: {
     channelConfig() {
-      return window.chatwootWebChannel;
+      return window.maasWebChannel;
     },
     replyTime() {
-      return window.chatwootWebChannel.replyTime;
+      return window.maasWebChannel.replyTime;
     },
     replyTimeStatus() {
       switch (this.replyTime) {
@@ -57,6 +57,10 @@ export default {
         closeHour: workingHourConfig.close_hour,
         closeMinute: workingHourConfig.close_minutes,
       };
+    },
+    isInBusinessHours() {
+      const { workingHoursEnabled } = window.maasWebChannel;
+      return workingHoursEnabled ? this.isInBetweenTheWorkingHours : true;
     },
   },
 };

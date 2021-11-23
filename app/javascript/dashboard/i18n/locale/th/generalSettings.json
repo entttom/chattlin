@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "คุณสามารถรับอีเมล์ในโดเมนเเบบกำหนดเองได้เเล้ว"
       }
     },
-    "UPDATE_CHATWOOT": "An update %{latestChatwootVersion} for Chatwoot is available. Please update your instance."
+    "UPDATE_CHATWOOT": "An update %{latestMaaSVersion} for MaaS is available. Please update your instance."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -66,10 +66,18 @@
       ]
     },
     "TYPE_LABEL": {
-      "conversation_creation": "New conversation",
+      "conversation_creation": "สร้างการสนทนาใหม่",
       "conversation_assignment": "Conversation Assigned",
       "assigned_conversation_new_message": "New Message",
       "conversation_mention": "Mention"
+    }
+  },
+  "NETWORK": {
+    "NOTIFICATION": {
+      "TEXT": "Disconnected from MaaS"
+    },
+    "BUTTON": {
+      "REFRESH": "Refresh"
     }
   }
 }

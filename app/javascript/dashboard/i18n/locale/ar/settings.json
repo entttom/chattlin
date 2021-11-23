@@ -23,12 +23,14 @@
       },
       "ACCESS_TOKEN": {
         "TITLE": "رمز المصادقة",
-        "NOTE": "يمكن استخدام هذا رمز المصادقة إذا كنت تبني تطبيقات API للتكامل مع Chatwoot"
+        "NOTE": "يمكن استخدام هذا رمز المصادقة إذا كنت تبني تطبيقات API للتكامل مع MaaS"
       },
       "AUDIO_NOTIFICATIONS_SECTION": {
         "TITLE": "الإشعارات الصوتية",
         "NOTE": "تمكين التنبيهات الصوتية في لوحة التحكم للرسائل والمحادثات الجديدة.",
-        "ENABLE_AUDIO": "تشغيل إشعار صوتي عند إنشاء محادثة جديدة أو وصول رسائل جديدة"
+        "NONE": "لا شيء",
+        "ASSIGNED": "المحادثات المسندة",
+        "ALL_CONVERSATIONS": "كل المحادثات"
       },
       "EMAIL_NOTIFICATIONS_SECTION": {
         "TITLE": "إشعارات البريد الإلكتروني",
@@ -78,6 +80,11 @@
         "ERROR": "الرجاء إدخال عنوان بريد إلكتروني صحيح",
         "PLACEHOLDER": "الرجاء إدخال عنوان البريد الإلكتروني الخاص بك، سيتم عرضه في المحادثات"
       },
+      "CURRENT_PASSWORD": {
+        "LABEL": "كلمة المرور الحالية",
+        "ERROR": "الرجاء إدخال كلمة مرور جديدة",
+        "PLACEHOLDER": "الرجاء إدخال كلمة مرور جديدة"
+      },
       "PASSWORD": {
         "LABEL": "كلمة المرور",
         "ERROR": "الرجاء إدخال كلمة مرور بطول 6 أحرف أو أكثر",
@@ -95,11 +102,13 @@
     "CHANGE_ACCOUNTS": "تبديل الحساب",
     "SELECTOR_SUBTITLE": "اختر حساباً من القائمة التالية",
     "PROFILE_SETTINGS": "إعدادات الملف الشخصي",
+    "KEYBOARD_SHORTCUTS": "اختصارات لوحة المفاتيح",
     "LOGOUT": "تسجيل الخروج"
   },
   "APP_GLOBAL": {
     "TRIAL_MESSAGE": "أيام متبقية من الفترة التجريبية.",
-    "TRAIL_BUTTON": "اشترك الآن"
+    "TRAIL_BUTTON": "اشترك الآن",
+    "DELETED_USER": "Deleted User"
   },
   "COMPONENTS": {
     "CODE": {
@@ -123,8 +132,8 @@
   "SIDEBAR": {
     "CONVERSATIONS": "المحادثات",
     "REPORTS": "التقارير",
-    "CONTACTS": "جهات الاتصال",
     "SETTINGS": "الإعدادات",
+    "CONTACTS": "جهات الاتصال",
     "HOME": "الرئيسية",
     "AGENTS": "موظف الدعم",
     "INBOXES": "قنوات التواصل",
@@ -132,10 +141,24 @@
     "CANNED_RESPONSES": "الردود السريعة",
     "INTEGRATIONS": "خيارات الربط",
     "ACCOUNT_SETTINGS": "إعدادات الحساب",
+    "APPLICATIONS": "التطبيقات",
     "LABELS": "الوسوم",
-    "TEAMS": "الفرق"
+    "CUSTOM_ATTRIBUTES": "سمات مخصصة",
+    "TEAMS": "الفرق",
+    "ALL_CONTACTS": "جميع جهات الاتصال",
+    "TAGGED_WITH": "Tagged with",
+    "REPORTS_OVERVIEW": "نظرة عامة",
+    "CSAT": "CSAT",
+    "CAMPAIGNS": "الحملات",
+    "ONGOING": "جارية",
+    "ONE_OFF": "إيقاف واحد",
+    "REPORTS_AGENT": "موظف الدعم",
+    "REPORTS_LABEL": "الوسوم",
+    "REPORTS_INBOX": "صندوق الوارد",
+    "REPORTS_TEAM": "Team"
   },
   "CREATE_ACCOUNT": {
+    "NO_ACCOUNT_WARNING": "أوه! لم نتمكن من العثور على الحساب. الرجاء إنشاء حساب جديد للمتابعة.",
     "NEW_ACCOUNT": "حساب جديد",
     "SELECTOR_SUBTITLE": "إنشاء حساب جديد",
     "API": {
@@ -149,6 +172,31 @@
         "PLACEHOLDER": "مؤسسة Wayne"
       },
       "SUBMIT": "إرسال"
+    }
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": {
+      "OPEN_CONVERSATION": "فتح المحادثة",
+      "RESOLVE_AND_NEXT": "حل وانتقل إلى التالي",
+      "NAVIGATE_DROPDOWN": "تصفح العناصر المنسدلة",
+      "RESOLVE_CONVERSATION": "إعادة فتح المحادثة",
+      "GO_TO_CONVERSATION_DASHBOARD": "الذهاب إلى لوحة المحادثة",
+      "ADD_ATTACHMENT": "إضافة مرفقات",
+      "GO_TO_CONTACTS_DASHBOARD": "الذهاب إلى لوحة جهات الاتصال",
+      "TOGGLE_SIDEBAR": "تبديل الشريط الجانبي",
+      "GO_TO_REPORTS_SIDEBAR": "الذهاب إلى شريط التقارير الجانبي",
+      "MOVE_TO_NEXT_TAB": "نقل إلى علامة التبويب التالية في قائمة المحادثات",
+      "GO_TO_SETTINGS": "انتقل إلى الإعدادات",
+      "SWITCH_CONVERSATION_STATUS": "Switch to the next conversation status",
+      "SWITCH_TO_PRIVATE_NOTE": "Switch to Private Note",
+      "TOGGLE_RICH_CONTENT_EDITOR": "Toggle Rich Content editor",
+      "SWITCH_TO_REPLY": "Switch to Reply",
+      "TOGGLE_SNOOZE_DROPDOWN": "Toggle snooze dropdown"
+    },
+    "KEYS": {
+      "WINDOWS_KEY_AND_COMMAND_KEY": "Win / ⌘",
+      "ALT_OR_OPTION_KEY": "Alt / ⌥",
+      "FORWARD_SLASH_KEY": "/"
     }
   }
 }

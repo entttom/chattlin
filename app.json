@@ -1,9 +1,9 @@
 {
-  "name": "Chatwoot",
-  "description": "Chatwoot is a customer support tool for instant messaging channels",
-  "website": "https://www.chatwoot.com/",
-  "repository": "https://github.com/chatwoot/chatwoot",
-  "logo": "https://app.chatwoot.com/brand-assets/logo_thumbnail.svg",
+  "name": "MaaS",
+  "description": "MaaS is a customer support tool for instant messaging channels",
+  "website": "https://www.maas.work/",
+  "repository": "https://github.com/maas/maas",
+  "logo": "https://app.maas.work/brand-assets/logo_thumbnail.svg",
   "keywords": [
     "live chat",
     "customer support",
@@ -26,8 +26,12 @@
       "value": "production"
     },
     "FRONTEND_URL": {
-      "description": "Public root URL of the Chatwoot installation. This will be used in the emails.",
+      "description": "Public root URL of the MaaS installation. This will be used in the emails.",
       "value": "https://CHANGE.herokuapp.com"
+    },
+    "INSTALLATION_ENV": {
+      "description": "Installation method used for MaaS.",
+      "value": "heroku"
     }
   },
   "formation": {

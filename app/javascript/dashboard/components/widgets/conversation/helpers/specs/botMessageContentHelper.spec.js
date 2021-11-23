@@ -12,9 +12,36 @@ describe('#generateBotMessageContent', () => {
   it('return correct input_email content', () => {
     expect(
       generateBotMessageContent('input_email', {
-        submitted_email: 'hello@chatwoot.com',
+        submitted_email: 'hello@maas.work',
       })
-    ).toEqual('<strong>hello@chatwoot.com</strong>');
+    ).toEqual('<strong>hello@maas.work</strong>');
+  });
+
+  it('return correct input_csat content', () => {
+    expect(
+      generateBotMessageContent('input_csat', {
+        submitted_values: {
+          csat_survey_response: {
+            rating: 5,
+            feedback_message: 'Great Service',
+          },
+        },
+      })
+    ).toEqual(
+      '<div><strong>Rating</strong></div><p>😍</p><div><strong>Feedback</strong></div><p>Great Service</p>'
+    );
+
+    expect(
+      generateBotMessageContent(
+        'input_csat',
+        {
+          submitted_values: {
+            csat_survey_response: { rating: 1, feedback_message: '' },
+          },
+        },
+        { csat: { ratingTitle: 'റേറ്റിംഗ്', feedbackTitle: 'പ്രതികരണം' } }
+      )
+    ).toEqual('<div><strong>റേറ്റിംഗ്</strong></div><p>😞</p>');
   });
 
   it('return correct form content', () => {

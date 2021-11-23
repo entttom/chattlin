@@ -11,7 +11,9 @@ module MailboxHelper
       content_type: 'incoming_email',
       source_id: processed_mail.message_id,
       content_attributes: {
-        email: processed_mail.serialized_data
+        email: processed_mail.serialized_data,
+        cc_email: processed_mail.cc,
+        bcc_email: processed_mail.bcc
       }
     )
   end
@@ -25,5 +27,10 @@ module MailboxHelper
       attachment.file.attach(mail_attachment[:blob])
     end
     @message.save!
+  end
+
+  def notification_email_from_maas?
+    # notification emails are send via mailer sender email address. so it should match
+    @processed_mail.original_sender == Mail::Address.new(ENV.fetch('MAILER_SENDER_EMAIL', 'MaaS <accounts@maas.work>')).address
   end
 end

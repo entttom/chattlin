@@ -50,7 +50,7 @@ RSpec.describe '/api/v1/widget/conversations/toggle_typing', type: :request do
              website_token: web_widget.website_token,
              contact: {
                name: 'contact-name',
-               email: 'contact-email@chatwoot.com'
+               email: 'contact-email@maas.work'
              },
              message: {
                content: 'This is a test message'
@@ -62,7 +62,7 @@ RSpec.describe '/api/v1/widget/conversations/toggle_typing', type: :request do
       json_response = JSON.parse(response.body)
 
       expect(json_response['id']).not_to eq nil
-      expect(json_response['contact']['email']).to eq 'contact-email@chatwoot.com'
+      expect(json_response['contact']['email']).to eq 'contact-email@maas.work'
       expect(json_response['messages'][0]['content']).to eq 'This is a test message'
     end
   end
@@ -104,7 +104,9 @@ RSpec.describe '/api/v1/widget/conversations/toggle_typing', type: :request do
   describe 'POST /api/v1/widget/conversations/transcript' do
     context 'with a conversation' do
       it 'sends transcript email' do
-        allow(ConversationReplyMailer).to receive(:conversation_transcript)
+        mailer = double
+        allow(ConversationReplyMailer).to receive(:with).and_return(mailer)
+        allow(mailer).to receive(:conversation_transcript)
 
         post '/api/v1/widget/conversations/transcript',
              headers: { 'X-Auth-Token' => token },
@@ -112,7 +114,7 @@ RSpec.describe '/api/v1/widget/conversations/toggle_typing', type: :request do
              as: :json
 
         expect(response).to have_http_status(:success)
-        expect(ConversationReplyMailer).to have_received(:conversation_transcript).with(conversation, 'test@test.com')
+        expect(mailer).to have_received(:conversation_transcript).with(conversation, 'test@test.com')
       end
     end
   end

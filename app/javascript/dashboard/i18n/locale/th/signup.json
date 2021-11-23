@@ -2,7 +2,7 @@
   "REGISTER": {
     "TRY_WOOT": "Register an account",
     "TITLE": "Register",
-    "TERMS_ACCEPT": "By signing up, you agree to our <a href=\"https://www.chatwoot.com/terms\">T & C</a> and <a href=\"https://www.chatwoot.com/privacy-policy\">Privacy policy</a>",
+    "TERMS_ACCEPT": "By signing up, you agree to our <a href=\"https://www.maas.work/terms\">T & C</a> and <a href=\"https://www.maas.work/privacy-policy\">Privacy policy</a>",
     "ACCOUNT_NAME": {
       "LABEL": "ชื่อบัญชี",
       "PLACEHOLDER": "Enter an account name. eg: Wayne Enterprises",
@@ -19,8 +19,8 @@
       "ERROR": "Email address is invalid"
     },
     "PASSWORD": {
-      "LABEL": "Password",
-      "PLACEHOLDER": "Password",
+      "LABEL": "หรัสผ่าน",
+      "PLACEHOLDER": "หรัสผ่าน",
       "ERROR": "หรัสผ่านนั้นสั้นเกินไป"
     },
     "CONFIRM_PASSWORD": {

@@ -3,7 +3,7 @@
     <div class="table-actions-wrap">
       <div class="left-aligned-wrap">
         <h1 class="page-title">
-          {{ $t('CONTACTS_PAGE.HEADER') }}
+          {{ headerTitle ? `#${headerTitle}` : $t('CONTACTS_PAGE.HEADER') }}
         </h1>
       </div>
       <div class="right-aligned-wrap">
@@ -17,18 +17,32 @@
             @keyup.enter="onSearchSubmit"
             @input="onInputSearch"
           />
-          <woot-submit-button
-            :button-text="$t('CONTACTS_PAGE.SEARCH_BUTTON')"
-            :loading="false"
-            :button-class="searchButtonClass"
+          <woot-button
+            :is-loading="false"
+            :class-names="searchButtonClass"
             @click="onSearchSubmit"
-          />
+          >
+            {{ $t('CONTACTS_PAGE.SEARCH_BUTTON') }}
+          </woot-button>
         </div>
 
-        <button class="button success icon" @click="onToggleCreate">
-          <i class="icon ion-android-add-circle" />
+        <woot-button
+          color-scheme="success"
+          icon="ion-android-add-circle"
+          class="margin-right-small"
+          data-testid="create-new-contact"
+          @click="onToggleCreate"
+        >
           {{ $t('CREATE_CONTACT.BUTTON_LABEL') }}
-        </button>
+        </woot-button>
+
+        <woot-button
+          color-scheme="info"
+          icon="ion-android-upload"
+          @click="onToggleImport"
+        >
+          {{ $t('IMPORT_CONTACTS.BUTTON_LABEL') }}
+        </woot-button>
       </div>
     </div>
   </header>
@@ -36,8 +50,11 @@
 
 <script>
 export default {
-  components: {},
   props: {
+    headerTitle: {
+      type: String,
+      default: '',
+    },
     searchQuery: {
       type: String,
       default: '',
@@ -54,10 +71,15 @@ export default {
       type: Function,
       default: () => {},
     },
+    onToggleImport: {
+      type: Function,
+      default: () => {},
+    },
   },
   data() {
     return {
       showCreateModal: false,
+      showImportModal: false,
     };
   },
   computed: {
@@ -76,7 +98,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: var(--space-small) var(--space-small) var(--space-small)
+  padding: var(--space-small) var(--space-normal) var(--space-small)
     var(--space-normal);
 }
 
@@ -92,7 +114,6 @@ export default {
 
 .search-wrap {
   width: 400px;
-  height: 3.8rem;
   display: flex;
   align-items: center;
   position: relative;

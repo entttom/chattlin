@@ -21,6 +21,9 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ActiveModel::Type::Boolean.new.cast(ENV.fetch('RAILS_SERVE_STATIC_FILES', true))
+  config.public_file_server.headers = {
+    'Cache-Control' => "public, max-age=#{1.year.to_i}"
+  }
   # Compress JavaScripts and CSS.
   # config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
@@ -42,9 +45,12 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
-  if ENV['FRONTEND_URL'].present?
-    config.action_cable.allowed_request_origins = [ENV['FRONTEND_URL'], %r{https?://#{URI.parse(ENV['FRONTEND_URL']).host}(:[0-9]+)?}]
-  end
+
+  # to enable connecting to the API channel public APIs
+  config.action_cable.disable_request_forgery_protection = true
+  # if ENV['FRONTEND_URL'].present?
+  #   config.action_cable.allowed_request_origins = [ENV['FRONTEND_URL'], %r{https?://#{URI.parse(ENV['FRONTEND_URL']).host}(:[0-9]+)?}]
+  # end
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = ActiveModel::Type::Boolean.new.cast(ENV.fetch('FORCE_SSL', false))
@@ -61,7 +67,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   config.active_job.queue_adapter = :sidekiq
-  # config.active_job.queue_name_prefix = "Chatwoot_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "MaaS_#{Rails.env}"
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -110,10 +116,14 @@ Rails.application.configure do
 
   # font cors issue with CDN
   # Ref: https://stackoverflow.com/questions/56960709/rails-font-cors-policy
+  # ref: https://github.com/cyu/rack-cors
   config.middleware.insert_before 0, Rack::Cors do
     allow do
       origins '*'
       resource '/packs/*', headers: :any, methods: [:get, :options]
+      if ActiveModel::Type::Boolean.new.cast(ENV.fetch('CW_API_ONLY_SERVER', false))
+        resource '*', headers: :any, methods: :any, expose: ['access-token', 'client', 'uid', 'expiry']
+      end
     end
   end
 end

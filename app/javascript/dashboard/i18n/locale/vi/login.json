@@ -1,8 +1,8 @@
 {
   "LOGIN": {
-    "TITLE": "Đăng nhập Chatwoot",
+    "TITLE": "Đăng nhập MaaS",
     "EMAIL": {
-      "LABEL": "Email",
+      "LABEL": "Thư điện tử",
       "PLACEHOLDER": "Email : someone@example.com"
     },
     "PASSWORD": {

@@ -26,7 +26,7 @@ class WebhookListener < BaseListener
     message = extract_message_and_account(event)[0]
     inbox = message.inbox
 
-    return unless message.reportable?
+    return unless message.webhook_sendable?
 
     payload = message.webhook_data.merge(event: __method__.to_s)
     deliver_webhook_payloads(payload, inbox)
@@ -36,7 +36,7 @@ class WebhookListener < BaseListener
     message = extract_message_and_account(event)[0]
     inbox = message.inbox
 
-    return unless message.reportable?
+    return unless message.webhook_sendable?
 
     payload = message.webhook_data.merge(event: __method__.to_s)
     deliver_webhook_payloads(payload, inbox)
@@ -59,7 +59,9 @@ class WebhookListener < BaseListener
       WebhookJob.perform_later(webhook.url, payload)
     end
 
-    # Deliver for API Inbox
-    WebhookJob.perform_later(inbox.channel.webhook_url, payload) if inbox.channel_type == 'Channel::Api'
+    return unless inbox.channel_type == 'Channel::Api'
+    return if inbox.channel.webhook_url.blank?
+
+    WebhookJob.perform_later(inbox.channel.webhook_url, payload)
   end
 end

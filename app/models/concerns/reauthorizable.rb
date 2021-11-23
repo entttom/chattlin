@@ -3,7 +3,7 @@
 # We would be aware of it until we make the API call to the service and it throws error
 
 # Example:
-# when a user changes his/her password, the auth token they provided to chatwoot becomes invalid
+# when a user changes his/her password, the auth token they provided to maas becomes invalid
 
 # This module helps to capture the errors into a counter and when threshold is passed would mark
 # the object to be reauthorized. We will also send an email to the owners alerting them of the error.
@@ -36,7 +36,13 @@ module Reauthorizable
   # could used to manually prompt reauthorization if auth scope changes
   def prompt_reauthorization!
     ::Redis::Alfred.set(reauthorization_required_key, true)
-    AdministratorNotifications::ChannelNotificationsMailer.slack_disconnect(account)&.deliver_later if (is_a? Integrations::Hook) && slack?
+
+    if (is_a? Integrations::Hook) && slack?
+      AdministratorNotifications::ChannelNotificationsMailer.with(account: account).slack_disconnect.deliver_later
+    end
+    return unless is_a? Channel::FacebookPage
+
+    AdministratorNotifications::ChannelNotificationsMailer.with(account: account).facebook_disconnect(inbox).deliver_later
   end
 
   # call this after you successfully Reauthorized the object in UI

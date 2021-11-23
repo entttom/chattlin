@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Τώρα μπορείτε να λαμβάνετε emails στον τομέα (domain) σας."
       }
     },
-    "UPDATE_CHATWOOT": "Μια ενημέρωση %{latestChatwootVersion} για το Chatwoot είναι διαθέσιμη. Ενημερώστε την εφαρμογή σας."
+    "UPDATE_CHATWOOT": "Μια ενημέρωση %{latestMaaSVersion} για το MaaS είναι διαθέσιμη. Ενημερώστε την εφαρμογή σας."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -70,6 +70,14 @@
       "conversation_assignment": "Η Συνομιλία Ανατέθηκε",
       "assigned_conversation_new_message": "Νέο Μήνυμα",
       "conversation_mention": "Αναφορά"
+    }
+  },
+  "NETWORK": {
+    "NOTIFICATION": {
+      "TEXT": "Αποσυνδέθηκε από το Chatwood"
+    },
+    "BUTTON": {
+      "REFRESH": "Ανανέωση"
     }
   }
 }

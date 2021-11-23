@@ -3,7 +3,7 @@
     "LINK": "Настройки профиля",
     "TITLE": "Настройки профиля",
     "BTN_TEXT": "Обновить профиль",
-    "UPDATE_SUCCESS": "Your profile has been updated successfully",
+    "UPDATE_SUCCESS": "Ваши данные успешно обновлены",
     "PASSWORD_UPDATE_SUCCESS": "Ваш пароль успешно изменен",
     "AFTER_EMAIL_CHANGED": "Ваш профиль был успешно обновлен, пожалуйста, войдите снова, так как ваши учетные данные были изменены",
     "FORM": {
@@ -19,7 +19,7 @@
       "PASSWORD_SECTION": {
         "TITLE": "Пароль",
         "NOTE": "Обновление пароля сбросит вашу авторизацию на всех устройствах.",
-        "BTN_TEXT": "Change password"
+        "BTN_TEXT": "Изменить пароль"
       },
       "ACCESS_TOKEN": {
         "TITLE": "Токен доступа",
@@ -27,8 +27,10 @@
       },
       "AUDIO_NOTIFICATIONS_SECTION": {
         "TITLE": "Звуковые уведомления",
-        "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
-        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+        "NOTE": "Включить звуковые уведомления в панели управления для новых сообщений и разговоров.",
+        "NONE": "Ничего",
+        "ASSIGNED": "Назначенные беседы",
+        "ALL_CONVERSATIONS": "Диалоги"
       },
       "EMAIL_NOTIFICATIONS_SECTION": {
         "TITLE": "Email Уведомления",
@@ -47,7 +49,7 @@
         "NOTE": "Редактируйте настройки push-уведомлений здесь",
         "CONVERSATION_ASSIGNMENT": "Отправлять push уведомление при назначении мне диалога",
         "CONVERSATION_CREATION": "Отправлять push уведомление, когда новый диалог создан",
-        "CONVERSATION_MENTION": "Send push notifications when you are mentioned in a conversation",
+        "CONVERSATION_MENTION": "Отправлять уведомления при упоминании в разговоре",
         "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Отправлять push уведомления при создании нового сообщения в назначенном диалоге",
         "HAS_ENABLED_PUSH": "Вы включили push уведомления для этого браузера.",
         "REQUEST_PUSH": "Включить push-уведомления"
@@ -78,6 +80,11 @@
         "ERROR": "Пожалуйста, введите действительный адрес электронной почты",
         "PLACEHOLDER": "Введите email, который будет отображаться в диалогах"
       },
+      "CURRENT_PASSWORD": {
+        "LABEL": "Текущий пароль",
+        "ERROR": "Пожалуйста, введите текущий пароль",
+        "PLACEHOLDER": "Пожалуйста, введите текущий пароль"
+      },
       "PASSWORD": {
         "LABEL": "Пароль",
         "ERROR": "Введите пароль из 6 или более символов",
@@ -95,11 +102,13 @@
     "CHANGE_ACCOUNTS": "Сменить Аккаунт",
     "SELECTOR_SUBTITLE": "Выберите аккаунт из списка",
     "PROFILE_SETTINGS": "Настройки профиля",
+    "KEYBOARD_SHORTCUTS": "Клавиши быстрого доступа",
     "LOGOUT": "Выйти"
   },
   "APP_GLOBAL": {
     "TRIAL_MESSAGE": "дней до окончания бесплатного периода.",
-    "TRAIL_BUTTON": "Купить"
+    "TRAIL_BUTTON": "Купить",
+    "DELETED_USER": "Удаленный пользователь"
   },
   "COMPONENTS": {
     "CODE": {
@@ -123,8 +132,8 @@
   "SIDEBAR": {
     "CONVERSATIONS": "Диалоги",
     "REPORTS": "Отчёты",
-    "CONTACTS": "Контакты",
     "SETTINGS": "Настройки",
+    "CONTACTS": "Контакты",
     "HOME": "Главная",
     "AGENTS": "Операторы",
     "INBOXES": "Источники",
@@ -132,10 +141,24 @@
     "CANNED_RESPONSES": "Шаблонные ответы",
     "INTEGRATIONS": "Интеграции",
     "ACCOUNT_SETTINGS": "Настройки аккаунта",
+    "APPLICATIONS": "Приложения",
     "LABELS": "Категории",
-    "TEAMS": "Команды"
+    "CUSTOM_ATTRIBUTES": "Пользовательские атрибуты",
+    "TEAMS": "Команды",
+    "ALL_CONTACTS": "Все контакты",
+    "TAGGED_WITH": "С метками",
+    "REPORTS_OVERVIEW": "Обзор",
+    "CSAT": "CSAT",
+    "CAMPAIGNS": "Кампании",
+    "ONGOING": "В настоящее время",
+    "ONE_OFF": "Один выключен",
+    "REPORTS_AGENT": "Операторы",
+    "REPORTS_LABEL": "Категории",
+    "REPORTS_INBOX": "Электронная почта",
+    "REPORTS_TEAM": "Команда"
   },
   "CREATE_ACCOUNT": {
+    "NO_ACCOUNT_WARNING": "Ой! Мы не смогли найти ни одного аккаунта в MaaS. Пожалуйста, создайте новый аккаунт, чтобы продолжить.",
     "NEW_ACCOUNT": "Новый аккаунт",
     "SELECTOR_SUBTITLE": "Создать новый аккаунт",
     "API": {
@@ -149,6 +172,31 @@
         "PLACEHOLDER": "Wayne Enterprises"
       },
       "SUBMIT": "Отправить"
+    }
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": {
+      "OPEN_CONVERSATION": "Открыть беседу",
+      "RESOLVE_AND_NEXT": "Решить и перейти к следующему",
+      "NAVIGATE_DROPDOWN": "Навигация в выпадающем списке",
+      "RESOLVE_CONVERSATION": "Решить разговор",
+      "GO_TO_CONVERSATION_DASHBOARD": "Перейти к панели разговоров",
+      "ADD_ATTACHMENT": "Добавить вложение",
+      "GO_TO_CONTACTS_DASHBOARD": "Перейти к панели контактов",
+      "TOGGLE_SIDEBAR": "Переключить боковую панель",
+      "GO_TO_REPORTS_SIDEBAR": "Перейти к боковой панели отчетов",
+      "MOVE_TO_NEXT_TAB": "Переместить на следующую вкладку в списке диалогов",
+      "GO_TO_SETTINGS": "Перейти к настройкам",
+      "SWITCH_CONVERSATION_STATUS": "Переключиться на статус следующего диалога",
+      "SWITCH_TO_PRIVATE_NOTE": "Переключиться на заметку",
+      "TOGGLE_RICH_CONTENT_EDITOR": "Переключить редактор содержимого",
+      "SWITCH_TO_REPLY": "Переключиться на ответ",
+      "TOGGLE_SNOOZE_DROPDOWN": "Вкл/выкл повтор"
+    },
+    "KEYS": {
+      "WINDOWS_KEY_AND_COMMAND_KEY": "Win / ⌘",
+      "ALT_OR_OPTION_KEY": "Alt / ⌥",
+      "FORWARD_SLASH_KEY": "/"
     }
   }
 }

@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Du kannst E-Mails jetzt von der festgelegten Domain erhalten."
       }
     },
-    "UPDATE_CHATWOOT": "Ein Update %{latestChatwootVersion} für Chatwoot ist verfügbar. Bitte aktualisiere deine Installation."
+    "UPDATE_CHATWOOT": "Ein Update %{latestMaaSVersion} für MaaS ist verfügbar. Bitte aktualisiere deine Installation."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -70,6 +70,14 @@
       "conversation_assignment": "Unterhaltung zugewiesen",
       "assigned_conversation_new_message": "Neue Nachricht",
       "conversation_mention": "Erwähnung"
+    }
+  },
+  "NETWORK": {
+    "NOTIFICATION": {
+      "TEXT": "Verbindung zu MaaS getrennt"
+    },
+    "BUTTON": {
+      "REFRESH": "Neu laden"
     }
   }
 }

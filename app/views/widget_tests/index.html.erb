@@ -12,7 +12,7 @@
 %>
 <script>
 
-window.chatwootSettings = {
+window.maasSettings = {
   hideMessageBubble: false,
   position: 'left',
   locale: 'en',
@@ -24,22 +24,25 @@ window.chatwootSettings = {
   var BASE_URL = '';
   var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
   g.src= BASE_URL + "/packs/js/sdk.js";
+  g.defer = true;
+  g.async = true;
   s.parentNode.insertBefore(g,s);
   g.onload=function(){
-    window.chatwootSDK.run({
+    window.maasSDK.run({
       websiteToken: '<%= @web_widget.website_token %>',
       baseUrl: BASE_URL
     })
   }
 })(document,"script");
 
-window.addEventListener('chatwoot:ready', function() {
-  console.log(window.$chatwoot);
+window.addEventListener('maas:ready', function() {
+  console.log(window.$maas);
   if (window.location.search.includes('setUser')) {
-    window.$chatwoot.setUser('<%= user_id %>', {
+    window.$maas.setUser('<%= user_id %>', {
       identifier_hash: '<%= user_hash %>',
       email: 'jane@example.com',
-      name: 'Jane Doe'
+      name: 'Jane Doe',
+      phone_number: ''
     });
   }
 })

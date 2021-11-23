@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "您现在可以在您的自定义域名的电子邮件中接收消息。"
       }
     },
-    "UPDATE_CHATWOOT": "Chatwoot 有可用更新%{latestChatwootVersion}，请更新您的应用。"
+    "UPDATE_CHATWOOT": "MaaS 有可用更新%{latestMaaSVersion}，请更新您的应用。"
   },
   "FORMS": {
     "MULTISELECT": {
@@ -70,6 +70,14 @@
       "conversation_assignment": "Conversation Assigned",
       "assigned_conversation_new_message": "New Message",
       "conversation_mention": "Mention"
+    }
+  },
+  "NETWORK": {
+    "NOTIFICATION": {
+      "TEXT": "Disconnected from MaaS"
+    },
+    "BUTTON": {
+      "REFRESH": "Refresh"
     }
   }
 }

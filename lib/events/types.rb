@@ -6,6 +6,9 @@ module Events::Types
   ACCOUNT_CREATED = 'account.created'
 
   #### Account Events ###
+  # campaign events
+  CAMPAIGN_TRIGGERED = 'campaign.triggered'
+
   # channel events
   WEBWIDGET_TRIGGERED = 'webwidget.triggered'
 
@@ -15,6 +18,7 @@ module Events::Types
   # FIXME: deprecate the opened and resolved events in future in favor of status changed event.
   CONVERSATION_OPENED = 'conversation.opened'
   CONVERSATION_RESOLVED = 'conversation.resolved'
+
   CONVERSATION_STATUS_CHANGED = 'conversation.status_changed'
   CONVERSATION_CONTACT_CHANGED = 'conversation.contact_changed'
   ASSIGNEE_CHANGED = 'assignee.changed'
@@ -30,6 +34,8 @@ module Events::Types
   # contact events
   CONTACT_CREATED = 'contact.created'
   CONTACT_UPDATED = 'contact.updated'
+  CONTACT_MERGED = 'contact.merged'
+  CONTACT_DELETED = 'contact.deleted'
 
   # agent events
   AGENT_ADDED = 'agent.added'

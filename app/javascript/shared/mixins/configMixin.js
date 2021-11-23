@@ -1,16 +1,13 @@
 export default {
   computed: {
     hostURL() {
-      return window.chatwootConfig.hostURL;
-    },
-    twilioCallbackURL() {
-      return `${this.hostURL}/twilio/callback`;
+      return window.maasConfig.hostURL;
     },
     vapidPublicKey() {
-      return window.chatwootConfig.vapidPublicKey;
+      return window.maasConfig.vapidPublicKey;
     },
     enabledLanguages() {
-      return window.chatwootConfig.enabledLanguages;
+      return window.maasConfig.enabledLanguages;
     },
   },
 };

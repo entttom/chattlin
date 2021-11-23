@@ -5,7 +5,7 @@
   >
     <spinner size="" />
   </div>
-  <div v-else class="home">
+  <div v-else class="home" @keydown.esc="closeChat">
     <div
       class="header-wrap bg-white"
       :class="{ expanded: !isHeaderCollapsed, collapsed: isHeaderCollapsed }"
@@ -34,15 +34,7 @@
         />
       </transition>
     </div>
-    <div v-if="showAttachmentError" class="banner">
-      <span>
-        {{
-          $t('FILE_SIZE_LIMIT', {
-            MAXIMUM_FILE_UPLOAD_SIZE: fileUploadSizeLimit,
-          })
-        }}
-      </span>
-    </div>
+    <banner />
     <div class="flex flex-1 overflow-auto">
       <conversation-wrap
         v-if="currentView === 'messageView'"
@@ -62,10 +54,7 @@
         leave-class="opacity-100 transform translate-y-0"
         leave-to-class="opacity-0 transform "
       >
-        <div
-          v-if="showInputTextArea && currentView === 'messageView'"
-          class="input-wrap"
-        >
+        <div v-if="currentView === 'messageView'" class="input-wrap">
           <chat-footer />
         </div>
         <team-availability
@@ -80,18 +69,22 @@
 </template>
 
 <script>
-import Branding from 'widget/components/Branding.vue';
+import Branding from 'shared/components/Branding.vue';
 import ChatFooter from 'widget/components/ChatFooter.vue';
 import ChatHeaderExpanded from 'widget/components/ChatHeaderExpanded.vue';
 import ChatHeader from 'widget/components/ChatHeader.vue';
 import ConversationWrap from 'widget/components/ConversationWrap.vue';
+import { IFrameHelper } from 'widget/helpers/utils';
 import configMixin from '../mixins/configMixin';
 import TeamAvailability from 'widget/components/TeamAvailability';
 import Spinner from 'shared/components/Spinner.vue';
+import Banner from 'widget/components/Banner.vue';
 import { mapGetters } from 'vuex';
 import { MAXIMUM_FILE_UPLOAD_SIZE } from 'shared/constants/messages';
 import { BUS_EVENTS } from 'shared/constants/busEvents';
 import PreChatForm from '../components/PreChat/Form';
+import { isEmptyObject } from 'widget/helpers/utils';
+
 export default {
   name: 'Home',
   components: {
@@ -103,6 +96,7 @@ export default {
     PreChatForm,
     Spinner,
     TeamAvailability,
+    Banner,
   },
   mixins: [configMixin],
   props: {
@@ -114,9 +108,16 @@ export default {
       type: Boolean,
       default: false,
     },
+    isCampaignViewClicked: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
-    return { isOnCollapsedView: false, showAttachmentError: false };
+    return {
+      isOnCollapsedView: false,
+      isOnNewConversation: false,
+    };
   },
   computed: {
     ...mapGetters({
@@ -126,14 +127,25 @@ export default {
       groupedMessages: 'conversation/getGroupedConversation',
       isFetchingList: 'conversation/getIsFetchingList',
       currentUser: 'contacts/getCurrentUser',
+      activeCampaign: 'campaign/getActiveCampaign',
+      getCampaignHasExecuted: 'campaign/getCampaignHasExecuted',
     }),
     currentView() {
       const { email: currentUserEmail = '' } = this.currentUser;
+
       if (this.isHeaderCollapsed) {
         if (this.conversationSize) {
           return 'messageView';
         }
-        if (this.preChatFormEnabled && !currentUserEmail) {
+
+        if (
+          !this.getCampaignHasExecuted &&
+          ((this.preChatFormEnabled &&
+            !isEmptyObject(this.activeCampaign) &&
+            this.preChatFormOptions.requireEmail) ||
+            this.isOnNewConversation ||
+            (this.preChatFormEnabled && !currentUserEmail))
+        ) {
           return 'preChatFormView';
         }
         return 'messageView';
@@ -146,20 +158,14 @@ export default {
     fileUploadSizeLimit() {
       return MAXIMUM_FILE_UPLOAD_SIZE;
     },
-    showInputTextArea() {
-      if (this.hideInputForBotConversations) {
-        if (this.isOpen) {
-          return true;
-        }
-        return false;
-      }
-      return true;
-    },
     isHeaderCollapsed() {
-      if (!this.hasIntroText || this.conversationSize) {
+      if (
+        !this.hasIntroText ||
+        this.conversationSize ||
+        this.isCampaignViewClicked
+      ) {
         return true;
       }
-
       return this.isOnCollapsedView;
     },
     hasIntroText() {
@@ -169,16 +175,17 @@ export default {
     },
   },
   mounted() {
-    bus.$on(BUS_EVENTS.ATTACHMENT_SIZE_CHECK_ERROR, () => {
-      this.showAttachmentError = true;
-      setTimeout(() => {
-        this.showAttachmentError = false;
-      }, 3000);
+    bus.$on(BUS_EVENTS.START_NEW_CONVERSATION, () => {
+      this.isOnCollapsedView = true;
+      this.isOnNewConversation = true;
     });
   },
   methods: {
     startConversation() {
       this.isOnCollapsedView = !this.isOnCollapsedView;
+    },
+    closeChat() {
+      IFrameHelper.sendMessage({ event: 'closeChat' });
     },
   },
 };
@@ -241,15 +248,7 @@ export default {
   }
 
   .input-wrap {
-    padding: 0 $space-normal;
-  }
-  .banner {
-    background: $color-error;
-    color: $color-white;
-    font-size: $font-size-default;
-    font-weight: $font-weight-bold;
-    padding: $space-slab;
-    text-align: center;
+    padding: 0 $space-two;
   }
 }
 </style>
