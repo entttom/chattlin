@@ -67,7 +67,7 @@ rvm autolibs disable
 rvm install "ruby-3.0.2"
 rvm use 3.0.2 --default
 
-git clone https://github.com/entttom/maas/maas.git
+git clone https://github.com/entttom/maas.git
 cd maas
 if [[ -z "$1" ]]; then
 git checkout master;
