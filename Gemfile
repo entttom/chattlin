@@ -62,7 +62,7 @@ gem 'barnes'
 
 ##--- gems for authentication & authorization ---##
 gem 'devise'
-gem 'devise-secure_password', '~> 2.0', git: 'https://github.com/maas/devise-secure_password'
+gem 'devise-secure_password', '~> 2.0', git: 'https://github.com/chatwoot/devise-secure_password'
 gem 'devise_token_auth'
 # authorization
 gem 'jwt'
@@ -80,7 +80,7 @@ gem 'facebook-messenger'
 gem 'line-bot-api'
 gem 'twilio-ruby', '~> 5.32.0'
 # twitty will handle subscription of twitter account events
-# gem 'twitty', git: 'https://github.com/maas/twitty'
+# gem 'twitty', git: 'https://github.com/chatwoot/twitty'
 gem 'twitty'
 # facebook client
 gem 'koala'

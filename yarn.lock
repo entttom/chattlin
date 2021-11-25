@@ -1096,9 +1096,9 @@
     is-url "^1.2.4"
     nanoid "^2.1.11"
 
-"@maas/prosemirror-schema@https://github.com/maas/prosemirror-schema.git#7e8acadd10d7b932c0dc0bd0a18f804434f83517":
+"@maas/prosemirror-schema@https://github.com/chatwoot/prosemirror-schema.git#7e8acadd10d7b932c0dc0bd0a18f804434f83517":
   version "1.0.0"
-  resolved "https://github.com/maas/prosemirror-schema.git#7e8acadd10d7b932c0dc0bd0a18f804434f83517"
+  resolved "https://github.com/chatwoot/prosemirror-schema.git#7e8acadd10d7b932c0dc0bd0a18f804434f83517"
   dependencies:
     prosemirror-commands "^1.1.4"
     prosemirror-dropcursor "^1.3.2"
@@ -10250,9 +10250,9 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-"ninja-keys@https://github.com/maas/ninja-keys.git#b4c3233f676780af90c607866fa85e404c835902":
+"ninja-keys@https://github.com/chatwoot/ninja-keys.git#b4c3233f676780af90c607866fa85e404c835902":
   version "1.1.6"
-  resolved "https://github.com/maas/ninja-keys.git#b4c3233f676780af90c607866fa85e404c835902"
+  resolved "https://github.com/chatwoot/ninja-keys.git#b4c3233f676780af90c607866fa85e404c835902"
   dependencies:
     "@material/mwc-icon" "0.25.3"
     hotkeys-js "3.8.7"
