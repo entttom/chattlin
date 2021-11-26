@@ -63,13 +63,13 @@
 import { mixin as clickaway } from 'vue-clickaway';
 import { mapGetters } from 'vuex';
 import Auth from '../../../api/auth';
-import WootDropdownItem from 'shared/components/ui/dropdown/DropdownItem.vue';
-import WootDropdownMenu from 'shared/components/ui/dropdown/DropdownMenu.vue';
+import MaassDropdownItem from 'shared/components/ui/dropdown/DropdownItem.vue';
+import MaassDropdownMenu from 'shared/components/ui/dropdown/DropdownMenu.vue';
 
 export default {
   components: {
-    WootDropdownMenu,
-    WootDropdownItem,
+    MaassDropdownMenu,
+    MaassDropdownItem,
   },
   mixins: [clickaway],
   props: {

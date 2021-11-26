@@ -10,8 +10,8 @@
 </template>
 <script>
 export default {
-  name: 'WootDropdownMenu',
-  componentName: 'WootDropdownMenu',
+  name: 'MaassDropdownMenu',
+  componentName: 'MaassDropdownMenu',
 
   props: {
     title: {

@@ -173,14 +173,14 @@
 import { mapGetters } from 'vuex';
 import { required, url, minLength } from 'vuelidate/lib/validators';
 import alertMixin from 'shared/mixins/alertMixin';
-import WootMessageEditor from 'dashboard/components/widgets/WootWriter/Editor';
+import MaassMessageEditor from 'dashboard/components/widgets/MaassWriter/Editor';
 import campaignMixin from 'shared/mixins/campaignMixin';
-import WootDateTimePicker from 'dashboard/components/ui/DateTimePicker.vue';
+import MaassDateTimePicker from 'dashboard/components/ui/DateTimePicker.vue';
 
 export default {
   components: {
-    WootDateTimePicker,
-    WootMessageEditor,
+    MaassDateTimePicker,
+    MaassMessageEditor,
   },
 
   mixins: [alertMixin, campaignMixin],

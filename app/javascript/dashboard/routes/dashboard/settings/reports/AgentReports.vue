@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import WootReports from './components/WootReports';
+import MaassReports from './components/MaassReports';
 
 export default {
   components: {
-    WootReports,
+    MaassReports,
   },
 };
 </script>

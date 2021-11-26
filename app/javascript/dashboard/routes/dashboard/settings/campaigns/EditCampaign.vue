@@ -112,12 +112,12 @@
 <script>
 import { mapGetters } from 'vuex';
 import { required, url, minLength } from 'vuelidate/lib/validators';
-import WootMessageEditor from 'dashboard/components/widgets/WootWriter/Editor';
+import MaassMessageEditor from 'dashboard/components/widgets/MaassWriter/Editor';
 import alertMixin from 'shared/mixins/alertMixin';
 import campaignMixin from 'shared/mixins/campaignMixin';
 export default {
   components: {
-    WootMessageEditor,
+    MaassMessageEditor,
   },
   mixins: [alertMixin, campaignMixin],
   props: {

@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions';
-import WootButton from '../WootButton.vue';
+import MaassButton from '../MaassButton.vue';
 
 export default {
   title: 'Components/Button',
-  component: WootButton,
+  component: MaassButton,
   argTypes: {
     colorScheme: {
       control: {
@@ -38,7 +38,7 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { WootButton },
+  components: { MaassButton },
   template:
     '<woot-button v-bind="$props" @click="onClick">{{label}}</woot-button>',
 });

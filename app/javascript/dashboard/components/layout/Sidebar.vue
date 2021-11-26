@@ -93,7 +93,7 @@ import OptionsMenu from './sidebarComponents/OptionsMenu.vue';
 import AccountSelector from './sidebarComponents/AccountSelector.vue';
 import AddAccountModal from './sidebarComponents/AddAccountModal.vue';
 import AddLabelModal from '../../routes/dashboard/settings/labels/AddLabel';
-import WootKeyShortcutModal from 'components/widgets/modal/WootKeyShortcutModal';
+import MaassKeyShortcutModal from 'components/widgets/modal/MaassKeyShortcutModal';
 import {
   hasPressedAltAndCKey,
   hasPressedAltAndRKey,
@@ -115,7 +115,7 @@ export default {
     AccountSelector,
     AddAccountModal,
     AddLabelModal,
-    WootKeyShortcutModal,
+    MaassKeyShortcutModal,
   },
   mixins: [adminMixin, alertMixin, eventListenerMixins],
   data() {

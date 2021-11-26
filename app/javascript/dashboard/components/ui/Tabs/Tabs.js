@@ -1,5 +1,5 @@
 export default {
-  name: 'WootTabs',
+  name: 'MaassTabs',
   props: {
     index: {
       type: Number,

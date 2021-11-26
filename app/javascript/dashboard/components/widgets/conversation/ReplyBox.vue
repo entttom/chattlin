@@ -86,11 +86,11 @@ import EmojiInput from 'shared/components/emoji/EmojiInput';
 import CannedResponse from './CannedResponse';
 import ResizableTextArea from 'shared/components/ResizableTextArea';
 import AttachmentPreview from 'dashboard/components/widgets/AttachmentsPreview';
-import ReplyTopPanel from 'dashboard/components/widgets/WootWriter/ReplyTopPanel';
+import ReplyTopPanel from 'dashboard/components/widgets/MaassWriter/ReplyTopPanel';
 import ReplyEmailHead from './ReplyEmailHead';
-import ReplyBottomPanel from 'dashboard/components/widgets/WootWriter/ReplyBottomPanel';
-import { REPLY_EDITOR_MODES } from 'dashboard/components/widgets/WootWriter/constants';
-import WootMessageEditor from 'dashboard/components/widgets/WootWriter/Editor';
+import ReplyBottomPanel from 'dashboard/components/widgets/MaassWriter/ReplyBottomPanel';
+import { REPLY_EDITOR_MODES } from 'dashboard/components/widgets/MaassWriter/constants';
+import MaassMessageEditor from 'dashboard/components/widgets/MaassWriter/Editor';
 import { checkFileSizeLimit } from 'shared/helpers/FileHelper';
 import { MAXIMUM_FILE_UPLOAD_SIZE } from 'shared/constants/messages';
 
@@ -112,7 +112,7 @@ export default {
     ReplyTopPanel,
     ReplyEmailHead,
     ReplyBottomPanel,
-    WootMessageEditor,
+    MaassMessageEditor,
   },
   mixins: [clickaway, inboxMixin, uiSettingsMixin, alertMixin],
   props: {

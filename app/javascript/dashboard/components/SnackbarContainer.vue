@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import WootSnackbar from './Snackbar';
+import MaassSnackbar from './Snackbar';
 
 export default {
   components: {
-    WootSnackbar,
+    MaassSnackbar,
   },
   props: {
     duration: {

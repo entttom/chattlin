@@ -56,7 +56,7 @@ const createState = (content, placeholder, plugins = []) => {
 };
 
 export default {
-  name: 'WootMessageEditor',
+  name: 'MaassMessageEditor',
   components: { TagAgents, CannedResponse },
   mixins: [eventListenerMixins],
   props: {

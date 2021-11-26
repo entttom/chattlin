@@ -70,12 +70,12 @@
 <script>
 import { required, email } from 'vuelidate/lib/validators';
 import globalConfigMixin from 'shared/mixins/globalConfigMixin';
-import WootSubmitButton from '../../components/buttons/FormSubmitButton';
+import MaassSubmitButton from '../../components/buttons/FormSubmitButton';
 import { mapGetters } from 'vuex';
 
 export default {
   components: {
-    WootSubmitButton,
+    MaassSubmitButton,
   },
   mixins: [globalConfigMixin],
   props: {

@@ -61,13 +61,13 @@
 <script>
 import { required, minLength } from 'vuelidate/lib/validators';
 import { mapGetters } from 'vuex';
-import WootSubmitButton from '../../../../components/buttons/FormSubmitButton';
+import MaassSubmitButton from '../../../../components/buttons/FormSubmitButton';
 import Modal from '../../../../components/Modal';
 import Auth from '../../../../api/auth';
 
 export default {
   components: {
-    WootSubmitButton,
+    MaassSubmitButton,
     Modal,
   },
   props: {

@@ -20,9 +20,9 @@ export const IFrameHelper = {
   },
   isAValidEvent: e => {
     const isDataAString = typeof e.data === 'string';
-    const isAValidWootEvent =
+    const isAValidMaassEvent =
       isDataAString && e.data.indexOf(WOOT_PREFIX) === 0;
-    return isAValidWootEvent;
+    return isAValidMaassEvent;
   },
   getMessage: e => JSON.parse(e.data.replace(WOOT_PREFIX, '')),
 };

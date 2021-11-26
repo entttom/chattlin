@@ -49,12 +49,12 @@
 import { required, minLength } from 'vuelidate/lib/validators';
 import Auth from '../../api/auth';
 
-import WootSubmitButton from '../../components/buttons/FormSubmitButton';
+import MaassSubmitButton from '../../components/buttons/FormSubmitButton';
 import { DEFAULT_REDIRECT_URL } from '../../constants';
 
 export default {
   components: {
-    WootSubmitButton,
+    MaassSubmitButton,
   },
   props: {
     resetPasswordToken: String,

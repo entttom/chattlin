@@ -14,7 +14,7 @@
 </template>
 <script>
 /* eslint no-console: 0 */
-// import WootSwitch from '../ui/Switch';
+// import MaassSwitch from '../ui/Switch';
 
 export default {
   props: ['inbox'],

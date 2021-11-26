@@ -43,13 +43,13 @@
 <script>
 import { mixin as clickaway } from 'vue-clickaway';
 
-import WootDropdownItem from 'shared/components/ui/dropdown/DropdownItem';
-import WootDropdownMenu from 'shared/components/ui/dropdown/DropdownMenu';
+import MaassDropdownItem from 'shared/components/ui/dropdown/DropdownItem';
+import MaassDropdownMenu from 'shared/components/ui/dropdown/DropdownMenu';
 
 export default {
   components: {
-    WootDropdownMenu,
-    WootDropdownItem,
+    MaassDropdownMenu,
+    MaassDropdownItem,
   },
   mixins: [clickaway],
   props: {

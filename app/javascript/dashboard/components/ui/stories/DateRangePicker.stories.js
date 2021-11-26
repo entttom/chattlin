@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import WootDateRangePicker from '../DateRangePicker.vue';
+import MaassDateRangePicker from '../DateRangePicker.vue';
 
 export default {
   title: 'Components/Date Picker/Date Range Picker',
@@ -26,7 +26,7 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { WootDateRangePicker },
+  components: { MaassDateRangePicker },
   template:
     '<woot-date-range-picker v-bind="$props" @change="onChange"></woot-date-range-picker>',
 });

@@ -20,7 +20,7 @@ import Spinner from 'shared/components/Spinner';
 import EmojiOrIcon from 'shared/components/EmojiOrIcon';
 
 export default {
-  name: 'WootButton',
+  name: 'MaassButton',
   components: { EmojiOrIcon, Spinner },
   props: {
     variant: {

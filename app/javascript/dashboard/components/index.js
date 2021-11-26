@@ -1,7 +1,7 @@
 /* eslint no-plusplus: 0 */
 import AvatarUploader from './widgets/forms/AvatarUploader.vue';
 import Bar from './widgets/chart/BarChart';
-import Button from './ui/WootButton';
+import Button from './ui/MaassButton';
 import Code from './Code';
 import ColorPicker from './widgets/ColorPicker';
 import ConfirmDeleteModal from './widgets/modal/ConfirmDeleteModal.vue';
@@ -22,7 +22,7 @@ import Tabs from './ui/Tabs/Tabs';
 import TabsItem from './ui/Tabs/TabsItem';
 import Thumbnail from './widgets/Thumbnail.vue';
 
-const WootUIKit = {
+const MaassUIKit = {
   AvatarUploader,
   Bar,
   Button,
@@ -56,7 +56,7 @@ const WootUIKit = {
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(WootUIKit);
+  window.Vue.use(MaassUIKit);
 }
 
-export default WootUIKit;
+export default MaassUIKit;

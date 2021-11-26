@@ -52,12 +52,12 @@
 /* eslint no-console: 0 */
 import { required, minLength } from 'vuelidate/lib/validators';
 
-import WootSubmitButton from '../../../../components/buttons/FormSubmitButton';
+import MaassSubmitButton from '../../../../components/buttons/FormSubmitButton';
 import Modal from '../../../../components/Modal';
 
 export default {
   components: {
-    WootSubmitButton,
+    MaassSubmitButton,
     Modal,
   },
   props: {

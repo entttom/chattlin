@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import WootDateTimePicker from '../DateTimePicker.vue';
+import MaassDateTimePicker from '../DateTimePicker.vue';
 
 export default {
   title: 'Components/Date Picker/Date Time Picker',
@@ -26,7 +26,7 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { WootDateTimePicker },
+  components: { MaassDateTimePicker },
   template:
     '<woot-date-time-picker v-bind="$props" @change="onChange"></woot-date-time-picker>',
 });

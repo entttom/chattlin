@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import WootMessageEditor from 'dashboard/components/widgets/WootWriter/Editor';
+import MaassMessageEditor from 'dashboard/components/widgets/MaassWriter/Editor';
 import ResizableTextArea from 'shared/components/ResizableTextArea';
 
 export default {
   components: {
-    WootMessageEditor,
+    MaassMessageEditor,
     ResizableTextArea,
   },
   props: {
