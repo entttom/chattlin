@@ -1,5 +1,5 @@
 class ConversationReplyMailer < ApplicationMailer
-  default from: ENV.fetch('MAILER_SENDER_EMAIL', 'MaaS <accounts@maas.work>')
+  default from: ENV.fetch('MAILER_SENDER_EMAIL', 'Maas <accounts@maas.work>')
   layout :choose_layout
 
   def reply_with_summary(conversation, last_queued_id)

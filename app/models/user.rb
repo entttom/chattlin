@@ -112,7 +112,7 @@ class User < ApplicationRecord
     self[:display_name].presence || name
   end
 
-  # Used internally for MaaS in MaaS
+  # Used internally for Maas in Maas
   def hmac_identifier
     hmac_key = GlobalConfig.get('MAAS_INBOX_HMAC_KEY')['MAAS_INBOX_HMAC_KEY']
     return OpenSSL::HMAC.hexdigest('sha256', hmac_key, email) if hmac_key.present?

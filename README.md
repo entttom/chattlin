@@ -28,23 +28,23 @@ ___
 
 <img src="https://s3.us-west-2.amazonaws.com/gh-assets.maas.work/maas-dashboard-assets.png" width="100%" alt="Chat dashboard"/>
 
-MaaS is an open-source omnichannel customer support software. The development of MaaS started in 2016. It failed to succeed as a business and eventually shut up shop in 2017. During 2019 #Hacktoberfest, the maintainers decided to make it open-source, instead of letting the code rust in a private repo. With a pleasant surprise, MaaS became a trending project on Hacker News and best of all, got lots of love from the community.
+Maas is an open-source omnichannel customer support software. The development of Maas started in 2016. It failed to succeed as a business and eventually shut up shop in 2017. During 2019 #Hacktoberfest, the maintainers decided to make it open-source, instead of letting the code rust in a private repo. With a pleasant surprise, Maas became a trending project on Hacker News and best of all, got lots of love from the community.
 Now, a failed project is back on track and the prospects are looking great. The team is back to working on the project and this time, we are building it in the open. Thanks to the ideas and contributions from the community.
 
 
 ## Features
 
-MaaS gives an integrated view of conversations happening in different communication channels.
+Maas gives an integrated view of conversations happening in different communication channels.
 
 It supports the following conversation channels:
 
  - **Website**: Talk to your customers using our live chat widget and make use of our SDK to identify a user and provide contextual support.
  - **Facebook**: Connect your Facebook pages and start replying to the direct messages to your page.
  - **Twitter**: Connect your Twitter profiles and reply to direct messages or the tweets where you are mentioned.
- - **Whatsapp**: Connect your Whatsapp business account and manage the conversation in MaaS
- - **SMS**: Connect your Twilio SMS account and reply to the SMS queries in MaaS
+ - **Whatsapp**: Connect your Whatsapp business account and manage the conversation in Maas
+ - **SMS**: Connect your Twilio SMS account and reply to the SMS queries in Maas
  - **API Channel**: Build custom communication channels using our API channel.
- - **Email (beta)**: Forward all your email queries to MaaS and view it in our integrated dashboard.
+ - **Email (beta)**: Forward all your email queries to Maas and view it in our integrated dashboard.
 
 Other features include:
 
@@ -52,11 +52,11 @@ Other features include:
 - **Private notes**: Inter team communication is possible using private notes in a conversation.
 - **Canned responses (Saved replies)**: Improve the response rate by adding saved replies for frequently asked questions.
 - **Conversation Labels**: Use conversation labelling to create custom workflows.
-- **Auto assignment**: MaaS intelligently assigns a ticket to the agents who have access to the inbox depending on their availability and load.
-- **Conversation continuity**: If the user has provided an email address through the chat widget, MaaS would send an email to the customer under the agent name so that the user can continue the conversation over the email.
-- **Multi-lingual support**: MaaS supports 10+ languages.
-- **Powerful API & Webhooks**: Extend the capability of the software using MaaS’s webhooks and APIs.
-- **Integrations**: MaaS natively integrates with Slack right now. Manage your conversations in Slack without logging into the dashboard.
+- **Auto assignment**: Maas intelligently assigns a ticket to the agents who have access to the inbox depending on their availability and load.
+- **Conversation continuity**: If the user has provided an email address through the chat widget, Maas would send an email to the customer under the agent name so that the user can continue the conversation over the email.
+- **Multi-lingual support**: Maas supports 10+ languages.
+- **Powerful API & Webhooks**: Extend the capability of the software using Maas’s webhooks and APIs.
+- **Integrations**: Maas natively integrates with Slack right now. Manage your conversations in Slack without logging into the dashboard.
 
 ## Documentation
 
@@ -64,7 +64,7 @@ Detailed documentation is available at [maas.work/help-center](https://www.maas.
 
 ## Translation process
 
-The translation process for MaaS web and mobile app is managed at [https://translate.maas.work](https://translate.maas.work) using Crowdin. Please read the [translation guide](https://www.maas.work/docs/contributing/translating-maas-to-your-language) for contributing to MaaS.
+The translation process for Maas web and mobile app is managed at [https://translate.maas.work](https://translate.maas.work) using Crowdin. Please read the [translation guide](https://www.maas.work/docs/contributing/translating-maas-to-your-language) for contributing to Maas.
 
 ## Branching model
 
@@ -75,7 +75,7 @@ If you are looking for a stable version, please use the `master` or tags labelle
 
 ### Heroku one-click deploy
 
-Deploying MaaS to Heroku is a breeze. It's as simple as clicking this button:
+Deploying Maas to Heroku is a breeze. It's as simple as clicking this button:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/maas/maas/tree/master)
 
@@ -102,4 +102,4 @@ Thanks goes to all these [wonderful people](https://www.maas.work/docs/contribut
 <a href="https://github.com/maas/maas/graphs/contributors"><img src="https://opencollective.com/maas/contributors.svg?width=890&button=false" /></a>
 
 
-*MaaS* &copy; 2017-2021, MaaS Inc - Released under the MIT License.
+*Maas* &copy; 2017-2021, Maas Inc - Released under the MIT License.

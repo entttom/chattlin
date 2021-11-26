@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Kirjaudu sisään MaaSiin",
+    "TITLE": "Kirjaudu sisään Maasiin",
     "EMAIL": {
       "LABEL": "Sähköposti",
       "PLACEHOLDER": "Sähköposti, esim: someone@example.fi"

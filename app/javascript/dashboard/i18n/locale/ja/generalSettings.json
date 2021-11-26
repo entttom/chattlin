@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "カスタムドメインでメールを受信できるようになりました。"
       }
     },
-    "UPDATE_MAAS": "An update %{latestMaaSVersion} for MaaS is available. Please update your instance."
+    "UPDATE_MAAS": "An update %{latestMaasVersion} for Maas is available. Please update your instance."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -74,7 +74,7 @@
   },
   "NETWORK": {
     "NOTIFICATION": {
-      "TEXT": "Disconnected from MaaS"
+      "TEXT": "Disconnected from Maas"
     },
     "BUTTON": {
       "REFRESH": "Refresh"

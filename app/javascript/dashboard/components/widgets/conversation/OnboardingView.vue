@@ -17,7 +17,7 @@
               })
             }}
           </p>
-          <p v-if="globalConfig.installationName === 'MaaS'">
+          <p v-if="globalConfig.installationName === 'Maas'">
             <a
               href="https://www.maas.work/changelog"
               target="_blank"

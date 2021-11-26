@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-# Description: MaaS installation script
+# Description: Maas installation script
 # OS: Ubuntu 20.04 LTS / Ubuntu 20.10
 # Script Version: 0.6
 # Run this script as root
 
-read -p 'Would you like to configure a domain and SSL for MaaS?(yes or no): ' configure_webserver
+read -p 'Would you like to configure a domain and SSL for Maas?(yes or no): ' configure_webserver
 
 if [ $configure_webserver == "yes" ]
 then
-read -p 'Enter your sub-domain to be used for MaaS (maas.domain.com for example) : ' domain_name
+read -p 'Enter your sub-domain to be used for Maas (maas.domain.com for example) : ' domain_name
 echo -e "\nThis script will try to generate SSL certificates via LetsEncrypt and serve maas at
 "https://$domain_name". Proceed further once you have pointed your DNS to the IP of the instance.\n"
 read -p 'Do you wish to proceed? (yes or no): ' exit_true
@@ -100,7 +100,7 @@ systemctl start maas.target
 
 if [ $configure_webserver != "yes" ]
 then
-echo "Woot! Woot!! MaaS server installation is complete"
+echo "Woot! Woot!! Maas server installation is complete"
 echo "The server will be accessible at http://<server-ip>:3000"
 echo "To configure a domain and SSL certificate, follow the guide at https://www.maas.work/docs/deployment/deploy-maas-in-linux-vm"
 else
@@ -117,6 +117,6 @@ cd maas
 sed -i "s/http:\/\/0.0.0.0:3000/https:\/\/$domain_name/g" .env
 EOF
 systemctl restart maas.target
-echo "Woot! Woot!! MaaS server installation is complete"
+echo "Woot! Woot!! Maas server installation is complete"
 echo "The server will be accessible at https://$domain_name"
 fi

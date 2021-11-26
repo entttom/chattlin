@@ -4,16 +4,16 @@ describe('#MessageFormatter', () => {
   describe('content with links', () => {
     it('should format correctly', () => {
       const message =
-        'MaaS is an opensource tool. [MaaS](https://www.maas.work)';
+        'Maas is an opensource tool. [Maas](https://www.maas.work)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>MaaS is an opensource tool. <a rel="noreferrer noopener nofollow" href="https://www.maas.work" class="link" title="" target="_blank">MaaS</a></p>'
+        '<p>Maas is an opensource tool. <a rel="noreferrer noopener nofollow" href="https://www.maas.work" class="link" title="" target="_blank">Maas</a></p>'
       );
     });
     it('should format correctly', () => {
       const message =
-        'MaaS is an opensource tool. https://www.maas.work';
+        'Maas is an opensource tool. https://www.maas.work';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>MaaS is an opensource tool. <a rel="noreferrer noopener nofollow" href="https://www.maas.work" class="link" title="" target="_blank">https://www.maas.work</a></p>'
+        '<p>Maas is an opensource tool. <a rel="noreferrer noopener nofollow" href="https://www.maas.work" class="link" title="" target="_blank">https://www.maas.work</a></p>'
       );
     });
   });
@@ -29,7 +29,7 @@ describe('#MessageFormatter', () => {
 
   describe('tweets', () => {
     it('should return the same string if not tags or @mentions', () => {
-      const message = 'MaaS is an opensource tool';
+      const message = 'Maas is an opensource tool';
       expect(new MessageFormatter(message).formattedMessage).toMatch(message);
     });
 
@@ -52,9 +52,9 @@ describe('#MessageFormatter', () => {
   describe('plain text content', () => {
     it('returns the plain text without HTML', () => {
       const message =
-        '<b>MaaS is an opensource tool. https://www.maas.work</b>';
+        '<b>Maas is an opensource tool. https://www.maas.work</b>';
       expect(new MessageFormatter(message).plainText).toMatch(
-        'MaaS is an opensource tool. https://www.maas.work'
+        'Maas is an opensource tool. https://www.maas.work'
       );
     });
   });

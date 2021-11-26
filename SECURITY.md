@@ -1,5 +1,5 @@
 # Security Policy
-MaaS is looking forward to working with security researchers across the world to keep MaaS and our users safe. If you have found an issue in our systems/applications, please reach out to us.
+Maas is looking forward to working with security researchers across the world to keep Maas and our users safe. If you have found an issue in our systems/applications, please reach out to us.
 
 ## Reporting a Vulnerability
 
@@ -12,7 +12,7 @@ If you have any questions about the process, feel free to reach out to security@
 
 ## Out of scope
 
-Please do not perform testing against MaaS production services. Use a self hosted instance to perform tests.
+Please do not perform testing against Maas production services. Use a self hosted instance to perform tests.
 
 We consider the following to be out of scope, though there may be exceptions.
 
@@ -28,4 +28,4 @@ If you are not sure about the scope, please create a report.
 
 ## Thanks
 
-Thank you for keeping MaaS and our users safe. 🙇
+Thank you for keeping Maas and our users safe. 🙇

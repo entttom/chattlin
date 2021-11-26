@@ -37,7 +37,7 @@ import { Integrations } from '@sentry/tracing';
 import posthog from 'posthog-js';
 import {
   initializeAnalyticsEvents,
-  initializeMaaSEvents,
+  initializeMaasEvents,
 } from '../dashboard/helper/scriptHelpers';
 
 Vue.config.env = process.env;
@@ -86,7 +86,7 @@ commonHelpers();
 window.WootConstants = constants;
 window.axios = createAxios(axios);
 window.bus = new Vue();
-initializeMaaSEvents();
+initializeMaasEvents();
 initializeAnalyticsEvents();
 
 window.onload = () => {

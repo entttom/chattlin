@@ -158,7 +158,7 @@
     "REPORTS_TEAM": "Tim"
   },
   "CREATE_ACCOUNT": {
-    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any MaaS accounts. Please create a new account to continue.",
+    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any Maas accounts. Please create a new account to continue.",
     "NEW_ACCOUNT": "Akun Baru",
     "SELECTOR_SUBTITLE": "Buat sebuah akun baru",
     "API": {

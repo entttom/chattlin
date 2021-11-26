@@ -16,10 +16,10 @@ describe('#accountAPI', () => {
   describeWithAPIMock('API calls', context => {
     it('#createAccount', () => {
       accountAPI.createAccount({
-        name: 'MaaS',
+        name: 'Maas',
       });
       expect(context.axiosMock.post).toHaveBeenCalledWith('/api/v1/accounts', {
-        name: 'MaaS',
+        name: 'Maas',
       });
     });
   });

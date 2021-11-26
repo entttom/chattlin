@@ -31,6 +31,6 @@ module MailboxHelper
 
   def notification_email_from_maas?
     # notification emails are send via mailer sender email address. so it should match
-    @processed_mail.original_sender == Mail::Address.new(ENV.fetch('MAILER_SENDER_EMAIL', 'MaaS <accounts@maas.work>')).address
+    @processed_mail.original_sender == Mail::Address.new(ENV.fetch('MAILER_SENDER_EMAIL', 'Maas <accounts@maas.work>')).address
   end
 end

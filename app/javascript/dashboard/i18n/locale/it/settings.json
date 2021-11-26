@@ -158,7 +158,7 @@
     "REPORTS_TEAM": "Team"
   },
   "CREATE_ACCOUNT": {
-    "NO_ACCOUNT_WARNING": "Uh oh! Non abbiamo trovato alcun account MaaS. Si prega di creare un nuovo account per continuare.",
+    "NO_ACCOUNT_WARNING": "Uh oh! Non abbiamo trovato alcun account Maas. Si prega di creare un nuovo account per continuare.",
     "NEW_ACCOUNT": "Nuovo Account",
     "SELECTOR_SUBTITLE": "Crea un nuovo account",
     "API": {

@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Nyní můžete přijímat e-maily na vaši vlastní doménu."
       }
     },
-    "UPDATE_MAAS": "Je dostupná aktualizace %{latestMaaSVersion} pro MaaS. Aktualizujte prosím svou instanci."
+    "UPDATE_MAAS": "Je dostupná aktualizace %{latestMaasVersion} pro Maas. Aktualizujte prosím svou instanci."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -74,7 +74,7 @@
   },
   "NETWORK": {
     "NOTIFICATION": {
-      "TEXT": "Disconnected from MaaS"
+      "TEXT": "Disconnected from Maas"
     },
     "BUTTON": {
       "REFRESH": "Refresh"

@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Đăng nhập MaaS",
+    "TITLE": "Đăng nhập Maas",
     "EMAIL": {
       "LABEL": "Thư điện tử",
       "PLACEHOLDER": "Email : someone@example.com"

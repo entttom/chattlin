@@ -1,4 +1,4 @@
-class MaaSHub
+class MaasHub
   BASE_URL = ENV['MAAS_HUB_URL'] || 'https://hub.2.maas.work'
   PING_URL = "#{BASE_URL}/ping".freeze
   REGISTRATION_URL = "#{BASE_URL}/instances".freeze
@@ -14,7 +14,7 @@ class MaaSHub
   def self.instance_config
     {
       installation_identifier: installation_identifier,
-      installation_version: MaaS.config[:version],
+      installation_version: Maas.config[:version],
       installation_host: URI.parse(ENV.fetch('FRONTEND_URL', '')).host,
       installation_env: ENV.fetch('INSTALLATION_ENV', '')
     }

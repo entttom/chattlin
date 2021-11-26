@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Теперь вы можете получать письма на свой домен."
       }
     },
-    "UPDATE_MAAS": "Доступно обновление %{latestMaaSVersion} для MaaS. Пожалуйста, обновите свою версию."
+    "UPDATE_MAAS": "Доступно обновление %{latestMaasVersion} для Maas. Пожалуйста, обновите свою версию."
   },
   "FORMS": {
     "MULTISELECT": {

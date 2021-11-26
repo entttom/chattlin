@@ -27,7 +27,7 @@ class DashboardController < ActionController::Base
       'ANALYTICS_TOKEN',
       'ANALYTICS_HOST'
     ).merge(
-      APP_VERSION: MaaS.config[:version],
+      APP_VERSION: Maas.config[:version],
       VAPID_PUBLIC_KEY: VapidService.public_key,
       ENABLE_ACCOUNT_SIGNUP: GlobalConfigService.load('ENABLE_ACCOUNT_SIGNUP', 'false')
     )

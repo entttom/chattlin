@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "اکنون می‌توانید ایمیل‌ها را در دامنه سفارشی خود دریافت کنید."
       }
     },
-    "UPDATE_MAAS": "به روزرسانی%{latestMaaSVersion} برای MaaS در دسترس است. لطفا نمونه خود را به روز کنید."
+    "UPDATE_MAAS": "به روزرسانی%{latestMaasVersion} برای Maas در دسترس است. لطفا نمونه خود را به روز کنید."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -74,7 +74,7 @@
   },
   "NETWORK": {
     "NOTIFICATION": {
-      "TEXT": "قطع کردن MaaS"
+      "TEXT": "قطع کردن Maas"
     },
     "BUTTON": {
       "REFRESH": "تازه کردن"

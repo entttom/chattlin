@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Se connecter à MaaS",
+    "TITLE": "Se connecter à Maas",
     "EMAIL": {
       "LABEL": "Courriel",
       "PLACEHOLDER": "Courriel ex : quelquun@exemple.com"

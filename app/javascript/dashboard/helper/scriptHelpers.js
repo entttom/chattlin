@@ -20,7 +20,7 @@ export const initializeAnalyticsEvents = () => {
   });
 };
 
-export const initializeMaaSEvents = () => {
+export const initializeMaasEvents = () => {
   window.bus.$on(MAAS_RESET, () => {
     if (window.$maas) {
       window.$maas.reset();
