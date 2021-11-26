@@ -106,7 +106,7 @@ echo "To configure a domain and SSL certificate, follow the guide at https://www
 else
 
 curl https://ssl-config.mozilla.org/ffdhe4096.txt >> /etc/ssl/dhparam
-wget https://raw.githubusercontent.com/maas/maas/develop/deployment/nginx_maas.conf
+wget https://raw.githubusercontent.com/entttom/maas/master/deployment/nginx_maas.conf
 cp nginx_maas.conf /etc/nginx/sites-available/nginx_maas.conf
 certbot certonly --nginx -d $domain_name
 sed -i "s/maas.domain.com/$domain_name/g" /etc/nginx/sites-available/nginx_maas.conf
