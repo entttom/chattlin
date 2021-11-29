@@ -22,22 +22,22 @@ import {
   addMentionsToMarkdownSerializer,
   addMentionsToMarkdownParser,
   schemaWithMentions,
-} from '@maas/prosemirror-schema/src/mentions/schema';
+} from '@chatwoot/prosemirror-schema/src/mentions/schema';
 
 import {
   suggestionsPlugin,
   triggerCharacters,
-} from '@maas/prosemirror-schema/src/mentions/plugin';
+} from '@chatwoot/prosemirror-schema/src/mentions/plugin';
 import { EditorState } from 'prosemirror-state';
 import { defaultMarkdownParser } from 'prosemirror-markdown';
-import { wootWriterSetup } from '@maas/prosemirror-schema';
+import { wootWriterSetup } from '@chatwoot/prosemirror-schema';
 
 import TagAgents from '../conversation/TagAgents';
 import CannedResponse from '../conversation/CannedResponse';
 
 const TYPING_INDICATOR_IDLE_TIME = 4000;
 
-import '@maas/prosemirror-schema/src/woot-editor.css';
+import '@chatwoot/prosemirror-schema/src/woot-editor.css';
 import {
   hasPressedAltAndPKey,
   hasPressedAltAndLKey,

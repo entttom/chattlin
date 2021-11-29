@@ -1749,7 +1749,7 @@
         ],
         "operationId": "newConversation",
         "summary": "Create New Conversation",
-        "description": "Creating a conversation in maas requires a source id. \n\n Learn more about source_id: https://github.com/maas/maas/wiki/Building-on-Top-of-Maas:-Importing-Existing-Contacts-and-Creating-Conversations",
+        "description": "Creating a conversation in maas requires a source id. \n\n Learn more about source_id: https://github.com/entttom/maas/wiki/Building-on-Top-of-Maas:-Importing-Existing-Contacts-and-Creating-Conversations",
         "security": [
           {
             "userApiKey": [
@@ -2737,7 +2737,7 @@
         ],
         "operationId": "conversationNewMessageAttachment",
         "summary": "Create New Message Attachment",
-        "description": "Create an attachment message. Refer to this discussion if you have any further doubts. https://github.com/maas/maas/discussions/1809#discussioncomment-1211845",
+        "description": "Create an attachment message. Refer to this discussion if you have any further doubts. https://github.com/entttom/maas/discussions/1809#discussioncomment-1211845",
         "consumes": [
           "multipart/form-data"
         ],

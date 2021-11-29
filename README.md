@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://heroku.com/deploy?template=https://github.com/maas/maas/tree/master" alt="Deploy to Heroku">
+  <a href="https://heroku.com/deploy?template=https://github.com/entttom/maas/tree/master" alt="Deploy to Heroku">
      <img alt="Deploy" src="https://www.herokucdn.com/deploy/button.svg"/>
   </a>
 </p>
@@ -14,11 +14,11 @@ ___
 
 <p align="center">
   <a href="https://codeclimate.com/github/maas/maas/maintainability"><img src="https://api.codeclimate.com/v1/badges/80f9e1a7c72d186289ad/maintainability" alt="Maintainability"></a>
-  <img src="https://img.shields.io/circleci/build/github/maas/maas" alt="CircleCI Badge">
-    <a href="https://hub.docker.com/r/maas/maas/"><img src="https://img.shields.io/docker/pulls/maas/maas" alt="Docker Pull Badge"></a>
-  <a href="https://hub.docker.com/r/maas/maas/"><img src="https://img.shields.io/docker/cloud/build/maas/maas" alt="Docker Build Badge"></a>
-  <img src="https://img.shields.io/github/license/maas/maas" alt="License">
-  <img src="https://img.shields.io/github/commit-activity/m/maas/maas" alt="Commits-per-month">
+  <img src="https://img.shields.io/circleci/build/github/entttom/maas" alt="CircleCI Badge">
+    <a href="https://hub.docker.com/r/maas/maas/"><img src="https://img.shields.io/docker/pulls/entttom/maas" alt="Docker Pull Badge"></a>
+  <a href="https://hub.docker.com/r/maas/maas/"><img src="https://img.shields.io/docker/cloud/build/entttom/maas" alt="Docker Build Badge"></a>
+  <img src="https://img.shields.io/github/license/entttom/maas" alt="License">
+  <img src="https://img.shields.io/github/commit-activity/m/entttom/maas" alt="Commits-per-month">
   <a title="Crowdin" target="_self" href="https://maas.crowdin.com/maas"><img src="https://badges.crowdin.net/e/37ced7eba411064bd792feb3b7a28b16/localized.svg"></a>
   <a href="https://discord.gg/cJXdrwS"><img src="https://img.shields.io/discord/647412545203994635" alt="Discord"></a>
   <a href="https://huntr.dev/bounties/disclose"><img src="https://cdn.huntr.dev/huntr_security_badge_mono.svg" alt="Huntr"></a>
@@ -77,7 +77,7 @@ If you are looking for a stable version, please use the `master` or tags labelle
 
 Deploying Maas to Heroku is a breeze. It's as simple as clicking this button:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/maas/maas/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/entttom/maas/tree/master)
 
 Follow this [link](https://www.maas.work/docs/environment-variables) to understand setting the correct environment variables for the app to work with all the features. There might be breakages if you do not set the relevant environment variables.
 
@@ -99,7 +99,7 @@ If you need help or just want to hang out, come, say hi on our [Discord](https:/
 
 Thanks goes to all these [wonderful people](https://www.maas.work/docs/contributors):
 
-<a href="https://github.com/maas/maas/graphs/contributors"><img src="https://opencollective.com/maas/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/entttom/maas/graphs/contributors"><img src="https://opencollective.com/maas/contributors.svg?width=890&button=false" /></a>
 
 
 *Maas* &copy; 2017-2021, Maas Inc - Released under the MIT License.

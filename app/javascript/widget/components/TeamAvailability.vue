@@ -29,7 +29,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { getContrastingTextColor } from '@maas/utils';
+import { getContrastingTextColor } from '@chatwoot/utils';
 import AvailableAgents from 'widget/components/AvailableAgents.vue';
 import CustomButton from 'shared/components/Button';
 import configMixin from 'widget/mixins/configMixin';
