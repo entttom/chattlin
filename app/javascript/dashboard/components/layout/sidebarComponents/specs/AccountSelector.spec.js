@@ -9,8 +9,8 @@ import MaassModal from 'dashboard/components/Modal';
 import MaassModalHeader from 'dashboard/components/ModalHeader';
 
 const localVue = createLocalVue();
-localVue.component('maass-modal', MaassModal);
-localVue.component('maass-modal-header', MaassModalHeader);
+localVue.component('woot-modal', MaassModal);
+localVue.component('woot-modal-header', MaassModalHeader);
 
 localVue.use(Vuex);
 localVue.use(VueI18n);

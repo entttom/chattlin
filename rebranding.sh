@@ -12,7 +12,7 @@ find . -type f -name "*.*" -print|xargs perl -i -pe 's#Maas#Maas#g'
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#MAAS#MAAS#g' 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#Maass#Maass#g' 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#maas#maas#g'
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#maass#maass#g' 
+#find . -type f -name "*.*" -print|xargs perl -i -pe 's#woot#maass#g' 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#db:maas_prepare#db:maas_prepare#g'  
 cd deployment
 rename  's/maas/maas/' *
@@ -34,7 +34,7 @@ find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://chat.maas.work/br
 find . -name "*" -exec rename 's/Maas/Maas/g' {} ";"
 find . -name "*" -exec rename 's/maas/maas/g' {} ";"
 find . -name "*" -exec rename 's/Maass/Maass/g' {} ";"
-find . -name "*" -exec rename 's/maass/maass/g' {} ";"
+#find . -name "*" -exec rename 's/woot/maass/g' {} ";"
 
 cp -r /Users/thomasentner/Library/Mobile\ Documents/com\~apple\~CloudDocs/MaaS/Maas\ Rebranding/master/ /Users/thomasentner/Documents/GitHub/maas/
 rm -rf ../master

@@ -1,17 +1,17 @@
 <template>
   <div class="column content-box">
-    <maass-button
+    <woot-button
       color-scheme="success"
       class-names="button--fixed-right-top"
       icon="ion-android-download"
       @click="downloadAgentReports"
     >
       {{ $t('REPORT.DOWNLOAD_AGENT_REPORTS') }}
-    </maass-button>
+    </woot-button>
 
     <report-date-range-selector @date-range-change="onDateRangeChange" />
     <div class="row">
-      <maass-report-stats-card
+      <woot-report-stats-card
         v-for="(metric, index) in metrics"
         :key="metric.NAME"
         :desc="metric.DESC"
@@ -23,12 +23,12 @@
       />
     </div>
     <div class="report-bar">
-      <maass-loading-state
+      <woot-loading-state
         v-if="accountReport.isFetching"
         :message="$t('REPORT.LOADING_CHART')"
       />
       <div v-else class="chart-container">
-        <maass-bar v-if="accountReport.data.length" :collection="collection" />
+        <woot-bar v-if="accountReport.data.length" :collection="collection" />
         <span v-else class="empty-state">
           {{ $t('REPORT.NO_ENOUGH_DATA') }}
         </span>

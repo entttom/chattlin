@@ -1,7 +1,7 @@
 <template>
-  <maass-modal :show.sync="show" :on-close="onCancel">
+  <woot-modal :show.sync="show" :on-close="onCancel">
     <div class="column content-box">
-      <maass-modal-header
+      <woot-modal-header
         :header-title="$t('EMAIL_TRANSCRIPT.TITLE')"
         :header-content="$t('EMAIL_TRANSCRIPT.DESC')"
       />
@@ -59,7 +59,7 @@
         </div>
         <div class="modal-footer">
           <div class="medium-12 row">
-            <maass-submit-button
+            <woot-submit-button
               :button-text="$t('EMAIL_TRANSCRIPT.SUBMIT')"
               :disabled="!isFormValid"
             />
@@ -70,7 +70,7 @@
         </div>
       </form>
     </div>
-  </maass-modal>
+  </woot-modal>
 </template>
 
 <script>

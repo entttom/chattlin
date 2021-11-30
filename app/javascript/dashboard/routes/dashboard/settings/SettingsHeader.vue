@@ -1,7 +1,7 @@
 <template>
   <div class="settings-header">
     <h1 class="page-title">
-      <maass-sidemenu-icon></maass-sidemenu-icon>
+      <woot-sidemenu-icon></woot-sidemenu-icon>
       <back-button
         v-if="showBackButton"
         :button-label="backButtonLabel"

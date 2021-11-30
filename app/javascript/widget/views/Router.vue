@@ -1,7 +1,7 @@
 <template>
   <div
     id="app"
-    class="maass-widget-wrap"
+    class="woot-widget-wrap"
     :class="{
       'is-mobile': isMobile,
       'is-widget-right': !isLeftAligned,

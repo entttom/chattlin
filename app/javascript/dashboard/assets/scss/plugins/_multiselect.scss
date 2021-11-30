@@ -7,7 +7,7 @@
     background: $color-background;
 
     &::after {
-      color: $color-maass;
+      color: $color-woot;
     }
   }
 }
@@ -21,7 +21,7 @@
 
   .multiselect--active {
     >.multiselect__tags {
-      border-color: $color-maass;
+      border-color: $color-woot;
     }
   }
 
@@ -159,7 +159,7 @@
     }
 
     &.multiselect--active>.multiselect__tags {
-      border-color: $color-maass;
+      border-color: $color-woot;
     }
   }
 }

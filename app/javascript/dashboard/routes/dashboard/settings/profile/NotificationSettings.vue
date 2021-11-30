@@ -155,7 +155,7 @@
           }}
         </p>
         <div v-else>
-          <maass-submit-button
+          <woot-submit-button
             :button-text="
               $t(
                 'PROFILE_SETTINGS.FORM.PUSH_NOTIFICATIONS_SECTION.REQUEST_PUSH'

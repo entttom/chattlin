@@ -26,7 +26,7 @@
         </span>
       </div>
     </div>
-    <maass-button
+    <woot-button
       v-if="popoutReplyBox"
       variant="clear"
       size="large"
@@ -35,7 +35,7 @@
       class-names="popout-button"
       @click="$emit('click')"
     />
-    <maass-button
+    <woot-button
       v-else
       variant="clear"
       size="large"

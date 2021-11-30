@@ -5,7 +5,7 @@ const parseErrorCode = error => Promise.reject(error);
 
 export default axios => {
   const { apiHost = '' } = window.maasConfig || {};
-  const maassApi = axios.create({ baseURL: `${apiHost}/` });
+  const wootApi = axios.create({ baseURL: `${apiHost}/` });
   // Add Auth Headers to requests if logged in
   if (Auth.isLoggedIn()) {
     const {
@@ -15,7 +15,7 @@ export default axios => {
       expiry,
       uid,
     } = Auth.getAuthData();
-    Object.assign(maassApi.defaults.headers.common, {
+    Object.assign(wootApi.defaults.headers.common, {
       'access-token': accessToken,
       'token-type': tokenType,
       client,
@@ -24,9 +24,9 @@ export default axios => {
     });
   }
   // Response parsing interceptor
-  maassApi.interceptors.response.use(
+  wootApi.interceptors.response.use(
     response => response,
     error => parseErrorCode(error)
   );
-  return maassApi;
+  return wootApi;
 };

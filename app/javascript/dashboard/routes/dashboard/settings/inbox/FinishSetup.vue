@@ -7,35 +7,35 @@
     >
       <div class="medium-12 columns text-center">
         <div class="website--code">
-          <maass-code
+          <woot-code
             v-if="currentInbox.web_widget_script"
             :script="currentInbox.web_widget_script"
           >
-          </maass-code>
+          </woot-code>
         </div>
         <div class="medium-6 small-offset-3">
-          <maass-code
+          <woot-code
             v-if="isATwilioInbox"
             lang="html"
             :script="currentInbox.callback_webhook_url"
           >
-          </maass-code>
+          </woot-code>
         </div>
         <div class="medium-6 small-offset-3">
-          <maass-code
+          <woot-code
             v-if="isALineInbox"
             lang="html"
             :script="currentInbox.callback_webhook_url"
           >
-          </maass-code>
+          </woot-code>
         </div>
         <div class="medium-6 small-offset-3">
-          <maass-code
+          <woot-code
             v-if="isAEmailInbox"
             lang="html"
             :script="currentInbox.forward_to_email"
           >
-          </maass-code>
+          </woot-code>
         </div>
         <div class="footer">
           <router-link

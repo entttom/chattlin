@@ -1,6 +1,6 @@
 <template>
   <div :class="emptyClassName">
-    <maass-loading-state
+    <woot-loading-state
       v-if="uiFlags.isFetching || loadingChatList"
       :message="loadingIndicatorMessage"
     />

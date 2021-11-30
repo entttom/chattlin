@@ -3,12 +3,12 @@ import * as types from '../../mutation-types';
 import getters, { getSelectedChatConversation } from './getters';
 import actions from './actions';
 import { findPendingMessageIndex } from './helpers';
-import maassConstants from '../../../constants';
+import wootConstants from '../../../constants';
 
 const state = {
   allConversations: [],
   listLoadingStatus: true,
-  chatStatusFilter: maassConstants.STATUS_TYPE.OPEN,
+  chatStatusFilter: wootConstants.STATUS_TYPE.OPEN,
   currentInbox: null,
   selectedChatId: null,
 };

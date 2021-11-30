@@ -30,14 +30,14 @@ import {
 } from '@chatwoot/prosemirror-schema/src/mentions/plugin';
 import { EditorState } from 'prosemirror-state';
 import { defaultMarkdownParser } from 'prosemirror-markdown';
-import { maassWriterSetup } from '@chatwoot/prosemirror-schema';
+import { wootWriterSetup } from '@chatwoot/prosemirror-schema';
 
 import TagAgents from '../conversation/TagAgents';
 import CannedResponse from '../conversation/CannedResponse';
 
 const TYPING_INDICATOR_IDLE_TIME = 4000;
 
-import '@chatwoot/prosemirror-schema/src/maass-editor.css';
+import '@chatwoot/prosemirror-schema/src/woot-editor.css';
 import {
   hasPressedAltAndPKey,
   hasPressedAltAndLKey,
@@ -47,7 +47,7 @@ import eventListenerMixins from 'shared/mixins/eventListenerMixins';
 const createState = (content, placeholder, plugins = []) => {
   return EditorState.create({
     doc: addMentionsToMarkdownParser(defaultMarkdownParser).parse(content),
-    plugins: maassWriterSetup({
+    plugins: wootWriterSetup({
       schema: schemaWithMentions,
       placeholder,
       plugins,
@@ -200,7 +200,7 @@ export default {
       }
     },
     focusEditorInputField() {
-      this.$refs.editor.querySelector('div.ProseMirror-maass-style').focus();
+      this.$refs.editor.querySelector('div.ProseMirror-woot-style').focus();
     },
     insertMentionNode(mentionItem) {
       if (!this.view) {
@@ -290,7 +290,7 @@ export default {
   width: 100%;
 }
 
-.ProseMirror-maass-style {
+.ProseMirror-woot-style {
   min-height: 8rem;
   max-height: 12rem;
   overflow: auto;

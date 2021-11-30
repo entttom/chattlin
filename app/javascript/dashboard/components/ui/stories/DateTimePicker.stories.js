@@ -28,7 +28,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MaassDateTimePicker },
   template:
-    '<maass-date-time-picker v-bind="$props" @change="onChange"></maass-date-time-picker>',
+    '<woot-date-time-picker v-bind="$props" @change="onChange"></woot-date-time-picker>',
 });
 
 export const DateTimePicker = Template.bind({});

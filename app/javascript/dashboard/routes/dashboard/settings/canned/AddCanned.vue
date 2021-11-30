@@ -1,7 +1,7 @@
 <template>
   <modal :show.sync="show" :on-close="onClose">
     <div class="column content-box">
-      <maass-modal-header
+      <woot-modal-header
         :header-title="$t('CANNED_MGMT.ADD.TITLE')"
         :header-content="$t('CANNED_MGMT.ADD.DESC')"
       />
@@ -32,7 +32,7 @@
         </div>
         <div class="modal-footer">
           <div class="medium-12 columns">
-            <maass-submit-button
+            <woot-submit-button
               :disabled="
                 $v.content.$invalid ||
                   $v.shortCode.$invalid ||

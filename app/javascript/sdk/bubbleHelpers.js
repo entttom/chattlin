@@ -1,4 +1,4 @@
-import { addClass, toggleClass, maassOn } from './DOMHelpers';
+import { addClass, toggleClass, wootOn } from './DOMHelpers';
 import { IFrameHelper } from './IFrameHelper';
 import { BUBBLE_DESIGN } from './constants';
 
@@ -18,13 +18,13 @@ export const isExpandedView = type => getBubbleView(type) === BUBBLE_DESIGN[1];
 
 export const setBubbleText = bubbleText => {
   if (isExpandedView(window.$maas.type)) {
-    const textNode = document.getElementById('maass-widget--expanded__text');
+    const textNode = document.getElementById('woot-widget--expanded__text');
     textNode.innerHTML = bubbleText;
   }
 };
 
 export const createBubbleIcon = ({ className, src, target }) => {
-  let bubbleClassName = `${className} maass-elements--${window.$maas.position}`;
+  let bubbleClassName = `${className} woot-elements--${window.$maas.position}`;
   const bubbleIcon = document.createElement('img');
   bubbleIcon.src = src;
   bubbleIcon.alt = 'bubble-icon';
@@ -32,10 +32,10 @@ export const createBubbleIcon = ({ className, src, target }) => {
 
   if (isExpandedView(window.$maas.type)) {
     const textNode = document.createElement('div');
-    textNode.id = 'maass-widget--expanded__text';
+    textNode.id = 'woot-widget--expanded__text';
     textNode.innerHTML = '';
     target.appendChild(textNode);
-    bubbleClassName += ' maass-widget--expanded';
+    bubbleClassName += ' woot-widget--expanded';
   }
 
   target.className = bubbleClassName;
@@ -43,12 +43,12 @@ export const createBubbleIcon = ({ className, src, target }) => {
 };
 
 export const createBubbleHolder = () => {
-  addClass(bubbleHolder, 'maass--bubble-holder');
+  addClass(bubbleHolder, 'woot--bubble-holder');
   body.appendChild(bubbleHolder);
 };
 
 export const createNotificationBubble = () => {
-  addClass(notificationBubble, 'maass--notification');
+  addClass(notificationBubble, 'woot--notification');
   return notificationBubble;
 };
 
@@ -59,9 +59,9 @@ export const onBubbleClick = (props = {}) => {
     const newIsOpen = toggleValue === undefined ? !isOpen : toggleValue;
     window.$maas.isOpen = newIsOpen;
 
-    toggleClass(chatBubble, 'maass--hide');
-    toggleClass(closeBubble, 'maass--hide');
-    toggleClass(widgetHolder, 'maass--hide');
+    toggleClass(chatBubble, 'woot--hide');
+    toggleClass(closeBubble, 'woot--hide');
+    toggleClass(widgetHolder, 'woot--hide');
     IFrameHelper.events.onBubbleToggle(newIsOpen);
 
     if (!newIsOpen) {
@@ -71,5 +71,5 @@ export const onBubbleClick = (props = {}) => {
 };
 
 export const onClickChatBubble = () => {
-  maassOn(bubbleHolder, 'click', onBubbleClick);
+  wootOn(bubbleHolder, 'click', onBubbleClick);
 };

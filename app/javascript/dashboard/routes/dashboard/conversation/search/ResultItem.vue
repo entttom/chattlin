@@ -8,7 +8,7 @@
             <div class="name-wrap">
               <span class="sub-block-title">{{ userName }}</span>
             </div>
-            <maass-label
+            <woot-label
               :title="conversationsId"
               :small="true"
               color-scheme="secondary"

@@ -20,14 +20,14 @@
           >
             {{ snoozedDisplayText }}
           </span>
-          <maass-button
+          <woot-button
             class="user--profile__button margin-right-small"
             size="small"
             variant="link"
             @click="$emit('contact-panel-toggle')"
           >
             {{ contactPanelToggleText }}
-          </maass-button>
+          </woot-button>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@ import agentMixin from '../../../mixins/agentMixin.js';
 import eventListenerMixins from 'shared/mixins/eventListenerMixins';
 import inboxMixin from 'shared/mixins/inboxMixin';
 import { hasPressedAltAndOKey } from 'shared/helpers/KeyboardHelpers';
-import maassConstants from '../../../constants';
+import wootConstants from '../../../constants';
 import differenceInHours from 'date-fns/differenceInHours';
 import InboxName from '../InboxName';
 
@@ -84,7 +84,7 @@ export default {
       );
     },
     isSnoozed() {
-      return this.currentChat.status === maassConstants.STATUS_TYPE.SNOOZED;
+      return this.currentChat.status === wootConstants.STATUS_TYPE.SNOOZED;
     },
     snoozedDisplayText() {
       const { snoozed_until: snoozedUntil } = this.currentChat;

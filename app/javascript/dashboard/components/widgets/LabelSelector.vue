@@ -1,7 +1,7 @@
 <template>
   <div v-on-clickaway="closeDropdownLabel" class="label-wrap">
     <add-label @add="toggleLabels" />
-    <maass-label
+    <woot-label
       v-for="label in savedLabels"
       :key="label.id"
       :title="label.title"

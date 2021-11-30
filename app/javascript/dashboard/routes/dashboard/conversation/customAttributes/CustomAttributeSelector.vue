@@ -5,14 +5,14 @@
       class="label-wrap"
       @keyup.esc="closeDropdown"
     >
-      <maass-button
+      <woot-button
         size="small"
         variant="link"
         icon="ion-plus"
         @click="toggleAttributeDropDown"
       >
         {{ $t('CUSTOM_ATTRIBUTES.ADD_BUTTON_TEXT') }}
-      </maass-button>
+      </woot-button>
 
       <div class="dropdown-wrap">
         <div

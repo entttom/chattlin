@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions';
-import maassTextArea from './TextArea';
+import wootTextArea from './TextArea';
 
 export default {
   title: 'Components/Form/Text Area',
-  component: maassTextArea,
+  component: wootTextArea,
   argTypes: {
     label: {
       defaultValue: 'Message',
@@ -40,9 +40,9 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { maassTextArea },
+  components: { wootTextArea },
   template:
-    '<maass-text-area v-bind="$props" @input="onClick"></maass-text-area>',
+    '<woot-text-area v-bind="$props" @input="onClick"></woot-text-area>',
 });
 
 export const TextArea = Template.bind({});

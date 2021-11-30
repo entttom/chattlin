@@ -1,13 +1,13 @@
 <template>
   <div class="column content-box">
-    <maass-button
+    <woot-button
       color-scheme="success"
       class-names="button--fixed-right-top"
       icon="ion-android-download"
       @click="downloadReports"
     >
       {{ downloadButtonLabel }}
-    </maass-button>
+    </woot-button>
     <report-filters
       v-if="filterItemsList"
       :type="type"
@@ -17,7 +17,7 @@
     />
     <div>
       <div v-if="filterItemsList.length" class="row">
-        <maass-report-stats-card
+        <woot-report-stats-card
           v-for="(metric, index) in metrics"
           :key="metric.NAME"
           :desc="metric.DESC"
@@ -29,12 +29,12 @@
         />
       </div>
       <div class="report-bar">
-        <maass-loading-state
+        <woot-loading-state
           v-if="accountReport.isFetching"
           :message="$t('REPORT.LOADING_CHART')"
         />
         <div v-else class="chart-container">
-          <maass-bar
+          <woot-bar
             v-if="accountReport.data.length && filterItemsList.length"
             :collection="collection"
           />

@@ -13,19 +13,19 @@
           </router-link>
         </p>
 
-        <table v-if="inboxesList.length" class="maass-table">
+        <table v-if="inboxesList.length" class="woot-table">
           <tbody>
             <tr v-for="item in inboxesList" :key="item.id">
               <td>
                 <img
                   v-if="item.avatar_url"
-                  class="maass-thumbnail"
+                  class="woot-thumbnail"
                   :src="item.avatar_url"
                   alt="No Page Image"
                 />
                 <img
                   v-else
-                  class="maass-thumbnail"
+                  class="woot-thumbnail"
                   src="~dashboard/assets/images/flag.svg"
                   alt="No Page Image"
                 />
@@ -66,7 +66,7 @@
                   <router-link
                     :to="addAccountScoping(`settings/inboxes/${item.id}`)"
                   >
-                    <maass-button
+                    <woot-button
                       v-if="isAdmin"
                       icon="ion-gear-b"
                       variant="link"
@@ -74,10 +74,10 @@
                       class-names="grey-btn"
                     >
                       {{ $t('INBOX_MGMT.SETTINGS') }}
-                    </maass-button>
+                    </woot-button>
                   </router-link>
 
-                  <maass-button
+                  <woot-button
                     v-if="isAdmin"
                     variant="link"
                     color-scheme="secondary"
@@ -87,7 +87,7 @@
                     @click="openDelete(item)"
                   >
                     {{ $t('INBOX_MGMT.DELETE.BUTTON_TEXT') }}
-                  </maass-button>
+                  </woot-button>
                 </div>
               </td>
             </tr>
@@ -113,7 +113,7 @@
       :inbox="selectedInbox"
     />
 
-    <maass-confirm-delete-modal
+    <woot-confirm-delete-modal
       v-if="showDeletePopup"
       :show.sync="showDeletePopup"
       :title="$t('INBOX_MGMT.DELETE.CONFIRM.TITLE')"

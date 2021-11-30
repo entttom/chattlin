@@ -14,28 +14,28 @@
 </template>
 
 <script>
-import maassConstants from '../../../constants';
+import wootConstants from '../../../constants';
 import eventListenerMixins from 'shared/mixins/eventListenerMixins';
 import { hasPressedAltAndBKey } from 'shared/helpers/KeyboardHelpers';
 
 export default {
   mixins: [eventListenerMixins],
   data: () => ({
-    activeStatus: maassConstants.STATUS_TYPE.OPEN,
+    activeStatus: wootConstants.STATUS_TYPE.OPEN,
   }),
   methods: {
     handleKeyEvents(e) {
       if (hasPressedAltAndBKey(e)) {
-        if (this.activeStatus === maassConstants.STATUS_TYPE.OPEN) {
-          this.activeStatus = maassConstants.STATUS_TYPE.RESOLVED;
-        } else if (this.activeStatus === maassConstants.STATUS_TYPE.RESOLVED) {
-          this.activeStatus = maassConstants.STATUS_TYPE.PENDING;
-        } else if (this.activeStatus === maassConstants.STATUS_TYPE.PENDING) {
-          this.activeStatus = maassConstants.STATUS_TYPE.SNOOZED;
-        } else if (this.activeStatus === maassConstants.STATUS_TYPE.SNOOZED) {
-          this.activeStatus = maassConstants.STATUS_TYPE.ALL;
-        } else if (this.activeStatus === maassConstants.STATUS_TYPE.ALL) {
-          this.activeStatus = maassConstants.STATUS_TYPE.OPEN;
+        if (this.activeStatus === wootConstants.STATUS_TYPE.OPEN) {
+          this.activeStatus = wootConstants.STATUS_TYPE.RESOLVED;
+        } else if (this.activeStatus === wootConstants.STATUS_TYPE.RESOLVED) {
+          this.activeStatus = wootConstants.STATUS_TYPE.PENDING;
+        } else if (this.activeStatus === wootConstants.STATUS_TYPE.PENDING) {
+          this.activeStatus = wootConstants.STATUS_TYPE.SNOOZED;
+        } else if (this.activeStatus === wootConstants.STATUS_TYPE.SNOOZED) {
+          this.activeStatus = wootConstants.STATUS_TYPE.ALL;
+        } else if (this.activeStatus === wootConstants.STATUS_TYPE.ALL) {
+          this.activeStatus = wootConstants.STATUS_TYPE.OPEN;
         }
       }
       this.onTabChange();

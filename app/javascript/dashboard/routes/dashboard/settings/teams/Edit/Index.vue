@@ -1,6 +1,6 @@
 <template>
   <div class="row content-box full-height">
-    <maass-wizard class="small-3 columns" :items="items" />
+    <woot-wizard class="small-3 columns" :items="items" />
     <router-view></router-view>
   </div>
 </template>

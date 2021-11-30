@@ -1,7 +1,7 @@
 <template>
-  <maass-modal :show.sync="show" :on-close="onCancel">
+  <woot-modal :show.sync="show" :on-close="onCancel">
     <div class="column content-box">
-      <maass-modal-header
+      <woot-modal-header
         :header-title="$t('NEW_CONVERSATION.TITLE')"
         :header-content="$t('NEW_CONVERSATION.DESC')"
       />
@@ -12,7 +12,7 @@
         @cancel="onCancel"
       />
     </div>
-  </maass-modal>
+  </woot-modal>
 </template>
 
 <script>

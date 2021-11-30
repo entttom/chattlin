@@ -1,13 +1,13 @@
 <template>
   <div class="column content-box">
-    <maass-button
+    <woot-button
       color-scheme="success"
       class-names="button--fixed-right-top"
       icon="ion-android-add-circle"
       @click="openAddPopup"
     >
       {{ $t('LABEL_MGMT.HEADER_BTN_TXT') }}
-    </maass-button>
+    </woot-button>
     <div class="row">
       <div class="small-8 columns with-right-space ">
         <p
@@ -16,11 +16,11 @@
         >
           {{ $t('LABEL_MGMT.LIST.404') }}
         </p>
-        <maass-loading-state
+        <woot-loading-state
           v-if="uiFlags.isFetching"
           :message="$t('LABEL_MGMT.LOADING')"
         />
-        <table v-if="!uiFlags.isFetching && records.length" class="maass-table">
+        <table v-if="!uiFlags.isFetching && records.length" class="woot-table">
           <thead>
             <th
               v-for="thHeader in $t('LABEL_MGMT.LIST.TABLE_HEADER')"
@@ -43,7 +43,7 @@
                 </div>
               </td>
               <td class="button-wrapper">
-                <maass-button
+                <woot-button
                   variant="link"
                   color-scheme="secondary"
                   class-names="grey-btn"
@@ -52,8 +52,8 @@
                   @click="openEditPopup(label)"
                 >
                   {{ $t('LABEL_MGMT.FORM.EDIT') }}
-                </maass-button>
-                <maass-button
+                </woot-button>
+                <woot-button
                   variant="link"
                   color-scheme="secondary"
                   icon="ion-close-circled"
@@ -62,7 +62,7 @@
                   @click="openDeletePopup(label, index)"
                 >
                   {{ $t('LABEL_MGMT.FORM.DELETE') }}
-                </maass-button>
+                </woot-button>
               </td>
             </tr>
           </tbody>
@@ -73,18 +73,18 @@
         <span v-html="$t('LABEL_MGMT.SIDEBAR_TXT')"></span>
       </div>
     </div>
-    <maass-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
+    <woot-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
       <add-label @close="hideAddPopup" />
-    </maass-modal>
+    </woot-modal>
 
-    <maass-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
+    <woot-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
       <edit-label
         :selected-response="selectedResponse"
         @close="hideEditPopup"
       />
-    </maass-modal>
+    </woot-modal>
 
-    <maass-delete-modal
+    <woot-delete-modal
       :show.sync="showDeleteConfirmationPopup"
       :on-close="closeDeletePopup"
       :on-confirm="confirmDeletion"

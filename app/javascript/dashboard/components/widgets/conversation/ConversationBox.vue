@@ -85,7 +85,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import '~dashboard/assets/scss/maass';
+@import '~dashboard/assets/scss/woot';
 
 .conversation-details-wrap {
   display: flex;

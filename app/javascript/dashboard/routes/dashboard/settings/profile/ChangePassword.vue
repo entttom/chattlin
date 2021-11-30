@@ -8,7 +8,7 @@
         <p>{{ $t('PROFILE_SETTINGS.FORM.PASSWORD_SECTION.NOTE') }}</p>
       </div>
       <div class="columns small-9 medium-5">
-        <maass-input
+        <woot-input
           v-model="currentPassword"
           type="password"
           :class="{ error: $v.currentPassword.$error }"
@@ -24,7 +24,7 @@
           @blur="$v.currentPassword.$touch"
         />
 
-        <maass-input
+        <woot-input
           v-model="password"
           type="password"
           :class="{ error: $v.password.$error }"
@@ -36,7 +36,7 @@
           @blur="$v.password.$touch"
         />
 
-        <maass-input
+        <woot-input
           v-model="passwordConfirmation"
           type="password"
           :class="{ error: $v.passwordConfirmation.$error }"
@@ -52,7 +52,7 @@
           @blur="$v.passwordConfirmation.$touch"
         />
 
-        <maass-button
+        <woot-button
           :is-loading="isPasswordChanging"
           type="submit"
           :disabled="
@@ -62,7 +62,7 @@
           "
         >
           {{ $t('PROFILE_SETTINGS.FORM.PASSWORD_SECTION.BTN_TEXT') }}
-        </maass-button>
+        </woot-button>
       </div>
     </div>
   </form>

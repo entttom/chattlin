@@ -1,6 +1,6 @@
 <template>
   <modal :show.sync="show" :on-close="onClose">
-    <maass-modal-header :header-title="title" :header-content="message" />
+    <woot-modal-header :header-title="title" :header-content="message" />
     <div class="modal-footer delete-item">
       <button class="alert button nice" @click="onConfirm">
         {{ confirmText }}

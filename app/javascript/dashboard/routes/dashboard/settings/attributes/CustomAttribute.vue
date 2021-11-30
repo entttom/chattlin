@@ -1,14 +1,14 @@
 <template>
   <div class="row table-wrap">
     <div class="column">
-      <maass-tabs :index="selectedTabIndex" @change="onClickTabChange">
-        <maass-tabs-item
+      <woot-tabs :index="selectedTabIndex" @change="onClickTabChange">
+        <woot-tabs-item
           v-for="tab in tabs"
           :key="tab.key"
           :name="tab.name"
           :show-badge="false"
         />
-      </maass-tabs>
+      </woot-tabs>
 
       <div class="columns with-right-space">
         <p
@@ -17,13 +17,13 @@
         >
           {{ $t('ATTRIBUTES_MGMT.LIST.EMPTY_RESULT.404') }}
         </p>
-        <maass-loading-state
+        <woot-loading-state
           v-if="uiFlags.isFetching"
           :message="$t('ATTRIBUTES_MGMT.LOADING')"
         />
         <table
           v-if="!uiFlags.isFetching && attributes.length"
-          class="maass-table"
+          class="woot-table"
         >
           <thead>
             <th
@@ -49,7 +49,7 @@
                 {{ attribute.attribute_key }}
               </td>
               <td class="button-wrapper">
-                <maass-button
+                <woot-button
                   variant="link"
                   color-scheme="secondary"
                   class-names="grey-btn"
@@ -57,8 +57,8 @@
                   @click="openEditPopup(attribute)"
                 >
                   {{ $t('ATTRIBUTES_MGMT.LIST.BUTTONS.EDIT') }}
-                </maass-button>
-                <maass-button
+                </woot-button>
+                <woot-button
                   variant="link"
                   color-scheme="secondary"
                   icon="ion-close-circled"
@@ -66,7 +66,7 @@
                   @click="openDelete(attribute)"
                 >
                   {{ $t('ATTRIBUTES_MGMT.LIST.BUTTONS.DELETE') }}
-                </maass-button>
+                </woot-button>
               </td>
             </tr>
           </tbody>
@@ -76,14 +76,14 @@
     <div class="small-4 columns">
       <span v-html="$t('ATTRIBUTES_MGMT.SIDEBAR_TXT')"></span>
     </div>
-    <maass-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
+    <woot-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
       <edit-attribute
         :selected-attribute="selectedAttribute"
         :is-updating="uiFlags.isUpdating"
         @on-close="hideEditPopup"
       />
-    </maass-modal>
-    <maass-confirm-delete-modal
+    </woot-modal>
+    <woot-confirm-delete-modal
       v-if="showDeletePopup"
       :show.sync="showDeletePopup"
       :title="confirmDeleteTitle"
@@ -210,7 +210,7 @@ export default {
   padding-left: var(--space-small);
 }
 
-.maass-table {
+.woot-table {
   width: 100%;
   margin-top: var(--space-small);
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="column content-box">
-    <maass-modal-header :header-title="pageTitle" />
+    <woot-modal-header :header-title="pageTitle" />
     <form class="row" @submit.prevent="editLabel">
-      <maass-input
+      <woot-input
         v-model.trim="title"
         :class="{ error: $v.title.$error }"
         class="medium-12 columns"
@@ -11,7 +11,7 @@
         :error="getLabelTitleErrorMessage"
         @input="$v.title.$touch"
       />
-      <maass-input
+      <woot-input
         v-model.trim="description"
         :class="{ error: $v.description.$error }"
         class="medium-12 columns"
@@ -23,7 +23,7 @@
       <div class="medium-12">
         <label>
           {{ $t('LABEL_MGMT.FORM.COLOR.LABEL') }}
-          <maass-color-picker v-model="color" />
+          <woot-color-picker v-model="color" />
         </label>
       </div>
       <div class="medium-12">
@@ -34,15 +34,15 @@
       </div>
       <div class="modal-footer">
         <div class="medium-12 columns">
-          <maass-button
+          <woot-button
             :is-disabled="$v.title.$invalid || uiFlags.isUpdating"
             :is-loading="uiFlags.isUpdating"
           >
             {{ $t('LABEL_MGMT.FORM.EDIT') }}
-          </maass-button>
-          <maass-button class="button clear" @click.prevent="onClose">
+          </woot-button>
+          <woot-button class="button clear" @click.prevent="onClose">
             {{ $t('LABEL_MGMT.FORM.CANCEL') }}
-          </maass-button>
+          </woot-button>
         </div>
       </div>
     </form>

@@ -9,7 +9,7 @@ import i18n from 'dashboard/i18n';
 const localVue = createLocalVue();
 localVue.use(Vuex);
 localVue.use(VueI18n);
-localVue.component('maass-button', MaassButton);
+localVue.component('woot-button', MaassButton);
 
 const i18nConfig = new VueI18n({
   locale: 'en',

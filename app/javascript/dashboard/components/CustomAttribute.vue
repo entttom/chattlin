@@ -20,7 +20,7 @@
           @keyup.enter="onUpdate"
         />
         <div class="input-group-button">
-          <maass-button size="small" icon="ion-checkmark" @click="onUpdate" />
+          <woot-button size="small" icon="ion-checkmark" @click="onUpdate" />
         </div>
       </div>
       <span v-if="shouldShowErrorMessage" class="error-message">
@@ -44,7 +44,7 @@
       <p v-else class="value">
         {{ formattedValue || '---' }}
       </p>
-      <maass-button
+      <woot-button
         v-if="showActions"
         v-tooltip="$t('CUSTOM_ATTRIBUTES.ACTIONS.COPY')"
         variant="link"
@@ -54,7 +54,7 @@
         class-names="edit-button"
         @click="onCopy"
       />
-      <maass-button
+      <woot-button
         v-if="showActions"
         v-tooltip="$t('CUSTOM_ATTRIBUTES.ACTIONS.EDIT')"
         variant="link"
@@ -64,7 +64,7 @@
         class-names="edit-button"
         @click="onEdit"
       />
-      <maass-button
+      <woot-button
         v-if="showActions"
         v-tooltip="$t('CUSTOM_ATTRIBUTES.ACTIONS.DELETE')"
         variant="link"

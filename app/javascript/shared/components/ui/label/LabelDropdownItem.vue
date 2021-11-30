@@ -1,7 +1,7 @@
 <template>
-  <maass-dropdown-item>
+  <woot-dropdown-item>
     <div class="item-wrap">
-      <maass-button variant="clear" @click="onClick">
+      <woot-button variant="clear" @click="onClick">
         <div class="button-wrap">
           <div class="name-label-wrap">
             <div
@@ -15,9 +15,9 @@
             <i v-if="selected" class="icon ion-checkmark-round" />
           </div>
         </div>
-      </maass-button>
+      </woot-button>
     </div>
-  </maass-dropdown-item>
+  </woot-dropdown-item>
 </template>
 
 <script>

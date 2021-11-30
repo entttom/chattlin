@@ -119,7 +119,7 @@
         @select="changeDateSelection"
       />
     </div>
-    <maass-date-range-picker
+    <woot-date-range-picker
       v-if="isDateRangeSelected"
       show-range
       :value="customDateRange"

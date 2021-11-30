@@ -8,7 +8,7 @@ export const loadCSS = () => {
   document.body.appendChild(css);
 };
 
-export const maassOn = (elm, event, fn) => {
+export const wootOn = (elm, event, fn) => {
   if (document.addEventListener) {
     elm.addEventListener(event, fn, false);
   } else if (document.attachEvent) {

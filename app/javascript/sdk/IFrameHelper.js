@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 import {
-  maassOn,
+  wootOn,
   addClass,
   loadCSS,
   removeClass,
@@ -45,9 +45,9 @@ export const IFrameHelper = {
     iframe.id = 'maas_live_chat_widget';
     iframe.style.visibility = 'hidden';
 
-    let holderClassName = `maass-widget-holder maass--hide maass-elements--${window.$maas.position}`;
+    let holderClassName = `woot-widget-holder woot--hide woot-elements--${window.$maas.position}`;
     if (window.$maas.hideMessageBubble) {
-      holderClassName += ` maass-widget--without-bubble`;
+      holderClassName += ` woot-widget--without-bubble`;
     }
     addClass(widgetHolder, holderClassName);
     widgetHolder.appendChild(iframe);
@@ -57,7 +57,7 @@ export const IFrameHelper = {
     IFrameHelper.preventDefaultScroll();
   },
   getAppFrame: () => document.getElementById('maas_live_chat_widget'),
-  getBubbleHolder: () => document.getElementsByClassName('maass--bubble-holder'),
+  getBubbleHolder: () => document.getElementsByClassName('woot--bubble-holder'),
   sendMessage: (key, value) => {
     const element = IFrameHelper.getAppFrame();
     element.contentWindow.postMessage(
@@ -80,7 +80,7 @@ export const IFrameHelper = {
     };
   },
   initWindowSizeListener: () => {
-    maassOn(window, 'resize', () => IFrameHelper.toggleCloseButton());
+    wootOn(window, 'resize', () => IFrameHelper.toggleCloseButton());
   },
   preventDefaultScroll: () => {
     widgetHolder.addEventListener('wheel', event => {
@@ -171,7 +171,7 @@ export const IFrameHelper = {
       if (!isOpen && unreadMessageCount > 0) {
         IFrameHelper.sendMessage('set-unread-view');
         onBubbleClick({ toggleValue });
-        const holderEl = document.querySelector('.maass-widget-holder');
+        const holderEl = document.querySelector('.woot-widget-holder');
         addClass(holderEl, 'has-unread-view');
       }
     },
@@ -181,7 +181,7 @@ export const IFrameHelper = {
       const toggleValue = true;
       if (!isOpen) {
         onBubbleClick({ toggleValue });
-        const holderEl = document.querySelector('.maass-widget-holder');
+        const holderEl = document.querySelector('.woot-widget-holder');
         addClass(holderEl, 'has-unread-view');
       }
     },
@@ -199,7 +199,7 @@ export const IFrameHelper = {
     },
 
     removeUnreadClass: () => {
-      const holderEl = document.querySelector('.maass-widget-holder');
+      const holderEl = document.querySelector('.woot-widget-holder');
       removeClass(holderEl, 'has-unread-view');
     },
 
@@ -223,13 +223,13 @@ export const IFrameHelper = {
     onLocationChangeListener();
     if (!window.$maas.hideMessageBubble) {
       const chatIcon = createBubbleIcon({
-        className: 'maass-widget-bubble',
+        className: 'woot-widget-bubble',
         src: bubbleImg,
         target: chatBubble,
       });
 
       const closeIcon = closeBubble;
-      const closeIconclassName = `maass-elements--${window.$maas.position} maass-widget-bubble maass--close maass--hide`;
+      const closeIconclassName = `woot-elements--${window.$maas.position} woot-widget-bubble woot--close woot--hide`;
       addClass(closeIcon, closeIconclassName);
 
       chatIcon.style.background = widgetColor;

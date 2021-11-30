@@ -38,7 +38,7 @@ export default {
   padding: $space-normal $space-normal $space-normal 0;
 
   .sub-block-title {
-    color: $color-maass;
+    color: $color-woot;
     font-weight: $font-weight-medium;
     margin-bottom: 0;
   }

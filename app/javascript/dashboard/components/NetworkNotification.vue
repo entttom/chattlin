@@ -96,7 +96,7 @@ export default {
 }
 
 .ui-refresh-button {
-  color: var(--color-maass);
+  color: var(--color-woot);
   font-size: var(--font-size-small);
   font-weight: bold;
 

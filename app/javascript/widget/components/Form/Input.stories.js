@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions';
-import maassInput from './Input';
+import wootInput from './Input';
 
 export default {
   title: 'Components/Form/Input',
-  component: maassInput,
+  component: wootInput,
   argTypes: {
     label: {
       defaultValue: 'Email Address',
@@ -40,8 +40,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { maassInput },
-  template: '<maass-input v-bind="$props" @input="onClick"></maass-input>',
+  components: { wootInput },
+  template: '<woot-input v-bind="$props" @input="onClick"></woot-input>',
 });
 
 export const Input = Template.bind({});

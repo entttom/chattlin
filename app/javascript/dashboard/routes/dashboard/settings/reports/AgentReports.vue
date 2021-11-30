@@ -1,5 +1,5 @@
 <template>
-  <maass-reports
+  <woot-reports
     key="agent-reports"
     type="agent"
     getter-key="agents/getAgents"

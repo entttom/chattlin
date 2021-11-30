@@ -1,6 +1,6 @@
 <template>
   <div class="column content-box">
-    <maass-modal-header
+    <woot-modal-header
       :header-title="$t('INTEGRATION_SETTINGS.WEBHOOK.EDIT.TITLE')"
     />
     <form class="row" @submit.prevent="editWebhook">
@@ -24,17 +24,17 @@
 
       <div class="modal-footer">
         <div class="medium-12 columns">
-          <maass-button
+          <woot-button
             :is-disabled="
               $v.endPoint.$invalid || uiFlags.updatingItem || endPoint === url
             "
             :is-loading="uiFlags.updatingItem"
           >
             {{ $t('INTEGRATION_SETTINGS.WEBHOOK.EDIT.FORM.SUBMIT') }}
-          </maass-button>
-          <maass-button class="button clear" @click.prevent="onClose">
+          </woot-button>
+          <woot-button class="button clear" @click.prevent="onClose">
             {{ $t('INTEGRATION_SETTINGS.WEBHOOK.ADD.CANCEL') }}
-          </maass-button>
+          </woot-button>
         </div>
       </div>
     </form>

@@ -17,7 +17,7 @@
   //logo
   .logo {
     img {
-      @include padding($maass-logo-padding);
+      @include padding($woot-logo-padding);
       max-height: 108px;
     }
   }
@@ -32,13 +32,13 @@
       .wrap,
       .child-icon {
         &:hover {
-          color: $color-maass;
+          color: $color-woot;
         }
       }
     }
 
     .active a .wrap {
-      color: $color-maass;
+      color: $color-woot;
     }
   }
 

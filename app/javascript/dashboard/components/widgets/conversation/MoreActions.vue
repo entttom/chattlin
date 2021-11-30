@@ -1,20 +1,20 @@
 <template>
   <div class="flex-container actions--container">
-    <maass-button
+    <woot-button
       v-if="!currentChat.muted"
       v-tooltip="$t('CONTACT_PANEL.MUTE_CONTACT')"
       class="hollow secondary actions--button"
       icon="ion-volume-mute"
       @click="mute"
     />
-    <maass-button
+    <woot-button
       v-else
       v-tooltip.left="$t('CONTACT_PANEL.UNMUTE_CONTACT')"
       class="hollow secondary actions--button"
       icon="ion-volume-medium"
       @click="unmute"
     />
-    <maass-button
+    <woot-button
       v-tooltip="$t('CONTACT_PANEL.SEND_TRANSCRIPT')"
       class="hollow secondary actions--button"
       icon="ion-share"

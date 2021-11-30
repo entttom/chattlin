@@ -28,7 +28,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MaassDateRangePicker },
   template:
-    '<maass-date-range-picker v-bind="$props" @change="onChange"></maass-date-range-picker>',
+    '<woot-date-range-picker v-bind="$props" @change="onChange"></woot-date-range-picker>',
 });
 
 export const DateRangePicker = Template.bind({});

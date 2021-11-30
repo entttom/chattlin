@@ -1,7 +1,7 @@
 <template>
   <div v-on-clickaway="closeSearch" class="search-wrap">
     <div class="search" :class="{ 'is-active': showSearchBox }">
-      <maass-sidemenu-icon />
+      <woot-sidemenu-icon />
       <div class="icon">
         <i class="ion-ios-search-strong search--icon" />
       </div>
@@ -23,7 +23,7 @@
               </span>
             </div>
             <div v-if="uiFlags.isFetching" class="search--activity-message">
-              <maass-spinner size="" />
+              <woot-spinner size="" />
               {{ $t('CONVERSATION.SEARCH.LOADING_MESSAGE') }}
             </div>
           </div>

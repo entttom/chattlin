@@ -19,7 +19,7 @@
           @keyup.enter="onUpdate"
         />
         <div class="input-group-button">
-          <maass-button size="small" icon="ion-checkmark" @click="onUpdate" />
+          <woot-button size="small" icon="ion-checkmark" @click="onUpdate" />
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <p class="value">
         {{ value || '---' }}
       </p>
-      <maass-button
+      <woot-button
         v-if="showEdit"
         variant="clear link"
         size="small"

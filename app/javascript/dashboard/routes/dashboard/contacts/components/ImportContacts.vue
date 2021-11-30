@@ -1,14 +1,14 @@
 <template>
   <modal :show.sync="show" :on-close="onClose">
     <div class="column content-box">
-      <maass-modal-header :header-title="$t('IMPORT_CONTACTS.TITLE')">
+      <woot-modal-header :header-title="$t('IMPORT_CONTACTS.TITLE')">
         <p>
           {{ $t('IMPORT_CONTACTS.DESC') }}
           <a :href="csvUrl" download="import-contacts-sample">{{
             $t('IMPORT_CONTACTS.DOWNLOAD_LABEL')
           }}</a>
         </p>
-      </maass-modal-header>
+      </woot-modal-header>
       <div class="row modal-content">
         <div class="medium-12 columns">
           <label>
@@ -24,13 +24,13 @@
         </div>
         <div class="modal-footer">
           <div class="medium-12 columns">
-            <maass-button
+            <woot-button
               :disabled="uiFlags.isCreating || !file"
               :loading="uiFlags.isCreating"
               @click="uploadFile"
             >
               {{ $t('IMPORT_CONTACTS.FORM.SUBMIT') }}
-            </maass-button>
+            </woot-button>
             <button class="button clear" @click.prevent="onClose">
               {{ $t('IMPORT_CONTACTS.FORM.CANCEL') }}
             </button>

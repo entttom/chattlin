@@ -9,20 +9,20 @@
       </p>
       <div class="footer">
         <div class="meta">
-          <maass-label
+          <woot-label
             :title="date"
             description="date"
             icon="ion-android-calendar"
             color-scheme="secondary"
           />
-          <maass-label
+          <woot-label
             :title="label"
             description="label"
             color-scheme="secondary"
           />
         </div>
         <div class="actions">
-          <maass-button
+          <woot-button
             variant="smooth"
             size="small"
             icon="ion-compose"
@@ -30,7 +30,7 @@
             class="action-button"
             @click="onEdit"
           />
-          <maass-button
+          <woot-button
             variant="smooth"
             size="small"
             icon="ion-trash-b"

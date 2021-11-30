@@ -37,7 +37,7 @@
         @focus="onFocus"
         @blur="onBlur"
       />
-      <maass-message-editor
+      <woot-message-editor
         v-else
         v-model="message"
         class="input"

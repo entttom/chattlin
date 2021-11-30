@@ -4,7 +4,7 @@
       :header-title="$t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.TITLE')"
       :header-content="$t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.DESC')"
     />
-    <maass-loading-state
+    <woot-loading-state
       v-if="uiFlags.isCreating"
       :message="$t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.LOADING_MESSAGE')"
     />
@@ -39,7 +39,7 @@
       <div class="medium-12 columns">
         <label>
           {{ $t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.WIDGET_COLOR.LABEL') }}
-          <maass-color-picker v-model="channelWidgetColor" />
+          <woot-color-picker v-model="channelWidgetColor" />
         </label>
       </div>
 
@@ -115,7 +115,7 @@
       />
       <div class="modal-footer">
         <div class="medium-12 columns">
-          <maass-submit-button
+          <woot-submit-button
             :loading="uiFlags.isCreating"
             :disabled="!channelWebsiteUrl || !inboxName"
             :button-text="$t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.SUBMIT_BUTTON')"

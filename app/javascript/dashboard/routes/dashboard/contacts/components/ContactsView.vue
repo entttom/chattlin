@@ -31,9 +31,9 @@
       :on-close="closeContactInfoPanel"
     />
     <create-contact :show="showCreateModal" @cancel="onToggleCreate" />
-    <maass-modal :show.sync="showImportModal" :on-close="onToggleImport">
+    <woot-modal :show.sync="showImportModal" :on-close="onToggleImport">
       <import-contacts v-if="showImportModal" :on-close="onToggleImport" />
-    </maass-modal>
+    </woot-modal>
   </div>
 </template>
 

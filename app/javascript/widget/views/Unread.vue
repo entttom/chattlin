@@ -137,7 +137,7 @@ export default {
 
   .clear-button {
     background: transparent;
-    color: $color-maass;
+    color: $color-woot;
     padding: 0;
     border: 0;
     font-weight: $font-weight-bold;

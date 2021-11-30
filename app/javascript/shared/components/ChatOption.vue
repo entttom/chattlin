@@ -42,7 +42,7 @@ export default {
 
 .option {
   border-radius: $space-jumbo;
-  border: 1px solid $color-maass;
+  border: 1px solid $color-woot;
   float: left;
   margin: $space-smaller;
   max-width: 100%;
@@ -51,7 +51,7 @@ export default {
     background: transparent;
     border-radius: $space-large;
     border: 0;
-    color: $color-maass;
+    color: $color-woot;
     cursor: pointer;
     height: auto;
     line-height: 1.5;

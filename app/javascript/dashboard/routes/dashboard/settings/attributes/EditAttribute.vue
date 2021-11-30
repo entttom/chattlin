@@ -1,9 +1,9 @@
 <template>
   <div class="column content-box">
-    <maass-modal-header :header-title="pageTitle" />
+    <woot-modal-header :header-title="pageTitle" />
     <form class="row" @submit.prevent="editAttributes">
       <div class="medium-12 columns">
-        <maass-input
+        <woot-input
           v-model.trim="displayName"
           :label="$t('ATTRIBUTES_MGMT.ADD.FORM.NAME.LABEL')"
           type="text"
@@ -40,7 +40,7 @@
             {{ $t('ATTRIBUTES_MGMT.ADD.FORM.TYPE.ERROR') }}
           </span>
         </label>
-        <maass-input
+        <woot-input
           v-model.trim="attributeKey"
           :label="$t('ATTRIBUTES_MGMT.ADD.FORM.KEY.LABEL')"
           type="text"
@@ -52,15 +52,15 @@
         />
       </div>
       <div class="modal-footer">
-        <maass-button
+        <woot-button
           :is-loading="isUpdating"
           :disabled="$v.description.$invalid"
         >
           {{ $t('ATTRIBUTES_MGMT.EDIT.UPDATE_BUTTON_TEXT') }}
-        </maass-button>
-        <maass-button variant="clear" @click.prevent="onClose">
+        </woot-button>
+        <woot-button variant="clear" @click.prevent="onClose">
           {{ $t('ATTRIBUTES_MGMT.ADD.CANCEL_BUTTON_TEXT') }}
-        </maass-button>
+        </woot-button>
       </div>
     </form>
   </div>

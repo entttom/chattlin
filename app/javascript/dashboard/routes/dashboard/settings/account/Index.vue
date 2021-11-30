@@ -89,15 +89,15 @@
         </div>
       </div>
 
-      <maass-submit-button
+      <woot-submit-button
         class="button nice success button--fixed-right-top"
         :button-text="$t('GENERAL_SETTINGS.SUBMIT')"
         :loading="isUpdating"
       >
-      </maass-submit-button>
+      </woot-submit-button>
     </form>
 
-    <maass-loading-state v-if="uiFlags.isFetchingItem" />
+    <woot-loading-state v-if="uiFlags.isFetchingItem" />
   </div>
 </template>
 

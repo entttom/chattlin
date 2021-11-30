@@ -1,13 +1,13 @@
 <template>
   <div class="column content-box">
-    <maass-button
+    <woot-button
       color-scheme="success"
       class-names="button--fixed-right-top"
       icon="ion-android-add-circle"
       @click="openAddPopup()"
     >
       {{ $t('CANNED_MGMT.HEADER_BTN_TXT') }}
-    </maass-button>
+    </woot-button>
 
     <!-- List Canned Response -->
     <div class="row">
@@ -18,14 +18,14 @@
         >
           {{ $t('CANNED_MGMT.LIST.404') }}
         </p>
-        <maass-loading-state
+        <woot-loading-state
           v-if="uiFlags.fetchingList"
           :message="$t('CANNED_MGMT.LOADING')"
         />
 
         <table
           v-if="!uiFlags.fetchingList && records.length"
-          class="maass-table"
+          class="woot-table"
         >
           <thead>
             <!-- Header -->
@@ -49,7 +49,7 @@
               <td>{{ cannedItem.content }}</td>
               <!-- Action Buttons -->
               <td class="button-wrapper">
-                <maass-button
+                <woot-button
                   variant="link"
                   color-scheme="secondary"
                   icon="ion-edit"
@@ -57,8 +57,8 @@
                   @click="openEditPopup(cannedItem)"
                 >
                   {{ $t('CANNED_MGMT.EDIT.BUTTON_TEXT') }}
-                </maass-button>
-                <maass-button
+                </woot-button>
+                <woot-button
                   variant="link"
                   color-scheme="secondary"
                   icon="ion-close-circled"
@@ -67,7 +67,7 @@
                   @click="openDeletePopup(cannedItem, index)"
                 >
                   {{ $t('CANNED_MGMT.DELETE.BUTTON_TEXT') }}
-                </maass-button>
+                </woot-button>
               </td>
             </tr>
           </tbody>
@@ -79,12 +79,12 @@
       </div>
     </div>
     <!-- Add Agent -->
-    <maass-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
+    <woot-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
       <add-canned :on-close="hideAddPopup" />
-    </maass-modal>
+    </woot-modal>
 
     <!-- Edit Canned Response -->
-    <maass-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
+    <woot-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
       <edit-canned
         v-if="showEditPopup"
         :id="selectedResponse.id"
@@ -92,10 +92,10 @@
         :edcontent="selectedResponse.content"
         :on-close="hideEditPopup"
       />
-    </maass-modal>
+    </woot-modal>
 
     <!-- Delete Canned Response -->
-    <maass-delete-modal
+    <woot-delete-modal
       :show.sync="showDeleteConfirmationPopup"
       :on-close="closeDeletePopup"
       :on-confirm="confirmDeletion"

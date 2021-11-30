@@ -7,7 +7,7 @@
       :show="showAddAccountModal"
       :has-accounts="hasAccounts"
     />
-    <maass-snackbar-box />
+    <woot-snackbar-box />
     <network-notification />
   </div>
 </template>

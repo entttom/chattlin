@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="add-agents__header"></div>
-    <table class="maass-table">
+    <table class="woot-table">
       <thead>
         <tr>
           <td>
@@ -62,7 +62,7 @@
           })
         }}
       </p>
-      <maass-submit-button
+      <woot-submit-button
         :button-text="submitButtonText"
         :loading="isWorking"
         :disabled="disableSubmitButton"

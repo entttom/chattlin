@@ -5,56 +5,56 @@
       v-on-clickaway="() => $emit('close')"
       class="dropdown-pane dropdowm--top"
     >
-      <maass-dropdown-menu>
-        <maass-dropdown-item v-if="showChangeAccountOption">
-          <maass-button
+      <woot-dropdown-menu>
+        <woot-dropdown-item v-if="showChangeAccountOption">
+          <woot-button
             variant="clear"
             size="small"
             class=" change-accounts--button"
             @click="$emit('toggle-accounts')"
           >
             {{ $t('SIDEBAR_ITEMS.CHANGE_ACCOUNTS') }}
-          </maass-button>
-        </maass-dropdown-item>
-        <maass-dropdown-item v-if="globalConfig.maasInboxToken">
-          <maass-button
+          </woot-button>
+        </woot-dropdown-item>
+        <woot-dropdown-item v-if="globalConfig.maasInboxToken">
+          <woot-button
             variant="clear"
             size="small"
             class=" change-accounts--button"
             @click="$emit('show-support-chat-window')"
           >
             Contact Support
-          </maass-button>
-        </maass-dropdown-item>
-        <maass-dropdown-item>
-          <maass-button
+          </woot-button>
+        </woot-dropdown-item>
+        <woot-dropdown-item>
+          <woot-button
             variant="clear"
             size="small"
             class=" change-accounts--button"
             @click="$emit('key-shortcut-modal')"
           >
             {{ $t('SIDEBAR_ITEMS.KEYBOARD_SHORTCUTS') }}
-          </maass-button>
-        </maass-dropdown-item>
-        <maass-dropdown-item>
+          </woot-button>
+        </woot-dropdown-item>
+        <woot-dropdown-item>
           <router-link
             :to="`/app/accounts/${accountId}/profile/settings`"
             class="button clear small change-accounts--button"
           >
             {{ $t('SIDEBAR_ITEMS.PROFILE_SETTINGS') }}
           </router-link>
-        </maass-dropdown-item>
-        <maass-dropdown-item>
-          <maass-button
+        </woot-dropdown-item>
+        <woot-dropdown-item>
+          <woot-button
             variant="clear"
             size="small"
             class=" change-accounts--button"
             @click="logout"
           >
             {{ $t('SIDEBAR_ITEMS.LOGOUT') }}
-          </maass-button>
-        </maass-dropdown-item>
-      </maass-dropdown-menu>
+          </woot-button>
+        </woot-dropdown-item>
+      </woot-dropdown-menu>
     </div>
   </transition>
 </template>

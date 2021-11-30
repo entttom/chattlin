@@ -1,4 +1,4 @@
-export const SDK_CSS = `.maass-widget-holder {
+export const SDK_CSS = `.woot-widget-holder {
   box-shadow: 0 5px 40px rgba(0, 0, 0, .16) !important;
   opacity: 1;
   will-change: transform, opacity;
@@ -9,20 +9,20 @@ export const SDK_CSS = `.maass-widget-holder {
   z-index: 2147483000 !important;
 }
 
-.maass-widget-holder iframe {
+.woot-widget-holder iframe {
   border: 0;
   height: 100% !important;
   width: 100% !important;
   max-height: 100vh !important;
 }
 
-.maass-widget-holder.has-unread-view {
+.woot-widget-holder.has-unread-view {
   border-radius: 0 !important;
   bottom: 94px;
   box-shadow: none !important;
 }
 
-.maass-widget-bubble {
+.woot-widget-bubble {
   background: #1f93ff;
   border-radius: 100px !important;
   border-width: 0px;
@@ -37,7 +37,7 @@ export const SDK_CSS = `.maass-widget-holder {
   user-select: none;
 }
 
-.maass-widget-bubble.maass-widget--expanded {
+.woot-widget-bubble.woot-widget--expanded {
   bottom: 24px;
   display: flex;
   height: 48px !important;
@@ -45,7 +45,7 @@ export const SDK_CSS = `.maass-widget-holder {
   align-items: center;
 }
 
-.maass-widget-bubble.maass-widget--expanded div {
+.woot-widget-bubble.woot-widget--expanded div {
   align-items: center;
   color: #fff;
   display: flex;
@@ -57,26 +57,26 @@ export const SDK_CSS = `.maass-widget-holder {
   width: auto !important;
 }
 
-.maass-widget-bubble.maass-widget--expanded img {
+.woot-widget-bubble.woot-widget--expanded img {
   height: 20px;
   margin: 14px 8px 14px 16px;
   width: 20px;
 }
 
-.maass-widget-bubble.maass-elements--left {
+.woot-widget-bubble.woot-elements--left {
   left: 20px;
 }
 
-.maass-widget-bubble.maass-elements--right {
+.woot-widget-bubble.woot-elements--right {
   right: 20px;
 }
 
-.maass-widget-bubble:hover {
+.woot-widget-bubble:hover {
   background: #1f93ff;
   box-shadow: 0 8px 32px rgba(0, 0, 0, .4) !important;
 }
 
-.maass-widget-bubble img {
+.woot-widget-bubble img {
   all: revert;
   height: 24px;
   margin: 20px;
@@ -84,19 +84,19 @@ export const SDK_CSS = `.maass-widget-holder {
 }
 
 @media only screen and (min-width: 667px) {
-  .maass-widget-holder.maass-elements--left {
+  .woot-widget-holder.woot-elements--left {
     left: 20px;
  }
-  .maass-widget-holder.maass-elements--right {
+  .woot-widget-holder.woot-elements--right {
     right: 20px;
  }
 }
 
-.maass--close:hover {
+.woot--close:hover {
   opacity: 1;
 }
 
-.maass--close::before, .maass--close::after {
+.woot--close::before, .woot--close::after {
   background-color: #fff;
   content: ' ';
   display: inline;
@@ -107,15 +107,15 @@ export const SDK_CSS = `.maass-widget-holder {
   width: 2px;
 }
 
-.maass--close::before {
+.woot--close::before {
   transform: rotate(45deg);
 }
 
-.maass--close::after {
+.woot--close::after {
   transform: rotate(-45deg);
 }
 
-.maass--hide {
+.woot--hide {
   bottom: -100vh !important;
   transform: translateY(40px);
   top: unset !important;
@@ -124,24 +124,24 @@ export const SDK_CSS = `.maass-widget-holder {
   z-index: -1 !important;
 }
 
-.maass-widget--without-bubble {
+.woot-widget--without-bubble {
   bottom: 20px !important;
 }
 
 @media only screen and (max-width: 667px) {
-  .maass-widget-holder {
+  .woot-widget-holder {
     height: 100%;
     right: 0;
     top: 0;
     width: 100%;
  }
 
- .maass-widget-holder iframe {
+ .woot-widget-holder iframe {
     min-height: 100% !important;
   }
 
 
- .maass-widget-holder.has-unread-view {
+ .woot-widget-holder.has-unread-view {
     height: auto;
     right: 0;
     width: auto;
@@ -151,15 +151,15 @@ export const SDK_CSS = `.maass-widget-holder {
     padding: 0 8px;
   }
 
-  .maass-widget-holder.has-unread-view iframe {
+  .woot-widget-holder.has-unread-view iframe {
     min-height: unset !important;
   }
 
- .maass-widget-holder.has-unread-view.maass-elements--left {
+ .woot-widget-holder.has-unread-view.woot-elements--left {
     left: 0;
   }
 
-  .maass-widget-bubble.maass--close {
+  .woot-widget-bubble.woot--close {
     bottom: 60px;
     opacity: 0;
     visibility: hidden !important;
@@ -168,7 +168,7 @@ export const SDK_CSS = `.maass-widget-holder {
 }
 
 @media only screen and (min-width: 667px) {
-  .maass-widget-holder {
+  .woot-widget-holder {
     border-radius: 16px !important;
     bottom: 104px;
     height: calc(85% - 64px - 20px);

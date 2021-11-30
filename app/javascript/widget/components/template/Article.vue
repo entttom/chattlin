@@ -39,7 +39,7 @@ export default {
   }
 
   .title {
-    color: $color-maass;
+    color: $color-woot;
     display: block;
     font-weight: $font-weight-medium;
 

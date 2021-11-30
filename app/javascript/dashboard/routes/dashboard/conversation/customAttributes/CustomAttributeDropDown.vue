@@ -15,25 +15,25 @@
     </div>
     <div class="list-wrap">
       <div class="list">
-        <maass-dropdown-menu>
+        <woot-dropdown-menu>
           <custom-attribute-drop-down-item
             v-for="attribute in filteredAttributes"
             :key="attribute.attribute_display_name"
             :title="attribute.attribute_display_name"
             @click="onAddAttribute(attribute)"
           />
-        </maass-dropdown-menu>
+        </woot-dropdown-menu>
         <div v-if="noResult" class="no-result">
           {{ $t('CUSTOM_ATTRIBUTES.FORM.ATTRIBUTE_SELECT.NO_RESULT') }}
         </div>
-        <maass-button
+        <woot-button
           class="add"
           icon="ion-plus-round"
           size="tiny"
           @click="addNewAttribute"
         >
           {{ $t('CUSTOM_ATTRIBUTES.FORM.ADD.TITLE') }}
-        </maass-button>
+        </woot-button>
       </div>
     </div>
   </div>

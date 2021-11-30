@@ -31,7 +31,7 @@
         </div>
       </h3>
       <div class="emoji--distribution-chart">
-        <maass-horizontal-bar :collection="chartData" :height="24" />
+        <woot-horizontal-bar :collection="chartData" :height="24" />
       </div>
     </div>
   </div>

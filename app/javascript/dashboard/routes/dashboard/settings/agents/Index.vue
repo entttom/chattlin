@@ -1,18 +1,18 @@
 <template>
   <div class="column content-box">
-    <maass-button
+    <woot-button
       color-scheme="success"
       class-names="button--fixed-right-top"
       icon="ion-android-add-circle"
       @click="openAddPopup()"
     >
       {{ $t('AGENT_MGMT.HEADER_BTN_TXT') }}
-    </maass-button>
+    </woot-button>
 
     <!-- List Agents -->
     <div class="row">
       <div class="small-8 columns with-right-space ">
-        <maass-loading-state
+        <woot-loading-state
           v-if="uiFlags.isFetching"
           :message="$t('AGENT_MGMT.LOADING')"
         />
@@ -20,7 +20,7 @@
           <p v-if="!agentList.length">
             {{ $t('AGENT_MGMT.LIST.404') }}
           </p>
-          <table v-else class="maass-table">
+          <table v-else class="woot-table">
             <tbody>
               <tr v-for="(agent, index) in agentList" :key="agent.email">
                 <!-- Gravtar Image -->
@@ -55,7 +55,7 @@
                 <!-- Actions -->
                 <td>
                   <div class="button-wrapper">
-                    <maass-button
+                    <woot-button
                       v-if="showEditAction(agent)"
                       variant="link"
                       color-scheme="secondary"
@@ -64,8 +64,8 @@
                       @click="openEditPopup(agent)"
                     >
                       {{ $t('AGENT_MGMT.EDIT.BUTTON_TEXT') }}
-                    </maass-button>
-                    <maass-button
+                    </woot-button>
+                    <woot-button
                       v-if="showDeleteAction(agent)"
                       variant="link"
                       color-scheme="secondary"
@@ -75,7 +75,7 @@
                       @click="openDeletePopup(agent, index)"
                     >
                       {{ $t('AGENT_MGMT.DELETE.BUTTON_TEXT') }}
-                    </maass-button>
+                    </woot-button>
                   </div>
                 </td>
               </tr>
@@ -95,11 +95,11 @@
       </div>
     </div>
     <!-- Add Agent -->
-    <maass-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
+    <woot-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
       <add-agent :on-close="hideAddPopup" />
-    </maass-modal>
+    </woot-modal>
     <!-- Edit Agent -->
-    <maass-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
+    <woot-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
       <edit-agent
         v-if="showEditPopup"
         :id="currentAgent.id"
@@ -108,9 +108,9 @@
         :email="currentAgent.email"
         :on-close="hideEditPopup"
       />
-    </maass-modal>
+    </woot-modal>
     <!-- Delete Agent -->
-    <maass-delete-modal
+    <woot-delete-modal
       :show.sync="showDeletePopup"
       :on-close="closeDeletePopup"
       :on-confirm="confirmDeletion"

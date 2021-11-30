@@ -39,14 +39,14 @@
         @update="value => onCustomAttributeUpdate(attribute, value)"
       />
     </div>
-    <maass-button
+    <woot-button
       size="small"
       variant="link"
       icon="ion-plus"
       @click="handleCustomCreate"
     >
       {{ $t('CUSTOM_ATTRIBUTES.ADD.TITLE') }}
-    </maass-button>
+    </woot-button>
   </div>
 </template>
 <script>

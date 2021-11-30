@@ -13,7 +13,7 @@ localVue.use(Vuex);
 localVue.use(VueI18n);
 localVue.use(VTooltip);
 
-localVue.component('maass-button', Button);
+localVue.component('woot-button', Button);
 
 const i18nConfig = new VueI18n({
   locale: 'en',

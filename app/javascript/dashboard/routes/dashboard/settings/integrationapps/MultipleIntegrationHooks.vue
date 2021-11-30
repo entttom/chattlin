@@ -1,7 +1,7 @@
 <template>
   <div class="row ">
     <div class="small-8 columns with-right-space ">
-      <table v-if="hasConnectedHooks" class="maass-table">
+      <table v-if="hasConnectedHooks" class="woot-table">
         <thead>
           <th v-for="hookHeader in hookHeaders" :key="hookHeader">
             {{ hookHeader }}
@@ -23,7 +23,7 @@
               {{ inboxName(hook) }}
             </td>
             <td class="button-wrapper">
-              <maass-button
+              <woot-button
                 variant="link"
                 color-scheme="secondary"
                 icon="ion-close-circled"
@@ -31,7 +31,7 @@
                 @click="$emit('delete', hook)"
               >
                 {{ $t('INTEGRATION_APPS.LIST.DELETE.BUTTON_TEXT') }}
-              </maass-button>
+              </woot-button>
             </td>
           </tr>
         </tbody>

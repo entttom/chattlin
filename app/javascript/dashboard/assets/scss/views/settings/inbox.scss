@@ -62,26 +62,26 @@
 
     &.active {
       h3 {
-        color: $color-maass;
+        color: $color-woot;
       }
 
       .step {
-        background: $color-maass;
+        background: $color-woot;
       }
     }
 
     &.over {
       &::after {
-        background: $color-maass;
+        background: $color-woot;
       }
 
       .step {
-        background: $color-maass;
+        background: $color-woot;
       }
 
       & + .item {
         &::before {
-          background: $color-maass;
+          background: $color-woot;
         }
       }
     }

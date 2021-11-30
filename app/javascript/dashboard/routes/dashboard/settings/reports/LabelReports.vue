@@ -1,5 +1,5 @@
 <template>
-  <maass-reports
+  <woot-reports
     key="label-reports"
     type="label"
     getter-key="labels/getLabels"

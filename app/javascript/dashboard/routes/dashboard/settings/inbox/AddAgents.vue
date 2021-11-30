@@ -33,7 +33,7 @@
           </label>
         </div>
         <div class="medium-12 columns">
-          <maass-submit-button
+          <woot-submit-button
             :button-text="$t('INBOX_MGMT.AGENTS.BUTTON_TEXT')"
             :loading="isCreating"
           />

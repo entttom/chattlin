@@ -6,7 +6,7 @@
       </h5>
     </div>
     <div class="button-wrap">
-      <maass-button
+      <woot-button
         variant="hollow"
         size="tiny"
         color-scheme="secondary"
@@ -14,8 +14,8 @@
         @click="onClickNotes"
       >
         {{ $t('EVENTS.BUTTON.PILL_BUTTON_NOTES') }}
-      </maass-button>
-      <maass-button
+      </woot-button>
+      <woot-button
         variant="hollow"
         size="tiny"
         color-scheme="secondary"
@@ -23,8 +23,8 @@
         @click="onClickEvents"
       >
         {{ $t('EVENTS.BUTTON.PILL_BUTTON_EVENTS') }}
-      </maass-button>
-      <maass-button
+      </woot-button>
+      <woot-button
         variant="hollow"
         size="tiny"
         color-scheme="secondary"
@@ -32,7 +32,7 @@
         @click="onClickConversation"
       >
         {{ $t('EVENTS.BUTTON.PILL_BUTTON_CONVO') }}
-      </maass-button>
+      </woot-button>
     </div>
   </div>
 </template>

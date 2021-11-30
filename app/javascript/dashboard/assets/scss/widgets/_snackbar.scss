@@ -13,7 +13,7 @@
 .ui-snackbar {
   @include padding($space-slab $space-medium);
   @include shadow;
-  background-color: $maass-snackbar-bg;
+  background-color: $woot-snackbar-bg;
   border-radius: $space-smaller;
   display: inline-block;
   margin-bottom: $space-small;
@@ -38,7 +38,7 @@
     @include padding(0);
     background: none;
     border: 0;
-    color: $maass-snackbar-button;
+    color: $woot-snackbar-button;
     font-size: $font-size-small;
     text-transform: uppercase;
   }

@@ -9,7 +9,7 @@
           <p>{{ $t('PROFILE_SETTINGS.FORM.PROFILE_SECTION.NOTE') }}</p>
         </div>
         <div class="columns small-9 medium-5">
-          <maass-avatar-uploader
+          <woot-avatar-uploader
             :label="$t('PROFILE_SETTINGS.FORM.PROFILE_IMAGE.LABEL')"
             :src="avatarUrl"
             @change="handleImageUpload"
@@ -49,9 +49,9 @@
               {{ $t('PROFILE_SETTINGS.FORM.EMAIL.ERROR') }}
             </span>
           </label>
-          <maass-button type="submit" :is-loading="isProfileUpdating">
+          <woot-button type="submit" :is-loading="isProfileUpdating">
             {{ $t('PROFILE_SETTINGS.BTN_TEXT') }}
-          </maass-button>
+          </woot-button>
         </div>
       </div>
     </form>
@@ -72,7 +72,7 @@
         </p>
       </div>
       <div class="columns small-9 medium-5">
-        <maass-code :script="currentUser.access_token"></maass-code>
+        <woot-code :script="currentUser.access_token"></woot-code>
       </div>
     </div>
   </div>

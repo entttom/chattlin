@@ -174,7 +174,7 @@ export default {
   border-radius: 7px;
 
   &.is-focused {
-    box-shadow: 0 0 0 1px $color-maass, 0 0 2px 3px $color-primary-light;
+    box-shadow: 0 0 0 1px $color-woot, 0 0 2px 3px $color-primary-light;
   }
 }
 

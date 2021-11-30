@@ -1,15 +1,15 @@
 <template>
   <section class="notification--table-wrap">
-    <maass-submit-button
+    <woot-submit-button
       v-if="notificationMetadata.unreadCount"
       class="button nice success button--fixed-right-top"
       :button-text="$t('NOTIFICATIONS_PAGE.MARK_ALL_DONE')"
       :loading="isUpdating"
       @click="onMarkAllDoneClick"
     >
-    </maass-submit-button>
+    </woot-submit-button>
 
-    <table class="maass-table notifications-table">
+    <table class="woot-table notifications-table">
       <tbody v-show="!isLoading">
         <tr
           v-for="notificationItem in notifications"
@@ -176,7 +176,7 @@ export default {
   width: var(--space-one);
   height: var(--space-one);
   border-radius: 50%;
-  background: var(--color-maass);
+  background: var(--color-woot);
 }
 
 .notification--created-at {

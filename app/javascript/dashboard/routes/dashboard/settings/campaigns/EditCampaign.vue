@@ -1,9 +1,9 @@
 <template>
   <div class="column content-box">
-    <maass-modal-header :header-title="pageTitle" />
+    <woot-modal-header :header-title="pageTitle" />
     <form class="row" @submit.prevent="editCampaign">
       <div class="medium-12 columns">
-        <maass-input
+        <woot-input
           v-model="title"
           :label="$t('CAMPAIGN.ADD.FORM.TITLE.LABEL')"
           type="text"
@@ -14,7 +14,7 @@
         />
         <label class="editor-wrap">
           {{ $t('CAMPAIGN.ADD.FORM.MESSAGE.LABEL') }}
-          <maass-message-editor
+          <woot-message-editor
             v-model.trim="message"
             class="message-editor"
             :is-format-mode="true"
@@ -54,7 +54,7 @@
             {{ $t('CAMPAIGN.ADD.FORM.SENT_BY.ERROR') }}
           </span>
         </label>
-        <maass-input
+        <woot-input
           v-model="endPoint"
           :label="$t('CAMPAIGN.ADD.FORM.END_POINT.LABEL')"
           type="text"
@@ -65,7 +65,7 @@
           :placeholder="$t('CAMPAIGN.ADD.FORM.END_POINT.PLACEHOLDER')"
           @blur="$v.endPoint.$touch"
         />
-        <maass-input
+        <woot-input
           v-model="timeOnPage"
           :label="$t('CAMPAIGN.ADD.FORM.TIME_ON_PAGE.LABEL')"
           type="text"
@@ -98,12 +98,12 @@
         </label>
       </div>
       <div class="modal-footer">
-        <maass-button :is-loading="uiFlags.isCreating">
+        <woot-button :is-loading="uiFlags.isCreating">
           {{ $t('CAMPAIGN.EDIT.UPDATE_BUTTON_TEXT') }}
-        </maass-button>
-        <maass-button variant="clear" @click.prevent="onClose">
+        </woot-button>
+        <woot-button variant="clear" @click.prevent="onClose">
           {{ $t('CAMPAIGN.ADD.CANCEL_BUTTON_TEXT') }}
-        </maass-button>
+        </woot-button>
       </div>
     </form>
   </div>
@@ -265,7 +265,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-::v-deep .ProseMirror-maass-style {
+::v-deep .ProseMirror-woot-style {
   height: 8rem;
 }
 </style>

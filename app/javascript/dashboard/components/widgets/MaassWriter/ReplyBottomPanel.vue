@@ -1,7 +1,7 @@
 <template>
   <div class="bottom-box" :class="wrapClass">
     <div class="left-wrap">
-      <maass-button
+      <woot-button
         :title="$t('CONVERSATION.REPLYBOX.TIP_EMOJI_ICON')"
         icon="ion-happy-outline"
         emoji="😊"
@@ -20,7 +20,7 @@
         :drop-directory="false"
         @input-file="onFileUpload"
       >
-        <maass-button
+        <woot-button
           v-if="showAttachButton"
           class-names="button--upload"
           :title="$t('CONVERSATION.REPLYBOX.TIP_ATTACH_ICON')"
@@ -31,7 +31,7 @@
           size="small"
         />
       </file-upload>
-      <maass-button
+      <woot-button
         v-if="enableRichEditor && !isOnPrivateNote"
         icon="ion-quote"
         emoji="🖊️"
@@ -65,14 +65,14 @@
           {{ $t('CONVERSATION.REPLYBOX.ENTER_TO_SEND') }}
         </label>
       </div>
-      <maass-button
+      <woot-button
         size="small"
         :class-names="buttonClass"
         :is-disabled="isSendDisabled"
         @click="onSend"
       >
         {{ sendButtonText }}
-      </maass-button>
+      </woot-button>
     </div>
   </div>
 </template>

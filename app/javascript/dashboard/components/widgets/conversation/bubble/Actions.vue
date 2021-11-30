@@ -120,7 +120,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~dashboard/assets/scss/maass';
+@import '~dashboard/assets/scss/woot';
 
 .right {
   .message-text--metadata {

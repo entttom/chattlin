@@ -56,7 +56,7 @@
     </div>
 
     <div class="medium-12 columns">
-      <maass-submit-button
+      <woot-submit-button
         :loading="uiFlags.isCreating"
         :button-text="$t('INBOX_MGMT.ADD.WHATSAPP.SUBMIT_BUTTON')"
       />

@@ -16,10 +16,10 @@ KillMode=mixed
 StandardInput=null
 SyslogIdentifier=%p
 
-Environment="PATH=/usr/local/rvm/gems/ruby-3.0.2/bin:/usr/local/rvm/gems/ruby-3.0.2@global/bin:/home/maas/.rvm/rubies/ruby-3.0.2/bin:/home/maas/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/maas/.rvm/bin:/home/maas/.rvm/bin"
+Environment="PATH=/home/maas/.rvm/gems/ruby-3.0.2/bin:/home/maas/.rvm/gems/ruby-3.0.2@global/bin:/home/maas/.rvm/rubies/ruby-3.0.2/bin:/home/maas/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/maas/.rvm/bin:/home/maas/.rvm/bin"
 Environment="PORT=3000"
 Environment="RAILS_ENV=production"
 Environment="NODE_ENV=production"
 Environment="RAILS_LOG_TO_STDOUT=true"
-Environment="GEM_HOME=/usr/local/rvm/gems/ruby-3.0.2"
-Environment="GEM_PATH=/usr/local/rvm/gems/ruby-3.0.2:/usr/local/rvm/gems/ruby-3.0.2@global"
+Environment="GEM_HOME=/home/maas/.rvm/gems/ruby-3.0.2"
+Environment="GEM_PATH=/home/maas/.rvm/gems/ruby-3.0.2:/home/maas/.rvm/gems/ruby-3.0.2@global"

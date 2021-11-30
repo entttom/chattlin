@@ -140,7 +140,7 @@ export default {
   background: $color-white;
   border-bottom-left-radius: $space-smaller;
   border-radius: $space-small;
-  border-top: $space-micro solid $color-maass;
+  border-top: $space-micro solid $color-woot;
   color: $color-body;
   display: inline-block;
   line-height: 1.5;

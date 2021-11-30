@@ -71,8 +71,8 @@ Vue.use(VTooltip, {
 Vue.use(hljs.vuePlugin);
 
 Vue.component('multiselect', Multiselect);
-Vue.component('maass-switch', MaassSwitch);
-Vue.component('maass-wizard', MaassWizard);
+Vue.component('woot-switch', MaassSwitch);
+Vue.component('woot-wizard', MaassWizard);
 
 const i18nConfig = new VueI18n({
   locale: 'en',

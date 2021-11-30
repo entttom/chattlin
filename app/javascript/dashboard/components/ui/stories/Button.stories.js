@@ -40,7 +40,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MaassButton },
   template:
-    '<maass-button v-bind="$props" @click="onClick">{{label}}</maass-button>',
+    '<woot-button v-bind="$props" @click="onClick">{{label}}</woot-button>',
 });
 
 export const Primary = Template.bind({});

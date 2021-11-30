@@ -1,6 +1,6 @@
 <template>
   <div class="row content-box full-height">
-    <maass-button
+    <woot-button
       v-if="showAddButton"
       color-scheme="success"
       class-names="button--fixed-right-top"
@@ -8,7 +8,7 @@
       @click="openAddHookModal"
     >
       {{ $t('INTEGRATION_APPS.ADD_BUTTON') }}
-    </maass-button>
+    </woot-button>
     <div v-if="showIntegrationHooks" class="integration-hooks">
       <div v-if="isIntegrationMultiple">
         <multiple-integration-hooks
@@ -26,11 +26,11 @@
       </div>
     </div>
 
-    <maass-modal :show.sync="showAddHookModal" :on-close="hideAddHookModal">
+    <woot-modal :show.sync="showAddHookModal" :on-close="hideAddHookModal">
       <new-hook :integration="integration" @close="hideAddHookModal" />
-    </maass-modal>
+    </woot-modal>
 
-    <maass-delete-modal
+    <woot-delete-modal
       :show.sync="showDeleteConfirmationPopup"
       :on-close="closeDeletePopup"
       :on-confirm="confirmDeletion"

@@ -385,7 +385,7 @@ export default {
 
 .modal-mask {
   &::v-deep {
-    .ProseMirror-maass-style {
+    .ProseMirror-woot-style {
       max-height: 40rem;
     }
 

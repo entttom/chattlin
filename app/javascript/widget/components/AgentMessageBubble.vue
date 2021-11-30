@@ -140,7 +140,7 @@ export default {
 
     .link {
       word-break: break-word;
-      color: $color-maass;
+      color: $color-woot;
     }
   }
 }

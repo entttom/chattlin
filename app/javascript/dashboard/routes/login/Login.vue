@@ -36,7 +36,7 @@
                 @input="$v.credentials.password.$touch"
               />
             </label>
-            <maass-submit-button
+            <woot-submit-button
               :disabled="
                 $v.credentials.email.$invalid ||
                   $v.credentials.password.$invalid ||
@@ -46,7 +46,7 @@
               :loading="loginApi.showLoading"
               button-class="large expanded"
             >
-            </maass-submit-button>
+            </woot-submit-button>
           </div>
         </form>
         <div class="column text-center sigin__footer">
@@ -62,7 +62,7 @@
           </p>
         </div>
       </div>
-      <maass-spinner v-else size="" />
+      <woot-spinner v-else size="" />
     </div>
   </div>
 </template>
