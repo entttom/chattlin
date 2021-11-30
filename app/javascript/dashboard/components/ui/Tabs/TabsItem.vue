@@ -17,7 +17,7 @@
 import TWEEN from 'tween.js';
 
 export default {
-  name: 'MaassTabsItem',
+  name: 'WootTabsItem',
   props: {
     index: {
       type: Number,

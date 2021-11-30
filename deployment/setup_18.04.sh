@@ -77,7 +77,7 @@ cp /home/maas/maas/deployment/maas.target /etc/systemd/system/maas.target
 systemctl enable maas.target
 systemctl start maas.target
 
-echo "Maass! Maass!! Maas server installation is complete"
+echo "Woot! Woot!! Maas server installation is complete"
 echo "The server will be accessible at http://<server-ip>:3000"
 echo "To configure a domain and SSL certificate, follow the guide at https://www.maas.work/docs/deployment/deploy-maas-in-linux-vm"
 

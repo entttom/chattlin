@@ -5,14 +5,14 @@ import VueI18n from 'vue-i18n';
 import Vuelidate from 'vuelidate';
 import Multiselect from 'vue-multiselect';
 
-import MaassUiKit from '../app/javascript/dashboard/components';
+import WootUiKit from '../app/javascript/dashboard/components';
 import i18n from '../app/javascript/dashboard/i18n';
 
 import '../app/javascript/dashboard/assets/scss/storybook.scss';
 
 Vue.use(VueI18n);
 Vue.use(Vuelidate);
-Vue.use(MaassUiKit);
+Vue.use(WootUiKit);
 Vue.use(Vuex);
 Vue.component('multiselect', Multiselect);
 

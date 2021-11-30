@@ -60,20 +60,20 @@ unless Rails.env.production?
   )
 
   # sample email collect
-  MaassMessageSeeder.create_sample_email_collect_message conversation
+  WootMessageSeeder.create_sample_email_collect_message conversation
 
   Message.create!(content: 'Hello', account: account, inbox: inbox, conversation: conversation, message_type: :incoming)
 
   # sample card
-  MaassMessageSeeder.create_sample_cards_message conversation
+  WootMessageSeeder.create_sample_cards_message conversation
   # input select
-  MaassMessageSeeder.create_sample_input_select_message conversation
+  WootMessageSeeder.create_sample_input_select_message conversation
   # form
-  MaassMessageSeeder.create_sample_form_message conversation
+  WootMessageSeeder.create_sample_form_message conversation
   # articles
-  MaassMessageSeeder.create_sample_articles_message conversation
+  WootMessageSeeder.create_sample_articles_message conversation
   # csat
-  MaassMessageSeeder.create_sample_csat_collect_message conversation
+  WootMessageSeeder.create_sample_csat_collect_message conversation
 
   CannedResponse.create!(account: account, short_code: 'start', content: 'Hello welcome to maas.')
 end

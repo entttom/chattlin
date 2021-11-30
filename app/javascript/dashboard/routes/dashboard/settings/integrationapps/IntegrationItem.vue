@@ -37,12 +37,12 @@
 <script>
 import { mapGetters } from 'vuex';
 import { frontendURL } from '../../../../helper/URLHelper';
-import MaassLabel from 'dashboard/components/ui/Label';
+import WootLabel from 'dashboard/components/ui/Label';
 import globalConfigMixin from 'shared/mixins/globalConfigMixin';
 
 export default {
   components: {
-    MaassLabel,
+    WootLabel,
   },
   mixins: [globalConfigMixin],
   props: {

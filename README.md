@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://s3.us-west-2.amazonaws.com/gh-assets.maas.work/brand.svg" alt="Maass-logo" width="240" />
+  <img src="https://s3.us-west-2.amazonaws.com/gh-assets.maas.work/brand.svg" alt="Woot-logo" width="240" />
 
   <p align="center">Customer engagement suite, an open-source alternative to Intercom, Zendesk, Salesforce Service Cloud etc.</p>
 </p>

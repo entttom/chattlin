@@ -12,8 +12,8 @@
 </template>
 <script>
 export default {
-  name: 'MaassDropdownItem',
-  componentName: 'MaassDropdownMenu',
+  name: 'WootDropdownItem',
+  componentName: 'WootDropdownMenu',
   props: {
     disabled: {
       type: Boolean,

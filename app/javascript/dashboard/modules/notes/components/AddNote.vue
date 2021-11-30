@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import MaassMessageEditor from 'dashboard/components/widgets/MaassWriter/Editor';
+import WootMessageEditor from 'dashboard/components/widgets/WootWriter/Editor';
 import { hasPressedCommandAndEnter } from 'shared/helpers/KeyboardHelpers';
 export default {
   components: {
-    MaassMessageEditor,
+    WootMessageEditor,
   },
 
   data() {

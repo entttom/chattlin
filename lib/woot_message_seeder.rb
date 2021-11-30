@@ -1,4 +1,4 @@
-module MaassMessageSeeder
+module WootMessageSeeder
   def self.create_sample_email_collect_message(conversation)
     Message.create!(
       account: conversation.account,

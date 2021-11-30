@@ -21,7 +21,7 @@ import { VeTable } from 'vue-easytable';
 import Spinner from 'shared/components/Spinner.vue';
 import Label from 'dashboard/components/ui/Label';
 import EmptyState from 'dashboard/components/widgets/EmptyState.vue';
-import MaassButton from 'dashboard/components/ui/MaassButton.vue';
+import WootButton from 'dashboard/components/ui/WootButton.vue';
 import messageFormatterMixin from 'shared/mixins/messageFormatterMixin';
 import UserAvatarWithName from 'dashboard/components/widgets/UserAvatarWithName';
 import InboxIconWithName from 'dashboard/components/widgets/InboxIconWithName';
@@ -193,7 +193,7 @@ export default {
             align: 'left',
             renderBodyCell: row => (
               <div class="button-wrapper">
-                <MaassButton
+                <WootButton
                   variant="clear"
                   icon="ion-edit"
                   color-scheme="secondary"
@@ -201,15 +201,15 @@ export default {
                   onClick={() => this.$emit('on-edit-click', row)}
                 >
                   {this.$t('CAMPAIGN.LIST.BUTTONS.EDIT')}
-                </MaassButton>
-                <MaassButton
+                </WootButton>
+                <WootButton
                   variant="link"
                   icon="ion-close-circled"
                   color-scheme="secondary"
                   onClick={() => this.$emit('on-delete-click', row)}
                 >
                   {this.$t('CAMPAIGN.LIST.BUTTONS.DELETE')}
-                </MaassButton>
+                </WootButton>
               </div>
             ),
           },
@@ -245,14 +245,14 @@ export default {
           align: 'left',
           renderBodyCell: row => (
             <div class="button-wrapper">
-              <MaassButton
+              <WootButton
                 variant="link"
                 icon="ion-close-circled"
                 color-scheme="secondary"
                 onClick={() => this.$emit('on-delete-click', row)}
               >
                 {this.$t('CAMPAIGN.LIST.BUTTONS.DELETE')}
-              </MaassButton>
+              </WootButton>
             </div>
           ),
         },

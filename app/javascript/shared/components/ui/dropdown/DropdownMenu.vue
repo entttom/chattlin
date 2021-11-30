@@ -14,8 +14,8 @@ import {
   hasPressedArrowDownKey,
 } from 'shared/helpers/KeyboardHelpers';
 export default {
-  name: 'MaassDropdownMenu',
-  componentName: 'MaassDropdownMenu',
+  name: 'WootDropdownMenu',
+  componentName: 'WootDropdownMenu',
 
   mixins: [eventListenerMixins],
 

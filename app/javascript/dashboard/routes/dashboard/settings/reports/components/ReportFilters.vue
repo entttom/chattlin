@@ -130,7 +130,7 @@
   </div>
 </template>
 <script>
-import MaassDateRangePicker from 'dashboard/components/ui/DateRangePicker.vue';
+import WootDateRangePicker from 'dashboard/components/ui/DateRangePicker.vue';
 const CUSTOM_DATE_RANGE_ID = 5;
 import subDays from 'date-fns/subDays';
 import startOfDay from 'date-fns/startOfDay';
@@ -139,7 +139,7 @@ import Thumbnail from 'dashboard/components/widgets/Thumbnail.vue';
 
 export default {
   components: {
-    MaassDateRangePicker,
+    WootDateRangePicker,
     Thumbnail,
   },
   props: {

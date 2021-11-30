@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Já pode receber emails no domínio que escolheu."
       }
     },
-    "UPDATE_MAAS": "Está disponível uma nova atualização %{latestMaasVersion} para o ChatMaass. Por favor, atualize a sua versão."
+    "UPDATE_MAAS": "Está disponível uma nova atualização %{latestMaasVersion} para o ChatWoot. Por favor, atualize a sua versão."
   },
   "FORMS": {
     "MULTISELECT": {

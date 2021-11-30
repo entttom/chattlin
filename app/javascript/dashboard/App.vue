@@ -15,7 +15,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import AddAccountModal from '../dashboard/components/layout/sidebarComponents/AddAccountModal';
-import MaassSnackbarBox from './components/SnackbarContainer';
+import WootSnackbarBox from './components/SnackbarContainer';
 import NetworkNotification from './components/NetworkNotification';
 import { accountIdFromPathname } from './helper/URLHelper';
 
@@ -23,7 +23,7 @@ export default {
   name: 'App',
 
   components: {
-    MaassSnackbarBox,
+    WootSnackbarBox,
     AddAccountModal,
     NetworkNotification,
   },

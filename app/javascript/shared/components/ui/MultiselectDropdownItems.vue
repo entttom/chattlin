@@ -57,13 +57,13 @@
 </template>
 
 <script>
-import MaassDropdownItem from 'shared/components/ui/dropdown/DropdownItem.vue';
-import MaassDropdownMenu from 'shared/components/ui/dropdown/DropdownMenu.vue';
+import WootDropdownItem from 'shared/components/ui/dropdown/DropdownItem.vue';
+import WootDropdownMenu from 'shared/components/ui/dropdown/DropdownMenu.vue';
 import Thumbnail from 'dashboard/components/widgets/Thumbnail.vue';
 export default {
   components: {
-    MaassDropdownItem,
-    MaassDropdownMenu,
+    WootDropdownItem,
+    WootDropdownMenu,
     Thumbnail,
   },
 

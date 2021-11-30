@@ -107,9 +107,9 @@ import {
   hasPressedAltAndMKey,
 } from 'shared/helpers/KeyboardHelpers';
 
-import MaassDropdownItem from 'shared/components/ui/dropdown/DropdownItem.vue';
-import MaassDropdownSubMenu from 'shared/components/ui/dropdown/DropdownSubMenu.vue';
-import MaassDropdownMenu from 'shared/components/ui/dropdown/DropdownMenu.vue';
+import WootDropdownItem from 'shared/components/ui/dropdown/DropdownItem.vue';
+import WootDropdownSubMenu from 'shared/components/ui/dropdown/DropdownSubMenu.vue';
+import WootDropdownMenu from 'shared/components/ui/dropdown/DropdownMenu.vue';
 import wootConstants from '../../constants';
 import {
   getUnixTime,
@@ -126,9 +126,9 @@ import {
 
 export default {
   components: {
-    MaassDropdownItem,
-    MaassDropdownMenu,
-    MaassDropdownSubMenu,
+    WootDropdownItem,
+    WootDropdownMenu,
+    WootDropdownSubMenu,
   },
   mixins: [clickaway, alertMixin, eventListenerMixins],
   props: { conversationId: { type: [String, Number], required: true } },

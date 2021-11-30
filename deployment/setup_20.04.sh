@@ -100,7 +100,7 @@ systemctl start maas.target
 
 if [ $configure_webserver != "yes" ]
 then
-echo "Maass! Maass!! Maas server installation is complete"
+echo "Woot! Woot!! Maas server installation is complete"
 echo "The server will be accessible at http://<server-ip>:3000"
 echo "To configure a domain and SSL certificate, follow the guide at https://www.maas.work/docs/deployment/deploy-maas-in-linux-vm"
 else
@@ -117,6 +117,6 @@ cd maas
 sed -i "s/http:\/\/0.0.0.0:3000/https:\/\/$domain_name/g" .env
 EOF
 systemctl restart maas.target
-echo "Maass! Maass!! Maas server installation is complete"
+echo "Woot! Woot!! Maas server installation is complete"
 echo "The server will be accessible at https://$domain_name"
 fi

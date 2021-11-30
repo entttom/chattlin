@@ -11,12 +11,12 @@ import axios from 'axios';
 import hljs from 'highlight.js';
 import Multiselect from 'vue-multiselect';
 import VueFormulate from '@braid/vue-formulate';
-import MaassSwitch from 'components/ui/Switch';
-import MaassWizard from 'components/ui/Wizard';
+import WootSwitch from 'components/ui/Switch';
+import WootWizard from 'components/ui/Wizard';
 import { sync } from 'vuex-router-sync';
 import Vuelidate from 'vuelidate';
 import VTooltip from 'v-tooltip';
-import MaassUiKit from '../dashboard/components';
+import WootUiKit from '../dashboard/components';
 import App from '../dashboard/App';
 import i18n from '../dashboard/i18n';
 import createAxios from '../dashboard/helper/APIHelper';
@@ -58,7 +58,7 @@ if (window.analyticsConfig) {
 
 Vue.use(VueRouter);
 Vue.use(VueI18n);
-Vue.use(MaassUiKit);
+Vue.use(WootUiKit);
 Vue.use(Vuelidate);
 Vue.use(VueFormulate, {
   rules: {
@@ -71,8 +71,8 @@ Vue.use(VTooltip, {
 Vue.use(hljs.vuePlugin);
 
 Vue.component('multiselect', Multiselect);
-Vue.component('woot-switch', MaassSwitch);
-Vue.component('woot-wizard', MaassWizard);
+Vue.component('woot-switch', WootSwitch);
+Vue.component('woot-wizard', WootWizard);
 
 const i18nConfig = new VueI18n({
   locale: 'en',
@@ -83,7 +83,7 @@ sync(store, router);
 // load common helpers into js
 commonHelpers();
 
-window.MaassConstants = constants;
+window.WootConstants = constants;
 window.axios = createAxios(axios);
 window.bus = new Vue();
 initializeMaasEvents();

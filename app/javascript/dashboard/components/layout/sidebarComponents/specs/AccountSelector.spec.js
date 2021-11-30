@@ -5,12 +5,12 @@ import VueI18n from 'vue-i18n';
 
 import i18n from 'dashboard/i18n';
 
-import MaassModal from 'dashboard/components/Modal';
-import MaassModalHeader from 'dashboard/components/ModalHeader';
+import WootModal from 'dashboard/components/Modal';
+import WootModalHeader from 'dashboard/components/ModalHeader';
 
 const localVue = createLocalVue();
-localVue.component('woot-modal', MaassModal);
-localVue.component('woot-modal-header', MaassModalHeader);
+localVue.component('woot-modal', WootModal);
+localVue.component('woot-modal-header', WootModalHeader);
 
 localVue.use(Vuex);
 localVue.use(VueI18n);
@@ -73,7 +73,7 @@ describe('accountSelctor', () => {
   });
 
   it('title and sub title exist', () => {
-    const headerComponent = accountSelector.findComponent(MaassModalHeader);
+    const headerComponent = accountSelector.findComponent(WootModalHeader);
     const topBar = headerComponent.find('.page-top-bar');
     const titleComponent = topBar.find('.page-sub-title');
     expect(titleComponent.text()).toBe('Switch Account');

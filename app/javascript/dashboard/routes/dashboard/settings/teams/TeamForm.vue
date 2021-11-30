@@ -41,12 +41,12 @@
 </template>
 
 <script>
-import MaassSubmitButton from '../../../../components/buttons/FormSubmitButton';
+import WootSubmitButton from '../../../../components/buttons/FormSubmitButton';
 import validations from './helpers/validations';
 
 export default {
   components: {
-    MaassSubmitButton,
+    WootSubmitButton,
   },
 
   props: {
