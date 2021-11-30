@@ -1,7 +1,7 @@
 <template>
   <section>
     <label v-if="richtext" class="greetings--richtext">
-      <woot-message-editor
+      <maass-message-editor
         v-model="greetingsMessage"
         :is-format-mode="true"
         class="input"

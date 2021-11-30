@@ -1,11 +1,11 @@
 <template>
   <modal :show.sync="show" :on-close="onClose">
-    <woot-modal-header
+    <maass-modal-header
       :header-title="$t('CUSTOM_ATTRIBUTES.ADD.TITLE')"
       :header-content="$t('CUSTOM_ATTRIBUTES.ADD.DESC')"
     />
     <form class="row" @submit.prevent="addCustomAttribute">
-      <woot-input
+      <maass-input
         v-model.trim="attributeName"
         :class="{ error: $v.attributeName.$error }"
         class="medium-12 columns"
@@ -14,22 +14,22 @@
         :placeholder="$t('CUSTOM_ATTRIBUTES.FORM.NAME.PLACEHOLDER')"
         @input="$v.attributeName.$touch"
       />
-      <woot-input
+      <maass-input
         v-model.trim="attributeValue"
         class="medium-12 columns"
         :label="$t('CUSTOM_ATTRIBUTES.FORM.VALUE.LABEL')"
         :placeholder="$t('CUSTOM_ATTRIBUTES.FORM.VALUE.PLACEHOLDER')"
       />
       <div class="modal-footer">
-        <woot-button
+        <maass-button
           :is-disabled="$v.attributeName.$invalid || isCreating"
           :is-loading="isCreating"
         >
           {{ $t('CUSTOM_ATTRIBUTES.FORM.CREATE') }}
-        </woot-button>
-        <woot-button variant="clear" @click.prevent="onClose">
+        </maass-button>
+        <maass-button variant="clear" @click.prevent="onClose">
           {{ $t('CUSTOM_ATTRIBUTES.FORM.CANCEL') }}
-        </woot-button>
+        </maass-button>
       </div>
     </form>
   </modal>

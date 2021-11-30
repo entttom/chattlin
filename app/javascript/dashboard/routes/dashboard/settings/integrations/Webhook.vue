@@ -1,13 +1,13 @@
 <template>
   <div class="row content-box full-height">
-    <woot-button
+    <maass-button
       color-scheme="success"
       class-names="button--fixed-right-top"
       icon="ion-android-add-circle"
       @click="openAddPopup()"
     >
       {{ $t('INTEGRATION_SETTINGS.WEBHOOK.HEADER_BTN_TXT') }}
-    </woot-button>
+    </maass-button>
 
     <div class="row">
       <div class="small-8 columns with-right-space ">
@@ -17,14 +17,14 @@
         >
           {{ $t('INTEGRATION_SETTINGS.WEBHOOK.LIST.404') }}
         </p>
-        <woot-loading-state
+        <maass-loading-state
           v-if="uiFlags.fetchingList"
           :message="$t('INTEGRATION_SETTINGS.WEBHOOK.LOADING')"
         />
 
         <table
           v-if="!uiFlags.fetchingList && records.length"
-          class="woot-table"
+          class="maass-table"
         >
           <thead>
             <th
@@ -42,22 +42,22 @@
                 {{ webHookItem.url }}
               </td>
               <td class="button-wrapper">
-                <woot-button
+                <maass-button
                   variant="link"
                   color-scheme="secondary"
                   icon="ion-edit"
                   @click="openEditPopup(webHookItem)"
                 >
                   {{ $t('INTEGRATION_SETTINGS.WEBHOOK.EDIT.BUTTON_TEXT') }}
-                </woot-button>
-                <woot-button
+                </maass-button>
+                <maass-button
                   variant="link"
                   icon="ion-close-circled"
                   color-scheme="secondary"
                   @click="openDeletePopup(webHookItem, index)"
                 >
                   {{ $t('INTEGRATION_SETTINGS.WEBHOOK.DELETE.BUTTON_TEXT') }}
-                </woot-button>
+                </maass-button>
               </td>
             </tr>
           </tbody>
@@ -76,20 +76,20 @@
       </div>
     </div>
 
-    <woot-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
+    <maass-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
       <new-webhook :on-close="hideAddPopup" />
-    </woot-modal>
+    </maass-modal>
 
-    <woot-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
+    <maass-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
       <edit-webhook
         v-if="showEditPopup"
         :id="selectedWebHook.id"
         :url="selectedWebHook.url"
         :on-close="hideEditPopup"
       />
-    </woot-modal>
+    </maass-modal>
 
-    <woot-delete-modal
+    <maass-delete-modal
       :show.sync="showDeleteConfirmationPopup"
       :on-close="closeDeletePopup"
       :on-confirm="confirmDeletion"

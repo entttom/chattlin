@@ -1,6 +1,6 @@
 <template>
   <div class="context-menu">
-    <woot-button
+    <maass-button
       icon="ion-more"
       size="large"
       class="button--delete-message"
@@ -14,19 +14,19 @@
       class="dropdown-pane dropdown-pane--open"
       :class="`dropdown-pane--${menuPosition}`"
     >
-      <woot-dropdown-menu>
-        <woot-dropdown-item v-if="showCopy">
-          <woot-button
+      <maass-dropdown-menu>
+        <maass-dropdown-item v-if="showCopy">
+          <maass-button
             variant="clear"
             size="small"
             icon="ion-ios-copy-outline"
             @click="handleCopy"
           >
             {{ $t('CONVERSATION.CONTEXT_MENU.COPY') }}
-          </woot-button>
-        </woot-dropdown-item>
-        <woot-dropdown-item>
-          <woot-button
+          </maass-button>
+        </maass-dropdown-item>
+        <maass-dropdown-item>
+          <maass-button
             variant="clear"
             color-scheme="alert"
             size="small"
@@ -34,9 +34,9 @@
             @click="handleDelete"
           >
             {{ $t('CONVERSATION.CONTEXT_MENU.DELETE') }}
-          </woot-button>
-        </woot-dropdown-item>
-      </woot-dropdown-menu>
+          </maass-button>
+        </maass-dropdown-item>
+      </maass-dropdown-menu>
     </div>
   </div>
 </template>

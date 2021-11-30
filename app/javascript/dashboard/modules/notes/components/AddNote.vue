@@ -1,20 +1,20 @@
 <template>
   <div class="card">
-    <woot-message-editor
+    <maass-message-editor
       v-model="noteContent"
       class="input--note"
       :placeholder="$t('NOTES.ADD.PLACEHOLDER')"
       :enable-suggestions="false"
     />
     <div class="footer">
-      <woot-button
+      <maass-button
         color-scheme="warning"
         :title="$t('NOTES.ADD.TITLE')"
         :is-disabled="buttonDisabled"
         @click="onAdd"
       >
         {{ $t('NOTES.ADD.BUTTON') }} (⌘⏎)
-      </woot-button>
+      </maass-button>
     </div>
   </div>
 </template>
@@ -71,7 +71,7 @@ export default {
     margin-top: var(--space-minus-small);
   }
 
-  &::v-deep .ProseMirror-woot-style {
+  &::v-deep .ProseMirror-maass-style {
     max-height: 36rem;
   }
 }

@@ -81,8 +81,8 @@ export default {
 
   .action-button + .action-button {
     background: white;
-    @include thin-border($color-woot);
-    color: $color-woot;
+    @include thin-border($color-maass);
+    color: $color-maass;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <woot-reports
+  <maass-reports
     key="team-reports"
     type="team"
     getter-key="teams/getTeams"

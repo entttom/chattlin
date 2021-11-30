@@ -1,7 +1,7 @@
 <template>
   <modal :show.sync="show" :on-close="onClose">
     <div class="column content-box">
-      <woot-modal-header :header-title="pageTitle" />
+      <maass-modal-header :header-title="pageTitle" />
       <form class="row medium-8" @submit.prevent="editCannedResponse()">
         <div class="medium-12 columns">
           <label :class="{ error: $v.shortCode.$error }">
@@ -29,7 +29,7 @@
         </div>
         <div class="modal-footer">
           <div class="medium-12 columns">
-            <woot-submit-button
+            <maass-submit-button
               :disabled="
                 $v.content.$invalid ||
                   $v.shortCode.$invalid ||

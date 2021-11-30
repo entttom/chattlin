@@ -79,9 +79,9 @@
       <button class="button clear" @click.prevent="onCancel">
         {{ $t('NEW_CONVERSATION.FORM.CANCEL') }}
       </button>
-      <woot-button type="submit" :is-loading="conversationsUiFlags.isCreating">
+      <maass-button type="submit" :is-loading="conversationsUiFlags.isCreating">
         {{ $t('NEW_CONVERSATION.FORM.SUBMIT') }}
-      </woot-button>
+      </maass-button>
     </div>
   </form>
 </template>

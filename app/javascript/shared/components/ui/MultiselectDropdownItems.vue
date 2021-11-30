@@ -12,12 +12,12 @@
     </div>
     <div class="list-scroll-container">
       <div class="multiselect-dropdown--list">
-        <woot-dropdown-menu>
-          <woot-dropdown-item
+        <maass-dropdown-menu>
+          <maass-dropdown-item
             v-for="option in filteredOptions"
             :key="option.id"
           >
-            <woot-button
+            <maass-button
               class="multiselect-dropdown--item"
               variant="clear"
               :class="{
@@ -45,9 +45,9 @@
                   />
                 </div>
               </div>
-            </woot-button>
-          </woot-dropdown-item>
-        </woot-dropdown-menu>
+            </maass-button>
+          </maass-dropdown-item>
+        </maass-dropdown-menu>
         <h4 v-if="noResult" class="no-result text-truncate text-block-title">
           {{ noSearchResult }}
         </h4>

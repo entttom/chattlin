@@ -1,7 +1,7 @@
 <template>
-  <woot-modal :show.sync="show" :on-close="onClose">
+  <maass-modal :show.sync="show" :on-close="onClose">
     <div class="column content-box">
-      <woot-modal-header
+      <maass-modal-header
         :header-title="$t('AGENT_MGMT.ADD.TITLE')"
         :header-content="$t('AGENT_MGMT.ADD.DESC')"
       />
@@ -44,7 +44,7 @@
         </div>
         <div class="modal-footer">
           <div class="medium-12 columns">
-            <woot-submit-button
+            <maass-submit-button
               :disabled="
                 $v.agentEmail.$invalid ||
                   $v.agentName.$invalid ||
@@ -60,7 +60,7 @@
         </div>
       </form>
     </div>
-  </woot-modal>
+  </maass-modal>
 </template>
 
 <script>

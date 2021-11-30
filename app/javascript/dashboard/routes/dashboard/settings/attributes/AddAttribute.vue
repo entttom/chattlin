@@ -1,7 +1,7 @@
 <template>
-  <woot-modal :show.sync="show" :on-close="onClose">
+  <maass-modal :show.sync="show" :on-close="onClose">
     <div class="column content-box">
-      <woot-modal-header :header-title="$t('ATTRIBUTES_MGMT.ADD.TITLE')" />
+      <maass-modal-header :header-title="$t('ATTRIBUTES_MGMT.ADD.TITLE')" />
 
       <form class="row" @submit.prevent="addAttributes">
         <div class="medium-12 columns">
@@ -16,7 +16,7 @@
               {{ $t('ATTRIBUTES_MGMT.ADD.FORM.MODEL.ERROR') }}
             </span>
           </label>
-          <woot-input
+          <maass-input
             v-model="displayName"
             :label="$t('ATTRIBUTES_MGMT.ADD.FORM.NAME.LABEL')"
             type="text"
@@ -54,7 +54,7 @@
               {{ $t('ATTRIBUTES_MGMT.ADD.FORM.TYPE.ERROR') }}
             </span>
           </label>
-          <woot-input
+          <maass-input
             v-model="attributeKey"
             :label="$t('ATTRIBUTES_MGMT.ADD.FORM.KEY.LABEL')"
             type="text"
@@ -64,7 +64,7 @@
             @blur="$v.attributeKey.$touch"
           />
           <div class="modal-footer">
-            <woot-submit-button
+            <maass-submit-button
               :disabled="isButtonDisabled"
               :button-text="$t('ATTRIBUTES_MGMT.ADD.SUBMIT')"
             />
@@ -75,7 +75,7 @@
         </div>
       </form>
     </div>
-  </woot-modal>
+  </maass-modal>
 </template>
 
 <script>

@@ -33,7 +33,7 @@
             </select>
           </div>
         </div>
-        <woot-button
+        <maass-button
           size="tiny"
           color-scheme="primary"
           class-names="add-button"
@@ -42,7 +42,7 @@
           @click="onAdd"
         >
           {{ $t('REMINDER.ADD_BUTTON.BUTTON') }}
-        </woot-button>
+        </maass-button>
       </div>
     </div>
   </div>

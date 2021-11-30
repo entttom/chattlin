@@ -22,22 +22,22 @@
       <social-icons :social-profiles="socialProfiles" />
     </div>
     <div class="contact-actions">
-      <woot-button
+      <maass-button
         class="new-message"
         size="small expanded"
         icon="ion-paper-airplane"
         @click="onNewMessageClick"
       >
         {{ $t('CONTACT_PANEL.NEW_MESSAGE') }}
-      </woot-button>
-      <woot-button
+      </maass-button>
+      <maass-button
         variant="hollow"
         size="small expanded"
         icon="ion-compose"
         @click="onEditClick"
       >
         {{ $t('EDIT_CONTACT.BUTTON_LABEL') }}
-      </woot-button>
+      </maass-button>
     </div>
   </div>
 </template>

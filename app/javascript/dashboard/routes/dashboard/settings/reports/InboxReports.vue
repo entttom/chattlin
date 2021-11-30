@@ -1,5 +1,5 @@
 <template>
-  <woot-reports
+  <maass-reports
     key="inbox-reports"
     type="inbox"
     getter-key="inboxes/getInboxes"

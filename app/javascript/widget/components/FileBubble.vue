@@ -68,7 +68,7 @@ export default {
 
   .icon-wrap {
     font-size: $font-size-mega;
-    color: $color-woot;
+    color: $color-maass;
     line-height: 1;
     margin-left: $space-smaller;
     margin-right: $space-small;
@@ -81,7 +81,7 @@ export default {
   }
 
   .download {
-    color: $color-woot;
+    color: $color-maass;
     font-weight: $font-weight-medium;
     padding: 0;
     margin: 0;

@@ -35,7 +35,7 @@ export default {
 
 .chat-bubble {
   @include light-shadow;
-  background: $color-woot;
+  background: $color-maass;
   border-radius: $space-two;
   color: $color-white;
   display: inline-block;

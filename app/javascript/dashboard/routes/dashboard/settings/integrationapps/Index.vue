@@ -2,7 +2,7 @@
   <div class="column content-box">
     <div class="row">
       <div class="empty-wrapper">
-        <woot-loading-state
+        <maass-loading-state
           v-if="uiFlags.isFetching"
           :message="$t('INTEGRATION_APPS.FETCHING')"
         />

@@ -1,11 +1,11 @@
 <template>
-  <woot-button variant="link" class="label--add" @click="addLabel">
-    <woot-label
+  <maass-button variant="link" class="label--add" @click="addLabel">
+    <maass-label
       color-scheme="secondary"
       :title="$t('CONTACT_PANEL.LABELS.CONVERSATION.ADD_BUTTON')"
       icon="ion-plus-round"
     />
-  </woot-button>
+  </maass-button>
 </template>
 
 <script>

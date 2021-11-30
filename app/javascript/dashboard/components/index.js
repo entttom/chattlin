@@ -50,7 +50,7 @@ const MaassUIKit = {
     keys.pop(); // remove 'install' from keys
     let i = keys.length;
     while (i--) {
-      Vue.component(`woot${keys[i]}`, this[keys[i]]);
+      Vue.component(`maass${keys[i]}`, this[keys[i]]);
     }
   },
 };

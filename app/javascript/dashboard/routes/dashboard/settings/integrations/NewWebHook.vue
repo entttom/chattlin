@@ -1,7 +1,7 @@
 <template>
   <modal :show.sync="show" :on-close="onClose" :close-on-backdrop-click="false">
     <div class="column content-box">
-      <woot-modal-header
+      <maass-modal-header
         :header-title="$t('INTEGRATION_SETTINGS.WEBHOOK.ADD.TITLE')"
         :header-content="
           useInstallationName(
@@ -33,15 +33,15 @@
 
         <div class="modal-footer">
           <div class="medium-12 columns">
-            <woot-button
+            <maass-button
               :disabled="$v.endPoint.$invalid || addWebHook.showLoading"
               :is-loading="addWebHook.showLoading"
             >
               {{ $t('INTEGRATION_SETTINGS.WEBHOOK.ADD.FORM.SUBMIT') }}
-            </woot-button>
-            <woot-button class="button clear" @click.prevent="onClose">
+            </maass-button>
+            <maass-button class="button clear" @click.prevent="onClose">
               {{ $t('INTEGRATION_SETTINGS.WEBHOOK.ADD.CANCEL') }}
-            </woot-button>
+            </maass-button>
           </div>
         </div>
       </form>

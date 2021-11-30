@@ -33,14 +33,14 @@
         <span class="spinner"></span>
       </div>
 
-      <woot-button
+      <maass-button
         v-if="!hasCurrentPageEndReached && !chatListLoading"
         variant="clear"
         size="expanded"
         @click="fetchConversations"
       >
         {{ $t('CHAT_LIST.LOAD_MORE_CONVERSATIONS') }}
-      </woot-button>
+      </maass-button>
 
       <p
         v-if="
@@ -65,7 +65,7 @@ import ConversationCard from './widgets/conversation/ConversationCard';
 import timeMixin from '../mixins/time';
 import eventListenerMixins from 'shared/mixins/eventListenerMixins';
 import conversationMixin from '../mixins/conversations';
-import wootConstants from '../constants';
+import maassConstants from '../constants';
 import {
   hasPressedAltAndJKey,
   hasPressedAltAndKKey,
@@ -94,8 +94,8 @@ export default {
   },
   data() {
     return {
-      activeAssigneeTab: wootConstants.ASSIGNEE_TYPE.ME,
-      activeStatus: wootConstants.STATUS_TYPE.OPEN,
+      activeAssigneeTab: maassConstants.ASSIGNEE_TYPE.ME,
+      activeStatus: maassConstants.STATUS_TYPE.OPEN,
     };
   },
   computed: {
@@ -121,7 +121,7 @@ export default {
       });
     },
     showAssigneeInConversationCard() {
-      return this.activeAssigneeTab === wootConstants.ASSIGNEE_TYPE.ALL;
+      return this.activeAssigneeTab === maassConstants.ASSIGNEE_TYPE.ALL;
     },
     inbox() {
       return this.$store.getters['inboxes/getInbox'](this.activeInbox);
@@ -272,7 +272,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '~dashboard/assets/scss/woot';
+@import '~dashboard/assets/scss/maass';
 .spinner {
   margin-top: var(--space-normal);
   margin-bottom: var(--space-normal);

@@ -12,7 +12,7 @@
           </router-link>
         </p>
 
-        <table v-if="teamsList.length" class="woot-table">
+        <table v-if="teamsList.length" class="maass-table">
           <tbody>
             <tr v-for="item in teamsList" :key="item.id">
               <td>
@@ -25,7 +25,7 @@
                   <router-link
                     :to="addAccountScoping(`settings/teams/${item.id}/edit`)"
                   >
-                    <woot-button
+                    <maass-button
                       v-if="isAdmin"
                       variant="link"
                       color-scheme="secondary"
@@ -33,9 +33,9 @@
                       icon="ion-gear-b"
                     >
                       {{ $t('TEAMS_SETTINGS.LIST.EDIT_TEAM') }}
-                    </woot-button>
+                    </maass-button>
                   </router-link>
-                  <woot-button
+                  <maass-button
                     v-if="isAdmin"
                     variant="link"
                     color-scheme="secondary"
@@ -45,7 +45,7 @@
                     @click="openDelete(item)"
                   >
                     {{ $t('TEAMS_SETTINGS.DELETE.BUTTON_TEXT') }}
-                  </woot-button>
+                  </maass-button>
                 </div>
               </td>
             </tr>
@@ -63,7 +63,7 @@
         />
       </div>
     </div>
-    <woot-confirm-delete-modal
+    <maass-confirm-delete-modal
       v-if="showDeletePopup"
       :show.sync="showDeletePopup"
       :title="confirmDeleteTitle"

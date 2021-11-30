@@ -1,6 +1,6 @@
 <template>
   <div class="column content-box">
-    <woot-modal-header
+    <maass-modal-header
       :header-title="integration.name"
       :header-content="integration.description"
     />
@@ -25,12 +25,12 @@
         validation-name="Inbox"
       />
       <div class="modal-footer">
-        <woot-button :disabled="hasErrors" :loading="uiFlags.isCreatingHook">
+        <maass-button :disabled="hasErrors" :loading="uiFlags.isCreatingHook">
           {{ $t('INTEGRATION_APPS.ADD.FORM.SUBMIT') }}
-        </woot-button>
-        <woot-button class="button clear" @click.prevent="onClose">
+        </maass-button>
+        <maass-button class="button clear" @click.prevent="onClose">
           {{ $t('INTEGRATION_APPS.ADD.FORM.CANCEL') }}
-        </woot-button>
+        </maass-button>
       </div>
     </formulate-form>
   </div>

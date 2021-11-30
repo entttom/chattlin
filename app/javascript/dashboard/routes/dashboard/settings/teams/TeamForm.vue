@@ -2,7 +2,7 @@
   <div class="row">
     <div class="small-12 medium-8 columns">
       <form class="row" @submit.prevent="handleSubmit">
-        <woot-input
+        <maass-input
           v-model.trim="title"
           :class="{ error: $v.title.$error }"
           class="medium-12 columns"
@@ -11,7 +11,7 @@
           @input="$v.title.$touch"
         />
 
-        <woot-input
+        <maass-input
           v-model.trim="description"
           :class="{ error: $v.description.$error }"
           class="medium-12 columns"
@@ -28,7 +28,7 @@
         </div>
         <div class="modal-footer">
           <div class="medium-12 columns">
-            <woot-submit-button
+            <maass-submit-button
               :disabled="$v.title.$invalid || submitInProgress"
               :button-text="submitButtonText"
               :loading="submitInProgress"

@@ -14,13 +14,13 @@
           v-on-clickaway="closeStatusMenu"
           class="dropdown-pane dropdowm--top"
         >
-          <woot-dropdown-menu>
-            <woot-dropdown-item
+          <maass-dropdown-menu>
+            <maass-dropdown-item
               v-for="status in availabilityStatuses"
               :key="status.value"
               class="status-items"
             >
-              <woot-button
+              <maass-button
                 variant="clear"
                 size="small"
                 color-scheme="secondary"
@@ -32,20 +32,20 @@
               >
                 <availability-status-badge :status="status.value" />
                 {{ status.label }}
-              </woot-button>
-            </woot-dropdown-item>
-          </woot-dropdown-menu>
+              </maass-button>
+            </maass-dropdown-item>
+          </maass-dropdown-menu>
         </div>
       </transition>
 
-      <woot-button
+      <maass-button
         variant="clear"
         color-scheme="secondary"
         class-names="status-change--change-button link"
         @click="openStatusMenu"
       >
         {{ $t('SIDEBAR_ITEMS.CHANGE_AVAILABILITY_STATUS') }}
-      </woot-button>
+      </maass-button>
     </div>
   </div>
 </template>

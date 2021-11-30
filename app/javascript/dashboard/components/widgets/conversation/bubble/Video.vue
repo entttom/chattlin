@@ -1,9 +1,9 @@
 <template>
   <div class="video message-text__wrap">
     <video :src="url" muted playsInline @click="onClick" />
-    <woot-modal :show.sync="show" :on-close="onClose">
+    <maass-modal :show.sync="show" :on-close="onClose">
       <video :src="url" controls playsInline class="modal-video" />
-    </woot-modal>
+    </maass-modal>
   </div>
 </template>
 

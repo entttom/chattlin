@@ -1,12 +1,12 @@
 <template>
   <div class="column content-box">
-    <woot-modal-header
+    <maass-modal-header
       :header-title="$t('CAMPAIGN.ADD.TITLE')"
       :header-content="$t('CAMPAIGN.ADD.DESC')"
     />
     <form class="row" @submit.prevent="addCampaign">
       <div class="medium-12 columns">
-        <woot-input
+        <maass-input
           v-model="title"
           :label="$t('CAMPAIGN.ADD.FORM.TITLE.LABEL')"
           type="text"
@@ -18,7 +18,7 @@
 
         <label v-if="isOngoingType" class="editor-wrap">
           {{ $t('CAMPAIGN.ADD.FORM.MESSAGE.LABEL') }}
-          <woot-message-editor
+          <maass-message-editor
             v-model="message"
             class="message-editor"
             :class="{ editor_warning: $v.message.$error }"
@@ -103,7 +103,7 @@
 
         <label v-if="isOnOffType">
           {{ $t('CAMPAIGN.ADD.FORM.SCHEDULED_AT.LABEL') }}
-          <woot-date-time-picker
+          <maass-date-time-picker
             :value="scheduledAt"
             :confirm-text="$t('CAMPAIGN.ADD.FORM.SCHEDULED_AT.CONFIRM')"
             :placeholder="$t('CAMPAIGN.ADD.FORM.SCHEDULED_AT.PLACEHOLDER')"
@@ -111,7 +111,7 @@
           />
         </label>
 
-        <woot-input
+        <maass-input
           v-if="isOngoingType"
           v-model="endPoint"
           :label="$t('CAMPAIGN.ADD.FORM.END_POINT.LABEL')"
@@ -123,7 +123,7 @@
           :placeholder="$t('CAMPAIGN.ADD.FORM.END_POINT.PLACEHOLDER')"
           @blur="$v.endPoint.$touch"
         />
-        <woot-input
+        <maass-input
           v-if="isOngoingType"
           v-model="timeOnPage"
           :label="$t('CAMPAIGN.ADD.FORM.TIME_ON_PAGE.LABEL')"
@@ -158,12 +158,12 @@
       </div>
 
       <div class="modal-footer">
-        <woot-button :is-loading="uiFlags.isCreating">
+        <maass-button :is-loading="uiFlags.isCreating">
           {{ $t('CAMPAIGN.ADD.CREATE_BUTTON_TEXT') }}
-        </woot-button>
-        <woot-button variant="clear" @click.prevent="onClose">
+        </maass-button>
+        <maass-button variant="clear" @click.prevent="onClose">
           {{ $t('CAMPAIGN.ADD.CANCEL_BUTTON_TEXT') }}
-        </woot-button>
+        </maass-button>
       </div>
     </form>
   </div>
@@ -335,7 +335,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-::v-deep .ProseMirror-woot-style {
+::v-deep .ProseMirror-maass-style {
   height: 8rem;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="resolve-actions">
     <div class="button-group">
-      <woot-button
+      <maass-button
         v-if="isOpen"
         class-names="resolve"
         color-scheme="success"
@@ -11,8 +11,8 @@
         @click="onCmdResolveConversation"
       >
         {{ this.$t('CONVERSATION.HEADER.RESOLVE_ACTION') }}
-      </woot-button>
-      <woot-button
+      </maass-button>
+      <maass-button
         v-else-if="isResolved"
         class-names="resolve"
         color-scheme="warning"
@@ -22,8 +22,8 @@
         @click="onCmdOpenConversation"
       >
         {{ this.$t('CONVERSATION.HEADER.REOPEN_ACTION') }}
-      </woot-button>
-      <woot-button
+      </maass-button>
+      <maass-button
         v-else-if="showOpenButton"
         class-names="resolve"
         color-scheme="primary"
@@ -32,8 +32,8 @@
         @click="onCmdOpenConversation"
       >
         {{ this.$t('CONVERSATION.HEADER.OPEN_ACTION') }}
-      </woot-button>
-      <woot-button
+      </maass-button>
+      <maass-button
         v-if="showAdditionalActions"
         ref="arrowDownButton"
         :color-scheme="buttonClass"
@@ -48,50 +48,50 @@
       v-on-clickaway="closeDropdown"
       class="dropdown-pane dropdown-pane--open"
     >
-      <woot-dropdown-menu>
-        <woot-dropdown-item v-if="!isPending">
-          <woot-button
+      <maass-dropdown-menu>
+        <maass-dropdown-item v-if="!isPending">
+          <maass-button
             variant="clear"
             @click="() => toggleStatus(STATUS_TYPE.PENDING)"
           >
             {{ this.$t('CONVERSATION.RESOLVE_DROPDOWN.MARK_PENDING') }}
-          </woot-button>
-        </woot-dropdown-item>
+          </maass-button>
+        </maass-dropdown-item>
 
-        <woot-dropdown-sub-menu
+        <maass-dropdown-sub-menu
           v-if="isOpen"
           :title="this.$t('CONVERSATION.RESOLVE_DROPDOWN.SNOOZE.TITLE')"
         >
-          <woot-dropdown-item>
-            <woot-button
+          <maass-dropdown-item>
+            <maass-button
               variant="clear"
               @click="() => toggleStatus(STATUS_TYPE.SNOOZED, null)"
             >
               {{ this.$t('CONVERSATION.RESOLVE_DROPDOWN.SNOOZE.NEXT_REPLY') }}
-            </woot-button>
-          </woot-dropdown-item>
-          <woot-dropdown-item>
-            <woot-button
+            </maass-button>
+          </maass-dropdown-item>
+          <maass-dropdown-item>
+            <maass-button
               variant="clear"
               @click="
                 () => toggleStatus(STATUS_TYPE.SNOOZED, snoozeTimes.tomorrow)
               "
             >
               {{ this.$t('CONVERSATION.RESOLVE_DROPDOWN.SNOOZE.TOMORROW') }}
-            </woot-button>
-          </woot-dropdown-item>
-          <woot-dropdown-item>
-            <woot-button
+            </maass-button>
+          </maass-dropdown-item>
+          <maass-dropdown-item>
+            <maass-button
               variant="clear"
               @click="
                 () => toggleStatus(STATUS_TYPE.SNOOZED, snoozeTimes.nextWeek)
               "
             >
               {{ this.$t('CONVERSATION.RESOLVE_DROPDOWN.SNOOZE.NEXT_WEEK') }}
-            </woot-button>
-          </woot-dropdown-item>
-        </woot-dropdown-sub-menu>
-      </woot-dropdown-menu>
+            </maass-button>
+          </maass-dropdown-item>
+        </maass-dropdown-sub-menu>
+      </maass-dropdown-menu>
     </div>
   </div>
 </template>
@@ -110,7 +110,7 @@ import {
 import MaassDropdownItem from 'shared/components/ui/dropdown/DropdownItem.vue';
 import MaassDropdownSubMenu from 'shared/components/ui/dropdown/DropdownSubMenu.vue';
 import MaassDropdownMenu from 'shared/components/ui/dropdown/DropdownMenu.vue';
-import wootConstants from '../../constants';
+import maassConstants from '../../constants';
 import {
   getUnixTime,
   addHours,
@@ -136,22 +136,22 @@ export default {
     return {
       isLoading: false,
       showActionsDropdown: false,
-      STATUS_TYPE: wootConstants.STATUS_TYPE,
+      STATUS_TYPE: maassConstants.STATUS_TYPE,
     };
   },
   computed: {
     ...mapGetters({ currentChat: 'getSelectedChat' }),
     isOpen() {
-      return this.currentChat.status === wootConstants.STATUS_TYPE.OPEN;
+      return this.currentChat.status === maassConstants.STATUS_TYPE.OPEN;
     },
     isPending() {
-      return this.currentChat.status === wootConstants.STATUS_TYPE.PENDING;
+      return this.currentChat.status === maassConstants.STATUS_TYPE.PENDING;
     },
     isResolved() {
-      return this.currentChat.status === wootConstants.STATUS_TYPE.RESOLVED;
+      return this.currentChat.status === maassConstants.STATUS_TYPE.RESOLVED;
     },
     isSnoozed() {
-      return this.currentChat.status === wootConstants.STATUS_TYPE.SNOOZED;
+      return this.currentChat.status === maassConstants.STATUS_TYPE.SNOOZED;
     },
     buttonClass() {
       if (this.isPending) return 'primary';
@@ -202,7 +202,7 @@ export default {
         );
         const lastConversationIndex = allConversations.length - 1;
         try {
-          await this.toggleStatus(wootConstants.STATUS_TYPE.RESOLVED);
+          await this.toggleStatus(maassConstants.STATUS_TYPE.RESOLVED);
         } catch (error) {
           // error
         }

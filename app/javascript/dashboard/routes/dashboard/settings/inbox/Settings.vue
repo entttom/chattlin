@@ -4,14 +4,14 @@
       :header-image="inbox.avatarUrl"
       :header-title="inboxName"
     >
-      <woot-tabs :index="selectedTabIndex" @change="onTabChange">
-        <woot-tabs-item
+      <maass-tabs :index="selectedTabIndex" @change="onTabChange">
+        <maass-tabs-item
           v-for="tab in tabs"
           :key="tab.key"
           :name="tab.name"
           :show-badge="false"
         />
-      </woot-tabs>
+      </maass-tabs>
     </setting-intro-banner>
 
     <div v-if="selectedTabKey === 'inbox_settings'" class="settings--content">
@@ -19,20 +19,20 @@
         :title="$t('INBOX_MGMT.SETTINGS_POPUP.INBOX_UPDATE_TITLE')"
         :sub-title="$t('INBOX_MGMT.SETTINGS_POPUP.INBOX_UPDATE_SUB_TEXT')"
       >
-        <woot-avatar-uploader
+        <maass-avatar-uploader
           :label="$t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.CHANNEL_AVATAR.LABEL')"
           :src="avatarUrl"
           delete-avatar
           @change="handleImageUpload"
           @onAvatarDelete="handleAvatarDelete"
         />
-        <woot-input
+        <maass-input
           v-model.trim="selectedInboxName"
           class="medium-9 columns"
           :label="inboxNameLabel"
           :placeholder="inboxNamePlaceHolder"
         />
-        <woot-input
+        <maass-input
           v-if="isAPIInbox"
           v-model.trim="webhookUrl"
           class="medium-9 columns"
@@ -50,7 +50,7 @@
           "
           @blur="$v.webhookUrl.$touch"
         />
-        <woot-input
+        <maass-input
           v-if="isAWebWidgetInbox"
           v-model.trim="channelWebsiteUrl"
           class="medium-9 columns"
@@ -59,7 +59,7 @@
             $t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.CHANNEL_DOMAIN.PLACEHOLDER')
           "
         />
-        <woot-input
+        <maass-input
           v-if="isAWebWidgetInbox"
           v-model.trim="channelWelcomeTitle"
           class="medium-9 columns"
@@ -73,7 +73,7 @@
           "
         />
 
-        <woot-input
+        <maass-input
           v-if="isAWebWidgetInbox"
           v-model.trim="channelWelcomeTagline"
           class="medium-9 columns"
@@ -89,7 +89,7 @@
 
         <label v-if="isAWebWidgetInbox" class="medium-9 columns">
           {{ $t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.WIDGET_COLOR.LABEL') }}
-          <woot-color-picker v-model="inbox.widget_color" />
+          <maass-color-picker v-model="inbox.widget_color" />
         </label>
 
         <label class="medium-9 columns">
@@ -229,7 +229,7 @@
           </label>
         </div>
 
-        <woot-submit-button
+        <maass-submit-button
           v-if="isAPIInbox"
           type="submit"
           :disabled="$v.webhookUrl.$invalid"
@@ -237,7 +237,7 @@
           :loading="uiFlags.isUpdatingInbox"
           @click="updateInbox"
         />
-        <woot-submit-button
+        <maass-submit-button
           v-else
           type="submit"
           :button-text="$t('INBOX_MGMT.SETTINGS_POPUP.UPDATE')"
@@ -271,7 +271,7 @@
           @select="$v.selectedAgents.$touch"
         />
 
-        <woot-submit-button
+        <maass-submit-button
           :button-text="$t('INBOX_MGMT.SETTINGS_POPUP.UPDATE')"
           :loading="isAgentListUpdating"
           @click="updateAgents"
@@ -284,10 +284,10 @@
           :title="$t('INBOX_MGMT.ADD.TWILIO.API_CALLBACK.TITLE')"
           :sub-title="$t('INBOX_MGMT.ADD.TWILIO.API_CALLBACK.SUBTITLE')"
         >
-          <woot-code
+          <maass-code
             :script="inbox.callback_webhook_url"
             lang="html"
-          ></woot-code>
+          ></maass-code>
         </settings-section>
       </div>
       <div v-else-if="isALineChannel" class="settings--content">
@@ -295,10 +295,10 @@
           :title="$t('INBOX_MGMT.ADD.LINE_CHANNEL.API_CALLBACK.TITLE')"
           :sub-title="$t('INBOX_MGMT.ADD.LINE_CHANNEL.API_CALLBACK.SUBTITLE')"
         >
-          <woot-code
+          <maass-code
             :script="inbox.callback_webhook_url"
             lang="html"
-          ></woot-code>
+          ></maass-code>
         </settings-section>
       </div>
       <div v-else-if="isAWebWidgetInbox">
@@ -307,14 +307,14 @@
             :title="$t('INBOX_MGMT.SETTINGS_POPUP.MESSENGER_HEADING')"
             :sub-title="$t('INBOX_MGMT.SETTINGS_POPUP.MESSENGER_SUB_HEAD')"
           >
-            <woot-code :script="inbox.web_widget_script"></woot-code>
+            <maass-code :script="inbox.web_widget_script"></maass-code>
           </settings-section>
 
           <settings-section
             :title="$t('INBOX_MGMT.SETTINGS_POPUP.HMAC_VERIFICATION')"
             :sub-title="$t('INBOX_MGMT.SETTINGS_POPUP.HMAC_DESCRIPTION')"
           >
-            <woot-code :script="inbox.hmac_token"></woot-code>
+            <maass-code :script="inbox.hmac_token"></maass-code>
           </settings-section>
           <settings-section
             :title="$t('INBOX_MGMT.SETTINGS_POPUP.HMAC_MANDATORY_VERIFICATION')"
@@ -341,7 +341,7 @@
           :title="$t('INBOX_MGMT.SETTINGS_POPUP.INBOX_IDENTIFIER')"
           :sub-title="$t('INBOX_MGMT.SETTINGS_POPUP.INBOX_IDENTIFIER_SUB_TEXT')"
         >
-          <woot-code :script="inbox.inbox_identifier"></woot-code>
+          <maass-code :script="inbox.inbox_identifier"></maass-code>
         </settings-section>
       </div>
       <div v-else-if="isAnEmailChannel">
@@ -350,7 +350,7 @@
             :title="$t('INBOX_MGMT.SETTINGS_POPUP.FORWARD_EMAIL_TITLE')"
             :sub-title="$t('INBOX_MGMT.SETTINGS_POPUP.FORWARD_EMAIL_SUB_TEXT')"
           >
-            <woot-code :script="inbox.forward_to_email"></woot-code>
+            <maass-code :script="inbox.forward_to_email"></maass-code>
           </settings-section>
         </div>
       </div>

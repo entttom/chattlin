@@ -1,6 +1,6 @@
 <template>
-  <woot-modal :show.sync="show" :on-close="onClose">
-    <woot-modal-header
+  <maass-modal :show.sync="show" :on-close="onClose">
+    <maass-modal-header
       :header-title="$t('MERGE_CONTACTS.TITLE')"
       :header-content="$t('MERGE_CONTACTS.DESCRIPTION')"
     />
@@ -14,7 +14,7 @@
       @cancel="onClose"
       @submit="onMergeContacts"
     />
-  </woot-modal>
+  </maass-modal>
 </template>
 
 <script>

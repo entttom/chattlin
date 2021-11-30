@@ -1,17 +1,17 @@
 <template>
   <div class="column content-box">
-    <woot-button
+    <maass-button
       color-scheme="success"
       class-names="button--fixed-right-top"
       icon="ion-android-add-circle"
       @click="openAddPopup"
     >
       {{ buttonText }}
-    </woot-button>
+    </maass-button>
     <campaign />
-    <woot-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
+    <maass-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
       <add-campaign @on-close="hideAddPopup" />
-    </woot-modal>
+    </maass-modal>
   </div>
 </template>
 

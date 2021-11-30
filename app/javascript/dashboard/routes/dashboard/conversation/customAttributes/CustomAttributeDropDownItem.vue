@@ -1,9 +1,9 @@
 <template>
-  <woot-dropdown-item>
-    <woot-button variant="clear" @click="onClick">
+  <maass-dropdown-item>
+    <maass-button variant="clear" @click="onClick">
       <span class="label-text" :title="title">{{ title }}</span>
-    </woot-button>
-  </woot-dropdown-item>
+    </maass-button>
+  </maass-dropdown-item>
 </template>
 
 <script>

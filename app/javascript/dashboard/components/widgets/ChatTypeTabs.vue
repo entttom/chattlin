@@ -1,15 +1,15 @@
 <template>
-  <woot-tabs :index="activeTabIndex" @change="onTabChange">
-    <woot-tabs-item
+  <maass-tabs :index="activeTabIndex" @change="onTabChange">
+    <maass-tabs-item
       v-for="item in items"
       :key="item.key"
       :name="item.name"
       :count="item.count"
     />
-  </woot-tabs>
+  </maass-tabs>
 </template>
 <script>
-import wootConstants from '../../constants';
+import maassConstants from '../../constants';
 import eventListenerMixins from 'shared/mixins/eventListenerMixins';
 import { hasPressedAltAndNKey } from 'shared/helpers/KeyboardHelpers';
 
@@ -22,7 +22,7 @@ export default {
     },
     activeTab: {
       type: String,
-      default: wootConstants.ASSIGNEE_TYPE.ME,
+      default: maassConstants.ASSIGNEE_TYPE.ME,
     },
   },
   computed: {
@@ -33,7 +33,7 @@ export default {
   methods: {
     handleKeyEvents(e) {
       if (hasPressedAltAndNKey(e)) {
-        if (this.activeTab === wootConstants.ASSIGNEE_TYPE.ALL) {
+        if (this.activeTab === maassConstants.ASSIGNEE_TYPE.ALL) {
           this.onTabChange(0);
         } else {
           this.onTabChange(this.activeTabIndex + 1);

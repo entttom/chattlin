@@ -117,7 +117,7 @@ export default {
           sortBy: this.sortConfig.name || undefined,
           width: 300,
           renderBodyCell: ({ row }) => (
-            <woot-button
+            <maass-button
               variant="clear"
               onClick={() => this.onClickContact(row.id)}
             >
@@ -142,7 +142,7 @@ export default {
                   </button>
                 </div>
               </div>
-            </woot-button>
+            </maass-button>
           ),
         },
         {

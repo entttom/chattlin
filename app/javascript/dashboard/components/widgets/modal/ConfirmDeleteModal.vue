@@ -1,8 +1,8 @@
 <template>
   <modal :show.sync="show" :on-close="closeModal">
-    <woot-modal-header :header-title="title" :header-content="message" />
+    <maass-modal-header :header-title="title" :header-content="message" />
     <form @submit.prevent="onConfirm">
-      <woot-input
+      <maass-input
         v-model="value"
         type="text"
         :class="{ error: $v.value.$error }"
@@ -10,12 +10,12 @@
         @blur="$v.value.$touch"
       />
       <div class="button-wrapper">
-        <woot-button color-scheme="alert" :is-disabled="$v.value.$invalid">
+        <maass-button color-scheme="alert" :is-disabled="$v.value.$invalid">
           {{ confirmText }}
-        </woot-button>
-        <woot-button class="clear" @click.prevent="closeModal">
+        </maass-button>
+        <maass-button class="clear" @click.prevent="closeModal">
           {{ rejectText }}
-        </woot-button>
+        </maass-button>
       </div>
     </form>
   </modal>

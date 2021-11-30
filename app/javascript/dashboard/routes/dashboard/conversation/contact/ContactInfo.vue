@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="contact-actions">
-        <woot-button
+        <maass-button
           v-if="showNewMessage"
           v-tooltip="$t('CONTACT_PANEL.NEW_MESSAGE')"
           title="$t('CONTACT_PANEL.NEW_MESSAGE')"
@@ -66,7 +66,7 @@
           size="small expanded"
           @click="toggleConversationModal"
         />
-        <woot-button
+        <maass-button
           v-tooltip="$t('EDIT_CONTACT.BUTTON_LABEL')"
           title="$t('EDIT_CONTACT.BUTTON_LABEL')"
           class="edit-contact"
@@ -75,7 +75,7 @@
           size="small expanded"
           @click="toggleEditModal"
         />
-        <woot-button
+        <maass-button
           v-if="isAdmin"
           v-tooltip="$t('CONTACT_PANEL.MERGE_CONTACT')"
           title="$t('CONTACT_PANEL.MERGE_CONTACT')"
@@ -87,7 +87,7 @@
           :disabled="uiFlags.isMerging"
           @click="openMergeModal"
         />
-        <woot-button
+        <maass-button
           v-if="isAdmin"
           v-tooltip="$t('DELETE_CONTACT.BUTTON_LABEL')"
           title="$t('DELETE_CONTACT.BUTTON_LABEL')"
@@ -119,7 +119,7 @@
         @close="toggleMergeModal"
       />
     </div>
-    <woot-confirm-delete-modal
+    <maass-confirm-delete-modal
       v-if="showDeleteModal"
       :show.sync="showDeleteModal"
       :title="$t('DELETE_CONTACT.CONFIRM.TITLE')"

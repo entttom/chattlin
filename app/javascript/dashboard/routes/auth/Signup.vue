@@ -13,7 +13,7 @@
     <div class="row align-center">
       <div class="small-12 medium-6 large-5 column">
         <form class="signup--box login-box" @submit.prevent="submit">
-          <woot-input
+          <maass-input
             v-model="credentials.fullName"
             :class="{ error: $v.credentials.fullName.$error }"
             :label="$t('REGISTER.FULL_NAME.LABEL')"
@@ -25,7 +25,7 @@
             "
             @blur="$v.credentials.fullName.$touch"
           />
-          <woot-input
+          <maass-input
             v-model.trim="credentials.email"
             type="email"
             :class="{ error: $v.credentials.email.$error }"
@@ -36,7 +36,7 @@
             "
             @blur="$v.credentials.email.$touch"
           />
-          <woot-input
+          <maass-input
             v-model="credentials.accountName"
             :class="{ error: $v.credentials.accountName.$error }"
             :label="$t('REGISTER.ACCOUNT_NAME.LABEL')"
@@ -48,7 +48,7 @@
             "
             @blur="$v.credentials.accountName.$touch"
           />
-          <woot-input
+          <maass-input
             v-model.trim="credentials.password"
             type="password"
             :class="{ error: $v.credentials.password.$error }"
@@ -62,7 +62,7 @@
             @blur="$v.credentials.password.$touch"
           />
 
-          <woot-input
+          <maass-input
             v-model.trim="credentials.confirmPassword"
             type="password"
             :class="{ error: $v.credentials.confirmPassword.$error }"
@@ -75,13 +75,13 @@
             "
             @blur="$v.credentials.confirmPassword.$touch"
           />
-          <woot-submit-button
+          <maass-submit-button
             :disabled="isSignupInProgress"
             :button-text="$t('REGISTER.SUBMIT')"
             :loading="isSignupInProgress"
             button-class="large expanded"
           >
-          </woot-submit-button>
+          </maass-submit-button>
           <p class="accept--terms" v-html="termsLink"></p>
         </form>
         <div class="column text-center sigin--footer">

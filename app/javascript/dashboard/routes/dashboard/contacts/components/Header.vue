@@ -17,16 +17,16 @@
             @keyup.enter="onSearchSubmit"
             @input="onInputSearch"
           />
-          <woot-button
+          <maass-button
             :is-loading="false"
             :class-names="searchButtonClass"
             @click="onSearchSubmit"
           >
             {{ $t('CONTACTS_PAGE.SEARCH_BUTTON') }}
-          </woot-button>
+          </maass-button>
         </div>
 
-        <woot-button
+        <maass-button
           color-scheme="success"
           icon="ion-android-add-circle"
           class="margin-right-small"
@@ -34,15 +34,15 @@
           @click="onToggleCreate"
         >
           {{ $t('CREATE_CONTACT.BUTTON_LABEL') }}
-        </woot-button>
+        </maass-button>
 
-        <woot-button
+        <maass-button
           color-scheme="info"
           icon="ion-android-upload"
           @click="onToggleImport"
         >
           {{ $t('IMPORT_CONTACTS.BUTTON_LABEL') }}
-        </woot-button>
+        </maass-button>
       </div>
     </div>
   </header>

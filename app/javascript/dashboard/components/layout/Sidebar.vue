@@ -55,7 +55,7 @@
       />
     </div>
 
-    <woot-key-shortcut-modal
+    <maass-key-shortcut-modal
       v-if="showShortcutModal"
       @close="closeKeyShortcutModal"
       @clickaway="closeKeyShortcutModal"
@@ -72,9 +72,9 @@
       @close-account-create-modal="closeCreateAccountModal"
     />
 
-    <woot-modal :show.sync="showAddLabelModal" :on-close="hideAddLabelPopup">
+    <maass-modal :show.sync="showAddLabelModal" :on-close="hideAddLabelPopup">
       <add-label-modal @close="hideAddLabelPopup" />
-    </woot-modal>
+    </maass-modal>
   </aside>
 </template>
 

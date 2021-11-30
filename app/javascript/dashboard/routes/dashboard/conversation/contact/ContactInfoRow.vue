@@ -7,7 +7,7 @@
         $t('CONTACT_PANEL.NOT_AVAILABLE')
       }}</span>
 
-      <woot-button
+      <maass-button
         v-if="showCopy"
         type="submit"
         variant="link"

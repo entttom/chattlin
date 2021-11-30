@@ -17,15 +17,15 @@
           <div class="small-2 column button-wrap">
             <div v-if="hasConnectedHooks">
               <div @click="$emit('delete', integration.hooks[0])">
-                <woot-button class="nice alert">
+                <maass-button class="nice alert">
                   {{ $t('INTEGRATION_APPS.DISCONNECT.BUTTON_TEXT') }}
-                </woot-button>
+                </maass-button>
               </div>
             </div>
             <div v-else>
-              <woot-button class="button nice" @click="$emit('add')">
+              <maass-button class="button nice" @click="$emit('add')">
                 {{ $t('INTEGRATION_APPS.CONNECT.BUTTON_TEXT') }}
-              </woot-button>
+              </maass-button>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@
         @keyup.esc="closeDropdownLabel"
       >
         <add-label @add="toggleLabels" />
-        <woot-label
+        <maass-label
           v-for="label in activeLabels"
           :key="label.id"
           :title="label.title"

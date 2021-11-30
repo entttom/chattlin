@@ -17,7 +17,7 @@
       </p>
     </div>
     <div class="small-2 column button-wrap">
-      <woot-label :title="labelText" :color-scheme="labelColor" />
+      <maass-label :title="labelText" :color-scheme="labelColor" />
     </div>
     <div class="small-2 column button-wrap">
       <router-link
@@ -27,9 +27,9 @@
           )
         "
       >
-        <woot-button icon="ion-gear-b">
+        <maass-button icon="ion-gear-b">
           {{ $t('INTEGRATION_APPS.CONFIGURE') }}
-        </woot-button>
+        </maass-button>
       </router-link>
     </div>
   </div>

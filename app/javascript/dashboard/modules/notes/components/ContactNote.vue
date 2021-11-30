@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="actions">
-        <woot-button
+        <maass-button
           v-tooltip="$t('NOTES.CONTENT_HEADER.DELETE')"
           variant="smooth"
           size="tiny"

@@ -12,7 +12,7 @@
         v-if="totalCount"
         class="primary button-group pagination-button-group"
       >
-        <woot-button
+        <maass-button
           size="small"
           variant="clear"
           color-scheme="secondary"
@@ -22,8 +22,8 @@
         >
           <i class="ion-chevron-left" />
           <i class="ion-chevron-left" />
-        </woot-button>
-        <woot-button
+        </maass-button>
+        <maass-button
           size="small"
           variant="clear"
           color-scheme="secondary"
@@ -31,16 +31,16 @@
           @click="onPrevPage"
         >
           <i class="ion-chevron-left" />
-        </woot-button>
-        <woot-button
+        </maass-button>
+        <maass-button
           size="small"
           variant="clear"
           color-scheme="secondary"
           @click.prevent
         >
           {{ currentPage }}
-        </woot-button>
-        <woot-button
+        </maass-button>
+        <maass-button
           size="small"
           variant="clear"
           color-scheme="secondary"
@@ -48,8 +48,8 @@
           @click="onNextPage"
         >
           <i class="ion-chevron-right" />
-        </woot-button>
-        <woot-button
+        </maass-button>
+        <maass-button
           size="small"
           variant="clear"
           color-scheme="secondary"
@@ -59,7 +59,7 @@
         >
           <i class="ion-chevron-right" />
           <i class="ion-chevron-right" />
-        </woot-button>
+        </maass-button>
       </div>
     </div>
   </footer>

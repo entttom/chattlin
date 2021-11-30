@@ -1,7 +1,7 @@
 <template>
-  <woot-modal :show.sync="show" :on-close="onCancel" modal-type="right-aligned">
+  <maass-modal :show.sync="show" :on-close="onCancel" modal-type="right-aligned">
     <div class="column content-box">
-      <woot-modal-header
+      <maass-modal-header
         :header-title="$t('CREATE_CONTACT.TITLE')"
         :header-content="$t('CREATE_CONTACT.DESC')"
       />
@@ -12,7 +12,7 @@
         @cancel="onCancel"
       />
     </div>
-  </woot-modal>
+  </maass-modal>
 </template>
 
 <script>

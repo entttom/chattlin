@@ -4,7 +4,7 @@
     class="selector-wrap"
     @keyup.esc="onCloseDropdown"
   >
-    <woot-button
+    <maass-button
       variant="hollow"
       color-scheme="secondary"
       class="selector-button"
@@ -36,7 +36,7 @@
           <i v-else class="icon ion-chevron-down" />
         </div>
       </div>
-    </woot-button>
+    </maass-button>
     <div
       :class="{ 'dropdown-pane--open': showSearchDropdown }"
       class="dropdown-pane"

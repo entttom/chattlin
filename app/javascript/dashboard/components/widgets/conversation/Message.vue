@@ -63,7 +63,7 @@
         target="_blank"
         rel="noopener noreferrer nofollow"
       >
-        <woot-thumbnail
+        <maass-thumbnail
           :src="sender.thumbnail"
           :username="sender.name"
           size="16px"
