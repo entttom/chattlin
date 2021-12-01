@@ -17,6 +17,13 @@ find . -type f -name "*.*" -print|xargs perl -i -pe 's#db:maas_prepare#db:maas_p
 cd deployment
 rename  's/maas/maas/' *
 cd ..
+cd app/javascript/dashboard/i18n/locale/
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#Woot#MaaS#g'
+cd ..
+cd ..
+cd ..
+cd ..
+cd .. 
 cp rebranding/public/*.png public/
 cp rebranding/public/brand-assets/*.svg public/brand-assets
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/chatwoot/devise-secure_password#https://github.com/chatwoot/devise-secure_password#g' 
