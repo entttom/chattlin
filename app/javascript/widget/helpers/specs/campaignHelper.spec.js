@@ -44,11 +44,13 @@ describe('#Campaigns Helper', () => {
               id: 1,
               timeOnPage: 3,
               url: 'https://www.maas.work/pricing',
+              triggerOnlyDuringBusinessHours: false,
             },
             {
               id: 2,
               timeOnPage: 6,
               url: 'https://www.maas.work/about',
+              triggerOnlyDuringBusinessHours: false,
             },
           ],
           currentURL: 'https://www.maas.work/about/',
@@ -58,8 +60,60 @@ describe('#Campaigns Helper', () => {
           id: 2,
           timeOnPage: 6,
           url: 'https://www.maas.work/about',
+          triggerOnlyDuringBusinessHours: false,
         },
       ]);
+    });
+    it('should return filtered campaigns if formatted campaigns are passed and business hours enabled', () => {
+      expect(
+        filterCampaigns({
+          campaigns: [
+            {
+              id: 1,
+              timeOnPage: 3,
+              url: 'https://www.maas.work/pricing',
+              triggerOnlyDuringBusinessHours: false,
+            },
+            {
+              id: 2,
+              timeOnPage: 6,
+              url: 'https://www.maas.work/about',
+              triggerOnlyDuringBusinessHours: true,
+            },
+          ],
+          currentURL: 'https://www.maas.work/about/',
+          isInBusinessHours: true,
+        })
+      ).toStrictEqual([
+        {
+          id: 2,
+          timeOnPage: 6,
+          url: 'https://www.maas.work/about',
+          triggerOnlyDuringBusinessHours: true,
+        },
+      ]);
+    });
+    it('should return empty campaigns if formatted campaigns are passed and business hours disabled', () => {
+      expect(
+        filterCampaigns({
+          campaigns: [
+            {
+              id: 1,
+              timeOnPage: 3,
+              url: 'https://www.maas.work/pricing',
+              triggerOnlyDuringBusinessHours: true,
+            },
+            {
+              id: 2,
+              timeOnPage: 6,
+              url: 'https://www.maas.work/about',
+              triggerOnlyDuringBusinessHours: true,
+            },
+          ],
+          currentURL: 'https://www.maas.work/about/',
+          isInBusinessHours: false,
+        })
+      ).toStrictEqual([]);
     });
   });
 });
