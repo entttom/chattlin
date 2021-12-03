@@ -23,6 +23,10 @@ cd ..
 cd ..
 cd ..
 cd ..
+cd ..
+cd config/locales/
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#Woot#MaaS#g'
+cd ..
 cd .. 
 cp rebranding/public/*.png public/
 cp rebranding/public/brand-assets/*.svg public/brand-assets
