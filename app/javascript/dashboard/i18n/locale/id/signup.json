@@ -2,7 +2,7 @@
   "REGISTER": {
     "TRY_WOOT": "Daftar akun",
     "TITLE": "Daftar",
-    "TERMS_ACCEPT": "Dengan mendaftar, Anda menyetujui <a href=\"https://www.maas.work/terms\">S&K</a> dan <a href=\"https://www.maas.work/privacy-policy\">Kebijakan Privasi</a>",
+    "TERMS_ACCEPT": "Dengan mendaftar, Anda menyetujui <a href=\"https://www.chattlin.com/terms\">S&K</a> dan <a href=\"https://www.chattlin.com/privacy-policy\">Kebijakan Privasi</a>",
     "ACCOUNT_NAME": {
       "LABEL": "Nama Akun",
       "PLACEHOLDER": "Masukkan nama akun. cth: Wayne Enterprises",
@@ -30,7 +30,7 @@
     },
     "API": {
       "SUCCESS_MESSAGE": "Pendaftaran Berhasil",
-      "ERROR_MESSAGE": "Tidak dapat terhubung ke Server MaaS, Silahkan coba lagi nanti"
+      "ERROR_MESSAGE": "Tidak dapat terhubung ke Server Chattlin, Silahkan coba lagi nanti"
     },
     "SUBMIT": "Kirim",
     "HAVE_AN_ACCOUNT": "Sudah punya akun?"

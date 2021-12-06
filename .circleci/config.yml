@@ -40,21 +40,21 @@ jobs:
 
       - restore_cache:
           keys:
-            - maas-bundle-{{ .Environment.CACHE_VERSION }}-{{ checksum "Gemfile.lock" }}
-            - maas-bundle
+            - chattlin-bundle-{{ .Environment.CACHE_VERSION }}-{{ checksum "Gemfile.lock" }}
+            - chattlin-bundle
 
       - run: bundle install --frozen --path ~/.bundle
       - save_cache:
           paths:
             - ~/.bundle
-          key: maas-bundle-{{ .Environment.CACHE_VERSION }}-{{ checksum "Gemfile.lock" }}
+          key: chattlin-bundle-{{ .Environment.CACHE_VERSION }}-{{ checksum "Gemfile.lock" }}
 
 
       # Only necessary if app uses webpacker or yarn in some other way
       - restore_cache:
           keys:
-            - maas-yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
-            - maas-yarn-
+            - chattlin-yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
+            - chattlin-yarn-
 
       - run:
           name: yarn
@@ -62,7 +62,7 @@ jobs:
 
       # Store yarn / webpacker cache
       - save_cache:
-          key: maas-yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
+          key: chattlin-yarn-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
 

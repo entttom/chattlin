@@ -53,14 +53,14 @@ export const sendRegistrationToServer = subscription => {
 };
 
 export const registerSubscription = (onSuccess = () => {}) => {
-  if (!window.maasConfig.vapidPublicKey) {
+  if (!window.chattlinConfig.vapidPublicKey) {
     return;
   }
   navigator.serviceWorker.ready
     .then(serviceWorkerRegistration =>
       serviceWorkerRegistration.pushManager.subscribe({
         userVisibleOnly: true,
-        applicationServerKey: window.maasConfig.vapidPublicKey,
+        applicationServerKey: window.chattlinConfig.vapidPublicKey,
       })
     )
     .then(sendRegistrationToServer)

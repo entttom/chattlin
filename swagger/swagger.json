@@ -1,19 +1,19 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "This is the API documentation for Maas server.",
+    "description": "This is the API documentation for Chattlin server.",
     "version": "1.0.0",
-    "title": "Maas",
-    "termsOfService": "https://www.maas.work/terms-of-service/",
+    "title": "Chattlin",
+    "termsOfService": "https://www.chattlin.com/terms-of-service/",
     "contact": {
-      "email": "hello@maas.work"
+      "email": "hello@chattlin.com"
     },
     "license": {
       "name": "MIT License",
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "host": "app.maas.work",
+  "host": "app.chattlin.com",
   "basePath": null,
   "schemes": [
     "https"
@@ -1749,7 +1749,7 @@
         ],
         "operationId": "newConversation",
         "summary": "Create New Conversation",
-        "description": "Creating a conversation in maas requires a source id. \n\n Learn more about source_id: https://github.com/entttom/maas/wiki/Building-on-Top-of-Maas:-Importing-Existing-Contacts-and-Creating-Conversations",
+        "description": "Creating a conversation in chattlin requires a source id. \n\n Learn more about source_id: https://github.com/entttom/chattlin/wiki/Building-on-Top-of-Chattlin:-Importing-Existing-Contacts-and-Creating-Conversations",
         "security": [
           {
             "userApiKey": [
@@ -2737,7 +2737,7 @@
         ],
         "operationId": "conversationNewMessageAttachment",
         "summary": "Create New Message Attachment",
-        "description": "Create an attachment message. Refer to this discussion if you have any further doubts. https://github.com/entttom/maas/discussions/1809#discussioncomment-1211845",
+        "description": "Create an attachment message. Refer to this discussion if you have any further doubts. https://github.com/entttom/chattlin/discussions/1809#discussioncomment-1211845",
         "consumes": [
           "multipart/form-data"
         ],
@@ -3766,7 +3766,7 @@
             "busy",
             "offline"
           ],
-          "description": "The availability status of the agent computed by Maas."
+          "description": "The availability status of the agent computed by Chattlin."
         },
         "auto_offline": {
           "type": "boolean",
@@ -4068,7 +4068,7 @@
         },
         "pubsub_token": {
           "type": "string",
-          "description": "The token to be used to connect to maas websocket"
+          "description": "The token to be used to connect to chattlin websocket"
         }
       }
     },
@@ -4733,7 +4733,7 @@
     },
     "source_id": {
       "type": "string",
-      "description": "Id of the session for which the conversation is created.\n\n\n\n Source Ids can be obtained through contactable inboxes API or via generated.<br/><br/>Website: Maas generated string which can be obtained from webhook events. <br/> Phone Channels(Twilio): Phone number in e164 format <br/> Email Channels: Contact Email address <br/> API Channel: Any Random String"
+      "description": "Id of the session for which the conversation is created.\n\n\n\n Source Ids can be obtained through contactable inboxes API or via generated.<br/><br/>Website: Chattlin generated string which can be obtained from webhook events. <br/> Phone Channels(Twilio): Phone number in e164 format <br/> Email Channels: Contact Email address <br/> API Channel: Any Random String"
     },
     "conversation_id": {
       "in": "path",

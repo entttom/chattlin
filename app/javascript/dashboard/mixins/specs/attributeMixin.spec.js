@@ -87,7 +87,7 @@ describe('attributeMixin', () => {
     const wrapper = shallowMount(Component, { store, localVue });
     expect(wrapper.vm.attributeDisplayType('date')).toBe('text');
     expect(
-      wrapper.vm.attributeDisplayType('https://www.maas.work/pricing')
+      wrapper.vm.attributeDisplayType('https://www.chattlin.com/pricing')
     ).toBe('link');
     expect(wrapper.vm.attributeDisplayType(9988)).toBe('number');
   });
@@ -99,7 +99,7 @@ describe('attributeMixin', () => {
       mixins: [attributeMixin],
     };
     const wrapper = shallowMount(Component, { store, localVue });
-    expect(wrapper.vm.isAttributeLink('https://www.maas.work/pricing')).toBe(
+    expect(wrapper.vm.isAttributeLink('https://www.chattlin.com/pricing')).toBe(
       true
     );
   });

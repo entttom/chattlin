@@ -61,7 +61,7 @@ class Channel::WebWidget < ApplicationRecord
         g.async = true;
         s.parentNode.insertBefore(g,s);
         g.onload=function(){
-          window.maasSDK.run({
+          window.chattlinSDK.run({
             websiteToken: '#{website_token}',
             baseUrl: BASE_URL
           })

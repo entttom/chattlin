@@ -17,7 +17,7 @@ RSpec.describe Note, type: :model do
   describe 'validates_factory' do
     it 'creates valid note object' do
       note = create(:note)
-      expect(note.content).to eq 'Hey welcome to maas'
+      expect(note.content).to eq 'Hey welcome to chattlin'
     end
   end
 end

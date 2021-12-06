@@ -12,7 +12,7 @@
 %>
 <script>
 
-window.maasSettings = {
+window.chattlinSettings = {
   hideMessageBubble: false,
   position: 'left',
   locale: 'en',
@@ -28,17 +28,17 @@ window.maasSettings = {
   g.async = true;
   s.parentNode.insertBefore(g,s);
   g.onload=function(){
-    window.maasSDK.run({
+    window.chattlinSDK.run({
       websiteToken: '<%= @web_widget.website_token %>',
       baseUrl: BASE_URL
     })
   }
 })(document,"script");
 
-window.addEventListener('maas:ready', function() {
-  console.log(window.$maas);
+window.addEventListener('chattlin:ready', function() {
+  console.log(window.$chattlin);
   if (window.location.search.includes('setUser')) {
-    window.$maas.setUser('<%= user_id %>', {
+    window.$chattlin.setUser('<%= user_id %>', {
       identifier_hash: '<%= user_hash %>',
       email: 'jane@example.com',
       name: 'Jane Doe',

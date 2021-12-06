@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Kirjaudu sisään Maasiin",
+    "TITLE": "Kirjaudu sisään Chattliniin",
     "EMAIL": {
       "LABEL": "Sähköposti",
       "PLACEHOLDER": "Sähköposti, esim: someone@example.fi"
@@ -11,7 +11,7 @@
     },
     "API": {
       "SUCCESS_MESSAGE": "Kirjautuminen Onnistui",
-      "ERROR_MESSAGE": "Yhteyden muodostaminen MaaS-palvelimelle ei onnistunut, yritä myöhemmin uudelleen",
+      "ERROR_MESSAGE": "Yhteyden muodostaminen Chattlin-palvelimelle ei onnistunut, yritä myöhemmin uudelleen",
       "UNAUTH": "Käyttäjätunnus / salasana virheellinen. Yritä uudelleen"
     },
     "FORGOT_PASSWORD": "Salasana unohtunut?",

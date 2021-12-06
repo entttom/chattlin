@@ -161,7 +161,7 @@ export default {
       if (window.fbSDKLoaded === undefined) {
         window.fbAsyncInit = () => {
           FB.init({
-            appId: window.maasConfig.fbAppId,
+            appId: window.chattlinConfig.fbAppId,
             xfbml: true,
             version: 'v7.0',
             status: true,

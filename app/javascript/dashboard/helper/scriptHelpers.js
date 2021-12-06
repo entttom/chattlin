@@ -1,7 +1,7 @@
 import posthog from 'posthog-js';
 
-export const MAAS_SET_USER = 'MAAS_SET_USER';
-export const MAAS_RESET = 'MAAS_RESET';
+export const CHATTLIN_SET_USER = 'CHATTLIN_SET_USER';
+export const CHATTLIN_RESET = 'CHATTLIN_RESET';
 
 export const ANALYTICS_IDENTITY = 'ANALYTICS_IDENTITY';
 export const ANALYTICS_RESET = 'ANALYTICS_RESET';
@@ -20,21 +20,21 @@ export const initializeAnalyticsEvents = () => {
   });
 };
 
-export const initializeMaasEvents = () => {
-  window.bus.$on(MAAS_RESET, () => {
-    if (window.$maas) {
-      window.$maas.reset();
+export const initializeChattlinEvents = () => {
+  window.bus.$on(CHATTLIN_RESET, () => {
+    if (window.$chattlin) {
+      window.$chattlin.reset();
     }
   });
-  window.bus.$on(MAAS_SET_USER, ({ user }) => {
-    if (window.$maas) {
-      window.$maas.setUser(user.email, {
+  window.bus.$on(CHATTLIN_SET_USER, ({ user }) => {
+    if (window.$chattlin) {
+      window.$chattlin.setUser(user.email, {
         avatar_url: user.avatar_url,
         email: user.email,
         identifier_hash: user.hmac_identifier,
         name: user.name,
       });
-      window.$maas.setCustomAttributes({
+      window.$chattlin.setCustomAttributes({
         signedUpAt: user.created_at,
         cloudCustomer: 'true',
       });

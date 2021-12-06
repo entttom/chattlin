@@ -29,7 +29,7 @@ class Api::V1::AccountsController < Api::BaseController
   end
 
   def show
-    @latest_maas_version = ::Redis::Alfred.get(::Redis::Alfred::LATEST_MAAS_VERSION)
+    @latest_chattlin_version = ::Redis::Alfred.get(::Redis::Alfred::LATEST_CHATTLIN_VERSION)
     render 'api/v1/accounts/show.json'
   end
 

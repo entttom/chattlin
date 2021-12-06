@@ -39,13 +39,13 @@ describe('#buildPopoutURL', () => {
   it('returns popout URL', () => {
     expect(
       buildPopoutURL({
-        origin: 'https://maas.work',
+        origin: 'https://chattlin.com',
         conversationCookie: 'random-jwt-token',
         websiteToken: 'random-website-token',
         locale: 'ar',
       })
     ).toEqual(
-      'https://maas.work/widget?cw_conversation=random-jwt-token&website_token=random-website-token&locale=ar'
+      'https://chattlin.com/widget?cw_conversation=random-jwt-token&website_token=random-website-token&locale=ar'
     );
   });
 });

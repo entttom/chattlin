@@ -26,7 +26,7 @@ describe('accountSelctor', () => {
     accounts: [
       {
         id: 1,
-        name: 'Maas',
+        name: 'Chattlin',
         role: 'administrator',
       },
       {

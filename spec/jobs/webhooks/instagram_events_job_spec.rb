@@ -9,7 +9,7 @@ describe Webhooks::InstagramEventsJob do
   end
 
   let!(:account) { create(:account) }
-  let!(:instagram_channel) { create(:channel_instagram_fb_page, account: account, instagram_id: 'maas-app-user-id-1') }
+  let!(:instagram_channel) { create(:channel_instagram_fb_page, account: account, instagram_id: 'chattlin-app-user-id-1') }
   let!(:instagram_inbox) { create(:inbox, channel: instagram_channel, account: account, greeting_enabled: false) }
   let!(:dm_params) { build(:instagram_message_create_event).with_indifferent_access }
   let!(:test_params) { build(:instagram_test_text_event).with_indifferent_access }
@@ -24,7 +24,7 @@ describe Webhooks::InstagramEventsJob do
             name: 'Jane',
             id: 'Sender-id-1',
             account_id: instagram_inbox.account_id,
-            profile_pic: 'https://maas-assets.local/sample.png'
+            profile_pic: 'https://chattlin-assets.local/sample.png'
           }.with_indifferent_access
         )
         instagram_webhook.perform_now(dm_params[:entry])
@@ -43,7 +43,7 @@ describe Webhooks::InstagramEventsJob do
             name: 'Jane',
             id: 'Sender-id-1',
             account_id: instagram_inbox.account_id,
-            profile_pic: 'https://maas-assets.local/sample.png'
+            profile_pic: 'https://chattlin-assets.local/sample.png'
           }.with_indifferent_access
         )
         instagram_webhook.perform_now(test_params[:entry])

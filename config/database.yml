@@ -7,18 +7,18 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV.fetch('POSTGRES_DATABASE', 'maas_dev') %>
+  database: <%= ENV.fetch('POSTGRES_DATABASE', 'chattlin_dev') %>
   username: <%= ENV.fetch('POSTGRES_USERNAME', 'postgres') %>
   password: <%= ENV.fetch('POSTGRES_PASSWORD', '') %>
 
 test:
   <<: *default
-  database: <%= ENV.fetch('POSTGRES_DATABASE', 'maas_test') %>
+  database: <%= ENV.fetch('POSTGRES_DATABASE', 'chattlin_test') %>
   username: <%= ENV.fetch('POSTGRES_USERNAME', 'postgres') %>
   password: <%= ENV.fetch('POSTGRES_PASSWORD', '') %>
 
 production:
   <<: *default
-  database: <%= ENV.fetch('POSTGRES_DATABASE', 'maas_production') %>
-  username: <%= ENV.fetch('POSTGRES_USERNAME', 'maas_prod') %>
-  password: <%= ENV.fetch('POSTGRES_PASSWORD', 'maas_prod') %>
+  database: <%= ENV.fetch('POSTGRES_DATABASE', 'chattlin_production') %>
+  username: <%= ENV.fetch('POSTGRES_USERNAME', 'chattlin_prod') %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD', 'chattlin_prod') %>

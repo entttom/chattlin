@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe SupportMailbox, type: :mailbox do
   include ActionMailbox::TestHelper
 
-  describe 'when a maas notification email is received' do
+  describe 'when a chattlin notification email is received' do
     let(:account) { create(:account) }
-    let!(:channel_email) { create(:channel_email, email: 'sojan@maas.work', account: account) }
+    let!(:channel_email) { create(:channel_email, email: 'sojan@chattlin.com', account: account) }
     let(:notification_mail) { create_inbound_email_from_fixture('notification.eml') }
     let(:described_subject) { described_class.receive notification_mail }
     let(:conversation) { Conversation.where(inbox_id: channel_email.inbox).last }
@@ -108,7 +108,7 @@ RSpec.describe SupportMailbox, type: :mailbox do
 
       before do
         # this email is hardcoded eml fixture file that's why we are updating this
-        channel_email.email = 'support@maas.work'
+        channel_email.email = 'support@chattlin.com'
         channel_email.save
       end
 

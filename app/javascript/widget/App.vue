@@ -77,7 +77,7 @@ export default {
     },
   },
   mounted() {
-    const { websiteToken, locale } = window.maasWebChannel;
+    const { websiteToken, locale } = window.chattlinWebChannel;
     this.setLocale(locale);
     if (this.isIFrame) {
       this.registerListeners();
@@ -94,7 +94,7 @@ export default {
       this.sendRNWebViewLoadedEvent();
     }
     this.$store.dispatch('conversationAttributes/getAttributes');
-    this.setWidgetColor(window.maasWebChannel);
+    this.setWidgetColor(window.chattlinWebChannel);
     this.registerUnreadEvents();
     this.registerCampaignEvents();
   },
@@ -129,7 +129,7 @@ export default {
       });
     },
     setLocale(locale) {
-      const { enabledLanguages } = window.maasWebChannel;
+      const { enabledLanguages } = window.chattlinWebChannel;
       if (enabledLanguages.some(lang => lang.iso_639_1_code === locale)) {
         this.$root.$i18n.locale = locale;
       }
@@ -168,7 +168,7 @@ export default {
         }
       });
       bus.$on('execute-campaign', campaignId => {
-        const { websiteToken } = window.maasWebChannel;
+        const { websiteToken } = window.chattlinWebChannel;
         this.executeCampaign({ campaignId, websiteToken });
       });
     },
@@ -220,7 +220,7 @@ export default {
       this.$store.dispatch('events/create', { name: eventName });
     },
     registerListeners() {
-      const { websiteToken } = window.maasWebChannel;
+      const { websiteToken } = window.chattlinWebChannel;
       window.addEventListener('message', e => {
         if (!IFrameHelper.isAValidEvent(e)) {
           return;
@@ -290,7 +290,7 @@ export default {
         event: 'loaded',
         config: {
           authToken: window.authToken,
-          channelConfig: window.maasWebChannel,
+          channelConfig: window.chattlinWebChannel,
         },
       });
     },
@@ -299,7 +299,7 @@ export default {
         event: 'loaded',
         config: {
           authToken: window.authToken,
-          channelConfig: window.maasWebChannel,
+          channelConfig: window.chattlinWebChannel,
         },
       });
     },

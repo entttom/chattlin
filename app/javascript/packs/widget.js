@@ -29,7 +29,7 @@ window.onload = () => {
 
   window.actionCable = new ActionCableConnector(
     window.WOOT_WIDGET,
-    window.maasPubsubToken
+    window.chattlinPubsubToken
   );
   getAlertAudio();
 };

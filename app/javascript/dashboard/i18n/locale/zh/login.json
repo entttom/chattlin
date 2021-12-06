@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "登录到Maas",
+    "TITLE": "登录到Chattlin",
     "EMAIL": {
       "LABEL": "Email",
       "PLACEHOLDER": "电子邮址 例如：somone@example.com"

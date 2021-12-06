@@ -22,7 +22,7 @@ import {
 } from './bubbleHelpers';
 import { dispatchWindowEvent } from 'shared/helpers/CustomEventHelper';
 
-const EVENT_NAME = 'maas:ready';
+const EVENT_NAME = 'chattlin:ready';
 
 export const IFrameHelper = {
   getUrl({ baseUrl, websiteToken }) {
@@ -42,11 +42,11 @@ export const IFrameHelper = {
     }
     iframe.src = widgetUrl;
 
-    iframe.id = 'maas_live_chat_widget';
+    iframe.id = 'chattlin_live_chat_widget';
     iframe.style.visibility = 'hidden';
 
-    let holderClassName = `woot-widget-holder woot--hide woot-elements--${window.$maas.position}`;
-    if (window.$maas.hideMessageBubble) {
+    let holderClassName = `woot-widget-holder woot--hide woot-elements--${window.$chattlin.position}`;
+    if (window.$chattlin.hideMessageBubble) {
       holderClassName += ` woot-widget--without-bubble`;
     }
     addClass(widgetHolder, holderClassName);
@@ -56,12 +56,12 @@ export const IFrameHelper = {
     IFrameHelper.initWindowSizeListener();
     IFrameHelper.preventDefaultScroll();
   },
-  getAppFrame: () => document.getElementById('maas_live_chat_widget'),
+  getAppFrame: () => document.getElementById('chattlin_live_chat_widget'),
   getBubbleHolder: () => document.getElementsByClassName('woot--bubble-holder'),
   sendMessage: (key, value) => {
     const element = IFrameHelper.getAppFrame();
     element.contentWindow.postMessage(
-      `maas-widget:${JSON.stringify({ event: key, ...value })}`,
+      `chattlin-widget:${JSON.stringify({ event: key, ...value })}`,
       '*'
     );
   },
@@ -69,11 +69,11 @@ export const IFrameHelper = {
     window.onmessage = e => {
       if (
         typeof e.data !== 'string' ||
-        e.data.indexOf('maas-widget:') !== 0
+        e.data.indexOf('chattlin-widget:') !== 0
       ) {
         return;
       }
-      const message = JSON.parse(e.data.replace('maas-widget:', ''));
+      const message = JSON.parse(e.data.replace('chattlin-widget:', ''));
       if (typeof IFrameHelper.events[message.event] === 'function') {
         IFrameHelper.events[message.event](message);
       }
@@ -112,29 +112,29 @@ export const IFrameHelper = {
         expires: 365,
         sameSite: 'Lax',
       });
-      window.$maas.hasLoaded = true;
+      window.$chattlin.hasLoaded = true;
       IFrameHelper.sendMessage('config-set', {
-        locale: window.$maas.locale,
-        position: window.$maas.position,
-        hideMessageBubble: window.$maas.hideMessageBubble,
-        showPopoutButton: window.$maas.showPopoutButton,
+        locale: window.$chattlin.locale,
+        position: window.$chattlin.position,
+        hideMessageBubble: window.$chattlin.hideMessageBubble,
+        showPopoutButton: window.$chattlin.showPopoutButton,
       });
       IFrameHelper.onLoad({
         widgetColor: message.config.channelConfig.widgetColor,
       });
       IFrameHelper.toggleCloseButton();
 
-      if (window.$maas.user) {
-        IFrameHelper.sendMessage('set-user', window.$maas.user);
+      if (window.$chattlin.user) {
+        IFrameHelper.sendMessage('set-user', window.$chattlin.user);
       }
       dispatchWindowEvent(EVENT_NAME);
     },
 
     setBubbleLabel(message) {
-      if (window.$maas.hideMessageBubble) {
+      if (window.$chattlin.hideMessageBubble) {
         return;
       }
-      setBubbleText(window.$maas.launcherTitle || message.label);
+      setBubbleText(window.$chattlin.launcherTitle || message.label);
     },
 
     toggleBubble: state => {
@@ -165,7 +165,7 @@ export const IFrameHelper = {
 
     setUnreadMode: message => {
       const { unreadMessageCount } = message;
-      const { isOpen } = window.$maas;
+      const { isOpen } = window.$chattlin;
       const toggleValue = true;
 
       if (!isOpen && unreadMessageCount > 0) {
@@ -177,7 +177,7 @@ export const IFrameHelper = {
     },
 
     setCampaignMode: () => {
-      const { isOpen } = window.$maas;
+      const { isOpen } = window.$chattlin;
       const toggleValue = true;
       if (!isOpen) {
         onBubbleClick({ toggleValue });
@@ -214,14 +214,14 @@ export const IFrameHelper = {
   onLoad: ({ widgetColor }) => {
     const iframe = IFrameHelper.getAppFrame();
     iframe.style.visibility = '';
-    iframe.setAttribute('id', `maas_live_chat_widget`);
+    iframe.setAttribute('id', `chattlin_live_chat_widget`);
 
     if (IFrameHelper.getBubbleHolder().length) {
       return;
     }
     createBubbleHolder();
     onLocationChangeListener();
-    if (!window.$maas.hideMessageBubble) {
+    if (!window.$chattlin.hideMessageBubble) {
       const chatIcon = createBubbleIcon({
         className: 'woot-widget-bubble',
         src: bubbleImg,
@@ -229,7 +229,7 @@ export const IFrameHelper = {
       });
 
       const closeIcon = closeBubble;
-      const closeIconclassName = `woot-elements--${window.$maas.position} woot-widget-bubble woot--close woot--hide`;
+      const closeIconclassName = `woot-elements--${window.$chattlin.position} woot-widget-bubble woot--close woot--hide`;
       addClass(closeIcon, closeIconclassName);
 
       chatIcon.style.background = widgetColor;

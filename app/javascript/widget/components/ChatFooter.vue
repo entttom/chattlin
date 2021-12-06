@@ -58,7 +58,7 @@ export default {
       return getContrastingTextColor(this.widgetColor);
     },
     hideReplyBox() {
-      const { csatSurveyEnabled } = window.maasWebChannel;
+      const { csatSurveyEnabled } = window.chattlinWebChannel;
       const { status } = this.conversationAttributes;
       return csatSurveyEnabled && status === 'resolved';
     },

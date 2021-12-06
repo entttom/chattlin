@@ -17,7 +17,7 @@ describe('#actions', () => {
         { commit },
         {
           websiteToken: 'XDsafmADasd',
-          currentURL: 'https://maas.work',
+          currentURL: 'https://chattlin.com',
           isInBusinessHours: true,
         }
       );
@@ -32,7 +32,7 @@ describe('#actions', () => {
             {
               id: 11,
               timeOnPage: '20',
-              url: 'https://maas.work',
+              url: 'https://chattlin.com',
               triggerOnlyDuringBusinessHours: false,
             },
           ],
@@ -46,7 +46,7 @@ describe('#actions', () => {
         { commit },
         {
           websiteToken: 'XDsafmADasd',
-          currentURL: 'https://www.maas.work',
+          currentURL: 'https://www.chattlin.com',
           isInBusinessHours: true,
         }
       );
@@ -59,7 +59,7 @@ describe('#actions', () => {
   describe('#initCampaigns', () => {
     const actionParams = {
       websiteToken: 'XDsafmADasd',
-      currentURL: 'https://maas.work',
+      currentURL: 'https://chattlin.com',
     };
     it('sends correct actions if campaigns are empty', async () => {
       await actions.initCampaigns(
@@ -81,7 +81,7 @@ describe('#actions', () => {
             {
               id: 11,
               timeOnPage: '20',
-              url: 'https://maas.work',
+              url: 'https://chattlin.com',
               triggerOnlyDuringBusinessHours: false,
             },
           ],

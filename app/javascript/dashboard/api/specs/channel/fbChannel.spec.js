@@ -13,12 +13,12 @@ describe('#FBChannel', () => {
   });
   describeWithAPIMock('API calls', context => {
     it('#create', () => {
-      fbChannel.create({ omniauthToken: 'ASFM131CSF@#@$', appId: 'maas' });
+      fbChannel.create({ omniauthToken: 'ASFM131CSF@#@$', appId: 'chattlin' });
       expect(context.axiosMock.post).toHaveBeenCalledWith(
         '/api/v1/callbacks/register_facebook_page',
         {
           omniauthToken: 'ASFM131CSF@#@$',
-          appId: 'maas',
+          appId: 'chattlin',
         }
       );
     });

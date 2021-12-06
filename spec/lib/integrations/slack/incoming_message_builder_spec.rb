@@ -11,7 +11,7 @@ describe Integrations::Slack::IncomingMessageBuilder do
   let!(:conversation) { create(:conversation, identifier: message_params[:event][:thread_ts]) }
 
   before do
-    stub_request(:get, 'https://maas-assets.local/sample.png').to_return(
+    stub_request(:get, 'https://chattlin-assets.local/sample.png').to_return(
       status: 200,
       body: File.read('spec/assets/sample.png'),
       headers: {}
@@ -42,7 +42,7 @@ describe Integrations::Slack::IncomingMessageBuilder do
         allow(builder).to receive(:sender).and_return(nil)
         builder.perform
         expect(conversation.messages.count).to eql(messages_count + 1)
-        expect(conversation.messages.last.content).to eql('this is test https://maas.work Hey @Sojan Test again')
+        expect(conversation.messages.last.content).to eql('this is test https://chattlin.com Hey @Sojan Test again')
       end
 
       it 'does not create message for invalid event type' do
@@ -68,7 +68,7 @@ describe Integrations::Slack::IncomingMessageBuilder do
         allow(builder).to receive(:sender).and_return(nil)
         builder.perform
         expect(conversation.messages.count).to eql(messages_count + 1)
-        expect(conversation.messages.last.content).to eql('this is test https://maas.work Hey @Sojan Test again')
+        expect(conversation.messages.last.content).to eql('this is test https://chattlin.com Hey @Sojan Test again')
         expect(conversation.messages.last.attachments).to be_any
       end
     end

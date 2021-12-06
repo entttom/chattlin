@@ -50,7 +50,7 @@ RSpec.describe '/api/v1/widget/conversations/toggle_typing', type: :request do
              website_token: web_widget.website_token,
              contact: {
                name: 'contact-name',
-               email: 'contact-email@maas.work'
+               email: 'contact-email@chattlin.com'
              },
              message: {
                content: 'This is a test message'
@@ -62,7 +62,7 @@ RSpec.describe '/api/v1/widget/conversations/toggle_typing', type: :request do
       json_response = JSON.parse(response.body)
 
       expect(json_response['id']).not_to eq nil
-      expect(json_response['contact']['email']).to eq 'contact-email@maas.work'
+      expect(json_response['contact']['email']).to eq 'contact-email@chattlin.com'
       expect(json_response['messages'][0]['content']).to eq 'This is a test message'
     end
   end

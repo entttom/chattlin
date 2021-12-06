@@ -2,7 +2,7 @@
   "REGISTER": {
     "TRY_WOOT": "Luo tili",
     "TITLE": "Rekisteröidy",
-    "TERMS_ACCEPT": "Rekisteröitymällä hyväksyt <a href=\"https://www.maas.work/terms\">käyttöehdot & säännöt</a> sekä <a href=\"https://www.maas.work/privacy-policy\">yksityisyydensuojan</a>",
+    "TERMS_ACCEPT": "Rekisteröitymällä hyväksyt <a href=\"https://www.chattlin.com/terms\">käyttöehdot & säännöt</a> sekä <a href=\"https://www.chattlin.com/privacy-policy\">yksityisyydensuojan</a>",
     "ACCOUNT_NAME": {
       "LABEL": "Tilin nimi",
       "PLACEHOLDER": "Anna käyttäjän nimi, esim: Wayne Enterprises",
@@ -30,7 +30,7 @@
     },
     "API": {
       "SUCCESS_MESSAGE": "Rekisteröinti onnistui",
-      "ERROR_MESSAGE": "Yhteyden muodostaminen MaaS-palvelimelle ei onnistunut, yritä myöhemmin uudelleen"
+      "ERROR_MESSAGE": "Yhteyden muodostaminen Chattlin-palvelimelle ei onnistunut, yritä myöhemmin uudelleen"
     },
     "SUBMIT": "Lähetä",
     "HAVE_AN_ACCOUNT": "Onko sinulla jo tili?"

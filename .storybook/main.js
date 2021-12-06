@@ -1,7 +1,7 @@
 const path = require('path');
 const resolve = require('../config/webpack/resolve');
 
-// Maas's webpack.config.js
+// Chattlin's webpack.config.js
 process.env.NODE_ENV = 'development';
 const custom = require('../config/webpack/environment');
 

@@ -9,9 +9,9 @@ describe('messageFormatterMixin', () => {
     };
     const wrapper = shallowMount(Component);
     const message =
-      '<b>Maas is an opensource tool. https://www.maas.work</b>';
+      '<b>Chattlin is an opensource tool. https://www.chattlin.com</b>';
     expect(wrapper.vm.getPlainText(message)).toMatch(
-      'Maas is an opensource tool. https://www.maas.work'
+      'Chattlin is an opensource tool. https://www.chattlin.com'
     );
   });
 
@@ -22,9 +22,9 @@ describe('messageFormatterMixin', () => {
     };
     const wrapper = shallowMount(Component);
     const message =
-      '<b style="max-width:100%">Maas is an opensource tool. https://www.maas.work</b><style type="css">.message{}</style>';
+      '<b style="max-width:100%">Chattlin is an opensource tool. https://www.chattlin.com</b><style type="css">.message{}</style>';
     expect(wrapper.vm.stripStyleCharacters(message)).toMatch(
-      '<b>Maas is an opensource tool. https://www.maas.work</b>'
+      '<b>Chattlin is an opensource tool. https://www.chattlin.com</b>'
     );
   });
 });

@@ -36,7 +36,7 @@ Share the server logs to debug the issue further
 
 **Environment**
 
-Describe whether you are using Maas Cloud (app.maas.work) or a self hosted installation of Maas. If you are using a self hosted installation of Maas describe the type of deployment (Docker/Linux VM installation/Heroku)
+Describe whether you are using Chattlin Cloud (app.chattlin.com) or a self hosted installation of Chattlin. If you are using a self hosted installation of Chattlin describe the type of deployment (Docker/Linux VM installation/Heroku)
 
 **Desktop (please complete the following information):**
  - OS: [e.g. iOS]

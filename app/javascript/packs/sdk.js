@@ -9,7 +9,7 @@ const ALLOWED_USER_ATTRIBUTES = [...REQUIRED_USER_KEYS, 'identifier_hash'];
 
 export const getUserCookieName = () => {
   const SET_USER_COOKIE_PREFIX = 'cw_user_';
-  const { websiteToken: websiteIdentifier } = window.$maas;
+  const { websiteToken: websiteIdentifier } = window.$chattlin;
   return `${SET_USER_COOKIE_PREFIX}${websiteIdentifier}`;
 };
 
@@ -27,18 +27,18 @@ export const hasUserKeys = user =>
   REQUIRED_USER_KEYS.reduce((acc, key) => acc || !!user[key], false);
 
 const runSDK = ({ baseUrl, websiteToken }) => {
-  const maasSettings = window.maasSettings || {};
-  window.$maas = {
+  const chattlinSettings = window.chattlinSettings || {};
+  window.$chattlin = {
     baseUrl,
     hasLoaded: false,
-    hideMessageBubble: maasSettings.hideMessageBubble || false,
+    hideMessageBubble: chattlinSettings.hideMessageBubble || false,
     isOpen: false,
-    position: maasSettings.position === 'left' ? 'left' : 'right',
+    position: chattlinSettings.position === 'left' ? 'left' : 'right',
     websiteToken,
-    locale: maasSettings.locale,
-    type: getBubbleView(maasSettings.type),
-    launcherTitle: maasSettings.launcherTitle || '',
-    showPopoutButton: maasSettings.showPopoutButton || false,
+    locale: chattlinSettings.locale,
+    type: getBubbleView(chattlinSettings.type),
+    launcherTitle: chattlinSettings.launcherTitle || '',
+    showPopoutButton: chattlinSettings.showPopoutButton || false,
 
     toggle(state) {
       IFrameHelper.events.toggleBubble(state);
@@ -62,8 +62,8 @@ const runSDK = ({ baseUrl, websiteToken }) => {
         return;
       }
 
-      window.$maas.identifier = identifier;
-      window.$maas.user = user;
+      window.$chattlin.identifier = identifier;
+      window.$chattlin.user = user;
       IFrameHelper.sendMessage('set-user', { identifier, user });
       Cookies.set(userCookieName, hashToBeStored, {
         expires: 365,
@@ -102,7 +102,7 @@ const runSDK = ({ baseUrl, websiteToken }) => {
     },
 
     reset() {
-      if (window.$maas.isOpen) {
+      if (window.$chattlin.isOpen) {
         IFrameHelper.events.toggleBubble();
       }
 
@@ -111,8 +111,8 @@ const runSDK = ({ baseUrl, websiteToken }) => {
 
       const iframe = IFrameHelper.getAppFrame();
       iframe.src = IFrameHelper.getUrl({
-        baseUrl: window.$maas.baseUrl,
-        websiteToken: window.$maas.websiteToken,
+        baseUrl: window.$chattlin.baseUrl,
+        websiteToken: window.$chattlin.websiteToken,
       });
     },
   };
@@ -123,6 +123,6 @@ const runSDK = ({ baseUrl, websiteToken }) => {
   });
 };
 
-window.maasSDK = {
+window.chattlinSDK = {
   run: runSDK,
 };

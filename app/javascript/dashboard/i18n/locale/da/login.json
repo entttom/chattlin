@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Log ind på Maas",
+    "TITLE": "Log ind på Chattlin",
     "EMAIL": {
       "LABEL": "E-mail",
       "PLACEHOLDER": "E-mail, fx: navn@eksempel.dk"
@@ -11,7 +11,7 @@
     },
     "API": {
       "SUCCESS_MESSAGE": "Login Lykkedes",
-      "ERROR_MESSAGE": "Kunne ikke oprette forbindelse til MaaS Server, Prøv igen senere",
+      "ERROR_MESSAGE": "Kunne ikke oprette forbindelse til Chattlin Server, Prøv igen senere",
       "UNAUTH": "Brugernavn / adgangskode forkert. Prøv igen"
     },
     "FORGOT_PASSWORD": "Glemt din adgangskode?",

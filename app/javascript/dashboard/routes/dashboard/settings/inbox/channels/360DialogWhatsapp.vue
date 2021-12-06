@@ -35,7 +35,7 @@
         <span>
           {{ $t('INBOX_MGMT.ADD.WHATSAPP.API_KEY.LABEL') }}
           <a
-            v-if="globalConfig.installationName === 'Maas'"
+            v-if="globalConfig.installationName === 'Chattlin'"
             href="https://hub.360dialog.com/lp/whatsapp/L9dj7aPA"
             target="_blank"
             rel="noopener noreferrer nofollow"

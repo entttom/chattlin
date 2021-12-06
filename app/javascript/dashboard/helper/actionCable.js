@@ -4,7 +4,7 @@ import { newMessageNotification } from 'shared/helpers/AudioNotificationHelper';
 
 class ActionCableConnector extends BaseActionCableConnector {
   constructor(app, pubsubToken) {
-    const { websocketURL = '' } = window.maasConfig || {};
+    const { websocketURL = '' } = window.chattlinConfig || {};
     super(app, pubsubToken, websocketURL);
     this.CancelTyping = [];
     this.events = {

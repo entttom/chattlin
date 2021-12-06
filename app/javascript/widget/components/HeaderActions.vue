@@ -45,7 +45,7 @@ export default {
       this.closeWindow();
       const {
         location: { origin },
-        maasWebChannel: { websiteToken },
+        chattlinWebChannel: { websiteToken },
         authToken,
       } = window;
 

@@ -2,7 +2,7 @@
   "REGISTER": {
     "TRY_WOOT": "Registrera ett konto",
     "TITLE": "Registrera",
-    "TERMS_ACCEPT": "Genom att registrera dig godkänner du våra <a href=\"https://www.maas.work/terms\">användarvillkor</a> och vår <a href=\"https://www.maas.work/privacy-policy\">sekretesspolicy</a>",
+    "TERMS_ACCEPT": "Genom att registrera dig godkänner du våra <a href=\"https://www.chattlin.com/terms\">användarvillkor</a> och vår <a href=\"https://www.chattlin.com/privacy-policy\">sekretesspolicy</a>",
     "ACCOUNT_NAME": {
       "LABEL": "Kontonamn",
       "PLACEHOLDER": "Ange ett kontonamn. t.ex.: Wayne Enterprises",
@@ -30,7 +30,7 @@
     },
     "API": {
       "SUCCESS_MESSAGE": "Registreringen lyckades",
-      "ERROR_MESSAGE": "Kunde inte ansluta till MaaS Server, försök igen senare"
+      "ERROR_MESSAGE": "Kunde inte ansluta till Chattlin Server, försök igen senare"
     },
     "SUBMIT": "Skicka",
     "HAVE_AN_ACCOUNT": "Har du redan ett konto?"

@@ -1,5 +1,5 @@
 # ref: https://github.com/jgorset/facebook-messenger#make-a-configuration-provider
-class MaasFbProvider < Facebook::Messenger::Configuration::Providers::Base
+class ChattlinFbProvider < Facebook::Messenger::Configuration::Providers::Base
   def valid_verify_token?(_verify_token)
     ENV['FB_VERIFY_TOKEN']
   end
@@ -15,13 +15,13 @@ class MaasFbProvider < Facebook::Messenger::Configuration::Providers::Base
   private
 
   def bot
-    Maas::Bot
+    Chattlin::Bot
   end
 end
 
 Rails.application.reloader.to_prepare do
   Facebook::Messenger.configure do |config|
-    config.provider = MaasFbProvider.new
+    config.provider = ChattlinFbProvider.new
   end
 
   Facebook::Messenger::Bot.on :message do |message|

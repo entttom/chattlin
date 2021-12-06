@@ -18,7 +18,7 @@ export default {
         account_id: 1,
         availability_status: 'offline',
         confirmed: true,
-        email: 'muhsin@maas.work',
+        email: 'muhsin@chattlin.com',
         available_name: 'Muhsin Keloth',
         id: 21,
         name: 'Muhsin Keloth',

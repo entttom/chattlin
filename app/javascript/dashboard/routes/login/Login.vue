@@ -128,7 +128,7 @@ export default {
       bus.$emit('newToastMessage', this.loginApi.message);
     },
     showSignupLink() {
-      return window.maasConfig.signupEnabled === 'true';
+      return window.chattlinConfig.signupEnabled === 'true';
     },
     login() {
       this.loginApi.showLoading = true;

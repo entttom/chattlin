@@ -1,31 +1,31 @@
 #!/bin/bash
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#git clone https://github.com/entttom/maas.git#git clone https://github.com/entttom/maas.git#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#cd maas#cd maas#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://raw.githubusercontent.com/entttom/maas/master/deployment/nginx_maas.conf#https://raw.githubusercontent.com/entttom/maas/master/deployment/nginx_maas.conf#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#maas.work#maas.work#g' 
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#git clone https://github.com/entttom/chattlin.git#git clone https://github.com/entttom/chattlin.git#g' 
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#cd chattlin#cd chattlin#g' 
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://raw.githubusercontent.com/entttom/maas/master/deployment/nginx_chattlin.conf#https://raw.githubusercontent.com/entttom/maas/master/deployment/nginx_chattlin.conf#g' 
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#chattlin.com#chattlin.com#g' 
 
 
 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#maas.work#maas.work#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#MaaS.work#MaaS.work#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#Maas#Maas#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#MAAS#MAAS#g' 
-#find . -type f -name "*.*" -print|xargs perl -i -pe 's#Woot#Maass#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#maas#maas#g'
-#find . -type f -name "*.*" -print|xargs perl -i -pe 's#woot#maass#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#db:maas_prepare#db:maas_prepare#g'  
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#chattlin.com#chattlin.com#g' 
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#Chattlin.com#Chattlin.com#g' 
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#Chattlin#Chattlin#g' 
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#CHATTLIN#CHATTLIN#g' 
+#find . -type f -name "*.*" -print|xargs perl -i -pe 's#Woot#Chattlin#g' 
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#chattlin#chattlin#g'
+#find . -type f -name "*.*" -print|xargs perl -i -pe 's#woot#chattlin#g' 
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#db:chattlin_prepare#db:chattlin_prepare#g'  
 cd deployment
-rename  's/maas/maas/' *
+rename  's/chattlin/chattlin/' *
 cd ..
 cd app/javascript/dashboard/i18n/locale/
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#Woot#MaaS#g'
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#Woot#Chattlin#g'
 cd ..
 cd ..
 cd ..
 cd ..
 cd ..
 cd config/locales/
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#Woot#MaaS#g'
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#Woot#Chattlin#g'
 cd ..
 cd .. 
 cp rebranding/public/*.png public/
@@ -39,15 +39,15 @@ find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/chatwo
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/chatwoot/ninja-keys#https://github.com/chatwoot/ninja-keys#g' 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#chatwoot/utils#chatwoot/utils#g' 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#entttom/maas"#entttom/maas"#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/entttom/maas#https://github.com/entttom/maas#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://chat.maas.work/brand-assets/logo_thumbnail.svg#https://chat.maas.work/brand-assets/logo_thumbnail.svg#g'
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/entttom/chattlin#https://github.com/entttom/chattlin#g' 
+#find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://app.chattlin.com/brand-assets/logo_thumbnail.svg#https://chat.maas.work/brand-assets/logo_thumbnail.svg#g'
 
-find . -name "*" -exec rename 's/Maas/Maas/g' {} ";"
-find . -name "*" -exec rename 's/maas/maas/g' {} ";"
-#find . -name "*" -exec rename 's/Woot/Maass/g' {} ";"
-#find . -name "*" -exec rename 's/woot/maass/g' {} ";"
+find . -name "*" -exec rename 's/Chattlin/Chattlin/g' {} ";"
+find . -name "*" -exec rename 's/chattlin/chattlin/g' {} ";"
+#find . -name "*" -exec rename 's/Woot/Chattlin/g' {} ";"
+#find . -name "*" -exec rename 's/woot/chattlin/g' {} ";"
 
-cp -r /Users/thomasentner/Library/Mobile\ Documents/com\~apple\~CloudDocs/MaaS/Maas\ Rebranding/master/ /Users/thomasentner/Documents/GitHub/maas/
+cp -r /Users/thomasentner/Library/Mobile\ Documents/com\~apple\~CloudDocs/MaaS/Chattlin\ Rebranding/master/ /Users/thomasentner/Documents/GitHub/maas/
 rm -rf ../master
 
 

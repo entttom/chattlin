@@ -4,9 +4,9 @@ class Internal::CheckNewVersionsJob < ApplicationJob
   def perform
     return unless Rails.env.production?
 
-    latest_version = MaasHub.latest_version
+    latest_version = ChattlinHub.latest_version
     return unless latest_version
 
-    ::Redis::Alfred.set(::Redis::Alfred::LATEST_MAAS_VERSION, latest_version)
+    ::Redis::Alfred.set(::Redis::Alfred::LATEST_CHATTLIN_VERSION, latest_version)
   end
 end

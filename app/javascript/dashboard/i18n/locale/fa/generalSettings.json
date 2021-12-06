@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "اکنون می‌توانید ایمیل‌ها را در دامنه سفارشی خود دریافت کنید."
       }
     },
-    "UPDATE_MAAS": "به روزرسانی%{latestMaasVersion} برای Maas در دسترس است. لطفا نمونه خود را به روز کنید."
+    "UPDATE_CHATTLIN": "به روزرسانی%{latestChattlinVersion} برای Chattlin در دسترس است. لطفا نمونه خود را به روز کنید."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -74,7 +74,7 @@
   },
   "NETWORK": {
     "NOTIFICATION": {
-      "TEXT": "قطع کردن Maas"
+      "TEXT": "قطع کردن Chattlin"
     },
     "BUTTON": {
       "REFRESH": "تازه کردن"

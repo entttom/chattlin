@@ -1,15 +1,15 @@
 swagger: "2.0"
 info:
-  description: This is the API documentation for Maas server.
+  description: This is the API documentation for Chattlin server.
   version: 1.0.0
-  title: Maas
-  termsOfService:	https://www.maas.work/terms-of-service/
+  title: Chattlin
+  termsOfService:	https://www.chattlin.com/terms-of-service/
   contact:
-    email: hello@maas.work
+    email: hello@chattlin.com
   license:
     name: MIT License
     url: https://opensource.org/licenses/MIT
-host: app.maas.work
+host: app.chattlin.com
 basePath:
 schemes:
   - https

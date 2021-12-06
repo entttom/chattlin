@@ -1,13 +1,13 @@
 export default {
   computed: {
     hostURL() {
-      return window.maasConfig.hostURL;
+      return window.chattlinConfig.hostURL;
     },
     vapidPublicKey() {
-      return window.maasConfig.vapidPublicKey;
+      return window.chattlinConfig.vapidPublicKey;
     },
     enabledLanguages() {
-      return window.maasConfig.enabledLanguages;
+      return window.chattlinConfig.enabledLanguages;
     },
   },
 };

@@ -10,7 +10,7 @@ RSpec.describe '/api/v1/widget/config', type: :request do
 
   describe 'POST /api/v1/widget/config' do
     let(:params) { { website_token: web_widget.website_token } }
-    let(:response_keys) { %w[maas_website_channel maas_widget_defaults contact auth_token global_config] }
+    let(:response_keys) { %w[chattlin_website_channel chattlin_widget_defaults contact auth_token global_config] }
 
     context 'with invalid website token' do
       it 'returns not found' do

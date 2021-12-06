@@ -158,9 +158,9 @@ export default {
     }),
     termsLink() {
       return this.$t('REGISTER.TERMS_ACCEPT')
-        .replace('https://www.maas.work/terms', this.globalConfig.termsURL)
+        .replace('https://www.chattlin.com/terms', this.globalConfig.termsURL)
         .replace(
-          'https://www.maas.work/privacy-policy',
+          'https://www.chattlin.com/privacy-policy',
           this.globalConfig.privacyURL
         );
     },

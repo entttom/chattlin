@@ -6,4 +6,4 @@ json.custom_email_domain_enabled @account.custom_email_domain_enabled
 json.support_email @account.support_email
 json.features @account.all_features
 json.auto_resolve_duration @account.auto_resolve_duration
-json.latest_maas_version @latest_maas_version
+json.latest_chattlin_version @latest_chattlin_version

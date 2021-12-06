@@ -158,13 +158,13 @@
     "REPORTS_TEAM": "Team"
   },
   "CREATE_ACCOUNT": {
-    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any Maas accounts. Please create a new account to continue.",
+    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any Chattlin accounts. Please create a new account to continue.",
     "NEW_ACCOUNT": "Nový účet",
     "SELECTOR_SUBTITLE": "Vytvořit nový účet",
     "API": {
       "SUCCESS_MESSAGE": "Účet byl úspěšně vytvořen",
       "EXIST_MESSAGE": "Účet již existuje",
-      "ERROR_MESSAGE": "Nelze se připojit k MaaS serveru, opakujte akci později"
+      "ERROR_MESSAGE": "Nelze se připojit k Chattlin serveru, opakujte akci později"
     },
     "FORM": {
       "NAME": {

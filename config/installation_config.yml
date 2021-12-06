@@ -1,21 +1,21 @@
 # if you dont specify locked attribute, the default value will be true
 # which means the particular config will be locked
 - name: INSTALLATION_NAME
-  value: 'Maas'
+  value: 'Chattlin'
 - name: LOGO_THUMBNAIL
   value: '/brand-assets/logo_thumbnail.svg'
 - name: LOGO
   value: '/brand-assets/logo.svg'
 - name: BRAND_URL
-  value: 'https://www.maas.work'
+  value: 'https://www.chattlin.com'
 - name: WIDGET_BRAND_URL
-  value: 'https://www.maas.work'
+  value: 'https://www.chattlin.com'
 - name: BRAND_NAME
-  value: 'Maas'
+  value: 'Chattlin'
 - name: TERMS_URL
-  value: 'https://www.maas.work/terms-of-service'
+  value: 'https://www.chattlin.com/terms-of-service'
 - name: PRIVACY_URL
-  value: 'https://www.maas.work/privacy-policy'
+  value: 'https://www.chattlin.com/privacy-policy'
 - name: DISPLAY_MANIFEST
   value: true
 - name: MAILER_INBOUND_EMAIL_DOMAIN
@@ -30,10 +30,10 @@
 - name: INSTALLATION_EVENTS_WEBHOOK_URL
   value:
   locked: false
-- name: MAAS_INBOX_TOKEN
+- name: CHATTLIN_INBOX_TOKEN
   value:
   locked: false
-- name: MAAS_INBOX_HMAC_KEY
+- name: CHATTLIN_INBOX_HMAC_KEY
   value:
   locked: false
 - name: API_CHANNEL_NAME

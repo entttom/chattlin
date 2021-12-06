@@ -94,7 +94,7 @@ export const validateAuthenticateRoutePermission = (to, from, next) => {
 
 const validateRouteAccess = (to, from, next) => {
   if (
-    window.maasConfig.signupEnabled !== 'true' &&
+    window.chattlinConfig.signupEnabled !== 'true' &&
     to.meta &&
     to.meta.requireSignupEnabled
   ) {

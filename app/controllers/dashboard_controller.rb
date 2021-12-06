@@ -21,19 +21,19 @@ class DashboardController < ActionController::Base
       'PRIVACY_URL',
       'DISPLAY_MANIFEST',
       'CREATE_NEW_ACCOUNT_FROM_DASHBOARD',
-      'MAAS_INBOX_TOKEN',
+      'CHATTLIN_INBOX_TOKEN',
       'API_CHANNEL_NAME',
       'API_CHANNEL_THUMBNAIL',
       'ANALYTICS_TOKEN',
       'ANALYTICS_HOST'
     ).merge(
-      APP_VERSION: Maas.config[:version],
+      APP_VERSION: Chattlin.config[:version],
       VAPID_PUBLIC_KEY: VapidService.public_key,
       ENABLE_ACCOUNT_SIGNUP: GlobalConfigService.load('ENABLE_ACCOUNT_SIGNUP', 'false')
     )
   end
 
   def ensure_installation_onboarding
-    redirect_to '/installation/onboarding' if ::Redis::Alfred.get(::Redis::Alfred::MAAS_INSTALLATION_ONBOARDING)
+    redirect_to '/installation/onboarding' if ::Redis::Alfred.get(::Redis::Alfred::CHATTLIN_INSTALLATION_ONBOARDING)
   end
 end

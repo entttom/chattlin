@@ -82,8 +82,8 @@
         <div>{{ `v${globalConfig.appVersion}` }}</div>
         <div v-if="hasAnUpdateAvailable && globalConfig.displayManifest">
           {{
-            $t('GENERAL_SETTINGS.UPDATE_MAAS', {
-              latestMaasVersion: latestMaasVersion,
+            $t('GENERAL_SETTINGS.UPDATE_CHATTLIN', {
+              latestChattlinVersion: latestChattlinVersion,
             })
           }}
         </div>
@@ -120,7 +120,7 @@ export default {
       supportEmail: '',
       features: {},
       autoResolveDuration: null,
-      latestMaasVersion: null,
+      latestChattlinVersion: null,
     };
   },
   validations: {
@@ -141,13 +141,13 @@ export default {
       uiFlags: 'accounts/getUIFlags',
     }),
     hasAnUpdateAvailable() {
-      if (!semver.valid(this.latestMaasVersion)) {
+      if (!semver.valid(this.latestChattlinVersion)) {
         return false;
       }
 
       return semver.lt(
         this.globalConfig.appVersion,
-        this.latestMaasVersion
+        this.latestChattlinVersion
       );
     },
     languagesSortedByCode() {
@@ -186,7 +186,7 @@ export default {
           custom_email_domain_enabled,
           features,
           auto_resolve_duration,
-          latest_maas_version: latestMaasVersion,
+          latest_chattlin_version: latestChattlinVersion,
         } = this.getAccount(this.accountId);
 
         this.$root.$i18n.locale = locale;
@@ -198,7 +198,7 @@ export default {
         this.customEmailDomainEnabled = custom_email_domain_enabled;
         this.features = features;
         this.autoResolveDuration = auto_resolve_duration;
-        this.latestMaasVersion = latestMaasVersion;
+        this.latestChattlinVersion = latestChattlinVersion;
       } catch (error) {
         // Ignore error
       }

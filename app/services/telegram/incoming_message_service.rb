@@ -6,7 +6,7 @@ class Telegram::IncomingMessageService
   pattr_initialize [:inbox!, :params!]
 
   def perform
-    # maas doesn't support group conversations at the moment
+    # chattlin doesn't support group conversations at the moment
     return unless private_message?
 
     set_contact

@@ -1,0 +1,25 @@
+[Unit]
+Requires=network.target
+PartOf=chattlin.target
+
+[Service]
+Type=simple
+User=chattlin
+WorkingDirectory=/home/chattlin/chattlin
+
+ExecStart=/bin/bash -lc 'bundle exec sidekiq -C config/sidekiq.yml'
+
+Restart=always
+RestartSec=1
+TimeoutStopSec=30
+KillMode=mixed
+StandardInput=null
+SyslogIdentifier=%p
+
+Environment="PATH=/home/chattlin/.rvm/gems/ruby-3.0.2/bin:/home/chattlin/.rvm/gems/ruby-3.0.2@global/bin:/home/chattlin/.rvm/rubies/ruby-3.0.2/bin:/home/chattlin/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/chattlin/.rvm/bin:/home/chattlin/.rvm/bin"
+Environment="PORT=3000"
+Environment="RAILS_ENV=production"
+Environment="NODE_ENV=production"
+Environment="RAILS_LOG_TO_STDOUT=true"
+Environment="GEM_HOME=/home/chattlin/.rvm/gems/ruby-3.0.2"
+Environment="GEM_PATH=/home/chattlin/.rvm/gems/ruby-3.0.2:/home/chattlin/.rvm/gems/ruby-3.0.2@global"

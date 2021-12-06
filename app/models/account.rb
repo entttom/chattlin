@@ -103,7 +103,7 @@ class Account < ApplicationRecord
   end
 
   def support_email
-    super || GlobalConfig.get('MAILER_SUPPORT_EMAIL')['MAILER_SUPPORT_EMAIL'] || ENV.fetch('MAILER_SENDER_EMAIL', 'Maas <accounts@maas.work>')
+    super || GlobalConfig.get('MAILER_SUPPORT_EMAIL')['MAILER_SUPPORT_EMAIL'] || ENV.fetch('MAILER_SENDER_EMAIL', 'Chattlin <accounts@chattlin.com>')
   end
 
   private

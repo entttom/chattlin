@@ -29,8 +29,8 @@ module MailboxHelper
     @message.save!
   end
 
-  def notification_email_from_maas?
+  def notification_email_from_chattlin?
     # notification emails are send via mailer sender email address. so it should match
-    @processed_mail.original_sender == Mail::Address.new(ENV.fetch('MAILER_SENDER_EMAIL', 'Maas <accounts@maas.work>')).address
+    @processed_mail.original_sender == Mail::Address.new(ENV.fetch('MAILER_SENDER_EMAIL', 'Chattlin <accounts@chattlin.com>')).address
   end
 end

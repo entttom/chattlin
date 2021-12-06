@@ -1,5 +1,5 @@
 # Security Policy
-Maas is looking forward to working with security researchers across the world to keep Maas and our users safe. If you have found an issue in our systems/applications, please reach out to us.
+Chattlin is looking forward to working with security researchers across the world to keep Chattlin and our users safe. If you have found an issue in our systems/applications, please reach out to us.
 
 ## Reporting a Vulnerability
 
@@ -7,12 +7,12 @@ We use [huntr.dev](https://huntr.dev/) for security issues that affect our proje
 
 This will enable us to review the vulnerability, fix it promptly, and reward you for your efforts.
 
-If you have any questions about the process, feel free to reach out to security@maas.work.
+If you have any questions about the process, feel free to reach out to security@chattlin.com.
 
 
 ## Out of scope
 
-Please do not perform testing against Maas production services. Use a self hosted instance to perform tests.
+Please do not perform testing against Chattlin production services. Use a self hosted instance to perform tests.
 
 We consider the following to be out of scope, though there may be exceptions.
 
@@ -28,4 +28,4 @@ If you are not sure about the scope, please create a report.
 
 ## Thanks
 
-Thank you for keeping Maas and our users safe. 🙇
+Thank you for keeping Chattlin and our users safe. 🙇

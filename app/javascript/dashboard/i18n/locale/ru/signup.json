@@ -2,7 +2,7 @@
   "REGISTER": {
     "TRY_WOOT": "Создать аккаунт",
     "TITLE": "Регистрация",
-    "TERMS_ACCEPT": "Зарегистрировавшись, вы соглашаетесь с нашими <a href=\"https://www.maas.work/terms\">правилами пользования</a> и <a href=\"https://www.maas.work/privacy-policy\">политикой конфиденциальности</a>",
+    "TERMS_ACCEPT": "Зарегистрировавшись, вы соглашаетесь с нашими <a href=\"https://www.chattlin.com/terms\">правилами пользования</a> и <a href=\"https://www.chattlin.com/privacy-policy\">политикой конфиденциальности</a>",
     "ACCOUNT_NAME": {
       "LABEL": "Имя аккаунта",
       "PLACEHOLDER": "Введите имя аккаунта, например: Wayne Enterprises",
@@ -30,7 +30,7 @@
     },
     "API": {
       "SUCCESS_MESSAGE": "Успешная регистрация",
-      "ERROR_MESSAGE": "Не удается соединиться с сервером MaaS, попробуйте позже"
+      "ERROR_MESSAGE": "Не удается соединиться с сервером Chattlin, попробуйте позже"
     },
     "SUBMIT": "Отправить",
     "HAVE_AN_ACCOUNT": "Уже есть аккаунт?"

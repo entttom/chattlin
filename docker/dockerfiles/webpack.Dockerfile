@@ -1,4 +1,4 @@
-FROM maas:development
+FROM chattlin:development
 
 RUN chmod +x docker/entrypoints/webpack.sh
 

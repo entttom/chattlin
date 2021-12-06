@@ -43,7 +43,7 @@ class Integrations::Facebook::MessageParser
   end
 
   # TODO : does this work ?
-  def sent_from_maas_app?
+  def sent_from_chattlin_app?
     app_id && app_id == ENV['FB_APP_ID'].to_i
   end
 end

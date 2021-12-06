@@ -19,7 +19,7 @@
 fi:
   hello: "Hei maailma"
   messages:
-    reset_password_success: MaaS! Salasanan nollauspyyntö onnistui. Tarkista sähköpostisi saadaksesi ohjeita.
+    reset_password_success: Chattlin! Salasanan nollauspyyntö onnistui. Tarkista sähköpostisi saadaksesi ohjeita.
     reset_password_failure: Hö! Emme löytäneet yhtään käyttäjää määritellyllä sähköpostilla.
   errors:
     signup:
@@ -90,7 +90,7 @@ fi:
       description: "Slack on chat-työkalu, joka tuo kaiken viestintäsi yhteen paikkaan. Integroimalla Slackin voit saada ilmoituksen kaikista uusista keskusteluista Slackin sisällä."
     webhooks:
       name: "Webhookit"
-      description: "Webhook-tapahtumat antavat sinulle reaaliaikaista tietoa siitä, mitä Maas-tililläsi tapahtuu. Voit käyttää webhookeja ja välittää tapahtumat suosikkiohjelmillesi, kuten Slackiin tai Githubiiin. Klikkaa \"Määrittele\" määrittääksesi webhookisi."
+      description: "Webhook-tapahtumat antavat sinulle reaaliaikaista tietoa siitä, mitä Chattlin-tililläsi tapahtuu. Voit käyttää webhookeja ja välittää tapahtumat suosikkiohjelmillesi, kuten Slackiin tai Githubiiin. Klikkaa \"Määrittele\" määrittääksesi webhookisi."
     dialogflow:
       name: "Dialogflow"
       description: "Build chatbots using Dialogflow and connect them to your inbox quickly. Let the bots handle the queries before handing them off to a customer service agent."

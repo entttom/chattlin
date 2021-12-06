@@ -14,7 +14,7 @@ export const IFrameHelper = {
   isIFrame: () => window.self !== window.top,
   sendMessage: msg => {
     window.parent.postMessage(
-      `maas-widget:${JSON.stringify({ ...msg })}`,
+      `chattlin-widget:${JSON.stringify({ ...msg })}`,
       '*'
     );
   },
@@ -30,7 +30,7 @@ export const RNHelper = {
   isRNWebView: () => window.ReactNativeWebView,
   sendMessage: msg => {
     window.ReactNativeWebView.postMessage(
-      `maas-widget:${JSON.stringify({ ...msg })}`
+      `chattlin-widget:${JSON.stringify({ ...msg })}`
     );
   },
 };

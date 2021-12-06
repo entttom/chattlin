@@ -1,16 +1,16 @@
 export default {
   computed: {
     useInboxAvatarForBot() {
-      return window.maasWidgetDefaults.useInboxAvatarForBot;
+      return window.chattlinWidgetDefaults.useInboxAvatarForBot;
     },
     hasAConnectedAgentBot() {
-      return !!window.maasWebChannel.hasAConnectedAgentBot;
+      return !!window.chattlinWebChannel.hasAConnectedAgentBot;
     },
     inboxAvatarUrl() {
-      return window.maasWebChannel.avatarUrl;
+      return window.chattlinWebChannel.avatarUrl;
     },
     channelConfig() {
-      return window.maasWebChannel;
+      return window.chattlinWebChannel;
     },
     hasEmojiPickerEnabled() {
       return this.channelConfig.enabledFeatures.includes('emoji_picker');
@@ -19,12 +19,12 @@ export default {
       return this.channelConfig.enabledFeatures.includes('attachments');
     },
     preChatFormEnabled() {
-      return window.maasWebChannel.preChatFormEnabled;
+      return window.chattlinWebChannel.preChatFormEnabled;
     },
     preChatFormOptions() {
       let requireEmail = false;
       let preChatMessage = '';
-      const options = window.maasWebChannel.preChatFormOptions || {};
+      const options = window.chattlinWebChannel.preChatFormOptions || {};
       if (!this.isOnNewConversation) {
         requireEmail = options.require_email;
         preChatMessage = options.pre_chat_message;

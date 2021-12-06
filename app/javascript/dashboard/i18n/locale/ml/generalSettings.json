@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "നിങ്ങളുടെ ഇഷ്‌ടാനുസൃത ഡൊമെയ്‌നിൽ നിങ്ങൾക്ക് ഇപ്പോൾ ഇമെയിലുകൾ സ്വീകരിക്കാൻ കഴിയും."
       }
     },
-    "UPDATE_MAAS": "An update %{latestMaasVersion} for Maas is available. Please update your instance."
+    "UPDATE_CHATTLIN": "An update %{latestChattlinVersion} for Chattlin is available. Please update your instance."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -74,7 +74,7 @@
   },
   "NETWORK": {
     "NOTIFICATION": {
-      "TEXT": "Disconnected from Maas"
+      "TEXT": "Disconnected from Chattlin"
     },
     "BUTTON": {
       "REFRESH": "Refresh"

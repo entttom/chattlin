@@ -17,9 +17,9 @@
               })
             }}
           </p>
-          <p v-if="globalConfig.installationName === 'Maas'">
+          <p v-if="globalConfig.installationName === 'Chattlin'">
             <a
-              href="https://www.maas.work/changelog"
+              href="https://www.chattlin.com/changelog"
               target="_blank"
               rel="noopener nofollow noreferrer"
               class="onboarding--link"

@@ -53,7 +53,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "maas_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "chattlin_#{Rails.env}"
 
   Rails.application.routes.default_url_options = { host: ENV['FRONTEND_URL'] }
 

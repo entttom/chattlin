@@ -11,7 +11,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'maas-app-user-id-1'
+                'id': 'chattlin-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {

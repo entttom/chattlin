@@ -305,7 +305,7 @@ export default {
       return router.currentRoute && router.currentRoute.name === routeName;
     },
     toggleSupportChatWindow() {
-      window.$maas.toggle();
+      window.$chattlin.toggle();
     },
     filterMenuItemsByRole(menuItems) {
       if (!this.currentRole) {

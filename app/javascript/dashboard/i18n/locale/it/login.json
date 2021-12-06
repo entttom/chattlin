@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Accedi a Maas",
+    "TITLE": "Accedi a Chattlin",
     "EMAIL": {
       "LABEL": "email",
       "PLACEHOLDER": "E-mail es.: qualcuno@esempio.com"
@@ -11,7 +11,7 @@
     },
     "API": {
       "SUCCESS_MESSAGE": "Accesso riuscito",
-      "ERROR_MESSAGE": "Impossibile connettersi al server MaaS, riprova più tardi",
+      "ERROR_MESSAGE": "Impossibile connettersi al server Chattlin, riprova più tardi",
       "UNAUTH": "Nome utente / Password errati. Riprova"
     },
     "FORGOT_PASSWORD": "Password dimenticata?",

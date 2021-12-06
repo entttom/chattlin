@@ -7,8 +7,8 @@ class SupportMailbox < ApplicationMailbox
                     :decorate_mail
 
   def process
-    # prevent loop from maas notification emails
-    return if notification_email_from_maas?
+    # prevent loop from chattlin notification emails
+    return if notification_email_from_chattlin?
 
     ActiveRecord::Base.transaction do
       find_or_create_contact

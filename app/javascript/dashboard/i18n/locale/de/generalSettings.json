@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Du kannst E-Mails jetzt von der festgelegten Domain erhalten."
       }
     },
-    "UPDATE_MAAS": "Ein Update %{latestMaasVersion} für Maas ist verfügbar. Bitte aktualisiere deine Installation."
+    "UPDATE_CHATTLIN": "Ein Update %{latestChattlinVersion} für Chattlin ist verfügbar. Bitte aktualisiere deine Installation."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -74,7 +74,7 @@
   },
   "NETWORK": {
     "NOTIFICATION": {
-      "TEXT": "Verbindung zu Maas getrennt"
+      "TEXT": "Verbindung zu Chattlin getrennt"
     },
     "BUTTON": {
       "REFRESH": "Neu laden"

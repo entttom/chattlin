@@ -1,9 +1,9 @@
 {
-  "name": "Maas",
-  "description": "Maas is a customer support tool for instant messaging channels",
-  "website": "https://www.maas.work/",
-  "repository": "https://github.com/entttom/maas",
-  "logo": "https://chat.maas.work/brand-assets/logo_thumbnail.svg",
+  "name": "Chattlin",
+  "description": "Chattlin is a customer support tool for instant messaging channels",
+  "website": "https://www.chattlin.com/",
+  "repository": "https://github.com/entttom/chattlin",
+  "logo": "https://app.chattlin.com/brand-assets/logo_thumbnail.svg",
   "keywords": [
     "live chat",
     "customer support",
@@ -26,11 +26,11 @@
       "value": "production"
     },
     "FRONTEND_URL": {
-      "description": "Public root URL of the Maas installation. This will be used in the emails.",
+      "description": "Public root URL of the Chattlin installation. This will be used in the emails.",
       "value": "https://CHANGE.herokuapp.com"
     },
     "INSTALLATION_ENV": {
-      "description": "Installation method used for Maas.",
+      "description": "Installation method used for Chattlin.",
       "value": "heroku"
     }
   },

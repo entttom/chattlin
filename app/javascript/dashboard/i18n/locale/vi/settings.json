@@ -158,13 +158,13 @@
     "REPORTS_TEAM": "Team"
   },
   "CREATE_ACCOUNT": {
-    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any Maas accounts. Please create a new account to continue.",
+    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any Chattlin accounts. Please create a new account to continue.",
     "NEW_ACCOUNT": "Tạo mới tài khoản",
     "SELECTOR_SUBTITLE": "Tạo mới một tài khoản",
     "API": {
       "SUCCESS_MESSAGE": "Tài khoản được tạo thành công",
       "EXIST_MESSAGE": "Tài khoản đã tồn tại",
-      "ERROR_MESSAGE": "Không thể kết nối với Máy chủ MaaS, Vui lòng thử lại sau"
+      "ERROR_MESSAGE": "Không thể kết nối với Máy chủ Chattlin, Vui lòng thử lại sau"
     },
     "FORM": {
       "NAME": {

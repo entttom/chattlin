@@ -158,13 +158,13 @@
     "REPORTS_TEAM": "Team"
   },
   "CREATE_ACCOUNT": {
-    "NO_ACCOUNT_WARNING": "Não conseguimos encontrar nenhuma conta do Maas. Por favor, crie uma nova conta para continuar.",
+    "NO_ACCOUNT_WARNING": "Não conseguimos encontrar nenhuma conta do Chattlin. Por favor, crie uma nova conta para continuar.",
     "NEW_ACCOUNT": "Nova conta",
     "SELECTOR_SUBTITLE": "Criar uma nova conta",
     "API": {
       "SUCCESS_MESSAGE": "Conta criada com sucesso",
       "EXIST_MESSAGE": "Esta conta já existe",
-      "ERROR_MESSAGE": "Não foi possível conectar ao servidor MaaS, por favor tente novamente mais tarde"
+      "ERROR_MESSAGE": "Não foi possível conectar ao servidor Chattlin, por favor tente novamente mais tarde"
     },
     "FORM": {
       "NAME": {

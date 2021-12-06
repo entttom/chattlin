@@ -12,7 +12,7 @@ export default {
       },
     },
     eventPath: {
-      defaultValue: 'maas/maas',
+      defaultValue: 'chattlin/chattlin',
       control: {
         type: 'text',
       },

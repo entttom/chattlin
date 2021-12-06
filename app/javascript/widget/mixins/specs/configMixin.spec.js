@@ -2,14 +2,14 @@ import { createWrapper } from '@vue/test-utils';
 import configMixin from '../configMixin';
 import Vue from 'vue';
 
-global.maasWebChannel = {
+global.chattlinWebChannel = {
   avatarUrl: 'https://test.url',
   hasAConnectedAgentBot: 'AgentBot',
   enabledFeatures: ['emoji_picker', 'attachments'],
   preChatFormOptions: { require_email: false, pre_chat_message: '' },
 };
 
-global.maasWidgetDefaults = {
+global.chattlinWidgetDefaults = {
   useInboxAvatarForBot: true,
 };
 

@@ -61,7 +61,7 @@ module SlackStubs
 
       client_msg_id: 'ffc6e64e-6f0c-4a3d-b594-faa6b44e48ab',
       type: 'message',
-      text: 'this is test <https://maas.work> Hey <@U019KT237LP|Sojan> Test again',
+      text: 'this is test <https://chattlin.com> Hey <@U019KT237LP|Sojan> Test again',
       user: 'ULYPAKE5S',
       ts: '1588623033.006000',
       team: 'TLST3048H',
@@ -78,11 +78,11 @@ module SlackStubs
     [
       {
         mimetype: 'image/png',
-        url_private: 'https://maas-assets.local/sample.png',
+        url_private: 'https://chattlin-assets.local/sample.png',
         name: 'name_of_the_file',
         title: 'title_of_the_file',
         filetype: 'png',
-        url_private_download: 'https://maas-assets.local/sample.png'
+        url_private_download: 'https://chattlin-assets.local/sample.png'
       }
     ]
   end

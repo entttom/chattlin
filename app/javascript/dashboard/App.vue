@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch('setUser');
-    this.setLocale(window.maasConfig.selectedLocale);
+    this.setLocale(window.chattlinConfig.selectedLocale);
     this.initializeAccount();
   },
 
