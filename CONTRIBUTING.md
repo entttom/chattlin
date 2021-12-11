@@ -1,0 +1,5 @@
+# Contributing to Chattlin
+
+Thanks for taking the time to contribute! :tada::+1:
+
+Please refer to our [Contributing Guide](https://www.chattlin.com/docs/contributing-guide) for detailed instructions. 
