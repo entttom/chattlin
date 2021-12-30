@@ -42,7 +42,7 @@ module ConversationReplyMailerHelper
   end
 
   def email_from
-    email_smtp_enabled ? @conversation.inbox.name : from_email_with_name
+    email_smtp_enabled ? @channel.smtp_email : from_email_with_name
   end
 
   def email_reply_to
