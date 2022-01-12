@@ -118,4 +118,4 @@ Thanks goes to all these [wonderful people](https://www.chattlin.com/docs/contri
 <a href="https://github.com/entttom/chattlin/graphs/contributors"><img src="https://opencollective.com/chattlin/contributors.svg?width=890&button=false" /></a>
 
 
-*Chattlin* &copy; 2017-2021, Chattlin Inc - Released under the MIT License.
+*Chattlin* &copy; 2017-2022, Chattlin Inc - Released under the MIT License.

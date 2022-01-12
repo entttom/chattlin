@@ -58,9 +58,9 @@ export default {
       return getContrastingTextColor(this.widgetColor);
     },
     hideReplyBox() {
-      const { csatSurveyEnabled } = window.chattlinWebChannel;
+      const { allowMessagesAfterResolved } = window.chattlinWebChannel;
       const { status } = this.conversationAttributes;
-      return csatSurveyEnabled && status === 'resolved';
+      return !allowMessagesAfterResolved && status === 'resolved';
     },
     showEmailTranscriptButton() {
       return this.currentUser && this.currentUser.email;
