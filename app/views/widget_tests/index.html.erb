@@ -14,10 +14,11 @@
 
 window.chattlinSettings = {
   hideMessageBubble: false,
-  position: 'left',
+  position: '<%= @widget_position %>',
   locale: 'en',
-  type: 'expanded_bubble',
+  type: '<%= @widget_type %>',
   showPopoutButton: true,
+  widgetStyle: '<%= @widget_style %>',
 };
 
 (function(d,t) {
@@ -36,14 +37,18 @@ window.chattlinSettings = {
 })(document,"script");
 
 window.addEventListener('chattlin:ready', function() {
-  console.log(window.$chattlin);
+  console.log('chattlin:ready', window.$chattlin);
   if (window.location.search.includes('setUser')) {
     window.$chattlin.setUser('<%= user_id %>', {
-      identifier_hash: '<%= user_hash %>',
+      identifier_hash: 'a<%= user_hash %>',
       email: 'jane@example.com',
       name: 'Jane Doe',
       phone_number: ''
     });
   }
+})
+
+window.addEventListener('chattlin:error', function(e) {
+  console.log('chattlin:error', e.details)
 })
 </script>

@@ -1,32 +1,17 @@
 import Cookies from 'js-cookie';
 import { IFrameHelper } from '../sdk/IFrameHelper';
-import { getBubbleView } from '../sdk/bubbleHelpers';
-import md5 from 'md5';
-
-const REQUIRED_USER_KEYS = ['avatar_url', 'email', 'name'];
-
-const ALLOWED_USER_ATTRIBUTES = [...REQUIRED_USER_KEYS, 'identifier_hash'];
-
-export const getUserCookieName = () => {
-  const SET_USER_COOKIE_PREFIX = 'cw_user_';
-  const { websiteToken: websiteIdentifier } = window.$chattlin;
-  return `${SET_USER_COOKIE_PREFIX}${websiteIdentifier}`;
-};
-
-export const getUserString = ({ identifier = '', user }) => {
-  const userStringWithSortedKeys = ALLOWED_USER_ATTRIBUTES.reduce(
-    (acc, key) => `${acc}${key}${user[key] || ''}`,
-    ''
-  );
-  return `${userStringWithSortedKeys}identifier${identifier}`;
-};
-
-const computeHashForUserData = (...args) => md5(getUserString(...args));
-
-export const hasUserKeys = user =>
-  REQUIRED_USER_KEYS.reduce((acc, key) => acc || !!user[key], false);
+import { getBubbleView } from '../sdk/settingsHelper';
+import {
+  computeHashForUserData,
+  getUserCookieName,
+  hasUserKeys,
+} from '../sdk/cookieHelpers';
 
 const runSDK = ({ baseUrl, websiteToken }) => {
+  if (window.$chattlin) {
+    return;
+  }
+
   const chattlinSettings = window.chattlinSettings || {};
   window.$chattlin = {
     baseUrl,
@@ -39,6 +24,7 @@ const runSDK = ({ baseUrl, websiteToken }) => {
     type: getBubbleView(chattlinSettings.type),
     launcherTitle: chattlinSettings.launcherTitle || '',
     showPopoutButton: chattlinSettings.showPopoutButton || false,
+    widgetStyle: chattlinSettings.widgetStyle || 'standard',
 
     toggle(state) {
       IFrameHelper.events.toggleBubble(state);
