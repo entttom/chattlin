@@ -47,7 +47,8 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Nyní můžete přijímat e-maily na vaši vlastní doménu."
       }
     },
-    "UPDATE_CHATTLIN": "Je dostupná aktualizace %{latestChattlinVersion} pro Chattlin. Aktualizujte prosím svou instanci."
+    "UPDATE_CHATTLIN": "Je dostupná aktualizace %{latestChattlinVersion} pro Chattlin. Aktualizujte prosím svou instanci.",
+    "LEARN_MORE": "Learn more"
   },
   "FORMS": {
     "MULTISELECT": {

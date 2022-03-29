@@ -47,7 +47,8 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Możesz teraz otrzymywać e-maile w swojej niestandardowej domenie."
       }
     },
-    "UPDATE_CHATTLIN": "Aktualizacja %{latestChattlinVersion} dla Chattlin jest dostępna. Proszę zaktualizować swoją instancję."
+    "UPDATE_CHATTLIN": "Aktualizacja %{latestChattlinVersion} dla Chattlin jest dostępna. Proszę zaktualizować swoją instancję.",
+    "LEARN_MORE": "Learn more"
   },
   "FORMS": {
     "MULTISELECT": {

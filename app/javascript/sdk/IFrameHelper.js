@@ -26,6 +26,10 @@ import { dispatchWindowEvent } from 'shared/helpers/CustomEventHelper';
 import { CHATTLIN_ERROR, CHATTLIN_READY } from '../widget/constants/sdkEvents';
 import { SET_USER_ERROR } from '../widget/constants/errorTypes';
 import { getUserCookieName } from './cookieHelpers';
+import {
+  getAlertAudio,
+  initOnEvents,
+} from 'shared/helpers/AudioNotificationHelper';
 import { isFlatWidgetStyle } from './settingsHelper';
 
 export const IFrameHelper = {
@@ -114,6 +118,19 @@ export const IFrameHelper = {
       iframe.setAttribute('style', `height: ${updatedIframeHeight} !important`);
   },
 
+  setupAudioListeners: () => {
+    const { baseUrl = '' } = window.$chattlin;
+    getAlertAudio(baseUrl).then(() =>
+      initOnEvents.forEach(event => {
+        document.removeEventListener(
+          event,
+          IFrameHelper.setupAudioListeners,
+          false
+        );
+      })
+    );
+  },
+
   events: {
     loaded: message => {
       Cookies.set('cw_conversation', message.config.authToken, {
@@ -136,7 +153,18 @@ export const IFrameHelper = {
       if (window.$chattlin.user) {
         IFrameHelper.sendMessage('set-user', window.$chattlin.user);
       }
+
       dispatchWindowEvent({ eventName: CHATTLIN_READY });
+
+      window.playAudioAlert = () => {};
+
+      initOnEvents.forEach(e => {
+        document.addEventListener(e, IFrameHelper.setupAudioListeners, false);
+      });
+
+      if (!window.$chattlin.resetTriggered) {
+        dispatchWindowEvent({ eventName: CHATTLIN_READY });
+      }
     },
     error: ({ errorType, data }) => {
       dispatchWindowEvent({ eventName: CHATTLIN_ERROR, data: data });
@@ -211,6 +239,10 @@ export const IFrameHelper = {
 
     closeChat: () => {
       onBubbleClick({ toggleValue: false });
+    },
+
+    playAudio: () => {
+      window.playAudioAlert();
     },
   },
   pushEvent: eventName => {

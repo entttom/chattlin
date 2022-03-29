@@ -47,7 +47,8 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Теперь вы можете получать письма на свой домен."
       }
     },
-    "UPDATE_CHATTLIN": "Доступно обновление %{latestChattlinVersion} для Chattlin. Пожалуйста, обновите свою версию."
+    "UPDATE_CHATTLIN": "Доступно обновление %{latestChattlinVersion} для Chattlin. Пожалуйста, обновите свою версию.",
+    "LEARN_MORE": "Узнайте больше"
   },
   "FORMS": {
     "MULTISELECT": {

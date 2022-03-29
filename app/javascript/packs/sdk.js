@@ -25,6 +25,7 @@ const runSDK = ({ baseUrl, websiteToken }) => {
     launcherTitle: chattlinSettings.launcherTitle || '',
     showPopoutButton: chattlinSettings.showPopoutButton || false,
     widgetStyle: chattlinSettings.widgetStyle || 'standard',
+    resetTriggered: false,
 
     toggle(state) {
       IFrameHelper.events.toggleBubble(state);
@@ -100,6 +101,8 @@ const runSDK = ({ baseUrl, websiteToken }) => {
         baseUrl: window.$chattlin.baseUrl,
         websiteToken: window.$chattlin.websiteToken,
       });
+
+      window.$chattlin.resetTriggered = true;
     },
   };
 

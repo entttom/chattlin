@@ -6,14 +6,14 @@ describe('#MessageFormatter', () => {
       const message =
         'Chattlin is an opensource tool. [Chattlin](https://www.chattlin.com)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chattlin is an opensource tool. <a rel="noreferrer noopener nofollow" href="https://www.chattlin.com" class="link" title="" target="_blank">Chattlin</a></p>'
+        '<p>Chattlin is an opensource tool. <a title="" class="link" href="https://www.chattlin.com" rel="noreferrer noopener nofollow" target="_blank">Chattlin</a></p>'
       );
     });
     it('should format correctly', () => {
       const message =
         'Chattlin is an opensource tool. https://www.chattlin.com';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chattlin is an opensource tool. <a rel="noreferrer noopener nofollow" href="https://www.chattlin.com" class="link" title="" target="_blank">https://www.chattlin.com</a></p>'
+        '<p>Chattlin is an opensource tool. <a title="" class="link" href="https://www.chattlin.com" rel="noreferrer noopener nofollow" target="_blank">https://www.chattlin.com</a></p>'
       );
     });
   });
@@ -55,6 +55,16 @@ describe('#MessageFormatter', () => {
         '<b>Chattlin is an opensource tool. https://www.chattlin.com</b>';
       expect(new MessageFormatter(message).plainText).toMatch(
         'Chattlin is an opensource tool. https://www.chattlin.com'
+      );
+    });
+  });
+
+  describe('#sanitize', () => {
+    it('sanitizes markup and removes all unnecessary elements', () => {
+      const message =
+        '[xssLink](javascript:alert(document.cookie))\n[normalLink](https://google.com)**I am a bold text paragraph**';
+      expect(new MessageFormatter(message).formattedMessage).toMatch(
+        '<p><a title="" class="link" rel="noreferrer noopener nofollow" target="_blank">xssLink</a><br><a title="" class="link" href="https://google.com" rel="noreferrer noopener nofollow" target="_blank">normalLink</a><strong>I am a bold text paragraph</strong></p>'
       );
     });
   });

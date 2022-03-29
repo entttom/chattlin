@@ -47,7 +47,8 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Most már goadhatsz e-maileket az egyedi domaineden."
       }
     },
-    "UPDATE_CHATTLIN": "Egy frissítés elérhető a Chattlinhoz %{latestChattlinVersion}. Kérjük frissítsd a telepítésed."
+    "UPDATE_CHATTLIN": "Egy frissítés elérhető a Chattlinhoz %{latestChattlinVersion}. Kérjük frissítsd a telepítésed.",
+    "LEARN_MORE": "Learn more"
   },
   "FORMS": {
     "MULTISELECT": {
