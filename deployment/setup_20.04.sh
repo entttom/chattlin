@@ -2,7 +2,7 @@
 
 # Description: Chattlin installation script
 # OS: Ubuntu 20.04 LTS / Ubuntu 20.10
-# Script Version: 0.7
+# Script Version: 0.8
 # Run this script as root
 
 read -p 'Would you like to configure a domain and SSL for Chattlin?(yes or no): ' configure_webserver
@@ -12,6 +12,7 @@ then
 read -p 'Enter your sub-domain to be used for Chattlin (chattlin.domain.com for example) : ' domain_name
 echo -e "\nThis script will try to generate SSL certificates via LetsEncrypt and serve chattlin at
 "https://$domain_name". Proceed further once you have pointed your DNS to the IP of the instance.\n"
+read -p 'Enter the email LetsEncrypt can use to send reminders when your SSL certificate is up for renewal: ' le_email
 read -p 'Do you wish to proceed? (yes or no): ' exit_true
 if [ $exit_true == "no" ]
 then
@@ -138,7 +139,7 @@ else
 curl https://ssl-config.mozilla.org/ffdhe4096.txt >> /etc/ssl/dhparam
 wget https://raw.githubusercontent.com/entttom/maas/master/deployment/nginx_chattlin.conf
 cp nginx_chattlin.conf /etc/nginx/sites-available/nginx_chattlin.conf
-certbot certonly --nginx -d $domain_name
+certbot certonly --non-interactive --agree-tos --nginx -m $le_email -d $domain_name
 sed -i "s/chattlin.domain.com/$domain_name/g" /etc/nginx/sites-available/nginx_chattlin.conf
 ln -s /etc/nginx/sites-available/nginx_chattlin.conf /etc/nginx/sites-enabled/nginx_chattlin.conf
 systemctl restart nginx

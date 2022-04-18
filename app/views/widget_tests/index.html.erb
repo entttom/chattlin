@@ -19,6 +19,7 @@ window.chattlinSettings = {
   type: '<%= @widget_type %>',
   showPopoutButton: true,
   widgetStyle: '<%= @widget_style %>',
+  darkMode: '<%= @dark_mode %>',
 };
 
 (function(d,t) {
@@ -40,7 +41,7 @@ window.addEventListener('chattlin:ready', function() {
   console.log('chattlin:ready', window.$chattlin);
   if (window.location.search.includes('setUser')) {
     window.$chattlin.setUser('<%= user_id %>', {
-      identifier_hash: 'a<%= user_hash %>',
+      identifier_hash: '<%= user_hash %>',
       email: 'jane@example.com',
       name: 'Jane Doe',
       phone_number: ''
@@ -49,6 +50,6 @@ window.addEventListener('chattlin:ready', function() {
 })
 
 window.addEventListener('chattlin:error', function(e) {
-  console.log('chattlin:error', e.details)
+  console.log('chattlin:error', e.detail)
 })
 </script>

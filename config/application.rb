@@ -33,4 +33,13 @@ module Chattlin
   def self.config
     @config ||= Rails.configuration.x
   end
+
+  def self.redis_ssl_verify_mode
+    # Introduced this method to fix the issue in heroku where redis connections fail for redis 6
+    # ref: https://github.com/entttom/chattlin/issues/2420
+    #
+    # unless the redis verify mode is explicitly specified as none, we will fall back to the default 'verify peer'
+    # ref: https://www.rubydoc.info/stdlib/openssl/OpenSSL/SSL/SSLContext#DEFAULT_PARAMS-constant
+    ENV['REDIS_OPENSSL_VERIFY_MODE'] == 'none' ? OpenSSL::SSL::VERIFY_NONE : OpenSSL::SSL::VERIFY_PEER
+  end
 end

@@ -31,6 +31,7 @@ import {
   initOnEvents,
 } from 'shared/helpers/AudioNotificationHelper';
 import { isFlatWidgetStyle } from './settingsHelper';
+import { popoutChatWindow } from '../widget/helpers/popoutHelper';
 
 export const IFrameHelper = {
   getUrl({ baseUrl, websiteToken }) {
@@ -144,6 +145,7 @@ export const IFrameHelper = {
         hideMessageBubble: window.$chattlin.hideMessageBubble,
         showPopoutButton: window.$chattlin.showPopoutButton,
         widgetStyle: window.$chattlin.widgetStyle,
+        darkMode: window.$chattlin.darkMode,
       });
       IFrameHelper.onLoad({
         widgetColor: message.config.channelConfig.widgetColor,
@@ -153,8 +155,6 @@ export const IFrameHelper = {
       if (window.$chattlin.user) {
         IFrameHelper.sendMessage('set-user', window.$chattlin.user);
       }
-
-      dispatchWindowEvent({ eventName: CHATTLIN_READY });
 
       window.playAudioAlert = () => {};
 
@@ -190,6 +190,12 @@ export const IFrameHelper = {
       }
 
       onBubbleClick(bubbleState);
+    },
+
+    popoutChatWindow: ({ baseUrl, websiteToken, locale }) => {
+      const cwCookie = Cookies.get('cw_conversation');
+      window.$chattlin.toggle('close');
+      popoutChatWindow(baseUrl, websiteToken, locale, cwCookie);
     },
 
     closeWindow: () => {

@@ -1,6 +1,10 @@
 import Cookies from 'js-cookie';
 import { IFrameHelper } from '../sdk/IFrameHelper';
-import { getBubbleView } from '../sdk/settingsHelper';
+import {
+  getBubbleView,
+  getDarkMode,
+  getWidgetStyle,
+} from '../sdk/settingsHelper';
 import {
   computeHashForUserData,
   getUserCookieName,
@@ -24,11 +28,20 @@ const runSDK = ({ baseUrl, websiteToken }) => {
     type: getBubbleView(chattlinSettings.type),
     launcherTitle: chattlinSettings.launcherTitle || '',
     showPopoutButton: chattlinSettings.showPopoutButton || false,
-    widgetStyle: chattlinSettings.widgetStyle || 'standard',
+    widgetStyle: getWidgetStyle(chattlinSettings.widgetStyle) || 'standard',
     resetTriggered: false,
+    darkMode: getDarkMode(chattlinSettings.darkMode),
 
     toggle(state) {
       IFrameHelper.events.toggleBubble(state);
+    },
+
+    popoutChatWindow() {
+      IFrameHelper.events.popoutChatWindow({
+        baseUrl: window.$chattlin.baseUrl,
+        websiteToken: window.$chattlin.websiteToken,
+        locale: window.$chattlin.locale,
+      });
     },
 
     setUser(identifier, user) {
