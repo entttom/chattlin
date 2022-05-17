@@ -24,7 +24,7 @@ class Messages::Instagram::MessageBuilder < Messages::Messenger::MessageBuilder
     @inbox.channel.authorization_error!
     raise
   rescue StandardError => e
-    Sentry.capture_exception(e)
+    ChattlinExceptionTracker.new(e, account: @inbox.account).capture_exception
     true
   end
 

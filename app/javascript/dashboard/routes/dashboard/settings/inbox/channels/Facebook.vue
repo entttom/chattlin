@@ -163,7 +163,7 @@ export default {
           FB.init({
             appId: window.chattlinConfig.fbAppId,
             xfbml: true,
-            version: 'v12.0',
+            version: window.chattlinConfig.fbApiVersion,
             status: true,
           });
           window.fbSDKLoaded = true;

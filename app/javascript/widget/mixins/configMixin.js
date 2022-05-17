@@ -25,15 +25,21 @@ export default {
       return window.chattlinWebChannel.preChatFormEnabled;
     },
     preChatFormOptions() {
-      let requireEmail = false;
       let preChatMessage = '';
       const options = window.chattlinWebChannel.preChatFormOptions || {};
-      requireEmail = options.require_email;
       preChatMessage = options.pre_chat_message;
+      const { pre_chat_fields: preChatFields = [] } = options;
       return {
-        requireEmail,
         preChatMessage,
+        preChatFields,
       };
+    },
+    shouldShowPreChatForm() {
+      const { preChatFields } = this.preChatFormOptions;
+      // Check if at least one enabled field in pre-chat fields
+      const hasEnabledFields =
+        preChatFields.filter(field => field.enabled).length > 0;
+      return this.preChatFormEnabled && hasEnabledFields;
     },
   },
 };

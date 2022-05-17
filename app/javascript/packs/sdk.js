@@ -10,7 +10,8 @@ import {
   getUserCookieName,
   hasUserKeys,
 } from '../sdk/cookieHelpers';
-
+import { addClass, removeClass } from '../sdk/DOMHelpers';
+import { SDK_SET_BUBBLE_VISIBILITY } from 'shared/constants/sharedFrameEvents';
 const runSDK = ({ baseUrl, websiteToken }) => {
   if (window.$chattlin) {
     return;
@@ -34,6 +35,23 @@ const runSDK = ({ baseUrl, websiteToken }) => {
 
     toggle(state) {
       IFrameHelper.events.toggleBubble(state);
+    },
+
+    toggleBubbleVisibility(visibility) {
+      let widgetElm = document.querySelector('.woot--bubble-holder');
+      let widgetHolder = document.querySelector('.woot-widget-holder');
+      if (visibility === 'hide') {
+        addClass(widgetHolder, 'woot-widget--without-bubble');
+        addClass(widgetElm, 'woot-hidden');
+        window.$chattlin.hideMessageBubble = true;
+      } else if (visibility === 'show') {
+        removeClass(widgetElm, 'woot-hidden');
+        removeClass(widgetHolder, 'woot-widget--without-bubble');
+        window.$chattlin.hideMessageBubble = false;
+      }
+      IFrameHelper.sendMessage(SDK_SET_BUBBLE_VISIBILITY, {
+        hideMessageBubble: window.$chattlin.hideMessageBubble,
+      });
     },
 
     popoutChatWindow() {
