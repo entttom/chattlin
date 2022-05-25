@@ -13,7 +13,7 @@ find . -type f -name "*.*" -print|xargs perl -i -pe 's#CHATTLIN#CHATTLIN#g'
 #find . -type f -name "*.*" -print|xargs perl -i -pe 's#Woot#Chattlin#g' 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#chattlin#chattlin#g'
 #find . -type f -name "*.*" -print|xargs perl -i -pe 's#woot#chattlin#g' 
-find . -type f -name "*.*" -print|xargs perl -i -pe 's#db:chattlin_prepare#db:chattlin_prepare#g'  
+find . -type f -name "*.*" -print|xargs perl -i -pe 's#db:chattlin_prepare#db:chattlin_prepare#g' 
 cd deployment
 rename  's/chattlin/chattlin/' *
 cd ..
@@ -30,6 +30,12 @@ cd ..
 cd .. 
 cp rebranding/public/*.png public/
 cp rebranding/public/brand-assets/*.svg public/brand-assets
+cp rebranding/chat.svg app/javascript/dashboard/assets/images/chat.svg 
+
+cp app/javascript/dashboard/components/layout/sidebarComponents/Primary.vue app/javascript/dashboard/components/layout/sidebarComponents/Primary1.vue 
+awk 'NR==99{print "background-color:#F5FAFE;border-bottom-right-radius:25x;border-top-right-radius:25px;"}1' app/javascript/dashboard/components/layout/sidebarComponents/Primary1.vue  > app/javascript/dashboard/components/layout/sidebarComponents/Primary.vue 
+rm app/javascript/dashboard/components/layout/sidebarComponents/Primary1.vue 
+
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/chatwoot/devise-secure_password#https://github.com/chatwoot/devise-secure_password#g' 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/chatwoot/twitty#https://github.com/chatwoot/twitty#g' 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/chatwoot/prosemirror-schema.git#https://github.com/chatwoot/prosemirror-schema.git#g' 
