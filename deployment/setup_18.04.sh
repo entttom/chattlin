@@ -43,8 +43,8 @@ RAILS_ENV=production
 sudo -i -u chattlin << EOF
 rvm --version
 rvm autolibs disable
-rvm install "ruby-3.0.2"
-rvm use 3.0.2 --default
+rvm install "ruby-3.0.4"
+rvm use 3.0.4 --default
 
 git clone https://github.com/entttom/chattlin.git
 cd chattlin

@@ -9,5 +9,8 @@ export default {
     enabledLanguages() {
       return window.chattlinConfig.enabledLanguages;
     },
+    isEnterprise() {
+      return window.chattlinConfig.isEnterprise === 'true';
+    },
   },
 };

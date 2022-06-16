@@ -2,7 +2,7 @@
   <div v-if="!authUIFlags.isFetching" id="app" class="app-wrapper app-root">
     <update-banner :latest-chattlin-version="latestChattlinVersion" />
     <transition name="fade" mode="out-in">
-      <router-view></router-view>
+      <router-view />
     </transition>
     <add-account-modal
       :show="showAddAccountModal"

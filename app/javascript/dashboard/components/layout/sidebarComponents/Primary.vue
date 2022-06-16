@@ -96,7 +96,7 @@ export default {
   width: var(--space-jumbo);
   border-right: 1px solid var(--s-50);
   box-sizing: content-box;
-background-color:#F5FAFE;border-bottom-right-radius:25x;border-top-right-radius:25px;
+background-color:#F5FAFE;border-bottom-right-radius:25px;border-top-right-radius:25px;
   height: 100%;
   flex-shrink: 0;
 }
