@@ -1,5 +1,5 @@
 class ChattlinHub
-  BASE_URL = ENV['CHATTLIN_HUB_URL'] || 'https://hub.2.chattlin.com'
+  BASE_URL = ENV.fetch('CHATTLIN_HUB_URL', 'https://hub.2.chattlin.com')
   PING_URL = "#{BASE_URL}/ping".freeze
   REGISTRATION_URL = "#{BASE_URL}/instances".freeze
   PUSH_NOTIFICATION_URL = "#{BASE_URL}/send_push".freeze
