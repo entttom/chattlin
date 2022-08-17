@@ -32,9 +32,9 @@ cp rebranding/public/*.png public/
 cp rebranding/public/brand-assets/*.svg public/brand-assets
 cp rebranding/chat.svg app/javascript/dashboard/assets/images/chat.svg 
 
-cp app/javascript/dashboard/components/layout/sidebarComponents/Primary.vue app/javascript/dashboard/components/layout/sidebarComponents/Primary1.vue 
-awk 'NR==99{print "background-color:#F5FAFE;border-bottom-right-radius:25px;border-top-right-radius:25px;"}1' app/javascript/dashboard/components/layout/sidebarComponents/Primary1.vue  > app/javascript/dashboard/components/layout/sidebarComponents/Primary.vue 
-rm app/javascript/dashboard/components/layout/sidebarComponents/Primary1.vue 
+#cp app/javascript/dashboard/components/layout/sidebarComponents/Primary.vue app/javascript/dashboard/components/layout/sidebarComponents/Primary1.vue 
+#awk 'NR==99{print "background-color:#F5FAFE;border-bottom-right-radius:25px;border-top-right-radius:25px;"}1' app/javascript/dashboard/components/layout/sidebarComponents/Primary1.vue  > app/javascript/dashboard/components/layout/sidebarComponents/Primary.vue 
+#rm app/javascript/dashboard/components/layout/sidebarComponents/Primary1.vue 
 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/chatwoot/devise-secure_password#https://github.com/chatwoot/devise-secure_password#g' 
 find . -type f -name "*.*" -print|xargs perl -i -pe 's#https://github.com/chatwoot/twitty#https://github.com/chatwoot/twitty#g' 

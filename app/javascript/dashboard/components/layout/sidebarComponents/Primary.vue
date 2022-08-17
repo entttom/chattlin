@@ -96,7 +96,6 @@ export default {
       window.$chattlin.toggle();
     },
     openNotificationPanel() {
-
       this.$emit('open-notification-panel');
     },
   },
