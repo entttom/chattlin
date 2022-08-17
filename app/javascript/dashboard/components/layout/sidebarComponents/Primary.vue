@@ -96,7 +96,7 @@ export default {
       window.$chattlin.toggle();
     },
     openNotificationPanel() {
-background-color:#F5FAFE;border-bottom-right-radius:25px;border-top-right-radius:25px;
+
       this.$emit('open-notification-panel');
     },
   },
