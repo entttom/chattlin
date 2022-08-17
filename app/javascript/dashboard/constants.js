@@ -12,5 +12,10 @@ export default {
     SNOOZED: 'snoozed',
     ALL: 'all',
   },
+  LAYOUT_TYPES: {
+    CONDENSED: 'condensed',
+    EXPANDED: 'expanded',
+  },
+  DOCS_URL: '//www.chattlin.com/docs/product/',
 };
 export const DEFAULT_REDIRECT_URL = '/app/';

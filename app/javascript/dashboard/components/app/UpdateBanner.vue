@@ -12,33 +12,26 @@
 </template>
 <script>
 import Banner from 'dashboard/components/ui/Banner.vue';
-import LocalStorage from '../../helper/localStorage';
+import { LocalStorage, LOCAL_STORAGE_KEYS } from '../../helper/localStorage';
 import { mapGetters } from 'vuex';
 import adminMixin from 'dashboard/mixins/isAdmin';
-
-const semver = require('semver');
-const dismissedUpdates = new LocalStorage('dismissedUpdates');
+import { hasAnUpdateAvailable } from './versionCheckHelper';
 
 export default {
-  components: {
-    Banner,
-  },
+  components: { Banner },
   mixins: [adminMixin],
   props: {
-    latestChattlinVersion: {
-      type: String,
-      default: '',
-    },
+    latestChattlinVersion: { type: String, default: '' },
+  },
+  data() {
+    return { userDismissedBanner: false };
   },
   computed: {
     ...mapGetters({ globalConfig: 'globalConfig/get' }),
-    hasAnUpdateAvailable() {
-      if (!semver.valid(this.latestChattlinVersion)) {
-        return false;
-      }
-      return semver.lt(
-        this.globalConfig.appVersion,
-        this.latestChattlinVersion
+    updateAvailable() {
+      return hasAnUpdateAvailable(
+        this.latestChattlinVersion,
+        this.globalConfig.appVersion
       );
     },
     bannerMessage() {
@@ -48,8 +41,9 @@ export default {
     },
     shouldShowBanner() {
       return (
+        !this.userDismissedBanner &&
         this.globalConfig.displayManifest &&
-        this.hasAnUpdateAvailable &&
+        this.updateAvailable &&
         !this.isVersionNotificationDismissed(this.latestChattlinVersion) &&
         this.isAdmin
       );
@@ -57,17 +51,23 @@ export default {
   },
   methods: {
     isVersionNotificationDismissed(version) {
-      return dismissedUpdates.get().includes(version);
+      const dismissedVersions =
+        LocalStorage.get(LOCAL_STORAGE_KEYS.DISMISSED_UPDATES) || [];
+      return dismissedVersions.includes(version);
     },
     dismissUpdateBanner() {
-      let updatedDismissedItems = dismissedUpdates.get();
+      let updatedDismissedItems =
+        LocalStorage.get(LOCAL_STORAGE_KEYS.DISMISSED_UPDATES) || [];
       if (updatedDismissedItems instanceof Array) {
         updatedDismissedItems.push(this.latestChattlinVersion);
       } else {
         updatedDismissedItems = [this.latestChattlinVersion];
       }
-      dismissedUpdates.store(updatedDismissedItems);
-      this.latestChattlinVersion = this.globalConfig.appVersion;
+      LocalStorage.set(
+        LOCAL_STORAGE_KEYS.DISMISSED_UPDATES,
+        updatedDismissedItems
+      );
+      this.userDismissedBanner = true;
     },
   },
 };

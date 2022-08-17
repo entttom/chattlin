@@ -129,19 +129,4 @@ describe('#getters', () => {
       offline: 1,
     });
   });
-
-  it('getAgentStatus', () => {
-    const state = {
-      records: [
-        {
-          id: 1,
-          name: 'Agent 1',
-          email: 'agent1@chattlin.com',
-          confirmed: true,
-          availability_status: 'online',
-        },
-      ],
-    };
-    expect(getters.getAgentsCount(state)).toEqual(1);
-  });
 });

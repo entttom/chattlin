@@ -55,6 +55,10 @@ export default {
       type: String,
       default: '',
     },
+    isOnChattlinCloud: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     hasSecondaryMenu() {
@@ -67,12 +71,18 @@ export default {
       if (!this.currentRole) {
         return [];
       }
-      return this.menuConfig.menuItems.filter(
+      const menuItemsFilteredByRole = this.menuConfig.menuItems.filter(
         menuItem =>
           window.roleWiseRoutes[this.currentRole].indexOf(
             menuItem.toStateName
           ) > -1
       );
+      return menuItemsFilteredByRole.filter(item => {
+        if (item.showOnlyOnCloud) {
+          return this.isOnChattlinCloud;
+        }
+        return true;
+      });
     },
     inboxSection() {
       return {
